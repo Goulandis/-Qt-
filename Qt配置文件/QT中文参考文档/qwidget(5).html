@@ -1,0 +1,2312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/kernel/qwidget.cpp:64 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QWidget类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QWidget类参考</h1>
+
+<p>QWidget类是所有用户界面对象的基类。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qwidget-h.html">qwidget.h</a>&gt;</tt>
+<p>继承<a href="qobject.html">QObject</a>和<a href="qpaintdevice.html">QPaintDevice</a>。
+<p>被<a href="qbutton.html">QButton</a>、<a href="qframe.html">QFrame</a>、<a href="qdialog.html">QDialog</a>、<a href="qcombobox.html">QComboBox</a>、<a href="qdatabrowser.html">QDataBrowser</a>、<a href="qdataview.html">QDataView</a>、<a href="qdatetimeedit.html">QDateTimeEdit</a>、<a href="qdesktopwidget.html">QDesktopWidget</a>、<a href="qdial.html">QDial</a>、<a href="qdockarea.html">QDockArea</a>、<a href="qglwidget.html">QGLWidget</a>、<a href="qheader.html">QHeader</a>、<a href="qmainwindow.html">QMainWindow</a>、<a href="qnpwidget.html">QNPWidget</a>、<a href="qscrollbar.html">QScrollBar</a>、<a href="qsizegrip.html">QSizeGrip</a>、<a href="qslider.html">QSlider</a>、<a href="qspinbox.html">QSpinBox</a>、<a href="qstatusbar.html">QStatusBar</a>、<a href="qtabbar.html">QTabBar</a>、<a href="qtabwidget.html">QTabWidget</a>、<a href="qworkspace.html">QWorkspace</a>和<a href="qxtwidget.html">QXtWidget</a>继承。
+<p><a href="qwidget-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QWidget"><b>QWidget</b></a> ( QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )</div></li>
+<li><div class=fn><a href="#~QWidget"><b>~QWidget</b></a> ()</div></li>
+<li><div class=fn>WId <a href="#winId"><b>winId</b></a> () const</div></li>
+<li><div class=fn>QStyle &amp; <a href="#style"><b>style</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setStyle"><b>setStyle</b></a> ( QStyle&nbsp;*&nbsp;style )</div></li>
+<li><div class=fn>QStyle * <a href="#setStyle-2"><b>setStyle</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;style )</div></li>
+<li><div class=fn>bool <a href="#isTopLevel"><b>isTopLevel</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isDialog"><b>isDialog</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isPopup"><b>isPopup</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isDesktop"><b>isDesktop</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isModal"><b>isModal</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isEnabled"><b>isEnabled</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isEnabledTo"><b>isEnabledTo</b></a> ( QWidget&nbsp;*&nbsp;ancestor ) const</div></li>
+<li><div class=fn>bool isEnabledToTLW () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>QRect <a href="#frameGeometry"><b>frameGeometry</b></a> () const</div></li>
+<li><div class=fn>const QRect &amp; <a href="#geometry"><b>geometry</b></a> () const</div></li>
+<li><div class=fn>int <a href="#x"><b>x</b></a> () const</div></li>
+<li><div class=fn>int <a href="#y"><b>y</b></a> () const</div></li>
+<li><div class=fn>QPoint <a href="#pos"><b>pos</b></a> () const</div></li>
+<li><div class=fn>QSize <a href="#frameSize"><b>frameSize</b></a> () const</div></li>
+<li><div class=fn>QSize <a href="#size"><b>size</b></a> () const</div></li>
+<li><div class=fn>int <a href="#width"><b>width</b></a> () const</div></li>
+<li><div class=fn>int <a href="#height"><b>height</b></a> () const</div></li>
+<li><div class=fn>QRect <a href="#rect"><b>rect</b></a> () const</div></li>
+<li><div class=fn>QRect <a href="#childrenRect"><b>childrenRect</b></a> () const</div></li>
+<li><div class=fn>QRegion <a href="#childrenRegion"><b>childrenRegion</b></a> () const</div></li>
+<li><div class=fn>QSize <a href="#minimumSize"><b>minimumSize</b></a> () const</div></li>
+<li><div class=fn>QSize <a href="#maximumSize"><b>maximumSize</b></a> () const</div></li>
+<li><div class=fn>int <a href="#minimumWidth"><b>minimumWidth</b></a> () const</div></li>
+<li><div class=fn>int <a href="#minimumHeight"><b>minimumHeight</b></a> () const</div></li>
+<li><div class=fn>int <a href="#maximumWidth"><b>maximumWidth</b></a> () const</div></li>
+<li><div class=fn>int <a href="#maximumHeight"><b>maximumHeight</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setMinimumSize"><b>setMinimumSize</b></a> ( const QSize &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setMinimumSize-2"><b>setMinimumSize</b></a> ( int&nbsp;minw, int&nbsp;minh )</div></li>
+<li><div class=fn>void <a href="#setMaximumSize"><b>setMaximumSize</b></a> ( const QSize &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setMaximumSize-2"><b>setMaximumSize</b></a> ( int&nbsp;maxw, int&nbsp;maxh )</div></li>
+<li><div class=fn>void <a href="#setMinimumWidth"><b>setMinimumWidth</b></a> ( int&nbsp;minw )</div></li>
+<li><div class=fn>void <a href="#setMinimumHeight"><b>setMinimumHeight</b></a> ( int&nbsp;minh )</div></li>
+<li><div class=fn>void <a href="#setMaximumWidth"><b>setMaximumWidth</b></a> ( int&nbsp;maxw )</div></li>
+<li><div class=fn>void <a href="#setMaximumHeight"><b>setMaximumHeight</b></a> ( int&nbsp;maxh )</div></li>
+<li><div class=fn>QSize <a href="#sizeIncrement"><b>sizeIncrement</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setSizeIncrement"><b>setSizeIncrement</b></a> ( const QSize &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setSizeIncrement-2"><b>setSizeIncrement</b></a> ( int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>QSize <a href="#baseSize"><b>baseSize</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setBaseSize"><b>setBaseSize</b></a> ( const QSize &amp; )</div></li>
+<li><div class=fn>void <a href="#setBaseSize-2"><b>setBaseSize</b></a> ( int&nbsp;basew, int&nbsp;baseh )</div></li>
+<li><div class=fn>void <a href="#setFixedSize"><b>setFixedSize</b></a> ( const&nbsp;QSize&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>void <a href="#setFixedSize-2"><b>setFixedSize</b></a> ( int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#setFixedWidth"><b>setFixedWidth</b></a> ( int&nbsp;w )</div></li>
+<li><div class=fn>void <a href="#setFixedHeight"><b>setFixedHeight</b></a> ( int&nbsp;h )</div></li>
+<li><div class=fn>QPoint <a href="#mapToGlobal"><b>mapToGlobal</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QPoint <a href="#mapFromGlobal"><b>mapFromGlobal</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QPoint <a href="#mapToParent"><b>mapToParent</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QPoint <a href="#mapFromParent"><b>mapFromParent</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QPoint <a href="#mapTo"><b>mapTo</b></a> ( QWidget&nbsp;*&nbsp;parent, const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QPoint <a href="#mapFrom"><b>mapFrom</b></a> ( QWidget&nbsp;*&nbsp;parent, const&nbsp;QPoint&nbsp;&amp;&nbsp;pos ) const</div></li>
+<li><div class=fn>QWidget * <a href="#topLevelWidget"><b>topLevelWidget</b></a> () const</div></li>
+<li><div class=fn>BackgroundMode <a href="#backgroundMode"><b>backgroundMode</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setBackgroundMode"><b>setBackgroundMode</b></a> ( BackgroundMode )</div></li>
+<li><div class=fn>void <a href="#setBackgroundMode-2"><b>setBackgroundMode</b></a> ( BackgroundMode&nbsp;m, BackgroundMode&nbsp;visual )</div></li>
+<li><div class=fn>const QColor &amp; <a href="#foregroundColor"><b>foregroundColor</b></a> () const</div></li>
+<li><div class=fn>const QColor &amp; <a href="#eraseColor"><b>eraseColor</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setEraseColor"><b>setEraseColor</b></a> ( const&nbsp;QColor&nbsp;&amp;&nbsp;color )</div></li>
+<li><div class=fn>const QPixmap * <a href="#erasePixmap"><b>erasePixmap</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setErasePixmap"><b>setErasePixmap</b></a> ( const&nbsp;QPixmap&nbsp;&amp;&nbsp;pixmap )</div></li>
+<li><div class=fn>const QColorGroup &amp; <a href="#colorGroup"><b>colorGroup</b></a> () const</div></li>
+<li><div class=fn>const QPalette &amp; <a href="#palette"><b>palette</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#ownPalette"><b>ownPalette</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setPalette"><b>setPalette</b></a> ( const QPalette &amp; )</div></li>
+<li><div class=fn>void <a href="#unsetPalette"><b>unsetPalette</b></a> ()</div></li>
+<li><div class=fn>const QColor &amp; <a href="#paletteForegroundColor"><b>paletteForegroundColor</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setPaletteForegroundColor"><b>setPaletteForegroundColor</b></a> ( const QColor &amp; )</div></li>
+<li><div class=fn>const QColor &amp; <a href="#paletteBackgroundColor"><b>paletteBackgroundColor</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setPaletteBackgroundColor"><b>setPaletteBackgroundColor</b></a> ( const QColor &amp; )</div></li>
+<li><div class=fn>const QPixmap * <a href="#paletteBackgroundPixmap"><b>paletteBackgroundPixmap</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setPaletteBackgroundPixmap"><b>setPaletteBackgroundPixmap</b></a> ( const QPixmap &amp; )</div></li>
+<li><div class=fn>const QBrush &amp; <a href="#backgroundBrush"><b>backgroundBrush</b></a> () const</div></li>
+<li><div class=fn>QFont <a href="#font"><b>font</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#ownFont"><b>ownFont</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setFont"><b>setFont</b></a> ( const QFont &amp; )</div></li>
+<li><div class=fn>void <a href="#unsetFont"><b>unsetFont</b></a> ()</div></li>
+<li><div class=fn>QFontMetrics <a href="#fontMetrics"><b>fontMetrics</b></a> () const</div></li>
+<li><div class=fn>QFontInfo <a href="#fontInfo"><b>fontInfo</b></a> () const</div></li>
+<li><div class=fn>const QCursor &amp; <a href="#cursor"><b>cursor</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#ownCursor"><b>ownCursor</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setCursor"><b>setCursor</b></a> ( const QCursor &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#unsetCursor"><b>unsetCursor</b></a> ()</div></li>
+<li><div class=fn>QString <a href="#caption"><b>caption</b></a> () const</div></li>
+<li><div class=fn>const QPixmap * <a href="#icon"><b>icon</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#iconText"><b>iconText</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#hasMouseTracking"><b>hasMouseTracking</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#hasMouse"><b>hasMouse</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setMask"><b>setMask</b></a> ( const&nbsp;QBitmap&nbsp;&amp;&nbsp;bitmap )</div></li>
+<li><div class=fn>virtual void <a href="#setMask-2"><b>setMask</b></a> ( const&nbsp;QRegion&nbsp;&amp;&nbsp;region )</div></li>
+<li><div class=fn>void <a href="#clearMask"><b>clearMask</b></a> ()</div></li>
+<li><div class=fn>const QColor &amp; backgroundColor () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>virtual void setBackgroundColor ( const&nbsp;QColor&nbsp;&amp;&nbsp;c ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>const QPixmap * backgroundPixmap () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>virtual void setBackgroundPixmap ( const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>enum <a href="#FocusPolicy-enum"><b>FocusPolicy</b></a> { NoFocus = 0, TabFocus = 0x1, ClickFocus = 0x2, StrongFocus = 0x3, WheelFocus = 0x7 }</div></li>
+<li><div class=fn>bool <a href="#isActiveWindow"><b>isActiveWindow</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setActiveWindow"><b>setActiveWindow</b></a> ()</div></li>
+<li><div class=fn>bool <a href="#isFocusEnabled"><b>isFocusEnabled</b></a> () const</div></li>
+<li><div class=fn>FocusPolicy <a href="#focusPolicy"><b>focusPolicy</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setFocusPolicy"><b>setFocusPolicy</b></a> ( FocusPolicy )</div></li>
+<li><div class=fn>bool <a href="#hasFocus"><b>hasFocus</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setFocusProxy"><b>setFocusProxy</b></a> ( QWidget&nbsp;*&nbsp;w )</div></li>
+<li><div class=fn>QWidget * <a href="#focusProxy"><b>focusProxy</b></a> () const</div></li>
+<li><div class=fn>void <a href="#grabMouse"><b>grabMouse</b></a> ()</div></li>
+<li><div class=fn>void <a href="#grabMouse-2"><b>grabMouse</b></a> ( const&nbsp;QCursor&nbsp;&amp;&nbsp;cursor )</div></li>
+<li><div class=fn>void <a href="#releaseMouse"><b>releaseMouse</b></a> ()</div></li>
+<li><div class=fn>void <a href="#grabKeyboard"><b>grabKeyboard</b></a> ()</div></li>
+<li><div class=fn>void <a href="#releaseKeyboard"><b>releaseKeyboard</b></a> ()</div></li>
+<li><div class=fn>bool <a href="#isUpdatesEnabled"><b>isUpdatesEnabled</b></a> () const</div></li>
+<li><div class=fn>virtual bool <a href="#close-2"><b>close</b></a> ( bool&nbsp;alsoDelete )</div></li>
+<li><div class=fn>bool <a href="#isVisible"><b>isVisible</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isVisibleTo"><b>isVisibleTo</b></a> ( QWidget&nbsp;*&nbsp;ancestor ) const</div></li>
+<li><div class=fn>bool isVisibleToTLW () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>QRect <a href="#visibleRect"><b>visibleRect</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isHidden"><b>isHidden</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isMinimized"><b>isMinimized</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isMaximized"><b>isMaximized</b></a> () const</div></li>
+<li><div class=fn>virtual QSize <a href="#sizeHint"><b>sizeHint</b></a> () const</div></li>
+<li><div class=fn>virtual QSize <a href="#minimumSizeHint"><b>minimumSizeHint</b></a> () const</div></li>
+<li><div class=fn>virtual QSizePolicy <a href="#sizePolicy"><b>sizePolicy</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setSizePolicy"><b>setSizePolicy</b></a> ( QSizePolicy )</div></li>
+<li><div class=fn>virtual int <a href="#heightForWidth"><b>heightForWidth</b></a> ( int&nbsp;w ) const</div></li>
+<li><div class=fn>virtual void <a href="#adjustSize"><b>adjustSize</b></a> ()</div></li>
+<li><div class=fn>QLayout * <a href="#layout"><b>layout</b></a> () const</div></li>
+<li><div class=fn>void <a href="#updateGeometry"><b>updateGeometry</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#reparent"><b>reparent</b></a> ( QWidget&nbsp;*&nbsp;parent, WFlags&nbsp;f, const&nbsp;QPoint&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE )</div></li>
+<li><div class=fn>void <a href="#reparent-2"><b>reparent</b></a> ( QWidget&nbsp;*&nbsp;parent, const&nbsp;QPoint&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE )</div></li>
+<li><div class=fn>void recreate ( QWidget&nbsp;*&nbsp;parent, WFlags&nbsp;f, const&nbsp;QPoint&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void <a href="#erase-2"><b>erase</b></a> ()</div></li>
+<li><div class=fn>void <a href="#erase"><b>erase</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#erase-3"><b>erase</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#erase-4"><b>erase</b></a> ( const&nbsp;QRegion&nbsp;&amp;&nbsp;reg )</div></li>
+<li><div class=fn>void <a href="#scroll"><b>scroll</b></a> ( int&nbsp;dx, int&nbsp;dy )</div></li>
+<li><div class=fn>void <a href="#scroll-2"><b>scroll</b></a> ( int&nbsp;dx, int&nbsp;dy, const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#drawText"><b>drawText</b></a> ( int&nbsp;x, int&nbsp;y, const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>void <a href="#drawText-2"><b>drawText</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pos, const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>QWidget * <a href="#focusWidget"><b>focusWidget</b></a> () const</div></li>
+<li><div class=fn>QRect <a href="#microFocusHint"><b>microFocusHint</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#acceptDrops"><b>acceptDrops</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setAcceptDrops"><b>setAcceptDrops</b></a> ( bool&nbsp;on )</div></li>
+<li><div class=fn>virtual void <a href="#setAutoMask"><b>setAutoMask</b></a> ( bool )</div></li>
+<li><div class=fn>bool <a href="#autoMask"><b>autoMask</b></a> () const</div></li>
+<li><div class=fn>enum <a href="#BackgroundOrigin-enum"><b>BackgroundOrigin</b></a> { WidgetOrigin, ParentOrigin, WindowOrigin }</div></li>
+<li><div class=fn>virtual void <a href="#setBackgroundOrigin"><b>setBackgroundOrigin</b></a> ( BackgroundOrigin )</div></li>
+<li><div class=fn>BackgroundOrigin <a href="#backgroundOrigin"><b>backgroundOrigin</b></a> () const</div></li>
+<li><div class=fn>virtual bool <a href="#customWhatsThis"><b>customWhatsThis</b></a> () const</div></li>
+<li><div class=fn>QWidget * <a href="#parentWidget"><b>parentWidget</b></a> ( bool&nbsp;sameWindow = FALSE ) const</div></li>
+<li><div class=fn>WFlags <a href="#testWFlags"><b>testWFlags</b></a> ( WFlags&nbsp;f ) const</div></li>
+<li><div class=fn>QWidget * <a href="#childAt"><b>childAt</b></a> ( int&nbsp;x, int&nbsp;y, bool&nbsp;includeThis = FALSE ) const</div></li>
+<li><div class=fn>QWidget * <a href="#childAt-2"><b>childAt</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, bool&nbsp;includeThis = FALSE ) const</div></li>
+<li><div class=fn>void setPalette ( const&nbsp;QPalette&nbsp;&amp;&nbsp;p, bool ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void setFont ( const&nbsp;QFont&nbsp;&amp;&nbsp;f, bool ) &nbsp;<em>(obsolete)</em></div></li>
+</ul>
+<h2>公有槽</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#setEnabled"><b>setEnabled</b></a> ( bool )</div></li>
+<li><div class=fn>void <a href="#setDisabled"><b>setDisabled</b></a> ( bool&nbsp;disable )</div></li>
+<li><div class=fn>virtual void <a href="#setCaption"><b>setCaption</b></a> ( const QString &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setIcon"><b>setIcon</b></a> ( const QPixmap &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setIconText"><b>setIconText</b></a> ( const QString &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setMouseTracking"><b>setMouseTracking</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>virtual void <a href="#setFocus"><b>setFocus</b></a> ()</div></li>
+<li><div class=fn>void <a href="#clearFocus"><b>clearFocus</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#setUpdatesEnabled"><b>setUpdatesEnabled</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>void <a href="#update"><b>update</b></a> ()</div></li>
+<li><div class=fn>void <a href="#update-2"><b>update</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#update-3"><b>update</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#repaint-2"><b>repaint</b></a> ()</div></li>
+<li><div class=fn>void <a href="#repaint-3"><b>repaint</b></a> ( bool&nbsp;erase )</div></li>
+<li><div class=fn>void <a href="#repaint"><b>repaint</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>void <a href="#repaint-4"><b>repaint</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>void <a href="#repaint-5"><b>repaint</b></a> ( const&nbsp;QRegion&nbsp;&amp;&nbsp;reg, bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>virtual void <a href="#show"><b>show</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#hide"><b>hide</b></a> ()</div></li>
+<li><div class=fn>void iconify () &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>virtual void <a href="#showMinimized"><b>showMinimized</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#showMaximized"><b>showMaximized</b></a> ()</div></li>
+<li><div class=fn>void <a href="#showFullScreen"><b>showFullScreen</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#showNormal"><b>showNormal</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#polish"><b>polish</b></a> ()</div></li>
+<li><div class=fn>void <a href="#constPolish"><b>constPolish</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#close"><b>close</b></a> ()</div></li>
+<li><div class=fn>void <a href="#raise"><b>raise</b></a> ()</div></li>
+<li><div class=fn>void <a href="#lower"><b>lower</b></a> ()</div></li>
+<li><div class=fn>void <a href="#stackUnder"><b>stackUnder</b></a> ( QWidget&nbsp;*&nbsp;w )</div></li>
+<li><div class=fn>virtual void <a href="#move-2"><b>move</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#move"><b>move</b></a> ( const QPoint &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#resize-2"><b>resize</b></a> ( int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#resize"><b>resize</b></a> ( const QSize &amp; )</div></li>
+<li><div class=fn>virtual void <a href="#setGeometry-2"><b>setGeometry</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>virtual void <a href="#setGeometry"><b>setGeometry</b></a> ( const QRect &amp; )</div></li>
+</ul>
+<h2>静态公有成员</h2>
+<ul>
+<li><div class=fn>void <a href="#setTabOrder"><b>setTabOrder</b></a> ( QWidget&nbsp;*&nbsp;first, QWidget&nbsp;*&nbsp;second )</div></li>
+<li><div class=fn>QWidget * <a href="#mouseGrabber"><b>mouseGrabber</b></a> ()</div></li>
+<li><div class=fn>QWidget * <a href="#keyboardGrabber"><b>keyboardGrabber</b></a> ()</div></li>
+<li><div class=fn>QWidget * <a href="#find"><b>find</b></a> ( WId&nbsp;id )</div></li>
+</ul>
+<h2>属性</h2>
+<ul>
+<li><div class=fn>bool <a href="#acceptDrops-prop"><b>acceptDrops</b></a>&nbsp;- 窗口部件中放下事件是否有效</div></li>
+<li><div class=fn>bool <a href="#autoMask-prop"><b>autoMask</b></a>&nbsp;- 窗口部件中自动面具特征是否有效</div></li>
+<li><div class=fn>QBrush <a href="#backgroundBrush-prop"><b>backgroundBrush</b></a>&nbsp;- 窗口部件的背景画刷&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>BackgroundMode <a href="#backgroundMode-prop"><b>backgroundMode</b></a>&nbsp;- 绘制窗口部件背景所使用的颜色模式</div></li>
+<li><div class=fn>BackgroundOrigin <a href="#backgroundOrigin-prop"><b>backgroundOrigin</b></a>&nbsp;- 窗口部件的背景的原点</div></li>
+<li><div class=fn>QSize <a href="#baseSize-prop"><b>baseSize</b></a>&nbsp;- 窗口部件的基础大小</div></li>
+<li><div class=fn>QString <a href="#caption-prop"><b>caption</b></a>&nbsp;- 窗口标题</div></li>
+<li><div class=fn>QRect <a href="#childrenRect-prop"><b>childrenRect</b></a>&nbsp;- 窗口部件的子对象的边界矩形&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QRegion <a href="#childrenRegion-prop"><b>childrenRegion</b></a>&nbsp;- 窗口部件的子对象所占用的组合区域&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QColorGroup <a href="#colorGroup-prop"><b>colorGroup</b></a>&nbsp;- 窗口部件调色板的当前颜色组&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QCursor <a href="#cursor-prop"><b>cursor</b></a>&nbsp;- 窗口部件的光标外形</div></li>
+<li><div class=fn>bool <a href="#customWhatsThis-prop"><b>customWhatsThis</b></a>&nbsp;- 窗口部件是否手动处理“这是什么”的帮助&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#enabled-prop"><b>enabled</b></a>&nbsp;- 窗口部件是否有效</div></li>
+<li><div class=fn>bool <a href="#focus-prop"><b>focus</b></a>&nbsp;- 窗口部件（或者它的焦点代理）是否得到键盘输入焦点&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#focusEnabled-prop"><b>focusEnabled</b></a>&nbsp;- 窗口部件是否接收键盘焦点&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>FocusPolicy <a href="#focusPolicy-prop"><b>focusPolicy</b></a>&nbsp;- 窗口部件接收键盘焦点的策略</div></li>
+<li><div class=fn>QFont <a href="#font-prop"><b>font</b></a>&nbsp;- 窗口部件当前的字体集</div></li>
+<li><div class=fn>QRect <a href="#frameGeometry-prop"><b>frameGeometry</b></a>&nbsp;- 相对于它的父对象包含任何窗口框架的窗口部件的几何形状&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QSize <a href="#frameSize-prop"><b>frameSize</b></a>&nbsp;- 包含任何窗口框架的窗口部件的大小&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QRect <a href="#geometry-prop"><b>geometry</b></a>&nbsp;- 相对于它的父对象不包括窗口框架的窗口部件的几何形状</div></li>
+<li><div class=fn>int <a href="#height-prop"><b>height</b></a>&nbsp;- 不包括窗口框架的窗口部件的高度&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#hidden-prop"><b>hidden</b></a>&nbsp;- 窗口部件是否明确地隐藏&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QPixmap <a href="#icon-prop"><b>icon</b></a>&nbsp;- 窗口部件图标像素映射</div></li>
+<li><div class=fn>QString <a href="#iconText-prop"><b>iconText</b></a>&nbsp;- 窗口部件图标文本</div></li>
+<li><div class=fn>bool <a href="#isActiveWindow-prop"><b>isActiveWindow</b></a>&nbsp;- 窗口部件或者它的一个子对象是否是活动窗口&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#isDesktop-prop"><b>isDesktop</b></a>&nbsp;- 窗口部件是否是桌面窗口部件，比如，代表桌面&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#isDialog-prop"><b>isDialog</b></a>&nbsp;- 窗口部件是否是对话框窗口部件&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#isModal-prop"><b>isModal</b></a>&nbsp;- 窗口部件是否是模式窗口部件&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#isPopup-prop"><b>isPopup</b></a>&nbsp;- 窗口部件是否是弹出窗口部件&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#isTopLevel-prop"><b>isTopLevel</b></a>&nbsp;- 窗口部件是否是顶级窗口部件&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#maximumHeight-prop"><b>maximumHeight</b></a>&nbsp;- 窗口部件的最大高度</div></li>
+<li><div class=fn>QSize <a href="#maximumSize-prop"><b>maximumSize</b></a>&nbsp;- 窗口部件的最大大小</div></li>
+<li><div class=fn>int <a href="#maximumWidth-prop"><b>maximumWidth</b></a>&nbsp;- 窗口部件的最大宽度</div></li>
+<li><div class=fn>QRect <a href="#microFocusHint-prop"><b>microFocusHint</b></a>&nbsp;- 窗口部件的当前设置的微焦点提示&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#minimized-prop"><b>minimized</b></a>&nbsp;- 窗口部件是否是最小化的（变为图标了）&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#minimumHeight-prop"><b>minimumHeight</b></a>&nbsp;- 窗口部件的最小高度</div></li>
+<li><div class=fn>QSize <a href="#minimumSize-prop"><b>minimumSize</b></a>&nbsp;- 窗口部件的最小大小</div></li>
+<li><div class=fn>QSize <a href="#minimumSizeHint-prop"><b>minimumSizeHint</b></a>&nbsp;- 建议的窗口部件最小大小&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#minimumWidth-prop"><b>minimumWidth</b></a>&nbsp;- 窗口部件的最小宽度</div></li>
+<li><div class=fn>bool <a href="#mouseTracking-prop"><b>mouseTracking</b></a>&nbsp;- 窗口部件跟踪鼠标是否生效</div></li>
+<li><div class=fn>bool <a href="#ownCursor-prop"><b>ownCursor</b></a>&nbsp;- 窗口部件是否使用它自己的光标&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#ownFont-prop"><b>ownFont</b></a>&nbsp;- 窗口部件是否使用它自己的字体&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#ownPalette-prop"><b>ownPalette</b></a>&nbsp;- 窗口部件是否使用它自己的调色板&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QPalette <a href="#palette-prop"><b>palette</b></a>&nbsp;- 窗口部件的调色板</div></li>
+<li><div class=fn>QColor <a href="#paletteBackgroundColor-prop"><b>paletteBackgroundColor</b></a>&nbsp;- 窗口部件的背景色</div></li>
+<li><div class=fn>QPixmap <a href="#paletteBackgroundPixmap-prop"><b>paletteBackgroundPixmap</b></a>&nbsp;- 窗口部件的背景像素映射</div></li>
+<li><div class=fn>QColor <a href="#paletteForegroundColor-prop"><b>paletteForegroundColor</b></a>&nbsp;- 窗口部件的前景色</div></li>
+<li><div class=fn>QPoint <a href="#pos-prop"><b>pos</b></a>&nbsp;- 窗口部件在它的父窗口部件中的位置</div></li>
+<li><div class=fn>QRect <a href="#rect-prop"><b>rect</b></a>&nbsp;- 不包含任何窗口框架的窗口部件的内部几何形状&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QSize <a href="#size-prop"><b>size</b></a>&nbsp;- 不包含任何窗口框架的窗口部件的大小</div></li>
+<li><div class=fn>QSize <a href="#sizeHint-prop"><b>sizeHint</b></a>&nbsp;- 建议的窗口部件大小&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QSize <a href="#sizeIncrement-prop"><b>sizeIncrement</b></a>&nbsp;- 窗口部件的大小增量</div></li>
+<li><div class=fn>QSizePolicy <a href="#sizePolicy-prop"><b>sizePolicy</b></a>&nbsp;- 窗口部件的默认布局行为</div></li>
+<li><div class=fn>bool <a href="#underMouse-prop"><b>underMouse</b></a>&nbsp;- 窗口部件是否在鼠标光标下&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#updatesEnabled-prop"><b>updatesEnabled</b></a>&nbsp;- 更新是否生效</div></li>
+<li><div class=fn>bool <a href="#visible-prop"><b>visible</b></a>&nbsp;- 窗口部件是否可视&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>QRect <a href="#visibleRect-prop"><b>visibleRect</b></a>&nbsp;- 窗口部件的当前可视矩形&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#width-prop"><b>width</b></a>&nbsp;- 不包含任何窗口框架的窗口部件宽度&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#x-prop"><b>x</b></a>&nbsp;- 相对于它的父对象包含任何窗口框架的窗口部件的x坐标&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#y-prop"><b>y</b></a>&nbsp;- 相对于它的父对象包含任何窗口框架的窗口部件的y坐标&nbsp;<em>（只读）</em></div></li>
+</ul>
+<h2>保护成员</h2>
+<ul>
+<li><div class=fn>virtual bool <a href="#event"><b>event</b></a> ( QEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#mousePressEvent"><b>mousePressEvent</b></a> ( QMouseEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#mouseReleaseEvent"><b>mouseReleaseEvent</b></a> ( QMouseEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#mouseDoubleClickEvent"><b>mouseDoubleClickEvent</b></a> ( QMouseEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#mouseMoveEvent"><b>mouseMoveEvent</b></a> ( QMouseEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#wheelEvent"><b>wheelEvent</b></a> ( QWheelEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#keyPressEvent"><b>keyPressEvent</b></a> ( QKeyEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#keyReleaseEvent"><b>keyReleaseEvent</b></a> ( QKeyEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#focusInEvent"><b>focusInEvent</b></a> ( QFocusEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#focusOutEvent"><b>focusOutEvent</b></a> ( QFocusEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#enterEvent"><b>enterEvent</b></a> ( QEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#leaveEvent"><b>leaveEvent</b></a> ( QEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#paintEvent"><b>paintEvent</b></a> ( QPaintEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#moveEvent"><b>moveEvent</b></a> ( QMoveEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#resizeEvent"><b>resizeEvent</b></a> ( QResizeEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#closeEvent"><b>closeEvent</b></a> ( QCloseEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#contextMenuEvent"><b>contextMenuEvent</b></a> ( QContextMenuEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#imStartEvent"><b>imStartEvent</b></a> ( QIMEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#imComposeEvent"><b>imComposeEvent</b></a> ( QIMEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#imEndEvent"><b>imEndEvent</b></a> ( QIMEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#tabletEvent"><b>tabletEvent</b></a> ( QTabletEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#dragEnterEvent"><b>dragEnterEvent</b></a> ( QDragEnterEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#dragMoveEvent"><b>dragMoveEvent</b></a> ( QDragMoveEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#dragLeaveEvent"><b>dragLeaveEvent</b></a> ( QDragLeaveEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#dropEvent"><b>dropEvent</b></a> ( QDropEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#showEvent"><b>showEvent</b></a> ( QShowEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#hideEvent"><b>hideEvent</b></a> ( QHideEvent * )</div></li>
+<li><div class=fn>virtual bool <a href="#macEvent"><b>macEvent</b></a> ( MSG * )</div></li>
+<li><div class=fn>virtual bool <a href="#winEvent"><b>winEvent</b></a> ( MSG * )</div></li>
+<li><div class=fn>virtual bool <a href="#x11Event"><b>x11Event</b></a> ( XEvent * )</div></li>
+<li><div class=fn>virtual bool <a href="#qwsEvent"><b>qwsEvent</b></a> ( QWSEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#updateMask"><b>updateMask</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#styleChange"><b>styleChange</b></a> ( QStyle&nbsp;&amp;&nbsp;oldStyle )</div></li>
+<li><div class=fn>virtual void <a href="#enabledChange"><b>enabledChange</b></a> ( bool&nbsp;oldEnabled )</div></li>
+<li><div class=fn>virtual void <a href="#paletteChange"><b>paletteChange</b></a> ( const&nbsp;QPalette&nbsp;&amp;&nbsp;oldPalette )</div></li>
+<li><div class=fn>virtual void <a href="#fontChange"><b>fontChange</b></a> ( const&nbsp;QFont&nbsp;&amp;&nbsp;oldFont )</div></li>
+<li><div class=fn>virtual void <a href="#windowActivationChange"><b>windowActivationChange</b></a> ( bool&nbsp;oldActive )</div></li>
+<li><div class=fn>virtual int <a href="#metric"><b>metric</b></a> ( int&nbsp;m ) const</div></li>
+<li><div class=fn>void <a href="#resetInputContext"><b>resetInputContext</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#create"><b>create</b></a> ( WId&nbsp;window = 0, bool&nbsp;initializeWindow = TRUE, bool&nbsp;destroyOldWindow = TRUE )</div></li>
+<li><div class=fn>virtual void <a href="#destroy"><b>destroy</b></a> ( bool&nbsp;destroyWindow = TRUE, bool&nbsp;destroySubWindows = TRUE )</div></li>
+<li><div class=fn>WFlags <a href="#getWFlags"><b>getWFlags</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setWFlags"><b>setWFlags</b></a> ( WFlags&nbsp;f )</div></li>
+<li><div class=fn>void <a href="#clearWFlags"><b>clearWFlags</b></a> ( WFlags&nbsp;f )</div></li>
+<li><div class=fn>virtual bool <a href="#focusNextPrevChild"><b>focusNextPrevChild</b></a> ( bool&nbsp;next )</div></li>
+<li><div class=fn>QFocusData * <a href="#focusData"><b>focusData</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#setKeyCompression"><b>setKeyCompression</b></a> ( bool&nbsp;compress )</div></li>
+<li><div class=fn>virtual void <a href="#setMicroFocusHint"><b>setMicroFocusHint</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;width, int&nbsp;height, bool&nbsp;text = TRUE, QFont&nbsp;*&nbsp;f = 0 )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QWidget类是所有用户界面对象的基类。
+<p> 
+
+<p> 窗口部件是用户界面的一个原子：它从窗口系统接收鼠标、键盘和其它事件，并且在屏幕上绘制自己的表现。每一个窗口部件都是矩形，并且它们按Z轴顺序排列的。一个窗口部件可以被它的父窗口部件或者它前面的窗口部件盖住一部分。
+<p> <a href="qdialog.html">QDialog</a>是最普通的顶级窗口。不被嵌入到一个父窗口部件的窗口部件被叫做顶级窗口部件。通常情况下，顶级窗口部件是有框架和标题栏的窗口（尽管如果使用了一定的窗口部件标记，创建顶级窗口部件时也可能没有这些装饰。）在Qt中，<a href="qmainwindow.html">QMainWindow</a>和和不同的<a href="qdialog.html">QDialog</a>的子类是最普通的顶级窗口。
+<p> 一个没有父窗口部件的窗口部件一直是顶级窗口部件。
+<p> 非顶级窗口部件是子窗口部件。它们是它们的父窗口部件中的子窗口。你通常不能在视觉角度从它们的父窗口部件中辨别一个子窗口部件。在Qt中的绝大多数其它窗口部件仅仅作为子窗口部件才是有用的。（当然把一个按钮作为或者叫做顶级窗口部件也是可能的，但绝大多数人喜欢把他们的按钮放到其它按钮当中，比如QDialog。）
+<p> QWidget有很多成员函数，但是它们中的一些有少量的直接功能：例如，QWidget有一个字体属性，但是它自己从来不用。有很多继承它的子类提供了实际的功能，比如<a href="qpushbutton.html">QPushButton</a>、<a href="qlistbox.html">QListBox</a>和<a href="qtabdialog.html">QTabDialog</a>等等。
+<p> <h3> 函数分组：
+</h3>
+<a name="1"></a><p> <center><table cellpadding="4" cellspacing="2" border="0" width="100%">
+<tr bgcolor="#a2c511"> <th valign="top" width="15%">上下文 <th valign="top" width="85%">函数
+<tr bgcolor="#f0f0f0"> <td valign="top">窗口函数 <td valign="top">
+<a href="#show">show</a>()、<a href="#hide">hide</a>()、<a href="#raise">raise</a>()、<a href="#lower">lower</a>()、<a href="#close">close</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">顶级窗口 <td valign="top">
+<a href="#caption">caption</a>()、<a href="#setCaption">setCaption</a>()、<a href="#icon">icon</a>()、<a href="#setIcon">setIcon</a>()、<a href="#iconText">iconText</a>()、<a href="#setIconText">setIconText</a>()、<a href="#isActiveWindow">isActiveWindow</a>()、<a href="#setActiveWindow">setActiveWindow</a>()、<a href="#showMinimized">showMinimized</a>()、<a href="#showMaximized">showMaximized</a>()、<a href="#showFullScreen">showFullScreen</a>()、<a href="#showNormal">showNormal</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top">窗口内容 <td valign="top">
+<a href="#update">update</a>()、<a href="#repaint">repaint</a>()、<a href="#erase">erase</a>()、<a href="#scroll">scroll</a>()、<a href="#updateMask">updateMask</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">几何形状 <td valign="top">
+<a href="#pos">pos</a>()、<a href="#size">size</a>()、<a href="#rect">rect</a>()、<a href="#x">x</a>()、<a href="#y">y</a>()、<a href="#width">width</a>()、<a href="#height">height</a>()、<a href="#sizePolicy">sizePolicy</a>()、<a href="#setSizePolicy">setSizePolicy</a>()、<a href="#sizeHint">sizeHint</a>()、<a href="#updateGeometry">updateGeometry</a>()、<a href="#layout">layout</a>()、<a href="#move">move</a>()、<a href="#resize">resize</a>()、<a href="#setGeometry">setGeometry</a>()、<a href="#frameGeometry">frameGeometry</a>()、<a href="#geometry">geometry</a>()、<a href="#childrenRect">childrenRect</a>()、<a href="#adjustSize">adjustSize</a>()、<a href="#mapFromGlobal">mapFromGlobal</a>()、<a href="#mapFromParent">mapFromParent</a>()、<a href="#mapToGlobal">mapToGlobal</a>()、<a href="#mapToParent">mapToParent</a>()、<a href="#maximumSize">maximumSize</a>()、<a href="#minimumSize">minimumSize</a>()、<a href="#sizeIncrement">sizeIncrement</a>()、<a href="#setMaximumSize">setMaximumSize</a>()、<a href="#setMinimumSize">setMinimumSize</a>()、<a href="#setSizeIncrement">setSizeIncrement</a>()、<a href="#setBaseSize">setBaseSize</a>()、<a href="#setFixedSize">setFixedSize</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top">模式 <td valign="top">
+<a href="#isVisible">isVisible</a>()、<a href="#isVisibleTo">isVisibleTo</a>()、<a href="#visibleRect">visibleRect</a>()、<a href="#isMinimized">isMinimized</a>()、<a href="#isDesktop">isDesktop</a>()、<a href="#isEnabled">isEnabled</a>()、<a href="#isEnabledTo">isEnabledTo</a>()、<a href="#isModal">isModal</a>()、<a href="#isPopup">isPopup</a>()、<a href="#isTopLevel">isTopLevel</a>()、<a href="#setEnabled">setEnabled</a>()、<a href="#hasMouseTracking">hasMouseTracking</a>()、<a href="#setMouseTracking">setMouseTracking</a>()、<a href="#isUpdatesEnabled">isUpdatesEnabled</a>()、<a href="#setUpdatesEnabled">setUpdatesEnabled</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">观感 <td valign="top">
+<a href="#style">style</a>()、<a href="#setStyle">setStyle</a>()、<a href="#cursor">cursor</a>()、<a href="#setCursor">setCursor</a>()、<a href="#font">font</a>()、<a href="#setFont">setFont</a>()、<a href="#palette">palette</a>()、<a href="#setPalette">setPalette</a>()、<a href="#backgroundMode">backgroundMode</a>()、<a href="#setBackgroundMode">setBackgroundMode</a>()、<a href="#colorGroup">colorGroup</a>()、<a href="#fontMetrics">fontMetrics</a>()、<a href="#fontInfo">fontInfo</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="focus.html#keyboard-focus">键盘焦点</a>函数 <td valign="top">
+<a href="#isFocusEnabled">isFocusEnabled</a>()、<a href="#setFocusPolicy">setFocusPolicy</a>()、<a href="#focusPolicy">focusPolicy</a>()、<a href="#hasFocus">hasFocus</a>()、<a href="#setFocus">setFocus</a>()、<a href="#clearFocus">clearFocus</a>()、<a href="#setTabOrder">setTabOrder</a>()、<a href="#setFocusProxy">setFocusProxy</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">鼠标和键盘捕获 <td valign="top">
+<a href="#grabMouse">grabMouse</a>()、<a href="#releaseMouse">releaseMouse</a>()、<a href="#grabKeyboard">grabKeyboard</a>()、<a href="#releaseKeyboard">releaseKeyboard</a>()、<a href="#mouseGrabber">mouseGrabber</a>()、<a href="#keyboardGrabber">keyboardGrabber</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top">事件处理器 <td valign="top">
+<a href="#event">event</a>()、<a href="#mousePressEvent">mousePressEvent</a>()、<a href="#mouseReleaseEvent">mouseReleaseEvent</a>()、<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#wheelEvent">wheelEvent</a>()、<a href="#enterEvent">enterEvent</a>()、<a href="#leaveEvent">leaveEvent</a>()、<a href="#paintEvent">paintEvent</a>()、<a href="#moveEvent">moveEvent</a>()、<a href="#resizeEvent">resizeEvent</a>()、<a href="#closeEvent">closeEvent</a>()、<a href="#dragEnterEvent">dragEnterEvent</a>()、<a href="#dragMoveEvent">dragMoveEvent</a>()、<a href="#dragLeaveEvent">dragLeaveEvent</a>()、<a href="#dropEvent">dropEvent</a>()、<a href="qobject.html#childEvent">childEvent</a>()、<a href="#showEvent">showEvent</a>()、<a href="#hideEvent">hideEvent</a>()、<a href="qobject.html#customEvent">customEvent</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">变化处理器 <td valign="top">
+<a href="#enabledChange">enabledChange</a>()、<a href="#fontChange">fontChange</a>()、<a href="#paletteChange">paletteChange</a>()、<a href="#styleChange">styleChange</a>()、<a href="#windowActivationChange">windowActivationChange</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top">系统函数 <td valign="top">
+<a href="#parentWidget">parentWidget</a>()、<a href="#topLevelWidget">topLevelWidget</a>()、<a href="#reparent">reparent</a>()、<a href="#polish">polish</a>()、<a href="#winId">winId</a>()、<a href="#find">find</a>()、<a href="#metric">metric</a>()。
+<tr bgcolor="#d0d0d0"> <td valign="top">这是什么的帮助 <td valign="top">
+<a href="#customWhatsThis">customWhatsThis</a>()。
+<tr bgcolor="#f0f0f0"> <td valign="top">内部核心函数 <td valign="top">
+<a href="#focusNextPrevChild">focusNextPrevChild</a>()、wmapper()、<a href="#clearWFlags">clearWFlags</a>()、<a href="#getWFlags">getWFlags</a>()、<a href="#setWFlags">setWFlags</a>()、<a href="#testWFlags">testWFlags</a>()。
+</table></center>
+<p> 每一个窗口部件构造函数接受两个或三个标准参数：
+<ol type=1>
+<li> <tt>QWidget *parent = 0</tt>是新窗口部件的父窗口部件。如果为0（默认），新的窗口部件将是一个顶级窗口部件。如果不是，它将会使<em>parent</em>的一个孩子，并且被<em>parent</em>的几何形状所强迫（除非你指定<a href="qt.html#WidgetFlags-enum">WType_TopLevel</a>作为<a href="qt.html#WidgetFlags">窗口部件标记</a>）。
+<li> <tt>const char *name = 0</tt>是新窗口部件的窗口部件名称。你可以使用<a href="qobject.html#name">name</a>()来访问它。窗口部件名称很少被程序员用到，但是对于图形用户界面构造程序，比如<em>Qt设计器</em>，是相当重要的（你可以在<em>Qt设计器</em>中命名一个窗口部件，并且在你的代码中使用这个名字来<a href="qobject.html#connect">连接</a>它）。<a href="qobject.html#dumpObjectTree">dumpObjectTree</a>()调试函数也使用它。
+<li> <tt>WFlags f = 0</tt>（在可用的情况下）设置窗口部件标记，默认设置对于几乎所有窗口部件都是适用的，但是，举例来说，一个没有窗口系统框架的顶级窗口部件，你必须使用特定的标记。
+</ol>
+<p> tictac/tictac.cpp实例程序是一个简单窗口部件的好实例。它包含了一些的事件处理器（就像所有窗口部件所必须的那样）、一些被指定给它的定制处理（就像所有有用的窗口部件做的那样）并且还有一些孩子和联机。它所做的每一件事都响应对应的一个事件：这是到目前为止设计图形用户界面的最普通的方式。
+<p> 你自己将需要为你的窗口部件提供内容，但是这里是一些简要的运行事件，从最普通的开始：
+<p> <ul>
+<p> <li> <a href="#paintEvent">paintEvent</a>() - 只要窗口部件需要被重绘就被调用。每个要显示输出的窗口部件必须实现它并且<em>不</em>在paintEvent()之外在屏幕上绘制是明智的。
+<p> <li> <a href="#resizeEvent">resizeEvent</a>() - 当窗口部件被重新定义大小时被调用。
+<p> <li> <a href="#mousePressEvent">mousePressEvent</a>() - 当鼠标键被按下时被调用。有六个鼠标相关事件，但是鼠标按下和鼠标释放事件是到目前为止最重要的。当鼠标在窗口部件内或者当它使用<a href="#grabMouse">grabMouse</a>()来捕获鼠标时，它接收鼠标按下事件。
+<p> <li> <a href="#mouseReleaseEvent">mouseReleaseEvent</a>() - 当鼠标键被释放时被调用。当窗口部件已经接收相应的鼠标按下事件时，它接收鼠标释放事件。这也就是说如果用户在<em>你的</em>窗口部件内按下鼠标，然后拖着鼠标到其它某个地方，然后释放，<em>你的</em>窗口部件接收这个释放事件。这里有一个例外：如果出现在弹出菜单中，当鼠标键被按下时，这个弹出菜单立即会偷掉这个鼠标事件。
+<p> <li> <a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>() - 和它看起来也许不太一样。如果用户双击，窗口部件接收一个鼠标按下事件（如果他们没有拿牢鼠标，也许会出现一个或两个鼠标移动事件）、一个鼠标释放事件并且最终是这个事件。直到你看到第二次点击是否到来之前，<em>不能</em>从一个双击中辨别一个点击。（这是为什么绝大多数图形用户界面图书建议双击是单击的一个扩展，而不是一个不同行为的触发的一个原因。）
+<p> </ul>
+<p> 如果你的窗口部件仅仅包含子窗口部件，你也许不需要实现任何一个事件处理器。如果你想检测在子窗口部件中的鼠标点击，请在父窗口部件的<a href="#mousePressEvent">mousePressEvent</a>()中调用子窗口部件的<a href="#hasMouse">hasMouse</a>()函数。
+<p> 接收键盘的窗口部件需要重新实现一些更多的事件处理器：
+<p> <ul>
+<p> <li> <a href="#keyPressEvent">keyPressEvent</a>() - 只要键被按下和当键已经被按下足够长的时间可以自动重复了就被调用。注意如果Tab和Shift+Tab键被用在焦点变换机制中，它们仅仅被传递给窗口部件。为了强迫那些键被你的窗口部件处理，你必须重新实现<a href="#event">QWidget::event</a>()。
+<p> <li> <a href="#focusInEvent">focusInEvent</a>() - 当窗口部件获得键盘焦点（假设你已经调用<a href="#setFocusPolicy">setFocusPolicy</a>()）时被调用。写得好的窗口部件意味着它们能按照一种清晰但谨慎的方式来获得键盘焦点。
+<p> <li> <a href="#focusOutEvent">focusOutEvent</a>() - 当窗口部件失去键盘焦点时被调用。
+<p> </ul>
+<p> 一些窗口部件也许需要实现一些不太普通的事件处理器：
+<p> <ul>
+<p> <li> <a href="#mouseMoveEvent">mouseMoveEvent</a>() - 只要当鼠标键被按下时鼠标移动就会被调用。举例来说，对于拖动，这个很有用。如果你调用<a href="#setMouseTracking">setMouseTracking</a>(TRUE)，尽管没有鼠标键被按下，你也会获得鼠标移动事件。（注意这个使用鼠标跟踪的应用程序在低下的X连接下不是很有用。）（也可以参考<a href="dnd.html">拖放</a>信息。）
+<p> <li> <a href="#keyReleaseEvent">keyReleaseEvent</a>() - 只要键被释放和当如果这个键是自动重复的并且被按下一段时间时就被调用。在这种情况下窗口部件接收一个键释放事件并且对于每一个重复立即有一个键按下事件。注意如果Tab和Shift+Tab键被用在焦点变换机制中，它们仅仅被传递给窗口部件。为了强迫那些键被你的窗口部件处理，你必须重新实现<a href="#event">QWidget::event</a>()。
+<p> <li> <a href="#wheelEvent">wheelEvent</a>() -- 当窗口部件拥有焦点时，只要用户转动鼠标滚轮就被调用。
+<p> <li> <a href="#enterEvent">enterEvent</a>() - 当鼠标进入这个窗口部件屏幕空间时被调用。（这不包括被这个窗口部件的子窗口部件所拥有的屏幕空间。）
+<p> <li> <a href="#leaveEvent">leaveEvent</a>() - 当鼠标离开这个窗口部件的屏幕空间时被调用。
+<p> <li> <a href="#moveEvent">moveEvent</a>() - 当窗口部件相对于它的父窗口部件已经被移动时被调用。
+<p> <li> <a href="#closeEvent">closeEvent</a>() - 当用户关闭窗口部件时（或这当<a href="#close">close</a>()被调用时）被调用。
+<p> </ul>
+<p> 这里还有一些不太明显的事件。它们在<a href="qevent-h.html">qevent.h</a>中被列出并且你需要重新实现<a href="#event">event</a>()来处理它们。event()的默认实现处理Tab和Shift+Tab（移动键盘焦点）并且其它绝大多数事件给上面提到的一个或更多的特定处理器。
+<p> 当实现一个窗口部件时，还有一些更多的事情要考虑。
+<p> <ul>
+<p> <li> 在构造函数中，在你可能收到一个事件的任何机会之前，请确认尽早地设置你的成员变量。
+<p> <li> 重新实现<a href="#sizeHint">sizeHint</a>()在绝大多数情况下都是很有用的并且使用<a href="#setSizePolicy">setSizePolicy</a>(),来设置正确的大小策略，这样你的同事可以更容易地设置布局管理器。一个大小策略可以让你为布局管理器提供好的默认情况，这样其它窗口部件可以很容易地包含和管理你的窗口部件。sizeHint()为这个窗口部件说明一个“好的”大小。
+<p> <li> 如果你的窗口部件是一个顶级窗口部件，<a href="#setCaption">setCaption</a>()和<a href="#setIcon">setIcon</a>()分别设置标题栏和图标。
+<p> </ul>
+<p> <p>也可以参考<a href="qevent.html">QEvent</a>、<a href="qpainter.html">QPainter</a>、<a href="qgridlayout.html">QGridLayout</a>、<a href="qboxlayout.html">QBoxLayout</a>和<a href="abstractwidgets.html">抽象窗口部件类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="BackgroundOrigin-enum"></a>QWidget::BackgroundOrigin</h3> 
+<p> 这个枚举变量定义了用于绘制窗口部件背景像素映射的原点。
+<p> 被绘制的像素映射使用：
+<ul>
+<li><tt>QWidget::WidgetOrigin</tt> - 窗口部件的坐标系统。
+<li><tt>QWidget::ParentOrigin</tt> - 父窗口部件的坐标系统。
+<li><tt>QWidget::WindowOrigin</tt> - 顶级窗口的坐标系统。
+</ul>
+
+<h3 class=fn><a name="FocusPolicy-enum"></a>QWidget::FocusPolicy</h3> 
+<p> 这个枚举变量定义了一个窗口部件获得<a href="focus.html#keyboard-focus">键盘焦点</a>所依据的不同策略。
+<p> <em>policy</em>可以是：
+<ul>
+<li><tt>QWidget::TabFocus</tt> - 窗口部件通过Tab获得焦点。
+<li><tt>QWidget::ClickFocus</tt> - 窗口部件通过点击获得焦点。
+<li><tt>QWidget::StrongFocus</tt> - 窗口部件通过Tab和点击获得焦点。
+<li><tt>QWidget::WheelFocus</tt> - 像StrongFocus那样加上窗口部件通过使用鼠标滚轮获得焦点。
+<li><tt>QWidget::NoFocus</tt> - 窗口部件不接收焦点。
+</ul><p> 
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QWidget"></a>QWidget::QWidget ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )
+</h3>
+构造一个是<em>parent</em>的孩子、名称为<em>name</em>并且窗口部件标记为<em>f</em>的窗口部件。
+<p> 如果<em>parent</em>为0，新的窗口部件变为顶级窗口。如果<em>parent</em>是另一个窗口部件，这个窗口部件变为<em>parent</em>中的一个子窗口。当它的<em>parent</em>被删除时，新的窗口部件被删除。
+<p> <em>name</em>被发送给<a href="qobject.html">QObject</a>的构造函数。
+<p> 窗口部件标记参数<em>f</em>通常为0，但它可以为顶级窗口部件设置自定义的窗口框架（比如，<em>parent</em>必须为0）。为了自定义框架，设置<a href="qt.html#WidgetFlags-enum">WStyle_Customize</a>标记和任何一个<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>进行或运算。
+<p> 如果你向一个已经可见的窗口部件中添加一个子窗口部件，你必须明显地显示这个孩子来使它可视。
+<p> 注意Qt的X11版本也许不能在所有的系统上传递风格标记得所有组合。这是因为在X11上，Qt只能询问窗口管理器，并且窗口管理器会覆盖应用程序的设置。在Windows上，Qt可以是指你想要的任何标记。
+<p> 实例：
+<pre>
+    <a href="qlabel.html">QLabel</a> *splashScreen = new <a href="qlabel.html">QLabel</a>( 0, "mySplashScreen",
+                                WStyle_Customize | WStyle_NoBorder |
+                                <a href="qt.html#WidgetFlags-enum">WStyle_Tool</a> );
+    </pre>
+ 
+
+<h3 class=fn><a name="~QWidget"></a>QWidget::~QWidget ()
+</h3>
+销毁这个窗口部件。
+<p> 首先这个窗口部件的孩子都被删除。如果这个窗口部件是主窗口部件，应用程序退出。
+
+<h3 class=fn>bool <a name="acceptDrops"></a>QWidget::acceptDrops () const
+</h3>
+<p>如果对于这个窗口部件放下事件生效，返回真，否则返回假。详细情况请参考<a href="qwidget.html#acceptDrops-prop">“acceptDrops”</a>属性。
+
+<h3 class=fn>void <a name="adjustSize"></a>QWidget::adjustSize ()<tt> [虚]</tt>
+</h3>
+调整窗口部件的大小来适合它的内容。
+<p> 如果<a href="#sizeHint">sizeHint</a>()有效（比如，如果大小提示的宽和高都大于等于0）就是用它，否则设置大小为子对象所占用的矩形（所有子窗口部件几何形状的合集）。
+<p> <p>也可以参考<a href="#sizeHint-prop">sizeHint</a>和<a href="#childrenRect-prop">childrenRect</a>。
+<p>实例：<a href="xform-example.html#x1467">xform/xform.cpp</a>。
+<p>在<a href="qmessagebox.html#adjustSize">QMessageBox</a>中被重新实现。
+
+<h3 class=fn>bool <a name="autoMask"></a>QWidget::autoMask () const
+</h3>
+<p>如果对于这个窗口部件自动面具特征生效，返回真，否则返回假。详细情况请参考<a href="qwidget.html#autoMask-prop">“autoMask”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;&amp; <a name="backgroundBrush"></a>QWidget::backgroundBrush () const
+</h3>
+<p>返回这个窗口部件的背景画刷。详细情况请参考<a href="qwidget.html#backgroundBrush-prop">“backgroundBrush”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="backgroundColor"></a>QWidget::backgroundColor () const
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p>作为替代请使用<a href="#paletteBackgroundColor">paletteBackgroundColor</a>()或<a href="#eraseColor">eraseColor</a>()。
+
+<h3 class=fn><a href="qt.html#BackgroundMode-enum">BackgroundMode</a> <a name="backgroundMode"></a>QWidget::backgroundMode () const
+</h3>
+<p>返回绘制窗口部件的背景所使用的颜色功能。详细情况请参考<a href="qwidget.html#backgroundMode-prop">“backgroundMode”</a>属性。
+
+<h3 class=fn><a href="qwidget.html#BackgroundOrigin-enum">BackgroundOrigin</a> <a name="backgroundOrigin"></a>QWidget::backgroundOrigin () const
+</h3>
+<p>返回窗口部件的背景的原点。详细情况请参考<a href="qwidget.html#backgroundOrigin-prop">“backgroundOrigin”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;* <a name="backgroundPixmap"></a>QWidget::backgroundPixmap () const
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p>作为替代请使用<a href="#paletteBackgroundPixmap">paletteBackgroundPixmap</a>()或者<a href="#erasePixmap">erasePixmap</a>()。
+<p>实例：<a href="themes-example.html#x267">themes/metal.cpp</a>和<a href="themes-example.html#x213">themes/wood.cpp</a>。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="baseSize"></a>QWidget::baseSize () const
+</h3>
+<p>返回窗口部件的继承大小。详细情况请参考<a href="qwidget.html#baseSize-prop">“baseSize”</a>属性。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="caption"></a>QWidget::caption () const
+</h3>
+<p>返回窗口标题。详细情况请参考<a href="qwidget.html#caption-prop">“caption”</a>属性。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="childAt"></a>QWidget::childAt ( int&nbsp;x, int&nbsp;y, bool&nbsp;includeThis = FALSE ) const
+</h3>  
+返回在窗口部件自己的坐标系统中像素位置<em>(x, y)</em>处的可视的子窗口部件。
+<p> 如果<em>includeThis</em>为真，并且在<em>(x, y)</em>没有可视的孩子，那么这个窗口部件本身被返回。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="childAt-2"></a>QWidget::childAt ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, bool&nbsp;includeThis = FALSE ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回在窗口部件自己的坐标系统中点<em>p</em>处的可视的子窗口部件。
+<p> 如果<em>includeThis</em>为真，并且在<em>p</em>没有可视的孩子，那么这个窗口部件本身被返回。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="childrenRect"></a>QWidget::childrenRect () const
+</h3>
+<p>返回这个窗口部件的孩子的边界矩形。详细情况请参考<a href="qwidget.html#childrenRect-prop">“childrenRect”</a>属性。
+
+<h3 class=fn><a href="qregion.html">QRegion</a> <a name="childrenRegion"></a>QWidget::childrenRegion () const
+</h3>
+<p>返回这个窗口部件的孩子所占用的组合区域。详细情况请参考<a href="qwidget.html#childrenRegion-prop">“childrenRegion”</a>属性。
+
+<h3 class=fn>void <a name="clearFocus"></a>QWidget::clearFocus ()<tt> [槽]</tt>
+</h3>
+从窗口部件中拿走键盘输入焦点。
+<p> 如果这个窗口部件有激活的焦点，<a href="#focusOutEvent">焦点移出事件</a>被发送给这个窗口部件告诉它关于它失去了焦点。
+<p> 这个窗口部件必须已经为了获得键盘输入焦点使焦点设置生效，比如，它必须调用<a href="#setFocusPolicy">setFocusPolicy</a>()。
+<p> <p>也可以参考<a href="#focus-prop">focus</a>、<a href="#setFocus">setFocus</a>()、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#focusPolicy-prop">focusPolicy</a>和<a href="qapplication.html#focusWidget">QApplication::focusWidget</a>()。
+
+<h3 class=fn>void <a name="clearMask"></a>QWidget::clearMask ()
+</h3>
+通过<a href="#setMask">setMask</a>()移除任何面具设置。
+<p> <p>也可以参考<a href="#setMask">setMask</a>()。
+
+<h3 class=fn>void <a name="clearWFlags"></a>QWidget::clearWFlags ( WFlags&nbsp;f )<tt> [保护]</tt>
+</h3>
+<p> 清空窗口部件标记<em>f</em>。
+<p> 窗口部件标记是<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>的组合。
+<p> <p>也可以参考<a href="#testWFlags">testWFlags</a>()、<a href="#getWFlags">getWFlags</a>()和<a href="#setWFlags">setWFlags</a>()。
+
+<h3 class=fn>bool <a name="close"></a>QWidget::close ()<tt> [槽]</tt>
+</h3>
+<p> 关闭这个窗口部件。如果窗口部件被关闭，返回真，否则返回假。
+<p> 首先它发送给这个窗口部件一个<a href="qcloseevent.html">QCloseEvent</a>。如果它<a href="qcloseevent.html#accept">接收</a>这个关闭事件，它就被<a href="#hide">隐藏了</a>。<a href="#closeEvent">QWidget::closeEvent</a>()的默认实现是接收这个关闭事件。
+<p> 当最后一个可视的顶级窗口部件被关闭，<a href="qapplication.html#lastWindowClosed">QApplication::lastWindowClosed</a>()信号被发射。
+<p>实例：<a href="mdi-example.html#x2045">mdi/application.cpp</a>和<a href="popup-example.html#x1582">popup/popup.cpp</a>。
+
+<h3 class=fn>bool <a name="close-2"></a>QWidget::close ( bool&nbsp;alsoDelete )<tt> [虚]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 关闭这个窗口部件。如果窗口部件被关闭，返回真，否则返回假。
+<p> 如果<em>alsoDelete</em>为真或者这个窗口部件有<a href="qt.html#WidgetFlags-enum">WDestructiveClose</a>窗口部件标记，这个窗口部件也被删除。这个窗口部件自己可以通过抵制它所收到的<a href="qcloseevent.html">QCloseEvent</a>来防止被关闭。
+<p> 当最后一个可视的顶级窗口部件被关闭，<a href="qapplication.html#lastWindowClosed">QApplication::lastWindowClosed</a>()信号被发射。
+<p> 注意关闭<a href="qapplication.html#mainWidget">QApplication::mainWidget</a>()会终止应用程序。
+<p> <p>也可以参考<a href="#closeEvent">closeEvent</a>()、<a href="qcloseevent.html">QCloseEvent</a>、<a href="#hide">hide</a>()、<a href="qapplication.html#quit">QApplication::quit</a>()、<a href="qapplication.html#setMainWidget">QApplication::setMainWidget</a>()和<a href="qapplication.html#lastWindowClosed">QApplication::lastWindowClosed</a>()。
+
+<h3 class=fn>void <a name="closeEvent"></a>QWidget::closeEvent ( <a href="qcloseevent.html">QCloseEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个对于事件<em>e</em>的事件处理器可以在子类中被重新实现来接收窗口部件关闭事件。
+<p> 默认实现是调用e->accept()，它隐藏这个窗口部件。详细情况请参考<a href="qcloseevent.html">QCloseEvent</a>文档。
+<p> <p>也可以参考<a href="#event">event</a>()、<a href="#hide">hide</a>(), <a href="#close">close</a>()和<a href="qcloseevent.html">QCloseEvent</a>。
+<p>实例：<a href="qaction-application-example.html#x1097">action/application.cpp</a>、<a href="simple-application-example.html#x1543">application/application.cpp</a>、<a href="i18n-example.html#x1916">i18n/mywidget.cpp</a>、<a href="popup-example.html#x1583">popup/popup.cpp</a>和<a href="qwerty-example.html#x402">qwerty/qwerty.cpp</a>。
+
+<h3 class=fn>const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp; <a name="colorGroup"></a>QWidget::colorGroup () const
+</h3>
+<p>返回这个窗口部件调色板的当前颜色组。详细情况请参考<a href="qwidget.html#colorGroup-prop">“colorGroup”</a>属性。
+
+<h3 class=fn>void <a name="constPolish"></a>QWidget::constPolish () const<tt> [槽]</tt>
+</h3>
+<p> 确认这个窗口部件通过调用<a href="#polish">polish</a>()被适当地初始化了。
+<p> 从像<a href="#sizeHint">sizeHint</a>()这样依赖于这个窗口部件被初始化的函数中调用<a href="#constPolish">constPolish</a>()，并且也可以在<a href="#show">show</a>()之前被调用。
+<p> <b>警告：</b>不要在窗口部件的构造函数中调用constPolish()。
+<p> <p>也可以参考<a href="#polish">polish</a>()。
+
+<h3 class=fn>void <a name="contextMenuEvent"></a>QWidget::contextMenuEvent ( <a href="qcontextmenuevent.html">QContextMenuEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个对于事件<em>e</em>的事件处理器可以在子类中被重新实现来接收窗口部件上下文菜单事件。
+<p> 默认实现是调用e->accept()，它拒绝这个上下文事件。详细情况请参考<a href="qcontextmenuevent.html">QContextMenuEvent</a>文档。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qcontextmenuevent.html">QContextMenuEvent</a>。
+
+<h3 class=fn>void <a name="create"></a>QWidget::create ( WId&nbsp;window = 0, bool&nbsp;initializeWindow = TRUE, bool&nbsp;destroyOldWindow = TRUE )<tt> [虚 保护]</tt>
+</h3>
+如果<em>window</em>为零，创一个新的窗口部件窗口，否则设置窗口部件参考为<em>window</em>。
+<p> 如果<em>initializeWindow</em>为真，初始化窗口（设置几何形状等等）。如果<em>initializeWindow</em>为假，没有初始化被执行。这个参数只有在<em>window</em>是有效窗口时才有效。
+<p> 如果<em>destroyOldWindow</em>为真，销毁就的窗口。如果<em>destroyOldWindow</em>为假，你有责任自己销毁这个窗口（使用平台本地代码）。
+<p> QWidget构造函数调用<a href="#create">create</a>(0,TRUE,TRUE)来为这个窗口部件创建窗口。
+
+<h3 class=fn>const&nbsp;<a href="qcursor.html">QCursor</a>&nbsp;&amp; <a name="cursor"></a>QWidget::cursor () const
+</h3>
+<p>返回这个窗口部件的光标外形。详细情况请参考<a href="qwidget.html#cursor-prop">“cursor”</a>属性。
+
+<h3 class=fn>bool <a name="customWhatsThis"></a>QWidget::customWhatsThis () const<tt> [虚]</tt>
+</h3>
+<p>如果这个窗口部件想手工地处理这是什么的帮助，返回真，否则返回假。详细情况请参考<a href="qwidget.html#customWhatsThis-prop">“customWhatsThis”</a>属性。
+
+<h3 class=fn>void <a name="destroy"></a>QWidget::destroy ( bool&nbsp;destroyWindow = TRUE, bool&nbsp;destroySubWindows = TRUE )<tt> [虚 保护]</tt>
+</h3>
+释放窗口系统资源。如果<em>destroyWindow</em>为真，销毁这个窗口部件窗口。
+<p> 对于所有的子窗口部件，<a href="#destroy">destroy</a>()循环地调用自己，传递给<em>destroySubWindows</em>一个<em>destroyWindow</em>参数。为了对子窗口部件地销毁进行控制，首先有选择地销毁子窗口部件。
+<p> 这个函数通常被QWidget析构函数调用。
+
+<h3 class=fn>void <a name="dragEnterEvent"></a>QWidget::dragEnterEvent ( <a href="qdragenterevent.html">QDragEnterEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+当一个拖动正在进行并且鼠标进入这个窗口部件，这个事件处理器被调用。
+<p> 对于在你的应用程序中如何提供拖放的概述请参考<a href="dnd.html">拖放文档</a>。
+<p> <p>也可以参考<a href="qtextdrag.html">QTextDrag</a>、<a href="qimagedrag.html">QImageDrag</a>和<a href="qdragenterevent.html">QDragEnterEvent</a>。
+<p>实例：<a href="simple_dd-example.html#x2676">iconview/simple_dd/main.cpp</a>。
+
+<h3 class=fn>void <a name="dragLeaveEvent"></a>QWidget::dragLeaveEvent ( <a href="qdragleaveevent.html">QDragLeaveEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+当一个拖动正在进行并且鼠标离开这个窗口部件，这个事件处理器被调用。
+<p> 对于在你的应用程序中如何提供拖放的概述请参考<a href="dnd.html">拖放文档</a>。
+<p> <p>也可以参考<a href="qtextdrag.html">QTextDrag</a>、<a href="qimagedrag.html">QImageDrag</a>和<a href="qdragleaveevent.html">QDragLeaveEvent</a>。
+
+<h3 class=fn>void <a name="dragMoveEvent"></a>QWidget::dragMoveEvent ( <a href="qdragmoveevent.html">QDragMoveEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+当一个拖动正在进行并且鼠标进入这个窗口部件，并且只要它在这个窗口部件中移动，这个事件处理器被调用。
+<p> 对于在你的应用程序中如何提供拖放的概述请参考<a href="dnd.html">拖放文档</a>。
+<p> <p>也可以参考<a href="qtextdrag.html">QTextDrag</a>、<a href="qimagedrag.html">QImageDrag</a>和<a href="qdragmoveevent.html">QDragMoveEvent</a>。
+
+<h3 class=fn>void <a name="drawText"></a>QWidget::drawText ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+在位置<em>(x, y)</em>绘制字符串<em>str</em>。
+<p> <em>y</em>位置是文本的基线位置。使用默认字体和默认前景色绘制文本。
+<p> 这个函数的提供是为了方便。你使用<a href="qpainter.html">painter</a>替代它一般将会获得更灵活的结果和更快的速度。
+<p> <p>也可以参考<a href="#font-prop">font</a>、<a href="#foregroundColor">foregroundColor</a>()和<a href="qpainter.html#drawText">QPainter::drawText</a>()。
+
+<h3 class=fn>void <a name="drawText-2"></a>QWidget::drawText ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在位置<em>pos</em>绘制字符串<em>str</em>。
+
+<h3 class=fn>void <a name="dropEvent"></a>QWidget::dropEvent ( <a href="qdropevent.html">QDropEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+当拖动在这个窗口部件上被放下，这个事件处理器被调用。
+<p> 对于在你的应用程序中如何提供拖放的概述请参考<a href="dnd.html">拖放文档</a>。
+<p> <p>也可以参考<a href="qtextdrag.html">QTextDrag</a>、<a href="qimagedrag.html">QImageDrag</a>和<a href="qdropevent.html">QDropEvent</a>。
+<p>实例：<a href="simple_dd-example.html#x2677">iconview/simple_dd/main.cpp</a>。
+
+<h3 class=fn>void <a name="enabledChange"></a>QWidget::enabledChange ( bool&nbsp;oldEnabled )<tt> [虚 保护]</tt>
+</h3>
+<p> <a href="#isEnabled">isEnabled</a>().
+这个虚函数被<a href="#setEnabled">setEnabled</a>()调用。<em>oldEnabled</em>是以前的设置，你可以从<a href="#isEnabled">isEnabled</a>()中得到新的设置。
+<p> 如果你的窗口部件需要知道什么时候它变为有效或无效，请重新实现这个函数。你将几乎必然要使用<a href="#update">update</a>()来更新这个窗口部件。
+<p> 默认实现是重新绘制窗口部件的可见部分。
+<p> <p>也可以参考<a href="#enabled-prop">enabled</a>、<a href="#enabled-prop">enabled</a>、<a href="#repaint">repaint</a>()、<a href="#update">update</a>()和<a href="#visibleRect-prop">visibleRect</a>。
+
+<h3 class=fn>void <a name="enterEvent"></a>QWidget::enterEvent ( <a href="qevent.html">QEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收窗口部件进入事件。
+<p> 当鼠标光标进入窗口部件，这个事件被发送给窗口部件。
+<p> <p>也可以参考<a href="#leaveEvent">leaveEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()和<a href="#event">event</a>()。
+
+<h3 class=fn>void <a name="erase"></a>QWidget::erase ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+在窗口部件中擦除指定区域<em>(x, y, w, h)</em>，并不产生<a href="#paintEvent">绘制事件</a>。
+<p> 如果<em>w</em>为负数，它被<tt>width()-x</tt>替换。如果<em>h</em>为负数，它被<tt>height()-y</tt>替换。
+<p> 子窗口部件不被影响。
+<p> <p>也可以参考<a href="#repaint">repaint</a>()。
+
+<h3 class=fn>void <a name="erase-2"></a>QWidget::erase ()
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个版本擦除整个窗口部件。
+
+<h3 class=fn>void <a name="erase-3"></a>QWidget::erase ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在窗口部件中擦除指定区域<em>r</em>，并不产生<a href="#paintEvent">绘制事件</a>。
+
+<h3 class=fn>void <a name="erase-4"></a>QWidget::erase ( const&nbsp;<a href="qregion.html">QRegion</a>&nbsp;&amp;&nbsp;reg )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在窗口部件中擦除<em>reg</em>定义的区域，并不产生<a href="#paintEvent">绘制事件</a>。
+<p> 子窗口部件不被影响。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="eraseColor"></a>QWidget::eraseColor () const
+</h3>
+<p> 返回这个窗口部件的擦除色。
+<p> <p>也可以参考<a href="#setEraseColor">setEraseColor</a>()、<a href="#setErasePixmap">setErasePixmap</a>()和<a href="#backgroundColor">backgroundColor</a>()。
+
+<h3 class=fn>const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;* <a name="erasePixmap"></a>QWidget::erasePixmap () const
+</h3>
+返回这个窗口部件的擦除像素映射。
+<p> <p>也可以参考<a href="#setErasePixmap">setErasePixmap</a>()和<a href="#eraseColor">eraseColor</a>()。
+
+<h3 class=fn>bool <a name="event"></a>QWidget::event ( <a href="qevent.html">QEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这是主事件处理器，它处理事件<em>e</em>。你可以在子类中被重新实现整个函数，但是我们建议你使用一个特定的事件处理器来替代它。
+<p> 主事件首先把事件传递给所有已经被安装的<a href="qobject.html#installEventFilter">事件过滤器</a>。如果没有过滤器中途截取这个事件，它调用一个特定的事件处理器。
+<p> 键按下和释放事件被处理得和其它事件不同。<a href="#event">event</a>()检查Tab和Shift+Tab并且试图适当地移动焦点。如果没有窗口部件被焦点移入（或者键按下不是Tab或Shift+Tab），event()调用<a href="#keyPressEvent">keyPressEvent</a>()。
+<p> 如果它能够把一个事件传递给没个东西，这个函数就返回真，否则如果没有任何东西想要这个事件，返回假。
+<p> <p>也可以参考<a href="#closeEvent">closeEvent</a>()、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#enterEvent">enterEvent</a>()、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()、<a href="#leaveEvent">leaveEvent</a>()、<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()、<a href="#mousePressEvent">mousePressEvent</a>()、 <a href="#mouseReleaseEvent">mouseReleaseEvent</a>()、<a href="#moveEvent">moveEvent</a>()、<a href="#paintEvent">paintEvent</a>()、<a href="#resizeEvent">resizeEvent</a>()、<a href="qobject.html#event">QObject::event</a>()和<a href="qobject.html#timerEvent">QObject::timerEvent</a>()。
+<p>从<a href="qobject.html#event">QObject</a>中被重新实现。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="find"></a>QWidget::find ( WId&nbsp;id )<tt> [静态]</tt>
+</h3>
+返回窗口标识符/句柄为<em>id</em>的窗口部件指针。
+<p> 窗口标识符类型依赖于底下的窗口系统，实际定义请参考<a href="qwindowdefs-h.html">qwindowdefs.h</a>。如果没有具有这样的标识符的窗口部件，0被返回。
+
+<h3 class=fn><a href="qfocusdata.html">QFocusData</a>&nbsp;* <a name="focusData"></a>QWidget::focusData ()<tt> [保护]</tt>
+</h3>
+返回这个窗口部件的顶级窗口部件的焦点数据的指针。
+<p> 焦点数据总是属于顶级窗口部件。焦点数据列表包含这个可以接收焦点的顶级窗口部件中所有的窗口部件，按Tab顺序。一个迭代器指向当前焦点窗口部件（<a href="#focusWidget">focusWidget</a>()返回这个窗口部件的指针）。
+<p> 这个信息对于重新实现更先进版本的<a href="#focusNextPrevChild">focusNextPrevChild</a>()很有用。
+
+<h3 class=fn>void <a name="focusInEvent"></a>QWidget::focusInEvent ( <a href="qfocusevent.html">QFocusEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收这个窗口部件的<a href="focus.html#keyboard-focus">键盘焦点</a>事件（焦点进入）。
+<p> 一个窗口部件通常必须使用<a href="#setFocusPolicy">setFocusPolicy</a>()来接收焦点事件，除了NoFocus的。（注意应用程序的程序员可以在任何一个窗口部件中调用<a href="#setFocus">setFocus</a>()，即使是那些通常不接收焦点的。）
+<p> 如果它接收了焦点，默认实现是更新这个窗口部件（请参考<a href="#focusPolicy">focusPolicy</a>()）。它也调用<a href="#setMicroFocusHint">setMicroFocusHint</a>()，提示任何系统指定的输入工具关于用户注意的焦点。
+<p> <p>也可以参考<a href="#focusOutEvent">focusOutEvent</a>(), <a href="#focusPolicy-prop">focusPolicy</a>、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()、<a href="#event">event</a>()和<a href="qfocusevent.html">QFocusEvent</a>。
+<p>在<a href="qtmultilineedit.html#focusInEvent">QtMultiLineEdit</a>中被重新实现。
+
+<h3 class=fn>bool <a name="focusNextPrevChild"></a>QWidget::focusNextPrevChild ( bool&nbsp;next )<tt> [虚 保护]</tt>
+</h3>
+找到一个新的窗口部件并且把<a href="focus.html#keyboard-focus">键盘焦点</a>给它，适用于Tab和Shift+Tab，并且如果它能找到新的窗口部件就返回真，并且如果不能就返回假。
+<p> 如果<em>next</em>为真，这个函数就“向前”搜索，如果<em>next</em>为假，它就“向后”搜索。
+<p> 有时，你想重新实现这个函数。例如，一个网页浏览器也许会重新实现它用来向前或向后移动“当前激活链接”，并且只有到达“页面”的最后一个或第一个链接时调用<a href="#focusNextPrevChild">QWidget::focusNextPrevChild</a>()。
+<p> 子窗口部件在它们的父窗口部件上调用<a href="#focusNextPrevChild">focusNextPrevChild</a>()，但是只有顶级窗口部件可以重定向焦点。通过重载一个对象中的这个方法，你可以获得能够遍历所有子窗口部件的焦点控制。
+<p> <p>也可以参考<a href="#focusData">focusData</a>()。
+
+<h3 class=fn>void <a name="focusOutEvent"></a>QWidget::focusOutEvent ( <a href="qfocusevent.html">QFocusEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收这个窗口部件的<a href="focus.html#keyboard-focus">键盘焦点</a>事件（焦点丢失）。
+<p> <p> 一个窗口部件通常必须使用<a href="#setFocusPolicy">setFocusPolicy</a>()来接收焦点事件，除了NoFocus的。（注意应用程序的程序员可以在任何一个窗口部件中调用<a href="#setFocus">setFocus</a>()，即使是那些通常不接收焦点的。）
+<p> 默认实现是调用<a href="#repaint">repaint</a>()，因为窗口部件的<a href="#colorGroup">colorGroup</a>()从激活变为通常，所以这个窗口部件也许需要重新绘制。它也调用<a href="#setMicroFocusHint">setMicroFocusHint</a>()，提示任何系统指定的输入工具关于用户注意的焦点。
+<p> <p>也可以参考<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusPolicy-prop">focusPolicy</a>、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()、<a href="#event">event</a>()和<a href="qfocusevent.html">QFocusEvent</a>.
+<p>实例：<a href="qmag-example.html#x1649">qmag/qmag.cpp</a>。
+
+<h3 class=fn><a href="qwidget.html#FocusPolicy-enum">FocusPolicy</a> <a name="focusPolicy"></a>QWidget::focusPolicy () const
+</h3>
+<p>返回窗口部件接收键盘焦点的方式。详细情况请参考<a href="qwidget.html#focusPolicy-prop">“focusPolicy”</a>属性。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="focusProxy"></a>QWidget::focusProxy () const
+</h3>  
+返回焦点代理的指针，或者如果没有焦点代理就返回0。
+<p> <p>也可以参考<a href="#setFocusProxy">setFocusProxy</a>()。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="focusWidget"></a>QWidget::focusWidget () const
+</h3>
+返回这个窗口部件窗口中的焦点窗口部件。这个和<a href="qapplication.html#focusWidget">QApplication::focusWidget</a>()是不一样的，后者返回当前激活窗口中的焦点窗口部件。
+
+<h3 class=fn><a href="qfont.html">QFont</a> <a name="font"></a>QWidget::font () const
+</h3>
+<p>返回这个窗口部件的字体当前设置。详细情况请参考<a href="qwidget.html#font-prop">“font”</a>属性。
+
+<h3 class=fn>void <a name="fontChange"></a>QWidget::fontChange ( const&nbsp;<a href="qfont.html">QFont</a>&nbsp;&amp;&nbsp;oldFont )<tt> [虚 保护]</tt>
+</h3>
+<p> 这个虚函数是从<a href="#setFont">setFont</a>()中被调用的。<em>oldFont</em>是以前的字体，你可以通过<a href="#font">font</a>()获得新的字体。
+<p> 如果你的窗口部件需要直到什么时候它的字体改变了，就重新实现这个函数。你将几乎毫无疑问的需要使用<a href="#update">update</a>()更新这个窗口部件。
+<p> 默认实现是更新包括它的几何形状的窗口部件。
+<p> <p>也可以参考<a href="#font-prop">font</a>、<a href="#font-prop">font</a>、<a href="#update">update</a>()和<a href="#updateGeometry">updateGeometry</a>()。
+
+<h3 class=fn><a href="qfontinfo.html">QFontInfo</a> <a name="fontInfo"></a>QWidget::fontInfo () const
+</h3>
+<p> 返回这个窗口部件当前字体的字体信息。等于QFontInto(widget->font())。
+<p> <p>也可以参考<a href="#font-prop">font</a>、<a href="#fontMetrics">fontMetrics</a>()和<a href="#font-prop">font</a>。
+
+<h3 class=fn><a href="qfontmetrics.html">QFontMetrics</a> <a name="fontMetrics"></a>QWidget::fontMetrics () const
+</h3>
+<p> 返回这个窗口部件的当前字体的字体规格。等于 <a href="qfontmetrics.html">QFontMetrics</a>(widget->font())。
+<p> <p>也可以参考<a href="#font-prop">font</a>、<a href="#fontInfo">fontInfo</a>()和<a href="#font-prop">font</a>。
+<p>实例：<a href="drawdemo-example.html#x1185">drawdemo/drawdemo.cpp</a>和<a href="qmag-example.html#x1650">qmag/qmag.cpp</a>。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="foregroundColor"></a>QWidget::foregroundColor () const
+</h3>
+和<a href="#paletteForegroundColor">paletteForegroundColor</a>()相同。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="frameGeometry"></a>QWidget::frameGeometry () const
+</h3>
+<p>返回相对于它的父对象包含任何窗口框架的窗口部件的几何形状。详细情况请参考<a href="qwidget.html#frameGeometry-prop">“frameGeometry”</a>属性。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="frameSize"></a>QWidget::frameSize () const
+</h3>
+<p>返回包含任何窗口框架的窗口部件的大小。详细情况请参考<a href="qwidget.html#frameSize-prop">“frameSize”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp; <a name="geometry"></a>QWidget::geometry () const
+</h3>
+<p>返回相对于它的父对象不包括窗口框架的窗口部件的几何形状。详细情况请参考<a href="qwidget.html#geometry-prop">“geometry”</a>属性。
+
+<h3 class=fn>WFlags <a name="getWFlags"></a>QWidget::getWFlags () const<tt> [保护]</tt>
+</h3>
+<p> 返回这个窗口部件的窗口部件标记。
+<p> 窗口部件就是<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>的一个组合。
+<p> <p>也可以参考<a href="#testWFlags">testWFlags</a>(), <a href="#setWFlags">setWFlags</a>()和<a href="#clearWFlags">clearWFlags</a>()。
+
+<h3 class=fn>void <a name="grabKeyboard"></a>QWidget::grabKeyboard ()
+</h3>  
+捕获键盘输入。
+<p> 这个窗口部件接收所有的键盘事件并且其它窗口部件将不会得到直到<a href="#releaseKeyboard">releaseKeyboard</a>()被调用。鼠标事件不受影响。如果你想捕获鼠标事件，请使用<a href="#grabMouse">grabMouse</a>()。
+<p> 焦点窗口部件不受影响，除非它不接收任何键盘事件。<a href="#setFocus">setFocus</a>()像平常那样移动焦点，但是只有在releaseKeyboard()被调用之后，新的焦点窗口部件才能接收键盘事件。
+<p> 如果一个不同的窗口部件当前正在捕获键盘焦点，那么那个窗口部件的捕获首先被释放。
+<p> <p>也可以参考<a href="#releaseKeyboard">releaseKeyboard</a>()、<a href="#grabMouse">grabMouse</a>()、<a href="#releaseMouse">releaseMouse</a>()和<a href="#focusWidget">focusWidget</a>()。
+
+<h3 class=fn>void <a name="grabMouse"></a>QWidget::grabMouse ()
+</h3>
+捕获鼠标输入。
+<p> <p> 这个窗口部件接收所有的鼠标事件并且其它窗口部件将不会得到直到<a href="#releaseMouse">releaseMouse</a>()被调用。键盘事件不受影响。如果你想捕获键盘事件，请使用<a href="#grabKeyboard">grabKeyboard</a>()。
+<p> <b>警告：</b>捕获鼠标的应用程序的bug经常会锁定终端。请特别仔细地使用这个函数，并且在调试的时候考虑使用-nograb命令行参数。
+<p> 在使用Qt的时候，几乎不需要捕获鼠标，因为Qt非常聪明地捕获它、释放它。在特殊情况下，当鼠标按键被按下并且保持这种状态直到最后一个按键被释放时，Qt捕获鼠标。
+<p> 注意只有可视的窗口部件可以捕获鼠标输入。如果一个窗口部件的<a href="#isVisible">isVisible</a>()返回假，这个窗口部件不能调用<a href="#grabMouse">grabMouse</a>()。
+<p> <p>也可以参考<a href="#releaseMouse">releaseMouse</a>()、<a href="#grabKeyboard">grabKeyboard</a>()、<a href="#releaseKeyboard">releaseKeyboard</a>()、<a href="#grabKeyboard">grabKeyboard</a>()和<a href="#focusWidget">focusWidget</a>()。
+
+<h3 class=fn>void <a name="grabMouse-2"></a>QWidget::grabMouse ( const&nbsp;<a href="qcursor.html">QCursor</a>&nbsp;&amp;&nbsp;cursor )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 捕获鼠标输入并且改变光标形状。
+<p> 光标将被赋值为形状<em>cursor</em>（只要在鼠标焦点被捕获）并且这个窗口部件将变为唯一接收鼠标事件的窗口部件直到<a href="#releaseMouse">releaseMouse</a>()被调用。
+<p> <b>警告：</b>不过鼠标也许会锁定终端。
+<p> <p>也可以参考<a href="#releaseMouse">releaseMouse</a>()、<a href="#grabKeyboard">grabKeyboard</a>()、<a href="#releaseKeyboard">releaseKeyboard</a>()和<a href="#cursor-prop">cursor</a>。
+
+<h3 class=fn>bool <a name="hasFocus"></a>QWidget::hasFocus () const
+</h3>
+<p>如果这个窗口部件（或者它的焦点代理）拥有键盘输入焦点，返回真，否则返回假。详细情况请参考<a href="qwidget.html#focus-prop">“focus”</a>属性。
+
+<h3 class=fn>bool <a name="hasMouse"></a>QWidget::hasMouse () const
+</h3>
+<p>如果窗口部件在鼠标光标之下，返回真，否则返回假。详细情况请参考<a href="qwidget.html#underMouse-prop">“underMouse”</a>属性。
+
+<h3 class=fn>bool <a name="hasMouseTracking"></a>QWidget::hasMouseTracking () const
+</h3>
+<p>如果这个窗口部件中鼠标跟踪生效，返回真，否则返回假。详细情况请参考<a href="qwidget.html#mouseTracking-prop">“mouseTracking”</a>属性。
+
+<h3 class=fn>int <a name="height"></a>QWidget::height () const
+</h3>
+<p>返回不包括窗口框架的窗口部件的高度。详细情况请参考<a href="qwidget.html#height-prop">“height”</a>属性。
+
+<h3 class=fn>int <a name="heightForWidth"></a>QWidget::heightForWidth ( int&nbsp;w ) const<tt> [虚]</tt>
+</h3>
+返回对于给定宽度<em>w</em>这个窗口部件的最佳高度。默认实现是返回0，表明最佳高度不依赖于宽度。
+<p> <b>警告：</b>不要考虑窗口部件的布局。
+<p>在<a href="qmenubar.html#heightForWidth">QMenuBar</a>和<a href="qtextedit.html#heightForWidth">QTextEdit</a>中被重新实现。
+
+<h3 class=fn>void <a name="hide"></a>QWidget::hide ()<tt> [虚 槽]</tt>
+</h3>
+隐藏窗口部件。
+<p> 你几乎不需要重新实现这个函数。如果你需要在一个窗口部件被隐藏之后做些什么，请使用<a href="#hideEvent">hideEvent</a>()替代。
+<p> <p>也可以参考<a href="#hideEvent">hideEvent</a>()、<a href="#hidden-prop">hidden</a>、<a href="#show">show</a>()、<a href="#showMinimized">showMinimized</a>()、<a href="#visible-prop">visible</a>和<a href="#close">close</a>()。
+<p>实例：<a href="mdi-example.html#x2047">mdi/application.cpp</a>、<a href="ftpclient-example.html#x684">network/ftpclient/ftpmainwindow.cpp</a>、<a href="popup-example.html#x1585">popup/popup.cpp</a>、 <a href="progress-example.html#x57">progress/progress.cpp</a>、<a href="scrollview-example.html#x745">scrollview/scrollview.cpp</a>和<a href="xform-example.html#x1468">xform/xform.cpp</a>。
+<p>在<a href="qmenubar.html#hide">QMenuBar</a>中被重新实现。
+
+<h3 class=fn>void <a name="hideEvent"></a>QWidget::hideEvent ( <a href="qhideevent.html">QHideEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收窗口部件隐藏事件。
+<p> 在窗口部件被隐藏之后，隐藏事件被立即发送给窗口部件。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qhideevent.html">QHideEvent</a>。
+<p>在<a href="qscrollbar.html#hideEvent">QScrollBar</a>中被重新实现。
+
+<h3 class=fn>const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;* <a name="icon"></a>QWidget::icon () const
+</h3>
+<p>返回窗口部件图标像素映射。详细情况请参考<a href="qwidget.html#icon-prop">“icon”</a>属性。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="iconText"></a>QWidget::iconText () const
+</h3>
+<p>返回窗口部件图标文本。详细情况请参考<a href="qwidget.html#iconText-prop">“iconText”</a>属性。
+
+<h3 class=fn>void <a name="iconify"></a>QWidget::iconify ()<tt> [槽]</tt>
+</h3> 
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+
+<h3 class=fn>void <a name="imComposeEvent"></a>QWidget::imComposeEvent ( <a href="qimevent.html">QIMEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收输入法写作事件。当用户通过输入法输入某些文本时，这个处理器将被调用。
+<p> 默认实现是调用e->ignore()，它拒绝输入法事件。详细情况请参考<a href="qimevent.html">QIMEvent</a>文档。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qimevent.html">QIMEvent</a>。
+
+<h3 class=fn>void <a name="imEndEvent"></a>QWidget::imEndEvent ( <a href="qimevent.html">QIMEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收输入法写作事件。当用户已经完成通过输入法输入某些文本时，这个处理器将被调用。
+<p> 默认实现是调用e->ignore()，它拒绝输入法事件。详细情况请参考<a href="qimevent.html">QIMEvent</a>文档。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qimevent.html">QIMEvent</a>。
+
+<h3 class=fn>void <a name="imStartEvent"></a>QWidget::imStartEvent ( <a href="qimevent.html">QIMEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收输入法写作事件。当用户开始通过输入法输入某些文本时，这个处理器将被调用。
+<p> 默认实现是调用e->ignore()，它拒绝输入法事件。详细情况请参考<a href="qimevent.html">QIMEvent</a>文档。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qimevent.html">QIMEvent</a>。
+
+<h3 class=fn>bool <a name="isActiveWindow"></a>QWidget::isActiveWindow () const
+</h3>
+<p>如果这个窗口部件是激活窗口或者它的一个孩子，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isActiveWindow-prop">“isActiveWindow”</a>属性。
+
+<h3 class=fn>bool <a name="isDesktop"></a>QWidget::isDesktop () const
+</h3>
+<p>如果这个窗口部件是一个桌面窗口部件，比如，它代表着桌面，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isDesktop-prop">“isDesktop”</a>属性。
+
+<h3 class=fn>bool <a name="isDialog"></a>QWidget::isDialog () const
+</h3>
+<p>如果这个窗口部件是一个对话框窗口部件，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isDialog-prop">“isDialog”</a>属性。
+
+<h3 class=fn>bool <a name="isEnabled"></a>QWidget::isEnabled () const
+</h3>
+<p>如果这个窗口部件是生效的，返回真，否则返回假。详细情况请参考<a href="qwidget.html#enabled-prop">“enabled”</a>属性。
+
+<h3 class=fn>bool <a name="isEnabledTo"></a>QWidget::isEnabledTo ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;ancestor ) const
+</h3>
+如果<em>ancestor</em>生效，这个窗口部件能够变为生效的，返回真，否则返回假。
+<p> 如果这个窗口部件自身或者它的每一个祖先，但是除了<em>ancestor</em>以外，已经被明确地指定为失效的时候，才是这样的情况。
+
+<p> <a href="#isEnabledTo">isEnabledTo</a>(0)等于<a href="#isEnabled">isEnabled</a>()。
+<p> <p>也可以参考<a href="#enabled-prop">enabled</a>和<a href="#enabled-prop">enabled</a>。
+
+<h3 class=fn>bool <a name="isEnabledToTLW"></a>QWidget::isEnabledToTLW () const
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 这个函数是被反对的。它等于<a href="#isEnabled">isEnabled</a>()。
+
+<h3 class=fn>bool <a name="isFocusEnabled"></a>QWidget::isFocusEnabled () const
+</h3>
+<p>如果这个窗口部件接收键盘焦点，返回真，否则返回假。详细情况请参考<a href="qwidget.html#focusEnabled-prop">“focusEnabled”</a>属性。
+
+<h3 class=fn>bool <a name="isHidden"></a>QWidget::isHidden () const
+</h3>
+<p>如果这个窗口部件被明确地隐藏，返回真，否则返回假。详细情况请参考<a href="qwidget.html#hidden-prop">“hidden”</a>属性。
+
+<h3 class=fn>bool <a name="isMaximized"></a>QWidget::isMaximized () const
+</h3>
+<p> 如果窗口部件是被最大化的顶级窗口部件，返回真，否则返回假。
+<p> 注意因为一些窗口系统的一些限制，这样做并不是总能得到所期望的结果（比如，如果在X11上的用户通过窗口管理器最大化这个窗口，Qt并不能把它与其它重定义大小区分开）。这有待于窗口管理器协议的进一步改进。
+<p> <p>也可以参考<a href="#showMaximized">showMaximized</a>()。
+
+<h3 class=fn>bool <a name="isMinimized"></a>QWidget::isMinimized () const
+</h3>
+<p>如果这个窗口部件最小化（变为图标了），返回真，否则返回假。详细情况请参考<a href="qwidget.html#minimized-prop">“minimized”</a>属性。
+
+<h3 class=fn>bool <a name="isModal"></a>QWidget::isModal () const
+</h3>
+<p>如果这个窗口部件是模式窗口部件，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isModal-prop">“isModal”</a>属性。
+
+<h3 class=fn>bool <a name="isPopup"></a>QWidget::isPopup () const
+</h3>
+<p>如果这个窗口部件是弹出窗口部件，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isPopup-prop">“isPopup”</a>属性。
+
+<h3 class=fn>bool <a name="isTopLevel"></a>QWidget::isTopLevel () const
+</h3>
+<p>如果这个窗口部件是顶级窗口部件，返回真，否则返回假。详细情况请参考<a href="qwidget.html#isTopLevel-prop">“isTopLevel”</a>属性。
+
+<h3 class=fn>bool <a name="isUpdatesEnabled"></a>QWidget::isUpdatesEnabled () const
+</h3>
+<p>如果更新是生效的，返回真，否则返回假。详细情况请参考<a href="qwidget.html#updatesEnabled-prop">“updatesEnabled”</a>属性。
+
+<h3 class=fn>bool <a name="isVisible"></a>QWidget::isVisible () const
+</h3>
+<p>如果这个窗口部件是可视的，返回真，否则返回假。详细情况请参考<a href="qwidget.html#visible-prop">“visible”</a>属性。
+
+<h3 class=fn>bool <a name="isVisibleTo"></a>QWidget::isVisibleTo ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;ancestor ) const
+</h3>
+如果<em>ancestor</em>被显示，这个窗口部件可以变为可视，返回真，否则返回假。
+<p> 如果这个窗口部件自身或者它的每一个祖先，但是除了<em>ancestor</em>以外，已经被明确地指定为隐藏的时候，才是这样的情况。
+<p> 如果这个窗口部件被屏幕上其它窗口弄得变暗，这个函数仍会返回真，但是如果它或者它们被移动了，它将被变为物理可视的。
+<p> <a href="#isVisibleTo">isVisibleTo</a>(0)和<a href="#isVisible">isVisible</a>()很相似，除了它变为图标的情况或者这个窗口存在与其它虚拟桌面的情况。
+<p> <p>也可以参考<a href="#show">show</a>()、<a href="#hide">hide</a>()和<a href="#visible-prop">visible</a>。
+
+<h3 class=fn>bool <a name="isVisibleToTLW"></a>QWidget::isVisibleToTLW () const
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 这个函数是被反对的。它等于<a href="#isVisible">isVisible</a>()。
+
+<h3 class=fn>void <a name="keyPressEvent"></a>QWidget::keyPressEvent ( <a href="qkeyevent.html">QKeyEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收这个窗口部件的键盘按下事件。
+<p> 窗口部件最初必须调用<a href="#setFocusPolicy">setFocusPolicy</a>()来接收焦点并且<a href="#hasFocus">得到焦点</a>用来接收键盘释放事件。
+<p> 如果你重新实现这个处理器，如果你不能理解这个事件，你就<a href="qkeyevent.html">忽略（ignore()）</a>这个事件，这是很重要的，这样这个窗口部件的父对象就可以说明它。
+<p> 默认实现是如果用户按下Esc就关闭弹出窗口部件。否则这个事件就被忽略。
+<p> <p>也可以参考<a href="#keyReleaseEvent">keyReleaseEvent</a>()、<a href="qkeyevent.html#ignore">QKeyEvent::ignore</a>()、<a href="#focusPolicy-prop">focusPolicy</a>, <a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#event">event</a>()和<a href="qkeyevent.html">QKeyEvent</a>。
+<p>实例：<a href="picture-example.html#x95">picture/picture.cpp</a>。
+<p>在<a href="qlineedit.html#keyPressEvent">QLineEdit</a>、<a href="qtextedit.html#keyPressEvent">QTextEdit</a>和<a href="qtmultilineedit.html#keyPressEvent">QtMultiLineEdit</a>中被重新实现。
+
+<h3 class=fn>void <a name="keyReleaseEvent"></a>QWidget::keyReleaseEvent ( <a href="qkeyevent.html">QKeyEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现用来接收这个窗口部件的键盘释放事件。
+<p> 窗口部件最初必须调用<a href="#setFocusPolicy">setFocusPolicy</a>()来接收焦点并且<a href="#hasFocus">得到焦点</a>用来接收键盘释放事件。
+<p> 如果你重新实现这个处理器，如果你不能理解这个事件，你就<a href="qkeyevent.html">忽略（ignore()）</a>这个事件，这是很重要的，这样这个窗口部件的父对象就可以说明它。
+<p> 默认实现就是忽略这个事件。
+<p> <p>也可以参考<a href="#keyPressEvent">keyPressEvent</a>()、<a href="qkeyevent.html#ignore">QKeyEvent::ignore</a>()、<a href="#focusPolicy-prop">focusPolicy</a>、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#event">event</a>()和<a href="qkeyevent.html">QKeyEvent</a>。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="keyboardGrabber"></a>QWidget::keyboardGrabber ()<tt> [静态]</tt>
+</h3>
+返回当前正在捕获键盘输入的窗口部件的指针。
+<p> 如果在这个应用程序中当前没有正在捕获键盘的窗口部件，0被返回。
+<p> <p>也可以参考<a href="#grabMouse">grabMouse</a>()和<a href="#mouseGrabber">mouseGrabber</a>()。
+
+<h3 class=fn><a href="qlayout.html">QLayout</a>&nbsp;* <a name="layout"></a>QWidget::layout () const
+</h3>
+<p> 返回管理窗口部件孩子的几何形状的布局引擎的指针。
+<p> 如果这个窗口部件没有布局，<a href="#layout">layout</a>()返回一个零指针。
+<p> <p>也可以参考<a href="#sizePolicy-prop">sizePolicy</a>。
+<p>实例：<a href="tutorial2-09.html#x2552">chart/optionsform.cpp</a>和<a href="simple-qfont-demo-walkthrough.html#x2130">fonts/simple-qfont-demo/viewer.cpp</a>。
+
+<h3 class=fn>void <a name="leaveEvent"></a>QWidget::leaveEvent ( <a href="qevent.html">QEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件管理器可以在子类中被重新实现来接收窗口部件离开事件。
+<p> 当鼠标光标离开这个窗口部件时，离开事件被发送给这个窗口部件。
+<p> <p>也可以参考<a href="#enterEvent">enterEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()和<a href="#event">event</a>()。
+
+<h3 class=fn>void <a name="lower"></a>QWidget::lower ()<tt> [槽]</tt>
+</h3>
+把这个窗口部件降低到它的父窗口部件的栈的底部。
+<p> 如果在屏幕上有与这个窗口部件重叠的兄弟，这个窗口部件将被它后来的这些兄弟变暗。
+<p> <p>也可以参考<a href="#raise">raise</a>()和<a href="#stackUnder">stackUnder</a>()。
+
+<h3 class=fn>bool <a name="macEvent"></a>QWidget::macEvent ( MSG * )<tt> [虚 保护]</tt>
+</h3>
+这个特定的事件处理器可以在子类中被重新实现用来接收本地Macintosh事件。
+<p>在你重新实现的这个函数中，如果你想停止Qt对这个事件的处理，返回真。如果你返回假，这个本地事件被回传给Qt，它会把这个事件转换为一个Qt事件并且把它发送给这个窗口部件。
+<p> <b>警告：</b>这个函数是不可以移植的。
+<p> <p>也可以参考<a href="qapplication.html#macEventFilter">QApplication::macEventFilter</a>()。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapFrom"></a>QWidget::mapFrom ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把<em>parent</em>的坐标系统中的这个窗口部件的坐标<em>pos</em>转换到这个窗口部件的坐标系统中。<em>parent</em>必须不能为0并且必须是这个调用窗口部件的父对象。
+<p> <p>也可以参考<a href="#mapTo">mapTo</a>()、<a href="#mapFromParent">mapFromParent</a>()、<a href="#mapFromGlobal">mapFromGlobal</a>()和<a href="#underMouse-prop">underMouse</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapFromGlobal"></a>QWidget::mapFromGlobal ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把全局屏幕坐标<em>pos</em>转换为窗口部件坐标。
+<p>也可以参考<a href="#mapToGlobal">mapToGlobal</a>()、<a href="#mapFrom">mapFrom</a>()和<a href="#mapFromParent">mapFromParent</a>()。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapFromParent"></a>QWidget::mapFromParent ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把父窗口部件坐标<em>pos</em>转换为窗口部件坐标。
+<p> 如果窗口部件没有父对象，就和<a href="#mapFromGlobal">mapFromGlobal</a>()一样。
+<p> <p>也可以参考<a href="#mapToParent">mapToParent</a>()、<a href="#mapFrom">mapFrom</a>()、<a href="#mapFromGlobal">mapFromGlobal</a>()和<a href="#underMouse-prop">underMouse</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapTo"></a>QWidget::mapTo ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把窗口部件坐标<em>pos</em>转换到<em>parent</em>坐标系统。<em>parent</em>必须不能为0并且必须是这个调用窗口部件的父对象。
+<p> <p>也可以参考<a href="#mapFrom">mapFrom</a>()、<a href="#mapToParent">mapToParent</a>()、<a href="#mapToGlobal">mapToGlobal</a>()和<a href="#underMouse-prop">underMouse</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapToGlobal"></a>QWidget::mapToGlobal ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把窗口部件坐标<em>pos</em>转换为全局屏幕坐标。例如，<pre>mapToGlobal(QPoint(0,0))</pre>将会给出这个窗口部件的左上角像素的全局坐标。
+<p>也可以参考<a href="#mapFromGlobal">mapFromGlobal</a>()、<a href="#mapTo">mapTo</a>()和<a href="#mapToParent">mapToParent</a>()。
+<p>实例：<a href="scribble-example.html#x967">scribble/scribble.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="mapToParent"></a>QWidget::mapToParent ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos ) const
+</h3>
+把窗口部件坐标<em>pos</em>转换为父窗口部件中的一个坐标。
+<p> 如果窗口部件没有父对象，就和<a href="#mapToGlobal">mapToGlobal</a>()一样。
+<p> <p>也可以参考<a href="#mapFromParent">mapFromParent</a>()、<a href="#mapTo">mapTo</a>()、<a href="#mapToGlobal">mapToGlobal</a>()和<a href="#underMouse-prop">underMouse</a>。
+
+<h3 class=fn>int <a name="maximumHeight"></a>QWidget::maximumHeight () const
+</h3>
+<p>返回这个窗口部件的最大高度。详细情况请参考<a href="qwidget.html#maximumHeight-prop">“maximumHeight”</a>属性。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="maximumSize"></a>QWidget::maximumSize () const
+</h3>
+<p>返回这个窗口部件的最大大小。详细情况请参考<a href="qwidget.html#maximumSize-prop">“maximumSize”</a>属性。
+
+<h3 class=fn>int <a name="maximumWidth"></a>QWidget::maximumWidth () const
+</h3>
+<p>返回这个窗口部件的最大宽度。详细情况请参考<a href="qwidget.html#maximumWidth-prop">“maximumWidth”</a>属性。
+
+<h3 class=fn>int <a name="metric"></a>QWidget::metric ( int&nbsp;m ) const<tt> [虚 保护]</tt>
+</h3>
+虚函数QPaintDevice::metric()的内部实现。
+<p> 使用<a href="qpaintdevicemetrics.html">QPaintDeviceMetrics</a>来替代它。
+<p> <em>m</em>是要获得的规格。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="microFocusHint"></a>QWidget::microFocusHint () const
+</h3>
+<p>返回这个窗口部件的当前设置的微焦点提示的当前设置。详细情况请参考<a href="qwidget.html#microFocusHint-prop">“microFocusHint”</a>属性。
+
+<h3 class=fn>int <a name="minimumHeight"></a>QWidget::minimumHeight () const
+</h3>
+<p>返回这个窗口部件的最小高度。详细情况请参考<a href="qwidget.html#minimumHeight-prop">“minimumHeight”</a>属性。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="minimumSize"></a>QWidget::minimumSize () const
+</h3>
+<p>返回这个窗口部件的最小大小。详细情况请参考<a href="qwidget.html#minimumSize-prop">“minimumSize”</a>属性。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="minimumSizeHint"></a>QWidget::minimumSizeHint () const<tt> [虚]</tt>
+</h3>
+<p>返回这个窗口部件的建议最小大小。详细情况请参考<a href="qwidget.html#minimumSizeHint-prop">“minimumSizeHint”</a>属性。
+<p>在<a href="qlineedit.html#minimumSizeHint">QLineEdit</a>和<a href="qtmultilineedit.html#minimumSizeHint">QtMultiLineEdit</a>中被重新实现。
+
+<h3 class=fn>int <a name="minimumWidth"></a>QWidget::minimumWidth () const
+</h3>
+<p>返回这个窗口部件的最小宽度。详细情况请参考<a href="qwidget.html#minimumWidth-prop">“minimumWidth”</a>属性。
+
+<h3 class=fn>void <a name="mouseDoubleClickEvent"></a>QWidget::mouseDoubleClickEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收这个窗口部件的鼠标双击事件。
+<p> 默认实现产生一个普通的鼠标点击事件。
+<p> 注意在窗口部件得到<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()之前，它得到一个<a href="#mousePressEvent">mousePressEvent</a>()和一个<a href="#mouseReleaseEvent">mouseReleaseEvent</a>()。
+<p> <p>也可以参考<a href="#mousePressEvent">mousePressEvent</a>()、<a href="#mouseReleaseEvent">mouseReleaseEvent</a>()、 <a href="#mouseMoveEvent">mouseMoveEvent</a>()、<a href="#event">event</a>()和<a href="qmouseevent.html">QMouseEvent</a>。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="mouseGrabber"></a>QWidget::mouseGrabber ()<tt> [静态]</tt>
+</h3>
+返回当前捕获鼠标输入的窗口部件的指针。
+<p> 如果这个应用程序中当前没有捕获鼠标的窗口部件，0被返回。
+<p> <p>也可以参考<a href="#grabMouse">grabMouse</a>()和<a href="#keyboardGrabber">keyboardGrabber</a>()。
+
+<h3 class=fn>void <a name="mouseMoveEvent"></a>QWidget::mouseMoveEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个窗口部件可以在子类中被重新实现来接收这个窗口部件中的鼠标移动事件。
+<p> 如果鼠标跟踪被切换为关闭，只有在鼠标被按下后移动的情况下，才会发生鼠标移动事件。如果鼠标跟踪被切换为开，即使鼠标没有被按下，只要移动就会发生鼠标移动事件。
+<p> <a href="qmouseevent.html#pos">QMouseEvent::pos</a>()报告鼠标光标相对于这个窗口部件的位置。对于按下和释放事件，这个位置通常和最后一次鼠标移动事件的位置相同，但是如果鼠标非常快地移动和按下，这也许是不同的。这依赖于底层的窗口系统，而不是Qt。
+<p> <p>也可以参考<a href="#mouseTracking-prop">mouseTracking</a>、<a href="#mousePressEvent">mousePressEvent</a>()、 <a href="#mouseReleaseEvent">mouseReleaseEvent</a>()、<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()、<a href="#event">event</a>()和<a href="qmouseevent.html">QMouseEvent</a>。
+<p>实例：<a href="aclock-example.html#x1223">aclock/aclock.cpp</a>、<a href="drawlines-example.html#x1700">drawlines/connect.cpp</a>、<a href="simple_dd-example.html#x2678">iconview/simple_dd/main.cpp</a>、<a href="life-example.html#x1885">life/life.cpp</a>、<a href="popup-example.html#x1586">popup/popup.cpp</a>、<a href="qmag-example.html#x1653">qmag/qmag.cpp</a>和<a href="scribble-example.html#x968">scribble/scribble.cpp</a>。
+<p>在<a href="qsizegrip.html#mouseMoveEvent">QSizeGrip</a>中被重新实现。
+
+<h3 class=fn>void <a name="mousePressEvent"></a>QWidget::mousePressEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收这个窗口部件中的鼠标按下事件。
+<p> 如果你在<a href="#mousePressEvent">mousePressEvent</a>()中创建新的窗口部件，<a href="#mouseReleaseEvent">mouseReleaseEvent</a>()也许不会像你所期待的那样结束，这依赖于底层的窗口系统（或X11窗口管理器）、这个窗口部件的位置并且也许更多。
+<p> 当你再窗口外点击时，默认实现是关闭弹出窗口。对于其它窗口部件类型，它什么都不做。
+<p> <p>也可以参考<a href="#mouseReleaseEvent">mouseReleaseEvent</a>()、<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()、<a href="#event">event</a>()和<a href="qmouseevent.html">QMouseEvent</a>。
+<p>实例：<a href="biff-example.html#x1946">biff/biff.cpp</a>、<a href="drawlines-example.html#x1701">drawlines/connect.cpp</a>、<a href="simple_dd-example.html#x2679">iconview/simple_dd/main.cpp</a>, <a href="life-example.html#x1886">life/life.cpp</a>, <a href="qmag-example.html#x1654">qmag/qmag.cpp</a>、<a href="scribble-example.html#x969">scribble/scribble.cpp</a>和<a href="tooltip-example.html#x571">tooltip/tooltip.cpp</a>。
+<p>在<a href="qsizegrip.html#mousePressEvent">QSizeGrip</a>中被重新实现。
+
+<h3 class=fn>void <a name="mouseReleaseEvent"></a>QWidget::mouseReleaseEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收鼠标释放事件。
+<p> <p>也可以参考<a href="#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()、<a href="#mouseMoveEvent">mouseMoveEvent</a>()、<a href="#event">event</a>()和<a href="qmouseevent.html">QMouseEvent</a>。
+<p>实例：<a href="drawlines-example.html#x1702">drawlines/connect.cpp</a>、<a href="hello-example.html#x1607">hello/hello.cpp</a>、<a href="popup-example.html#x1587">popup/popup.cpp</a>、<a href="qmag-example.html#x1655">qmag/qmag.cpp</a>、<a href="scribble-example.html#x970">scribble/scribble.cpp</a>、<a href="showimg-example.html#x1288">showimg/showimg.cpp</a>和<a href="tutorial1-14.html#x2419">t14/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="move"></a>QWidget::move ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp; )<tt> [槽]</tt>
+</h3>
+<p>设置窗口部件在它的父窗口部件中的位置。详细情况请参考<a href="qwidget.html#pos-prop">“pos”</a>属性。
+
+<h3 class=fn>void <a name="move-2"></a>QWidget::move ( int&nbsp;x, int&nbsp;y )<tt> [虚 槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个和<a href="#move">move</a>( <a href="qsize.html">QSize</a>(<em>x</em>, <em>y</em>) )一致。
+
+<h3 class=fn>void <a name="moveEvent"></a>QWidget::moveEvent ( <a href="qmoveevent.html">QMoveEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收窗口部件移动事件。当窗口部件接收到这个事件时，它已经在新的位置上了。
+<p> 旧的位置可以通过<a href="qmoveevent.html#oldPos">QMoveEvent::oldPos</a>()来访问。
+<p> <p>也可以参考<a href="#resizeEvent">resizeEvent</a>()、<a href="#event">event</a>()、<a href="#pos-prop">pos</a>和<a href="qmoveevent.html">QMoveEvent</a>。
+
+<h3 class=fn>bool <a name="ownCursor"></a>QWidget::ownCursor () const
+</h3>
+<p>如果这个窗口部件使用它自己的光标，返回真，否则返回假。详细情况请参考<a href="qwidget.html#ownCursor-prop">“ownCursor”</a>属性。
+
+<h3 class=fn>bool <a name="ownFont"></a>QWidget::ownFont () const
+</h3>
+<p>如果这个窗口部件使用它自己的字体，返回真，否则返回假。详细情况请参考<a href="qwidget.html#ownFont-prop">“ownFont”</a>属性。
+
+<h3 class=fn>bool <a name="ownPalette"></a>QWidget::ownPalette () const
+</h3>
+<p>如果这个窗口部件使用它自己的调色板，返回真，否则返回假。详细情况请参考<a href="qwidget.html#ownPalette-prop">“ownPalette”</a>属性。
+
+<h3 class=fn>void <a name="paintEvent"></a>QWidget::paintEvent ( <a href="qpaintevent.html">QPaintEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收绘制事件。
+<p> 绘制事件就是重新绘制这个窗口部件的所有部分的一个请求。它可以是<a href="#repaint">repaint</a>()或<a href="#update">update</a>()的结果，或者因为这个窗口部件原来被变暗并且现在已经不再被覆盖了，或者其它很多原因。
+<p> 很多窗口部件在当它们被请求时，它们很简单地重新绘制整个界面，但是一些比较慢的窗口部件需要通过仅仅绘制被请求的区域<a href="qpaintevent.html#region">QPaintEvent::region</a>()进行优化。这个速度优化不会改变结果，在事件处理过程中，绘制仅仅发生在被改变的区域中。例如，<a href="qlistview.html">QListView</a>和<a href="qcanvas.html">QCanvas</a>就是这样做的。
+<p> Qt也试图通过把多个绘制事件合并为一个来加快绘制速度。当update()被调用几次或者窗口系统发送几次绘制事件，Qt把它们合并为一个比较大区域（请参考<a href="qregion.html#unite">QRegion::unite</a>()）的一个事件中。repaint()不允许这样优化，所以只要可能我们建议使用update()。
+<p> 当绘制事件发生，更新区域通常被擦除，所以你正在这个窗口部件的背景上绘制。这里有一些例外并且<a href="qpaintevent.html#erased">QPaintEvent::erased</a>()告诉你这个窗口部件是否被擦除。
+<p> 背景可以通过使用<a href="#setBackgroundMode">setBackgroundMode</a>()、<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()或<a href="#setBackgroundPixmap">setBackgroundPixmap</a>()来设置。setBackgroundMode()的文档详细描述了背景，我们建议你去读一下。
+<p> <p>也可以参考<a href="#event">event</a>()、<a href="#repaint">repaint</a>()、<a href="#update">update</a>()、<a href="qpainter.html">QPainter</a>、<a href="qpixmap.html">QPixmap</a>和<a href="qpaintevent.html">QPaintEvent</a>。
+<p>实例：<a href="drawdemo-example.html#x1188">drawdemo/drawdemo.cpp</a>、<a href="drawlines-example.html#x1703">drawlines/connect.cpp</a>、<a href="qmag-example.html#x1656">qmag/qmag.cpp</a>、<a href="scribble-example.html#x971">scribble/scribble.cpp</a>、<a href="splitter-example.html#x1240">splitter/splitter.cpp</a>、<a href="tutorial1-08.html#x2323">t8/cannon.cpp</a>和<a href="tutorial1-09.html#x2333">t9/cannon.cpp</a>。
+<p>在<a href="qbutton.html#paintEvent">QButton</a>、<a href="qframe.html#paintEvent">QFrame</a>、<a href="qglwidget.html#paintEvent">QGLWidget</a>、<a href="qsizegrip.html#paintEvent">QSizeGrip</a>、<a href="qstatusbar.html#paintEvent">QStatusBar</a>和<a href="qtabbar.html#paintEvent">QTabBar</a>中被重新实现。
+
+<h3 class=fn>const&nbsp;<a href="qpalette.html">QPalette</a>&nbsp;&amp; <a name="palette"></a>QWidget::palette () const
+</h3>
+<p>返回这个窗口部件的调色板。详细情况请参考<a href="qwidget.html#palette-prop">“palette”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="paletteBackgroundColor"></a>QWidget::paletteBackgroundColor () const
+</h3>
+<p>返回这个窗口部件的背景色。详细情况请参考<a href="qwidget.html#paletteBackgroundColor-prop">“paletteBackgroundColor”</a>属性。
+
+<h3 class=fn>const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;* <a name="paletteBackgroundPixmap"></a>QWidget::paletteBackgroundPixmap () const
+</h3>
+<p>返回这个窗口部件的背景像素映射。详细情况请参考<a href="qwidget.html#paletteBackgroundPixmap-prop">“paletteBackgroundPixmap”</a>属性。
+
+<h3 class=fn>void <a name="paletteChange"></a>QWidget::paletteChange ( const&nbsp;<a href="qpalette.html">QPalette</a>&nbsp;&amp;&nbsp;oldPalette )<tt> [虚 保护]</tt>
+</h3>
+<p> 这个虚函数是从<a href="#setPalette">setPalette</a>()中被调用的。<em>oldPalette</em>是原来的调色板，你可以通过<a href="#palette">palette</a>()得到新的调色板。
+<p> 如果你的窗口部件需要知道什么时候调色板发生变化了，请重新实现这个函数。
+<p> <p>也可以参考<a href="#palette-prop">palette</a>和<a href="#palette-prop">palette</a>。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="paletteForegroundColor"></a>QWidget::paletteForegroundColor () const
+</h3>
+<p>返回这个窗口部件的前景色。详细情况请参考<a href="qwidget.html#paletteForegroundColor-prop">“paletteForegroundColor”</a>属性。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="parentWidget"></a>QWidget::parentWidget ( bool&nbsp;sameWindow = FALSE ) const
+</h3>
+<p> 返回这个窗口部件的父窗口部件的指针，如果它没有，就返回零指针。如果<em>sameWindow</em>为真并且这个窗口部件是顶级的，就返回0，否则返回它的父窗口部件。
+<p>实例：<a href="mdi-example.html#x2049">mdi/application.cpp</a>。
+
+<h3 class=fn>void <a name="polish"></a>QWidget::polish ()<tt> [虚 槽]</tt>
+</h3>
+延时窗口部件的初始化。
+<p> 这个函数将在窗口部件完全创建完毕<em>之后</em>并且在它每一次被显示<em>之前</em>被调用。
+<p> 抛光对于依赖一个特定窗口部件的最终初始化是很有用的。有一些事情构造函数不能够决定，因为子类的初始化也许没有完成。
+<p> 在这个函数之后，窗口部件就有一个适当的字体和调色板并且<a href="qapplication.html#polish">QApplication::polish</a>()已经被调用。
+<p> 当重新实现这个函数的时候，记得调用QWidget的实现。
+<p> <p>也可以参考<a href="#constPolish">constPolish</a>()和<a href="qapplication.html#polish">QApplication::polish</a>()。
+<p>实例：<a href="menu-example.html#x1872">menu/menu.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="pos"></a>QWidget::pos () const
+</h3>
+<p>返回这个窗口部件在它父窗口部件中的位置。详细情况请参考<a href="qwidget.html#pos-prop">“pos”</a>属性。
+
+<h3 class=fn>bool <a name="qwsEvent"></a>QWidget::qwsEvent ( QWSEvent * )<tt> [虚 保护]</tt>
+</h3>
+这个特定的事件处理器可以在子类中被重新实现来接收本地的Qt/Embedded事件。
+<p>在你重新实现的这个函数中，如果你想停止Qt对这个事件的处理，返回真。如果你返回假，这个本地事件被回传给Qt，它会把这个事件转换为一个Qt事件并且把它发送给这个窗口部件。
+<p> <b>警告：</b>这个函数是不可以移植的。
+<p> <p>也可以参考<a href="qapplication.html#qwsEventFilter">QApplication::qwsEventFilter</a>()。
+
+<h3 class=fn>void <a name="raise"></a>QWidget::raise ()<tt> [槽]</tt>
+</h3>
+把这个窗口部件升高到它的父窗口部件的栈的顶部。
+<p> <p> 如果在屏幕上有与这个窗口部件重叠的兄弟，这个窗口部件将在它后来的这些兄弟之前变的可视了。
+<p> <p>也可以参考<a href="#lower">lower</a>()和<a href="#stackUnder">stackUnder</a>()。
+<p>实例：<a href="showimg-example.html#x1290">showimg/showimg.cpp</a>。
+
+<h3 class=fn>void <a name="recreate"></a>QWidget::recreate ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent, WFlags&nbsp;f, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE )
+</h3>
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 这个函数的提供是为了从Qt 1.0移植到2.0。在Qt 2.0中它已经被重新命名为<a href="#reparent">reparent</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="rect"></a>QWidget::rect () const
+</h3>
+<p>返回不包含任何窗口框架的窗口部件的内部几何形状。详细情况请参考<a href="qwidget.html#rect-prop">“rect”</a>属性。
+
+<h3 class=fn>void <a name="releaseKeyboard"></a>QWidget::releaseKeyboard ()
+</h3>
+释放键盘捕获。
+<p> <p>也可以参考<a href="#grabKeyboard">grabKeyboard</a>()、<a href="#grabMouse">grabMouse</a>()和<a href="#releaseMouse">releaseMouse</a>()。
+
+<h3 class=fn>void <a name="releaseMouse"></a>QWidget::releaseMouse ()
+</h3>
+释放鼠标捕获。
+<p> <p>也可以参考<a href="#grabMouse">grabMouse</a>()、<a href="#grabKeyboard">grabKeyboard</a>()和<a href="#releaseKeyboard">releaseKeyboard</a>()。
+
+<h3 class=fn>void <a name="repaint"></a>QWidget::repaint ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, bool&nbsp;erase = TRUE )<tt> [槽]</tt>
+</h3>
+通过立即调用<a href="#paintEvent">paintEvent</a>()来直接重新绘制窗口部件，除非更新是失效的或者窗口部件被隐藏。
+<p> 如果<em>erase</em>为真，Qt在paintEvent()调用之前擦除区域<em>(x,y,w,h)</em>。
+<p> 如果<em>w</em>是负数，它被<code>width()-x</code>替换，并且如果<em>h</em>是负数，它被<code>height()-y</code>替换。
+<p> 如果你需要立即重新绘制，我们建议使用<a href="#repaint">repaint</a>()，比如在动画期间。在绝大多数情况下，<a href="#update">update</a>()更好，因为它允许Qt来优化速度并且防止闪烁。
+<p> <b>警告：</b>如果你在一个函数中调用repaint()，而它自己又被paintEvent()调用，你也许会看到无线循环。update()函数从来不会产生循环。
+<p> <p>也可以参考<a href="#update">update</a>()、<a href="#paintEvent">paintEvent</a>()、<a href="#updatesEnabled-prop">updatesEnabled</a>和<a href="#erase">erase</a>()。
+<p>实例：<a href="qwerty-example.html#x405">qwerty/qwerty.cpp</a>。
+
+<h3 class=fn>void <a name="repaint-2"></a>QWidget::repaint ()<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个版本擦除并且重新绘制整个窗口部件。
+
+<h3 class=fn>void <a name="repaint-3"></a>QWidget::repaint ( bool&nbsp;erase )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个版本重新绘制整个窗口部件。
+
+<h3 class=fn>void <a name="repaint-4"></a>QWidget::repaint ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, bool&nbsp;erase = TRUE )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 通过立即调用<a href="#paintEvent">paintEvent</a>()来直接重新绘制窗口部件，除非更新是失效的或者窗口部件被隐藏。
+<p> 如果<em>erase</em>为真，擦除窗口部件区域<em>r</em>。
+
+<h3 class=fn>void <a name="repaint-5"></a>QWidget::repaint ( const&nbsp;<a href="qregion.html">QRegion</a>&nbsp;&amp;&nbsp;reg, bool&nbsp;erase = TRUE )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 通过立即调用<a href="#paintEvent">paintEvent</a>()来直接重新绘制窗口部件，除非更新是失效的或者窗口部件被隐藏。
+<p> 如果<em>erase</em>为真，擦除窗口部件区域<em>reg</em>。
+<p> <p> 如果你需要立即重新绘制，我们建议使用<a href="#repaint">repaint</a>()，比如在动画期间。一连串的多次调用update()将产生一个单一的绘制事件。
+<p> <b>警告：</b>如果你在一个函数中调用repaint()，而它自己又被paintEvent()调用，你也许会看到无线循环。update()函数从来不会产生循环。
+<p> <p>也可以参考<a href="#update">update</a>()、<a href="#paintEvent">paintEvent</a>()、<a href="#updatesEnabled-prop">updatesEnabled</a>和<a href="#erase">erase</a>()。
+
+<h3 class=fn>void <a name="reparent"></a>QWidget::reparent ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent, WFlags&nbsp;f, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE )<tt> [虚]</tt>
+</h3>
+重新定义这个窗口部件的父对象。这个窗口部件得到新的<em>parent</em>，新的窗口部件标记（<em>f</em>，但通常使用0）和在新的父对象中的新位置（<em>p</em>）。
+<p> 如果<em>showIt</em>为真，一旦窗口部件被重新定义父对象，<a href="#show">show</a>()就被调用。
+<p> 如果新的父窗口部件在一个不同的顶级窗口部件中，被重新定义父对象的窗口部件和它的孩子们将被添加到新窗口部件的<a href="#setFocusPolicy">tab链</a>的最后。如果被移动的窗口部件之一拥有<a href="focus.html#keyboard-focus">键盘焦点</a>，<a href="#reparent">reparent</a>()为这个窗口部件调用<a href="#clearFocus">clearFocus</a>()。
+<p> 如果新的父窗口部件和原来的父对象在同一个顶级窗口部件中，reparent()不会改变tab顺序或者键盘焦点。
+<p> <b>警告：</b>你对这个函数的需要是绝对不必要的。如果你有一个窗口部件动态的改变它的内容，使用<a href="qwidgetstack.html">QWidgetStack</a>或<a href="qwizard.html">QWizard</a>会更容易的多。
+<p> <p>也可以参考<a href="#getWFlags">getWFlags</a>()。
+
+<h3 class=fn>void <a name="reparent-2"></a>QWidget::reparent ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, bool&nbsp;showIt = FALSE )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 一个方便的重新定义这个窗口部件的父对象的版本没有把窗口部件标记作为参数。
+<p> 调用<a href="#reparent">reparent</a>(<em>parent</em>, <a href="#getWFlags">getWFlags</a>() &amp; ~<a href="qt.html#WidgetFlags-enum">WType_Mask</a>, <em>p</em>, <em>showIt</em>)。
+
+<h3 class=fn>void <a name="resetInputContext"></a>QWidget::resetInputContext ()<tt> [保护]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。比如，改变焦点到另一个窗口部件，移动光标，等等。
+
+<h3 class=fn>void <a name="resize"></a>QWidget::resize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp; )<tt> [槽]</tt>
+</h3>
+<p>设置不包含任何窗口框架的窗口部件的大小。详细情况请参考<a href="qwidget.html#size-prop">“size”</a>属性。
+
+<h3 class=fn>void <a name="resize-2"></a>QWidget::resize ( int&nbsp;w, int&nbsp;h )<tt> [虚 槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个和<a href="#resize">resize</a>( <a href="qsize.html">QSize</a>(<em>w</em>, <em>h</em>) )一致。
+
+<h3 class=fn>void <a name="resizeEvent"></a>QWidget::resizeEvent ( <a href="qresizeevent.html">QResizeEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收窗口部件重定义大小事件。当<a href="#resizeEvent">resizeEvent</a>()被调用时，这个窗口部件已经有了新的几何形状。原来的大小可以通过<a href="qresizeevent.html#oldSize">QResizeEvent::oldSize</a>()访问。
+<p> 这个窗口部件竟被擦除并且在处理重定义大小事件之后立即接收到一个绘制事件。在这个处理器中不需要（或者必须）绘制。
+<p> 由<a href="qt.html#WidgetFlags-enum">WResizeNoErase</a>创建的窗口部件将不会被擦除。不过，它们也将收到一个对于整个区域的绘制事件。再一次的，在这个处理器中不需要（或者必须）绘制。
+<p> 如果窗口部件的<a href="#setAutoMask">自动面具</a>生效，默认实现调用<a href="#updateMask">updateMask</a>()。
+<p> <p>也可以参考<a href="#moveEvent">moveEvent</a>()、<a href="#event">event</a>()、<a href="#size-prop">size</a>、<a href="qresizeevent.html">QResizeEvent</a>和<a href="#paintEvent">paintEvent</a>()。
+<p>实例：<a href="drawdemo-example.html#x1190">drawdemo/drawdemo.cpp</a>、<a href="mainlyQt-editor-example.html#x2565">mainlyQt/editor.cpp</a>、<a href="mainlyXt-editor-example.html#x2556">mainlyXt/editor.cpp</a> 、<a href="menu-example.html#x1873">menu/menu.cpp</a>、<a href="qmag-example.html#x1659">qmag/qmag.cpp</a>、<a href="scribble-example.html#x972">scribble/scribble.cpp</a>和<a href="tooltip-example.html#x573">tooltip/tooltip.cpp</a>。
+<p>在<a href="qframe.html#resizeEvent">QFrame</a>和<a href="qglwidget.html#resizeEvent">QGLWidget</a>中被重新实现。
+
+<h3 class=fn>void <a name="scroll"></a>QWidget::scroll ( int&nbsp;dx, int&nbsp;dy )
+</h3> 
+卷动包括它的孩子的窗口部件，向右<em>dx</em>像素并且向下<em>dy</em>像素。<em>dx</em>和<em>dy</em>都可以为负。
+<p> 在卷动后，<a href="#scroll">scroll</a>()发送绘制事件，只为了读的部分，但不写。例如，当向右卷动10像素，窗口部件的最左面10像素需要重新绘制。绘制事件也许立即或者稍后被交付，依赖于一些启发式。
+<p> <p>也可以参考<a href="qscrollview.html">QScrollView</a>、<a href="#erase">erase</a>()和<a href="qpaintdevice.html#bitBlt">bitBlt</a>()。
+
+<h3 class=fn>void <a name="scroll-2"></a>QWidget::scroll ( int&nbsp;dx, int&nbsp;dy, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个版本仅卷动<em>r</em>并且不移动窗口部件的孩子。
+<p> 如果<em>r</em>为空或者无效，结果是未定义的。
+<p> <p>也可以参考<a href="qscrollview.html">QScrollView</a>、<a href="#erase">erase</a>()和<a href="qpaintdevice.html#bitBlt">bitBlt</a>()。
+
+<h3 class=fn>void <a name="setAcceptDrops"></a>QWidget::setAcceptDrops ( bool&nbsp;on )<tt> [虚]</tt>
+</h3>
+<p>设置对于这个窗口部件放下事件是否生效为<em>on</em>。详细情况请参考<a href="qwidget.html#acceptDrops-prop">“acceptDrops”</a>属性。
+
+<h3 class=fn>void <a name="setActiveWindow"></a>QWidget::setActiveWindow ()<tt> [虚]</tt>
+</h3>
+设置包含这个窗口部件的顶级窗口部件为激活窗口。
+<p> 激活窗口就是拥有键盘输入焦点的可视的顶级窗口。
+<p> 这个函数执行的操作和在一个顶级窗口的标题栏点击鼠标是一样的。在X11上，结果依赖于窗口管理器。如果你想确认窗口也被堆在顶部，请另外调用<a href="#raise">raise</a>()。注意这个窗口已经被变为可视，除非<a href="#setActiveWindow">setActiveWindow</a>()没有效果。
+<p> 在Windows上，如果当应用程序不是当前激活的应用程序，如果你调用这个函数，然后它不会使它变为激活窗口。它将会在标题栏条目上闪烁蓝色标明这个窗口已经做了些什么。这是由于Microsoft不允许一个应用程序打断用户当前在另一个应用程序上所做的事情。
+<p> <p>也可以参考<a href="#isActiveWindow-prop">isActiveWindow</a>、<a href="#topLevelWidget">topLevelWidget</a>()和<a href="#show">show</a>()。
+<p>在<a href="qxtwidget.html#setActiveWindow">QXtWidget</a>中被重新实现。
+
+<h3 class=fn>void <a name="setAutoMask"></a>QWidget::setAutoMask ( bool )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件自动面具特征是否生效。详细情况请参考<a href="qwidget.html#autoMask-prop">“autoMask”</a>属性。
+
+<h3 class=fn>void <a name="setBackgroundColor"></a>QWidget::setBackgroundColor ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;c )<tt> [虚]</tt>
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。使用<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()或<a href="#setEraseColor">setEraseColor</a>()替代它。
+<p>实例：<a href="customlayout-example.html#x1411">customlayout/main.cpp</a>、<a href="desktop-example.html#x1799">desktop/desktop.cpp</a>、<a href="hello-example.html#x1614">hello/main.cpp</a>、<a href="movies-example.html#x474">movies/main.cpp</a>和<a href="splitter-example.html#x1241">splitter/splitter.cpp</a>。
+
+<h3 class=fn>void <a name="setBackgroundMode"></a>QWidget::setBackgroundMode ( <a href="qt.html#BackgroundMode-enum">BackgroundMode</a> )<tt> [虚]</tt>
+</h3>
+<p>设置绘制窗口部件背景所使用的颜色模式。详细情况请参考<a href="qwidget.html#backgroundMode-prop">“backgroundMode”</a>属性。
+
+<h3 class=fn>void <a name="setBackgroundMode-2"></a>QWidget::setBackgroundMode ( <a href="qt.html#BackgroundMode-enum">BackgroundMode</a>&nbsp;m, <a href="qt.html#BackgroundMode-enum">BackgroundMode</a>&nbsp;visual )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置这个窗口部件自己的背景模式为<em>m</em>并且可视背景模式为<em>visual</em>。可视背景模式和可设计的属性<tt>backgroundColor</tt>、<tt>foregroundColor</tt>和<tt>backgroundPixmap</tt>一起使用。
+<p> 对于复杂的控制，合理的背景模式有时和窗口部件自己的背景模式不同。例如，微调框把<a href="qt.html#BackgroundMode-enum">PaletteBackground</a>作为背景模式（通常是暗灰色），当它被嵌入到行编辑控件中使用<a href="qt.html#BackgroundMode-enum">PaletteBase</a>（通常是白色）。因为行编辑控件覆盖微调框的绝大部分可视区域，它定义了<a href="qt.html#BackgroundMode-enum">PaletteBase</a>为它的<em>可视</em>背景模式。改变<tt>backgroundColor</tt>属性会改变行编辑控件的背景，这正是用户在<em>Qt设计器</em>中所期待的。
+
+<h3 class=fn>void <a name="setBackgroundOrigin"></a>QWidget::setBackgroundOrigin ( <a href="qwidget.html#BackgroundOrigin-enum">BackgroundOrigin</a> )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件背景的原点。详细情况请参考<a href="qwidget.html#backgroundOrigin-prop">“backgroundOrigin”</a>属性。
+
+<h3 class=fn>void <a name="setBackgroundPixmap"></a>QWidget::setBackgroundPixmap ( const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm )<tt> [虚]</tt>
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。使用<a href="#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap</a>()或<a href="#setErasePixmap">setErasePixmap</a>()替代它。 
+<p>实例：<a href="desktop-example.html#x1800">desktop/desktop.cpp</a>。
+
+<h3 class=fn>void <a name="setBaseSize"></a>QWidget::setBaseSize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp; )
+</h3>
+<p>设置这个窗口部件的基础大小。详细情况请参考<a href="qwidget.html#baseSize-prop">“baseSize”</a>属性。
+
+<h3 class=fn>void <a name="setBaseSize-2"></a>QWidget::setBaseSize ( int&nbsp;basew, int&nbsp;baseh )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个和<a href="#setBaseSize">setBaseSize</a>( <a href="qsize.html">QSize</a>(<em>basew</em>, <em>baseh</em>) )一致。设置窗口部件基础大小的宽为<em>basew</em>，高为<em>baseh</em>。
+
+<h3 class=fn>void <a name="setCaption"></a>QWidget::setCaption ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp; )<tt> [虚 槽]</tt>
+</h3>
+<p>设置窗口标题。详细情况请参考<a href="qwidget.html#caption-prop">“caption”</a>属性。
+
+<h3 class=fn>void <a name="setCursor"></a>QWidget::setCursor ( const&nbsp;<a href="qcursor.html">QCursor</a>&nbsp;&amp; )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的光标形状。详细情况请参考<a href="qwidget.html#cursor-prop">“cursor”</a>属性。
+
+<h3 class=fn>void <a name="setDisabled"></a>QWidget::setDisabled ( bool&nbsp;disable )<tt> [槽]</tt>
+</h3>
+如果<em>disable</em>为真，使窗口部件输入事件失效，否则使输入事件生效。
+<p> 更多信息请参考<a href="#enabled-prop">enabled</a>文档。
+<p> <p>也可以参考<a href="#isEnabledTo">isEnabledTo</a>()、<a href="qkeyevent.html">QKeyEvent</a>、<a href="qmouseevent.html">QMouseEvent</a>和<a href="#enabledChange">enabledChange</a>()。
+
+<h3 class=fn>void <a name="setEnabled"></a>QWidget::setEnabled ( bool )<tt> [虚 槽]</tt>
+</h3>
+<p>设置这个窗口部件是否生效。详细情况请参考<a href="qwidget.html#enabled-prop">“enabled”</a>属性。
+
+<h3 class=fn>void <a name="setEraseColor"></a>QWidget::setEraseColor ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;color )<tt> [虚]</tt>
+</h3>
+设置这个窗口部件的擦除颜色为<em>color</em>。
+<p> 擦除颜色就是在<a href="#paintEvent">paintEvent</a>()被调用之前这个窗口部件被清空的颜色。如果有擦除像素映射（使用<a href="#setErasePixmap">setErasePixmap</a>()设置），然后这个属性就会有不确定的值。
+<p> <p>也可以参考<a href="#erasePixmap">erasePixmap</a>()、<a href="#backgroundColor">backgroundColor</a>()、<a href="#backgroundMode-prop">backgroundMode</a>和<a href="#palette-prop">palette</a>。
+
+<h3 class=fn>void <a name="setErasePixmap"></a>QWidget::setErasePixmap ( const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pixmap )<tt> [虚]</tt>
+</h3>
+设置这个窗口部件的擦除像素映射为<em>pixmap</em>。
+<p> 这个像素映射就是在<a href="#paintEvent">paintEvent</a>()被调用之前用来清空这个窗口部件的。
+
+<h3 class=fn>void <a name="setFixedHeight"></a>QWidget::setFixedHeight ( int&nbsp;h )
+</h3>
+设置这个窗口部件的最小高度和最大高度都为<em>h</em>，而不改变宽度。为了方便而提供。
+<p> <p>也可以参考<a href="#sizeHint-prop">sizeHint</a>、<a href="#minimumSize-prop">minimumSize</a>、<a href="#maximumSize-prop">maximumSize</a>和<a href="#setFixedSize">setFixedSize</a>()。
+<p>实例：<a href="simple-qfont-demo-walkthrough.html#x2131">fonts/simple-qfont-demo/viewer.cpp</a>、<a href="layout-example.html#x496">layout/layout.cpp</a>、<a href="qdir-example.html#x1845">qdir/qdir.cpp</a>和<a href="showimg-example.html#x1292">showimg/showimg.cpp</a>。
+
+<h3 class=fn>void <a name="setFixedSize"></a>QWidget::setFixedSize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp;&nbsp;s )
+</h3>
+设置这个窗口部件的最小大小和最大大小都为<em>s</em>，这样就可以防止它变大或者变小。
+<p> <p>也可以参考<a href="#maximumSize-prop">maximumSize</a>和<a href="#minimumSize-prop">minimumSize</a>。
+
+<h3 class=fn>void <a name="setFixedSize-2"></a>QWidget::setFixedSize ( int&nbsp;w, int&nbsp;h )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置窗口部件的宽度为<em>w</em>，高度为<em>h</em>。
+
+<h3 class=fn>void <a name="setFixedWidth"></a>QWidget::setFixedWidth ( int&nbsp;w )
+</h3>
+设置这个窗口部件的最小宽度和最大宽度都为<em>h</em>，而不改变高度。为了方便而提供。
+<p> <p>也可以参考<a href="#sizeHint-prop">sizeHint</a>、<a href="#minimumSize-prop">minimumSize</a>、<a href="#maximumSize-prop">maximumSize</a>和<a href="#setFixedSize">setFixedSize</a>()。
+<p>实例：<a href="ftpclient-example.html#x686">network/ftpclient/ftpmainwindow.cpp</a>、<a href="progressbar-example.html#x1118">progressbar/progressbar.cpp</a>和<a href="qdir-example.html#x1846">qdir/qdir.cpp</a>。
+
+
+<h3 class=fn>void <a name="setFocus"></a>QWidget::setFocus ()<tt> [虚 槽]</tt>
+</h3>  
+把键盘输入焦点给这个窗口部件（或者它的焦点代理）。
+<p> 首先，一个焦点移出事件会被发送给焦点窗口部件（如果有的话）告诉它关于失去焦点的事情。然后一个焦点进入事件被发送给这个窗口部件告诉它刚刚接收到焦点。（如果焦点移出和进入的窗口部件是同一个的话，就什么都没有发生。）
+<p> <a href="#setFocus">setFocus</a>()会把焦点给一个窗口部件，而不管它的焦点策略，但是不会清空任何键盘捕获（请参考<a href="#grabKeyboard">grabKeyboard</a>()）。
+<p> 请注意如果窗口部件是被隐藏的，它将不接收焦点。
+<p> <b>警告：</b>如果你在一个函数中调用setFocus()，而这个函数自己被<a href="#focusOutEvent">focusOutEvent</a>()或<a href="#focusInEvent">focusInEvent</a>()调用，你也许会体验到无限循环。
+<p> <p>也可以参考<a href="#focus-prop">focus</a>、<a href="#clearFocus">clearFocus</a>()、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#focusPolicy-prop">focusPolicy</a>、<a href="qapplication.html#focusWidget">QApplication::focusWidget</a>()、<a href="#grabKeyboard">grabKeyboard</a>()和<a href="#grabMouse">grabMouse</a>()。
+<p>实例：<a href="addressbook-example.html#x554">addressbook/centralwidget.cpp</a>、<a href="lineedits-example.html#x109">lineedits/lineedits.cpp</a>、<a href="mdi-example.html#x2052">mdi/application.cpp</a>、<a href="popup-example.html#x1591">popup/popup.cpp</a>、<a href="rot-example.html#x1564">rot13/rot13.cpp</a>、<a href="tutorial1-08.html#x2326">t8/main.cpp</a>和<a href="wizard-example.html#x11">wizard/wizard.cpp</a>。
+
+<h3 class=fn>void <a name="setFocusPolicy"></a>QWidget::setFocusPolicy ( <a href="qwidget.html#FocusPolicy-enum">FocusPolicy</a> )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件接收键盘焦点的方式。详细情况请参考<a href="qwidget.html#focusPolicy-prop">“focusPolicy”</a>属性。
+
+<h3 class=fn>void <a name="setFocusProxy"></a>QWidget::setFocusProxy ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;w )<tt> [虚]</tt>
+</h3>  
+设置这个窗口部件的焦点代理为窗口部件<em>w</em>。如果<em>w</em>为0，这个函数重置这个窗口部件没有焦点代理。
+<p> 一些窗口部件，比如<a href="qcombobox.html">QComboBox</a>，能够“拥有焦点”，但创建一个子窗口部件来实际处理这个焦点。例如，QComboBox创建了一个<a href="qlineedit.html">QLineEdit</a>来处理焦点。
+<p> 当“这个窗口部件”获得焦点时，<a href="#setFocusProxy">setFocusProxy</a>()设置这个窗口部件实际获得焦点。如果有了一个焦点代理，<a href="#focusPolicy">focusPolicy</a>()、<a href="#setFocusPolicy">setFocusPolicy</a>()、<a href="#setFocus">setFocus</a>()和<a href="#hasFocus">hasFocus</a>()都在这个焦点代理上操作。
+<p> <p>也可以参考<a href="#focusProxy">focusProxy</a>()。
+
+<h3 class=fn>void <a name="setFont"></a>QWidget::setFont ( const&nbsp;<a href="qfont.html">QFont</a>&nbsp;&amp; )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的字体当前设置。详细情况请参考<a href="qwidget.html#font-prop">“font”</a>属性。
+<p>在<a href="qcombobox.html#setFont">QComboBox</a>、<a href="qlabel.html#setFont">QLabel</a>和<a href="qtabdialog.html#setFont">QTabDialog</a>中被重新实现。
+
+<h3 class=fn>void <a name="setFont-2"></a>QWidget::setFont ( const&nbsp;<a href="qfont.html">QFont</a>&nbsp;&amp;&nbsp;f, bool )
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 使用<a href="#setFont">setFont</a>(const <a href="qfont.html">QFont</a>& font)替代它。
+
+<h3 class=fn>void <a name="setGeometry"></a>QWidget::setGeometry ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp; )<tt> [虚 槽]</tt>
+</h3>
+<p>设置相对于它的父对象不包括窗口框架的窗口部件的几何形状。详细情况请参考<a href="qwidget.html#geometry-prop">“geometry”</a>属性。
+
+<h3 class=fn>void <a name="setGeometry-2"></a>QWidget::setGeometry ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )<tt> [虚 槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这相当于<a href="#setGeometry">setGeometry</a>( <a href="qrect.html">QRect</a>(<em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>) )。
+
+<h3 class=fn>void <a name="setIcon"></a>QWidget::setIcon ( const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp; )<tt> [虚 槽]</tt>
+</h3>
+<p>设置这个窗口部件图标像素映射。详细情况请参考<a href="qwidget.html#icon-prop">“icon”</a>属性。
+
+<h3 class=fn>void <a name="setIconText"></a>QWidget::setIconText ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp; )<tt> [虚 槽]</tt>
+</h3>
+<p>设置这个窗口部件图标文本。详细情况请参考<a href="qwidget.html#iconText-prop">“iconText”</a>属性。
+
+<h3 class=fn>void <a name="setKeyCompression"></a>QWidget::setKeyCompression ( bool&nbsp;compress )<tt> [虚 保护]</tt>
+</h3>
+如果<em>compress</em>为真，使键盘事件压缩生效，并且如果<em>compress</em>为假，使键盘事件压缩失效。
+<p> 默认情况下，键盘压缩是关闭的，所以窗口部件对于每一个键盘按下（或者更多，因为自动重复通常是打开的）都接收到一个键盘按下事件。如果你把它打开并且你的应用程序更不上键盘输入，Qt也许会试图压缩键盘事件，这样每一个事件中就会处理多于一个字符的情况。
+<p> 例如，如果布局重新运算占用太长时间的CPU，一个字处理器窗口部件接收每一个<a href="qkeyevent.html#text">QKeyEvent::text</a>()中的2个、3个或更多字符。
+<p> 如果窗口部件支持多字符unicode输入，它对于这种压缩打开总是安全的。
+<p> Qt只对可打印的字符执行键盘事件压缩。修正键、光标移动键、功能键和其它操作键（比如，Escape、Return、Backspace、PrintScreen）将会停止键盘事件压缩，即使如果可以更多可压缩的键盘事件。
+<p> 并不是所有的平台都支持这种压缩，在这种情况下如果把这个选项打开将不会有任何效果。
+<p> <p>也可以参考<a href="qkeyevent.html#text">QKeyEvent::text</a>().
+
+<h3 class=fn>void <a name="setMask"></a>QWidget::setMask ( const&nbsp;<a href="qbitmap.html">QBitmap</a>&nbsp;&amp;&nbsp;bitmap )<tt> [虚]</tt>
+</h3>
+导致只有和<em>bitmap</em>中为1的位对应的窗口部件的像素是可视的。如果包含像素的区域在窗口部件的<a href="#rect">rect</a>()之外，在那个区域的窗口系统控制允许可视，也许不可视，依赖于平台。
+<p> 注意如果区域相当复杂，这种效果会很慢。
+<p> <p>也可以参考<a href="#clearMask">clearMask</a>()。
+
+<h3 class=fn>void <a name="setMask-2"></a>QWidget::setMask ( const&nbsp;<a href="qregion.html">QRegion</a>&nbsp;&amp;&nbsp;region )<tt> [虚]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 导致只有和<em>region</em>重合的窗口部件的部分是可视的。如果包含像素的区域在窗口部件的<a href="#rect">rect</a>()之外，在那个区域的窗口系统控制允许可视，也许不可视，依赖于平台。
+<p> 注意如果区域相当复杂，这种效果会很慢。
+<p> <p>也可以参考<a href="#clearMask">clearMask</a>()。
+
+<h3 class=fn>void <a name="setMaximumHeight"></a>QWidget::setMaximumHeight ( int&nbsp;maxh )
+</h3>
+<p>设置这个窗口部件的最大高度为<em>maxh</em>。详细情况请参考<a href="qwidget.html#maximumHeight-prop">“maximumHeight”</a>属性。
+
+<h3 class=fn>void <a name="setMaximumSize"></a>QWidget::setMaximumSize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp; )
+</h3>
+<p>设置这个窗口部件的最大大小。详细情况请参考<a href="qwidget.html#maximumSize-prop">“maximumSize”</a>属性。
+
+<h3 class=fn>void <a name="setMaximumSize-2"></a>QWidget::setMaximumSize ( int&nbsp;maxw, int&nbsp;maxh )<tt> [虚]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数相当于<a href="#setMaximumSize">setMaximumSize</a>( <a href="qsize.html">QSize</a>(<em>maxw</em>, <em>maxh</em>) )。设置最大宽度为<em>maxw</em>，最大高度为<em>maxh</em>。
+
+<h3 class=fn>void <a name="setMaximumWidth"></a>QWidget::setMaximumWidth ( int&nbsp;maxw )
+</h3>
+<p>设置这个窗口部件的最大宽度为<em>maxw</em>。详细情况请参考<a href="qwidget.html#maximumWidth-prop">“maximumWidth”</a>属性。
+
+<h3 class=fn>void <a name="setMicroFocusHint"></a>QWidget::setMicroFocusHint ( int&nbsp;x, int&nbsp;y, int&nbsp;width, int&nbsp;height, bool&nbsp;text = TRUE, <a href="qfont.html">QFont</a>&nbsp;*&nbsp;f = 0 )<tt> [虚 保护]</tt>
+</h3>
+当窗口部件得到焦点，它应该为合适的大小和位置——<em>x</em>、<em>y</em>和<em>width</em>与em>height</em>，调用setMicroFocusHint。这没有<em>可视</em>效果，它仅仅为任意系统指定的输入处理工具提供提示。
+<p> 如果这是一个文本输入位置，<em>text</em>参数应该为真。
+<p> 在Windows版本的Qt中，这个方法设置系统插入符号，这用户用户可访问的焦点处理。如果<em>text</em>为真，在远东亚洲语言输入系统中，它也会设置输入法的。
+<p> 在X11版本的Qt中，如果<em>text</em>为真，这个方法为复杂语言输入处理设置XIM“spot”点。
+<p> 字体参数<em>f</em>现在不使用了。
+<p> <p>也可以参考<a href="#microFocusHint-prop">microFocusHint</a>。
+
+<h3 class=fn>void <a name="setMinimumHeight"></a>QWidget::setMinimumHeight ( int&nbsp;minh )
+</h3>
+<p>设置这个窗口部件的最小高度为<em>minh</em>。详细情况请参考<a href="qwidget.html#minimumHeight-prop">“minimumHeight”</a>属性。
+
+<h3 class=fn>void <a name="setMinimumSize"></a>QWidget::setMinimumSize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp; )
+</h3>
+<p>设置这个窗口部件的最小大小。详细情况请参考<a href="qwidget.html#minimumSize-prop">“minimumSize”</a>属性。
+
+<h3 class=fn>void <a name="setMinimumSize-2"></a>QWidget::setMinimumSize ( int&nbsp;minw, int&nbsp;minh )<tt> [虚]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数相当于<a href="#setMinimumSize">setMinimumSize</a>( <a href="qsize.html">QSize</a>(minw, minh) )。设置最小宽度为<em>minw</em>，最小高度为<em>minh</em>。
+
+<h3 class=fn>void <a name="setMinimumWidth"></a>QWidget::setMinimumWidth ( int&nbsp;minw )
+</h3>
+<p>设置这个窗口部件的最小宽度为<em>minw</em>。详细情况请参考<a href="qwidget.html#minimumWidth-prop">“minimumWidth”</a>属性。
+
+<h3 class=fn>void <a name="setMouseTracking"></a>QWidget::setMouseTracking ( bool&nbsp;enable )<tt> [虚 槽]</tt>
+</h3>
+<p>设置对于这个窗口部件鼠标跟踪是否生效为<em>enable</em>。详细情况请参考<a href="qwidget.html#mouseTracking-prop">“mouseTracking”</a>属性。
+
+<h3 class=fn>void <a name="setPalette"></a>QWidget::setPalette ( const&nbsp;<a href="qpalette.html">QPalette</a>&nbsp;&amp; )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的调色板。详细情况请参考<a href="qwidget.html#palette-prop">“palette”</a>属性。
+<p>在<a href="qcombobox.html#setPalette">QComboBox</a>、<a href="qscrollbar.html#setPalette">QScrollBar</a>和<a href="qslider.html#setPalette">QSlider</a>中被重新实现。
+
+<h3 class=fn>void <a name="setPalette-2"></a>QWidget::setPalette ( const&nbsp;<a href="qpalette.html">QPalette</a>&nbsp;&amp;&nbsp;p, bool )
+</h3>
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 使用<a href="#setPalette">setPalette</a>( const <a href="qpalette.html">QPalette</a>& p )替代它。
+
+<h3 class=fn>void <a name="setPaletteBackgroundColor"></a>QWidget::setPaletteBackgroundColor ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的背景色。详细情况请参考<a href="qwidget.html#paletteBackgroundColor-prop">“paletteBackgroundColor”</a>属性。
+
+<h3 class=fn>void <a name="setPaletteBackgroundPixmap"></a>QWidget::setPaletteBackgroundPixmap ( const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp; )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的背景像素映射。详细情况请参考<a href="qwidget.html#paletteBackgroundPixmap-prop">“paletteBackgroundPixmap”</a>属性。
+
+<h3 class=fn>void <a name="setPaletteForegroundColor"></a>QWidget::setPaletteForegroundColor ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; )
+</h3>
+<p>设置这个窗口部件的前景色。详细情况请参考<a href="qwidget.html#paletteForegroundColor-prop">“paletteForegroundColor”</a>属性。
+
+<h3 class=fn>void <a name="setSizeIncrement"></a>QWidget::setSizeIncrement ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp; )
+</h3>
+<p>设置这个窗口部件的大小增量。详细情况请参考<a href="qwidget.html#sizeIncrement-prop">“sizeIncrement”</a>属性。
+
+<h3 class=fn>void <a name="setSizeIncrement-2"></a>QWidget::setSizeIncrement ( int&nbsp;w, int&nbsp;h )<tt> [虚]</tt>
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置x（宽度）大小增量为<em>w</em>，y（高度）大小增量为<em>h</em>。
+
+<h3 class=fn>void <a name="setSizePolicy"></a>QWidget::setSizePolicy ( <a href="qsizepolicy.html">QSizePolicy</a> )<tt> [虚]</tt>
+</h3>
+<p>设置这个窗口部件的默认布局方式。详细情况请参考<a href="qwidget.html#sizePolicy-prop">“sizePolicy”</a>属性。
+
+<h3 class=fn>void <a name="setStyle"></a>QWidget::setStyle ( <a href="qstyle.html">QStyle</a>&nbsp;*&nbsp;style )
+</h3>
+设置这个窗口部件的图形用户界面风格为<em>style</em>。风格对象的所有权不能被转让。
+<p> 如果没有风格被设置，这个窗口部件使用应用程序的风格<a href="qapplication.html#style">QApplication::style</a>()替代它。
+<p> 设置窗口部件的风格对于已经存在或未来的子窗口部件没有效果。
+<p> <b>警告：</b>当你想显示Qt的风格的能力时，这个函数对于演示目的很有用。真正的应用程序应该避免它并且使用一个一致的图形用户界面风格来替代它。
+<p> <p>也可以参考<a href="#style">style</a>()、<a href="qstyle.html">QStyle</a>、<a href="qapplication.html#style">QApplication::style</a>()和<a href="qapplication.html#setStyle">QApplication::setStyle</a>()。
+<p>实例：<a href="grapher-nsplugin-example.html#x2786">grapher/grapher.cpp</a>和<a href="progressbar-example.html#x1119">progressbar/progressbar.cpp</a>。
+
+<h3 class=fn><a href="qstyle.html">QStyle</a>&nbsp;* <a name="setStyle-2"></a>QWidget::setStyle ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;style )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 使用<a href="qstylefactory.html">QStyleFactory</a>设置这个窗口部件的图形用户界面风格为<em>style</em>。
+
+<h3 class=fn>void <a name="setTabOrder"></a>QWidget::setTabOrder ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;first, <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;second )<tt> [静态]</tt>
+</h3>
+在焦点窗口部件的环中移动<em>second</em>窗口部件，这样当Tab被按下时，<a href="focus.html#keyboard-focus">键盘焦点</a>从<em>first</em>窗口部件移动到<em>second</em>窗口部件。
+<p> 注意因为<em>second</em>窗口部件的tab顺序被改变，你应该用链的方式安排顺序：
+<p> <pre>
+    <a href="#setTabOrder">setTabOrder</a>( a, b ); // a到b
+    <a href="#setTabOrder">setTabOrder</a>( b, c ); // a到b到c
+    <a href="#setTabOrder">setTabOrder</a>( c, d ); // a到b到c到d
+  </pre>
+ 
+<p> <em>不能</em>像这样：
+<p> <pre>
+    <a href="#setTabOrder">setTabOrder</a>( c, d ); // c到d，错误
+    <a href="#setTabOrder">setTabOrder</a>( a, b ); // a到b并且c到d
+    <a href="#setTabOrder">setTabOrder</a>( b, c ); // a到b到c，而不是c到d
+  </pre>
+ 
+<p> 如果<em>first</em>或<em>second</em>有焦点代理，<a href="#setTabOrder">setTabOrder</a>()替代它/它们的代理。
+<p> <p>也可以参考<a href="#focusPolicy-prop">focusPolicy</a>和<a href="#setFocusProxy">setFocusProxy</a>()。
+<p>实例：<a href="customlayout-example.html#x1413">customlayout/main.cpp</a>.
+
+<h3 class=fn>void <a name="setUpdatesEnabled"></a>QWidget::setUpdatesEnabled ( bool&nbsp;enable )<tt> [虚 槽]</tt>
+</h3>
+<p>设置更新是否生效为<em>enable</em>。详细情况请参考<a href="qwidget.html#updatesEnabled-prop">“updatesEnabled”</a>属性。
+
+<h3 class=fn>void <a name="setWFlags"></a>QWidget::setWFlags ( WFlags&nbsp;f )<tt> [虚 保护]</tt>
+</h3>
+<p> 设置窗口部件标记为<em>f</em>。
+<p> 窗口部件标记为<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>的组合。
+<p> <p>也可以参考<a href="#testWFlags">testWFlags</a>()、<a href="#getWFlags">getWFlags</a>()和<a href="#clearWFlags">clearWFlags</a>()。
+
+<h3 class=fn>void <a name="show"></a>QWidget::show ()<tt> [虚 槽]</tt>
+</h3>
+显示这个窗口部件和它的子窗口部件。
+<p> 如果它的大小或位置已经发生改变，Qt保证窗口部件正好在被显示之前得到移动和重定义大小事件。
+<p> 你几乎不用重新实现这个函数。如果你需要在一个窗口部件被显示之前改变一些东西，请使用<a href="#showEvent">showEvent</a>()替代它。如果你需要对初始化延时，请使用<a href="#polish">polish</a>()。
+<p> <p>也可以参考<a href="#showEvent">showEvent</a>()、<a href="#hide">hide</a>()、<a href="#showMinimized">showMinimized</a>()、<a href="#showMaximized">showMaximized</a>()、<a href="#showNormal">showNormal</a>()、<a href="#visible-prop">visible</a>和<a href="#polish">polish</a>()。
+<p>实例：<a href="canvas-example.html#x2744">canvas/main.cpp</a>、<a href="simple-qfont-demo-walkthrough.html#x2135">fonts/simple-qfont-demo/simple-qfont-demo.cpp</a>、<a href="qdialog.html#x2105">life/main.cpp</a>、<a href="popup-example.html#x1594">popup/popup.cpp</a>、<a href="tutorial1-01.html#x2273">t1/main.cpp</a>、<a href="tutorial1-03.html#x2289">t3/main.cpp</a>和<a href="tutorial1-04.html#x2296">t4/main.cpp</a>。
+<p>在<a href="qdialog.html#show">QDialog</a>和<a href="qmenubar.html#show">QMenuBar</a>中被重新实现。
+
+<h3 class=fn>void <a name="showEvent"></a>QWidget::showEvent ( <a href="qshowevent.html">QShowEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收窗口部件显示事件。
+<p> 在窗口部件被显示之前，非自发显示事件立即被发送给窗口部件。顶级窗口部件的自发显示事件在这之后被交付。
+<p> <p>也可以参考<a href="#event">event</a>()和<a href="qshowevent.html">QShowEvent</a>。
+<p>实例：<a href="qdir-example.html#x1847">qdir/qdir.cpp</a>。
+
+<h3 class=fn>void <a name="showFullScreen"></a>QWidget::showFullScreen ()<tt> [槽]</tt>
+</h3>
+用全屏模式显示这个窗口部件。
+<p> 调用这个函数只有对顶级窗口部件有效。
+<p> 为了从全屏模式返回，请调用<a href="#showNormal">showNormal</a>()。
+<p> 全屏模式在Windows下工作的非常好，但是在X下却有些问题。这些问题是由于指定X11客户端和窗口管理器之间通讯的ICCCM协议的限制。ICCCM很简单地不能理解无装饰的全屏模式窗口这一概念。因此，我们所能做的最好方式是请求一个无边框窗口并且放置和重定以它的大小为整个屏幕。依赖窗口管理器，这也许能工作，也许不能。无边框窗口使用MOTIF提示被请求，至少可以被实际存在地所有现代窗口管理器能够部分支持。
+<p> 另一个方法是绕过整个窗口管理器并且使用WX11BypassWM标记创建一个窗口。尽管这样还会有其它一些问题，比如完全地破坏<a href="focus.html#keyboard-focus">键盘焦点</a>和当桌面变化时或用户升起其它窗口时会有非常奇怪的效果。
+<p> 遵循现代的后ICCCM规范的未来X11窗口管理器也许能够完全地支持全屏模式。
+<p> <p>也可以参考<a href="#showNormal">showNormal</a>()、<a href="#showMaximized">showMaximized</a>()、<a href="#show">show</a>()、<a href="#hide">hide</a>()和<a href="#visible-prop">visible</a>。
+
+<h3 class=fn>void <a name="showMaximized"></a>QWidget::showMaximized ()<tt> [虚 槽]</tt>
+</h3>
+最大化显示这个窗口部件。
+<p> 对不是<a href="#isTopLevel">顶级窗口部件</a>的，调用这个函数没有任何效果。
+<p> 在X11下，这个函数在特定窗口管理器下允许不能正常工作。关于为什么的详细情况请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#showNormal">showNormal</a>()、<a href="#showMinimized">showMinimized</a>()、<a href="#show">show</a>()、<a href="#hide">hide</a>()和<a href="#visible-prop">visible</a>。
+<p>实例：<a href="canvas-example.html#x2745">canvas/main.cpp</a>、<a href="helpviewer-example.html#x1048">helpviewer/main.cpp</a>、<a href="mdi-example.html#x2055">mdi/application.cpp</a>、<a href="qwerty-example.html#x420">qwerty/main.cpp</a>、<a href="qwerty-example.html#x411">qwerty/qwerty.cpp</a>和<a href="scribble-example.html#x980">scribble/main.cpp</a>。
+
+<h3 class=fn>void <a name="showMinimized"></a>QWidget::showMinimized ()<tt> [虚 槽]</tt>
+</h3>
+最小化显示这个窗口为一个图标。
+<p> 对不是<a href="#isTopLevel">顶级窗口部件</a>的，调用这个函数没有任何效果。
+<p> <p>也可以参考<a href="#showNormal">showNormal</a>()、<a href="#showMaximized">showMaximized</a>()、<a href="#show">show</a>()、<a href="#hide">hide</a>(), <a href="#visible-prop">visible</a>和<a href="#minimized-prop">minimized</a>。
+
+<h3 class=fn>void <a name="showNormal"></a>QWidget::showNormal ()<tt> [虚 槽]</tt>
+</h3>
+在窗口部件被最大化或最小化之后，恢复它。
+<p> 对不是<a href="#isTopLevel">顶级窗口部件</a>的，调用这个函数没有任何效果。
+<p> <p>也可以参考<a href="#showMinimized">showMinimized</a>()、<a href="#showMaximized">showMaximized</a>()、<a href="#show">show</a>()、<a href="#hide">hide</a>()和<a href="#visible-prop">visible</a>。
+<p>实例：<a href="mdi-example.html#x2056">mdi/application.cpp</a>。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="size"></a>QWidget::size () const
+</h3>
+<p>返回不包含任何窗口框架的窗口部件的大小。详细情况请参考<a href="qwidget.html#size-prop">“size”</a>属性。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="sizeHint"></a>QWidget::sizeHint () const<tt> [虚]</tt>
+</h3>
+<p>返回建议的窗口部件大小。详细情况请参考<a href="qwidget.html#sizeHint-prop">“sizeHint”</a>属性。
+<p>在<a href="qsizegrip.html#sizeHint">QSizeGrip</a>中被重新实现。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="sizeIncrement"></a>QWidget::sizeIncrement () const
+</h3>
+<p>返回窗口部件的大小增量。详细情况请参考<a href="qwidget.html#sizeIncrement-prop">“sizeIncrement”</a>属性。
+
+<h3 class=fn><a href="qsizepolicy.html">QSizePolicy</a> <a name="sizePolicy"></a>QWidget::sizePolicy () const<tt> [虚]</tt>
+</h3>
+<p>返回窗口部件的默认布局行为。详细情况请参考<a href="qwidget.html#sizePolicy-prop">“sizePolicy”</a>属性。
+
+<h3 class=fn>void <a name="stackUnder"></a>QWidget::stackUnder ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;w )<tt> [槽]</tt>
+</h3>
+把窗口部件放在父窗口部件栈中<em>w</em>的下面。
+<p> 为了保证这个能工作，这个窗口部件自己和<em>w</em>必须是兄弟。
+<p> <p>也可以参考<a href="#raise">raise</a>()和<a href="#lower">lower</a>()。
+
+<h3 class=fn><a href="qstyle.html">QStyle</a>&nbsp;&amp; <a name="style"></a>QWidget::style () const
+</h3>
+返回这个窗口部件的图形用户界面的风格。
+<p> <p>也可以参考<a href="#setStyle">QWidget::setStyle</a>()、<a href="qapplication.html#setStyle">QApplication::setStyle</a>()和<a href="qapplication.html#style">QApplication::style</a>()。
+
+<h3 class=fn>void <a name="styleChange"></a>QWidget::styleChange ( <a href="qstyle.html">QStyle</a>&nbsp;&amp;&nbsp;oldStyle )<tt> [虚 保护]</tt>
+</h3>
+当窗口部件的风格发生变化时，这个虚函数被调用。<em>oldStyle</em>是原来的图形用户界面风格，你可以通过<a href="#style">style</a>()得到新的风格。
+<p> 如果你的窗口部件需要知道什么时候它的图形用户界面发生变化，请重新实现这个函数。你几乎必然需要使用<a href="#update">update</a>()来更新窗口部件。
+<p> 默认实现是更新包括几何形状的窗口部件。
+<p> <p>也可以参考<a href="qapplication.html#setStyle">QApplication::setStyle</a>()、<a href="#style">style</a>()、<a href="#update">update</a>()和<a href="#updateGeometry">updateGeometry</a>()。
+
+<h3 class=fn>void <a name="tabletEvent"></a>QWidget::tabletEvent ( <a href="qtabletevent.html">QTabletEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收这个窗口部件的写字板事件。
+<p> 如果你重新实现这个处理器，如果你不处理它的话，你<a href="qtabletevent.html">忽略（ignore()）</a>这个事件是非常重要的，这样这个窗口部件的父对象就可以解释它。
+<p> 默认实现是忽略这个事件。
+<p> <p>也可以参考<a href="qtabletevent.html#ignore">QTabletEvent::ignore</a>()、<a href="qtabletevent.html#accept">QTabletEvent::accept</a>()、<a href="#event">event</a>()和<a href="qtabletevent.html">QTabletEvent</a>。
+
+<h3 class=fn>WFlags <a name="testWFlags"></a>QWidget::testWFlags ( WFlags&nbsp;f ) const
+</h3>
+<p> 返回这个窗口部件的标记和<em>f</em>的位与（AND）运算结果。
+<p> 窗口部件标记是<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>的组合。
+<p> <p>也可以参考<a href="#getWFlags">getWFlags</a>()、<a href="#setWFlags">setWFlags</a>()和<a href="#clearWFlags">clearWFlags</a>()。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="topLevelWidget"></a>QWidget::topLevelWidget () const
+</h3>
+返回这个窗口部件的顶级窗口部件，比如，有（或者能够有）窗口系统框架的上一级祖先。
+<p> 如果这个窗口部件是顶级的，它自己被返回。
+<p> 通常的使用方法是改变窗口标题：
+<p> <pre>
+        aWidget-&gt;topLevelWidget()-&gt;setCaption( "New Caption" );
+    </pre>
+ 
+<p> <p>也可以参考<a href="#isTopLevel-prop">isTopLevel</a>。
+
+<h3 class=fn>void <a name="unsetCursor"></a>QWidget::unsetCursor ()<tt> [虚]</tt>
+</h3>
+<p>重置这个窗口部件的光标形状。详细情况请参考<a href="qwidget.html#cursor-prop">“cursor”</a>属性。
+
+<h3 class=fn>void <a name="unsetFont"></a>QWidget::unsetFont ()
+</h3>
+<p>重置这个窗口部件的字体当前设置。详细情况请参考<a href="qwidget.html#font-prop">“font”</a>属性。
+
+<h3 class=fn>void <a name="unsetPalette"></a>QWidget::unsetPalette ()
+</h3>
+<p>重置这个窗口部件的调色板。详细情况请参考<a href="qwidget.html#palette-prop">“palette”</a>属性。
+
+<h3 class=fn>void <a name="update"></a>QWidget::update ()<tt> [槽]</tt>
+</h3>
+更新窗口部件，除非更新已经失效或者窗口部件被隐藏。
+<p> 这个函数不会导致一个立刻的重新绘制——更正确的是，当Qt回到主事件回路中时，它规划了所要处理的绘制事件。这样允许Qt来优化得到比调用<a href="#repaint">repaint</a>()更快的速度和更少的闪烁。
+<p> 几次调用<a href="#update">update</a>()的结果通常仅仅是一次<a href="#paintEvent">paintEvent</a>()调用。
+<p> Qt通常在paintEvent()调用之前擦除这个窗口部件的区域。仅仅只有在WRepaintNoErase<a href="qt.html#WidgetFlags">窗口部件标记</a>被设置的时候，窗口部件本身对绘制它所有的像素负有责任。
+<p> <p>也可以参考<a href="#repaint">repaint</a>()、<a href="#paintEvent">paintEvent</a>()、<a href="#updatesEnabled-prop">updatesEnabled</a>、<a href="#erase">erase</a>()和<a href="#setWFlags">setWFlags</a>()。
+<p>实例：<a href="desktop-example.html#x1801">desktop/desktop.cpp</a>和<a href="scrollview-example.html#x749">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>void <a name="update-2"></a>QWidget::update ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 更新窗口部件中的矩形(<em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>)，除非更新已经失效或者窗口部件被隐藏。
+<p> 这个函数不会导致一个立刻的重新绘制——更正确的是，当Qt回到主事件回路中时，它规划了所要处理的绘制事件。这样允许Qt来优化得到比调用<a href="#repaint">repaint</a>()更快的速度和更少的闪烁。
+<p> 几次调用<a href="#update">update</a>()的结果通常仅仅是一次<a href="#paintEvent">paintEvent</a>()调用。
+<p> 如果<em>w</em>为负数，它被<tt>width()-x</tt>替换。如果<em>h</em>为负数，它被<tt>height()-y</tt>替换。
+<p> Qt通常在paintEvent()调用之前擦除这个窗口部件的区域。仅仅只有在WRepaintNoErase<a href="qt.html#WidgetFlags">窗口部件标记</a>被设置的时候，窗口部件本身对绘制它所有的像素负有责任。
+<p> <p>也可以参考<a href="#repaint">repaint</a>(), <a href="#paintEvent">paintEvent</a>(), <a href="#updatesEnabled-prop">updatesEnabled</a> and <a href="#erase">erase</a>().
+
+<h3 class=fn>void <a name="update-3"></a>QWidget::update ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 更新窗口部件中的矩形<em>r</em>，除非更新已经失效或者窗口部件被隐藏。
+<p> 这个函数不会导致一个立刻的重新绘制——更正确的是，当Qt回到主事件回路中时，它规划了所要处理的绘制事件。这样允许Qt来优化得到比调用<a href="#repaint">repaint</a>()更快的速度和更少的闪烁。
+<p> 几次调用<a href="#update">update</a>()的结果通常仅仅是一次<a href="#paintEvent">paintEvent</a>()调用。
+
+<h3 class=fn>void <a name="updateGeometry"></a>QWidget::updateGeometry ()
+</h3>
+把这个窗口部件已经改变并且也许需要改变几何形状通告给布局系统。
+<p> 如果<a href="#sizeHint">sizeHint</a>()或<a href="#sizePolicy">sizePolicy</a>()已经发生变化，请调用这个函数。
+<p> 对于明确隐藏的窗口部件，<a href="#updateGeometry">updateGeometry</a>()是没有操作的。只要这个窗口部件一显示出来，布局系统就将被通告。
+
+<h3 class=fn>void <a name="updateMask"></a>QWidget::updateMask ()<tt> [虚 保护]</tt>
+</h3>
+这个函数可以在子类中被重新实现来支持透明窗口部件。只要窗口部件改变状态，形状面具不得不被重新计算，它就会被调用。
+<p> <p>也可以参考<a href="#autoMask-prop">autoMask</a>、<a href="#setMask">setMask</a>()和<a href="#clearMask">clearMask</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="visibleRect"></a>QWidget::visibleRect () const
+</h3>
+<p>返回窗口部件的当前可见矩形。详细情况请参考<a href="qwidget.html#visibleRect-prop">“visibleRect”</a>属性。
+
+<h3 class=fn>void <a name="wheelEvent"></a>QWidget::wheelEvent ( <a href="qwheelevent.html">QWheelEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件处理器可以在子类中被重新实现来接收这个窗口部件的滚轮事件。
+<p> 如果你重新实现这个处理器，如果你不处理它的话，你<a href="qtabletevent.html">忽略（ignore()）</a>这个事件是非常重要的，这样这个窗口部件的父对象就可以解释它。
+<p> 默认实现是忽略这个事件。
+<p> <p>也可以参考<a href="qwheelevent.html#ignore">QWheelEvent::ignore</a>()、<a href="qwheelevent.html#accept">QWheelEvent::accept</a>()、<a href="#event">event</a>()和<a href="qwheelevent.html">QWheelEvent</a>。
+
+<h3 class=fn>int <a name="width"></a>QWidget::width () const
+</h3>
+<p>返回不包含任何窗口框架的窗口部件宽度。详细情况请参考<a href="qwidget.html#width-prop">“width”</a>属性。
+
+<h3 class=fn>bool <a name="winEvent"></a>QWidget::winEvent ( MSG * )<tt> [虚 保护]</tt>
+</h3>
+这个特定事件处理器可以在子类中被重新实现来接收本地Windows事件。
+<p> 在重新实现的这个函数中，如果你想停止Qt对这个事件的处理，请返回真。如果你返回假，这个本地事件被回传给Qt，它会把这个事件转化为一个Qt事件并且把它发送给这个窗口部件。
+<p> <b>警告：</b>这个函数不能移植。
+<p> <p>也可以参考<a href="qapplication.html#winEventFilter">QApplication::winEventFilter</a>()。
+
+<h3 class=fn>WId <a name="winId"></a>QWidget::winId () const
+</h3>
+<p> 返回窗口部件的窗口系统标识符。
+<p> 原则上是可以移植的，但是如果使用了它，一定是做了一些不可移植的事情。请留心。
+<p> <p>也可以参考<a href="#find">find</a>()。
+<p>实例：<a href="mainlyXt-editor-example.html#x2557">mainlyXt/editor.cpp</a>.
+
+<h3 class=fn>void <a name="windowActivationChange"></a>QWidget::windowActivationChange ( bool&nbsp;oldActive )<tt> [虚 保护]</tt>
+</h3>
+<p> 当窗口部件的窗口被窗口系统激活或者停用，这个虚函数被调用。<em>oldActive</em>是原来的状态，你可以通过<a href="#isActiveWindow">isActiveWindow</a>()得到新的设置。
+<p> 如果你的窗口部件需要知道什么时候它的窗口变为激活或停用，请重新实现这个函数。
+<p> 如果停止和激活颜色组不同与高亮和连接颜色，默认实现更新这个窗口部件的可视部分。
+<p> <p>也可以参考<a href="#setActiveWindow">setActiveWindow</a>()、<a href="#isActiveWindow-prop">isActiveWindow</a>、<a href="#update">update</a>()和<a href="#palette-prop">palette</a>。
+
+<h3 class=fn>int <a name="x"></a>QWidget::x () const
+</h3>
+<p>返回包括任何窗口框架的相对于它的父窗口部件的这个窗口部件的x坐标。详细情况请参考<a href="qwidget.html#x-prop">“x”</a>属性。
+
+<h3 class=fn>bool <a name="x11Event"></a>QWidget::x11Event ( XEvent * )<tt> [虚 保护]</tt>
+</h3>
+这个特定事件处理器可以在子类中被重新实现来接收本地X11事件。
+<p> 在重新实现的这个函数中，如果你想停止Qt对这个事件的处理，请返回真。如果你返回假，这个本地事件被回传给Qt，它会把这个事件转化为一个Qt事件并且把它发送给这个窗口部件。
+<p> <b>警告：</b>这个函数不能移植。
+<p> <p>也可以参考<a href="qapplication.html#x11EventFilter">QApplication::x11EventFilter</a>()。
+<p>在<a href="qxtwidget.html#x11Event">QXtWidget</a>中被重新实现。
+
+<h3 class=fn>int <a name="y"></a>QWidget::y () const
+</h3>
+<p>返回包括任何窗口框架的相对于它的父窗口部件的这个窗口部件的y坐标。详细情况请参考<a href="qwidget.html#y-prop">“y”</a>属性。
+
+<hr><h2>属性文档</h2>
+<h3 class=fn>bool <a name="acceptDrops-prop"></a>acceptDrops</h3> 
+<p>这个属性保存的是窗口部件中放下事件是否有效。
+<p>设置这个属性为真告诉系统这个窗口部件<em>可以</em>能够接收放下事件。
+<p> 如果窗口部件是桌面（<a href="#isDesktop">QWidget::isDesktop</a>()），如果其它应用程序正在使用桌面，这也许会失败，你可以调用<a href="#acceptDrops">acceptDrops</a>()来测试这种情况是否发生。
+<p>通过<a href="#setAcceptDrops">setAcceptDrops</a>()可以设置属性值并且通过<a href="#acceptDrops">acceptDrops</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="autoMask-prop"></a>autoMask</h3> 
+<p>这个属性保存的是窗口部件中自动面具特征是否有效。
+<p>透明窗口部件使用面具来定义它们的可视区域。QWidget有一些内置的支持可以使重新计算面具的任务更容易。当设置自动面具为真，只要窗口部件改变大小或者改变它的焦点状态<a href="#updateMask">updateMask</a>()就将会被调用。注意你必须重新实现updateMask()（其中应该包含一个<a href="#setMask">setMask</a>()的调用）或者什么都不会发生。
+<p> 注意：当你在你的自定义窗口部件中被重新实现<a href="#resizeEvent">resizeEvent</a>()、<a href="#focusInEvent">focusInEvent</a>()或<a href="#focusOutEvent">focusOutEvent</a>()时并且还想确认自动面具计算工作，你应该在你的事件处理函数的后面添加：
+<p> <pre>
+    if ( <a href="#autoMask">autoMask</a>() )
+        <a href="#updateMask">updateMask</a>();
+  </pre>
+ 
+<p> 对于所有改变窗口部件的外观，都需要一个重新计算的面具，这都是真的。
+<p> 虽然面具是一个技术上很吸引人的概念，但是他有一个很大的缺点：当使用复杂的不能被很容易地使用相对简单的区域表达的面具时，它们在一些窗口系统中很慢。经典的实例就是透明的标签。它的内容的复杂形状使它需要用一个位图重新描述它的面具，这将会消耗内存和事件。如果你想让几个临近的窗口部件的背景没有缝隙的融合在一起，你也许想使用的是<a href="#setBackgroundOrigin">setBackgroundOrigin</a>()，而不是面具。
+<p> <p>也可以参考<a href="#updateMask">updateMask</a>()、<a href="#setMask">setMask</a>()、<a href="#clearMask">clearMask</a>()和<a href="#backgroundOrigin-prop">backgroundOrigin</a>。
+<p>通过<a href="#setAutoMask">setAutoMask</a>()可以设置属性值并且通过<a href="#autoMask">autoMask</a>()来获得属性值。
+
+<h3 class=fn><a href="qbrush.html">QBrush</a> <a name="backgroundBrush-prop"></a>backgroundBrush</h3>
+<p>这个属性保存的是窗口部件的背景画刷。
+<p>背景画刷依赖于窗口部件的调色板和它的背景模式。
+<p> <p>也可以参考<a href="#backgroundColor">backgroundColor</a>()、<a href="#backgroundPixmap">backgroundPixmap</a>()、<a href="#eraseColor">eraseColor</a>()、<a href="#palette-prop">palette</a>和<a href="qapplication.html#setPalette">QApplication::setPalette</a>()。
+<p>通过<a href="#backgroundBrush">backgroundBrush</a>()来获得属性值。
+
+<h3 class=fn><a href="qt.html#BackgroundMode-enum">BackgroundMode</a> <a name="backgroundMode-prop"></a>backgroundMode</h3>
+<p>这个属性保存的是绘制窗口部件背景所使用的颜色模式。
+<p>setPaletteBackgroundColor()读取这个属性来决定<a href="#palette-prop">palette</a>中的哪一个被设置。
+<p> 对于绝大多数出口部，默认的就足够了（<a href="qt.html#BackgroundMode-enum">PaletteBackground</a>，通常是灰色），但是一些需要使用<a href="qt.html#BackgroundMode-enum">PaletteBase</a>（文本输出的背景，通常是白色）或者其它模式。
+<p> 凹陷的<a href="qlistbox.html">QListBox</a>并且为了和它的环境形成对照使用基本色，在构造函数中这样做：
+<p> <pre>
+    <a href="#setBackgroundMode">setBackgroundMode</a>( <a href="qt.html#BackgroundMode-enum">PaletteBase</a> );
+    </pre>
+ 
+<p> 对于Qt内置的窗口部件，你永远都不需要为它们设置背景模式，但是你也许需要在你的自定义窗口部件中考虑设置一下，这样<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()就可以像被期待地那样工作。
+<p> 注意对于<a href="#setBackgroundMode">setBackgroundMode</a>()中的两个背景模式值，名为<a href="qt.html#BackgroundMode-enum">FixedPixmap</a>何<a href="qt.html#BackgroundMode-enum">FixedColor</a>，没有什么意义。你必须调用<a href="#setBackgroundPixmap">setBackgroundPixmap</a>()和setPaletteBackgroundColor()来替代。
+<p>通过<a href="#setBackgroundMode">setBackgroundMode</a>()可以设置属性值并且通过<a href="#backgroundMode">backgroundMode</a>()来获得属性值。
+
+<h3 class=fn><a href="qwidget.html#BackgroundOrigin-enum">BackgroundOrigin</a> <a name="backgroundOrigin-prop"></a>backgroundOrigin</h3> <p>这个属性保存的是窗口部件的背景的原点。
+<p>这个原点是WidgetOrigin（默认）、ParentOrigin和WindowOrigin其中之一。
+<p> 只有在窗口部件有一个背景像素映射，对于定位有所不同。使用WindowOrigin，临近的几个窗口部件的背景会融合的很好好像没有缝隙一样。
+<p> <p>也可以参考<a href="#backgroundPixmap">backgroundPixmap</a>()和<a href="#backgroundMode-prop">backgroundMode</a>。
+<p>通过<a href="#setBackgroundOrigin">setBackgroundOrigin</a>()设置属性值并且通过<a href="#backgroundOrigin">backgroundOrigin</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="baseSize-prop"></a>baseSize</h3>
+<p>这个属性保存的是窗口部件的基础大小。
+<p>如果窗口部件定义了<a href="#sizeIncrement">sizeIncrement</a>()，基础大小就被用来计算一个确切的窗口部件大小。
+<p> <p>也可以参考<a href="#sizeIncrement-prop">sizeIncrement</a>。
+<p>通过<a href="#setBaseSize">setBaseSize</a>()设置属性值并且通过<a href="#baseSize">baseSize</a>()来获得属性值。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="caption-prop"></a>caption</h3> 
+<p>This property holds the window caption (title).
+这个属性保存的是窗口标题。
+<p>这个属性只对顶级窗口部件有用。如果没有标题被设置，标题就为<a href="qstring.html#QString-null">QString::null</a>。
+<p> <p>也可以参考<a href="#icon-prop">icon</a> and <a href="#iconText-prop">iconText</a>。
+<p>通过<a href="#setCaption">setCaption</a>()可以设置属性值并且通过<a href="#caption">caption</a>()来获得属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="childrenRect-prop"></a>childrenRect</h3>
+<p>这个属性保存的是窗口部件的子对象的边界矩形。
+<p>隐藏的子对象除外。
+<p> <p>也可以参考<a href="#childrenRegion-prop">childrenRegion</a>和<a href="#geometry-prop">geometry</a>。
+<p>通过<a href="#childrenRect">childrenRect</a>()来获得属性值。
+
+<h3 class=fn><a href="qregion.html">QRegion</a> <a name="childrenRegion-prop"></a>childrenRegion</h3>
+<p>这个属性保存的是窗口部件的子对象所占用的组合区域。
+<p>隐藏的子对象除外。
+<p> <p>也可以参考<a href="#childrenRect-prop">childrenRect</a>和<a href="#geometry-prop">geometry</a>。
+<p>通过<a href="#childrenRegion">childrenRegion</a>()来获得属性值。
+
+<h3 class=fn><a href="qcolorgroup.html">QColorGroup</a> <a name="colorGroup-prop"></a>colorGroup</h3>
+<p>This property holds the current color group of the widget palette.
+这个属性保存的是窗口部件调色板的当前颜色组。
+<p>颜色组由窗口部件的状态决定。一个失效的窗口部件是<a href="qpalette.html#disabled">QPalette::disabled</a>()颜色组，一个有<a href="focus.html#keyboard-focus">键盘焦点</a>的窗口部件是<a href="qpalette.html#active">QPalette::active</a>()颜色组，一个停止的窗口部件是<a href="qpalette.html#inactive">QPalette::inactive</a>()颜色组。
+<p> <p>也可以参考<a href="#palette-prop">palette</a>。
+<p>通过<a href="#colorGroup">colorGroup</a>()来获得属性值。
+
+<h3 class=fn><a href="qcursor.html">QCursor</a> <a name="cursor-prop"></a>cursor</h3>
+<p>这个属性保存的是窗口部件的光标外形。
+<p>当鼠标在窗口部件之上时，鼠标光标将采用这个外形。对于可以使用的外形的范围请参考<a href="qt.html#CursorShape-enum">预定义的光标对象列表</a>。
+<p> 一个编辑器窗口部件也许使用I形光标：
+<pre>
+        <a href="#setCursor">setCursor</a>( <a href="qt.html#CursorShape-enum">IbeamCursor</a> );
+    </pre>
+ 
+<p> 如果没有光标被设置，或者在调用<a href="#unsetCursor">unsetCursor</a>()之后，父对象的光标被使用。函数unsetCursor()对于顶级窗口部件没有效果。
+<p> <p>也可以参考<a href="qapplication.html#setOverrideCursor">QApplication::setOverrideCursor</a>()。
+<p>通过<a href="#setCursor">setCursor</a>()设置属性值，通过<a href="#cursor">cursor</a>()来获得属性值并且通过<a href="#unsetCursor">unsetCursor</a>()重置属性值。
+
+<h3 class=fn>bool <a name="customWhatsThis-prop"></a>customWhatsThis</h3> 
+<p>这个属性保存的是窗口部件是否手动处理“这是什么”的帮助。
+<p><a href="#customWhatsThis">customWhatsThis</a>()的默认实现返回假，这也就是说窗口部件在“这是什么”状态将不接受任何事件。
+<p> 通过调用<a href="qwhatsthis.html#leaveWhatsThisMode">QWhatsThis::leaveWhatsThisMode</a>()，不管有没有任何实际显示的帮助文本，窗口部件会离开“这是什么”模式。
+<p> 如果你的窗口部件是一个“被动的内部行动者”，假设在所有环境下工作时，你也许要重新实现customWhatsThis()。
+<p> <p>也可以参考<a href="qwhatsthis.html#inWhatsThisMode">QWhatsThis::inWhatsThisMode</a>()和<a href="qwhatsthis.html#leaveWhatsThisMode">QWhatsThis::leaveWhatsThisMode</a>()。
+<p>通过<a href="#customWhatsThis">customWhatsThis</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="enabled-prop"></a>enabled</h3>
+<p>这个属性保存的是窗口部件是否有效。
+<p>一个有效的窗口部件接收键盘和鼠标事件，一个失效的窗口部件不能。实际上，有效的窗口部件只有在它处于焦点时才接收键盘事件。
+<p> 一些窗口部件当它们被失效的时候，显示得不同。例如，一个按钮也许把它的标签变灰。如果你的窗口部件需要知道它什么时候生效或失效，你可以重新实现<a href="#enabledChange">enabledChange</a>()函数。
+<p> 使一个窗口部件失效就隐含地使它所有的子对象失效。使一个窗口部件生效就会逐个把它的子窗口部件生效，除非它们被明确地失效。
+<p> <p>也可以参考<a href="#enabled-prop">enabled</a>、<a href="#isEnabledTo">isEnabledTo</a>()、<a href="qkeyevent.html">QKeyEvent</a>、<a href="qmouseevent.html">QMouseEvent</a>和<a href="#enabledChange">enabledChange</a>()。
+<p>通过<a href="#setEnabled">setEnabled</a>()设置属性值并且通过<a href="#isEnabled">isEnabled</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="focus-prop"></a>focus</h3> 
+<p>这个属性保存的是窗口部件（或者它的焦点代理）是否得到键盘输入焦点。
+<p>实际上等价于<tt>qApp-&gt;focusWidget() == this</tt>。
+<p> <p>也可以参考<a href="#setFocus">setFocus</a>()、a href="#clearFocus">clearFocus</a>()、<a href="#focusPolicy-prop">focusPolicy</a>和<a href="qapplication.html#focusWidget">QApplication::focusWidget</a>()。
+<p>通过<a href="#hasFocus">hasFocus</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="focusEnabled-prop"></a>focusEnabled</h3> 
+<p>这个属性保存的是窗口部件是否接收<a href="focus.html#keyboard-focus">键盘焦点</a>。
+<p>键盘焦点初始状态是失效的（比如，<a href="#focusPolicy">focusPolicy</a>() == QWidget::NoFocus）。
+<p> 如果一个窗口部件处理键盘事件，你必须为它使键盘焦点生效。这通常在窗口部件的构造函数中完成。例如，<a href="qlineedit.html">QLineEdit</a>的构造函数调用<a href="#setFocusPolicy">setFocusPolicy</a>(QWidget::StrongFocus)。
+<p> <p>也可以参考<a href="#focusPolicy-prop">focusPolicy</a>、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()和<a href="#enabled-prop">enabled</a>。
+<p>通过<a href="#isFocusEnabled">isFocusEnabled</a>()来获得属性值。
+
+<h3 class=fn><a href="qwidget.html#FocusPolicy-enum">FocusPolicy</a> <a name="focusPolicy-prop"></a>focusPolicy</h3> <p>这个属性保存的是窗口部件接收<a href="focus.html#keyboard-focus">键盘焦点</a>的策略。
+<p>如果窗口部件通过tab来接收键盘焦点，这个策略就是QWidget::TabFocus；如果窗口部件通过点击来接收键盘焦点，这个策略就是QWidget::ClickFocus；如果窗口部件上述两种方式都使用，是QWidget::StrongFocus；并且如果它不接收焦点（QWidget的默认值），是QWidget::NoFocus。
+<p> 如果一个窗口部件处理键盘事件，你必须为它使键盘焦点生效。这通常在窗口部件的构造函数中完成。例如，<a href="qlineedit.html">QLineEdit</a>的构造函数调用<a href="#setFocusPolicy">setFocusPolicy</a>(QWidget::StrongFocus)。
+<p> <p>也可以参考<a href="#focusEnabled-prop">focusEnabled</a>、<a href="#focusInEvent">focusInEvent</a>()、<a href="#focusOutEvent">focusOutEvent</a>()、<a href="#keyPressEvent">keyPressEvent</a>()、<a href="#keyReleaseEvent">keyReleaseEvent</a>()和<a href="#enabled-prop">enabled</a>。
+<p>通过<a href="#setFocusPolicy">setFocusPolicy</a>()设置属性值并且通过<a href="#focusPolicy">focusPolicy</a>()来获得属性值。
+
+<h3 class=fn><a href="qfont.html">QFont</a> <a name="font-prop"></a>font</h3>
+<p>这个属性保存的是窗口部件当前的字体集。
+<p><a href="#fontInfo">fontInfo</a>()函数报告这个窗口部件所用的实际字体。
+<p> 只要没有特定字体被设置，或者在<a href="#unsetFont">unsetFont</a>()被调用之后，那么这个窗口部件类使用父窗口部件的字体或者（如果这个窗口部件是顶级窗口部件）使用默认应用程序字体。
+<p> 这段代码设置12点的helvetica粗字体：
+<pre>
+    <a href="qfont.html">QFont</a> f( "Helvetica", 12, QFont::Bold );
+    <a href="#setFont">setFont</a>( f );
+    </pre>
+ 
+<p> 另外设置字体时，<a href="#setFont">setFont</a>()通知所有子对象关于这个变化。
+<p> <p>也可以参考<a href="#fontChange">fontChange</a>()、<a href="#fontInfo">fontInfo</a>()、<a href="#fontMetrics">fontMetrics</a>()和<a href="#ownFont-prop">ownFont</a>。
+<p>通过<a href="#setFont">setFont</a>()设置属性值，通过<a href="#font">font</a>()来获得属性值并且通过<a href="#unsetFont">unsetFont</a>()重置属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="frameGeometry-prop"></a>frameGeometry</h3>
+<p>这个属性保存的是相对于它的父对象包含任何窗口框架的窗口部件的几何形状。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#geometry-prop">geometry</a>、<a href="#x-prop">x</a>、a href="#y-prop">y</a>和<a href="#pos-prop">pos</a>。
+<p>通过<a href="#frameGeometry">frameGeometry</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="frameSize-prop"></a>frameSize</h3> 
+<p>这个属性保存的是包含任何窗口框架的窗口部件的大小。
+<p>通过<a href="#frameSize">frameSize</a>()来获得属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="geometry-prop"></a>geometry</h3>
+<p>这个属性保存的是相对于它的父对象不包括窗口框架的窗口部件的几何形状。
+<p>当窗口部件改变几何形状时，如果它是可视的，它立即接收到一个移动事件（<a href="#moveEvent">moveEvent</a>()）和/或一个重定义大小（<a href="#resizeEvent">resizeEvent</a>()）。如果它当前不是可视的，它被保证会在被显示之前接收到适当的事件。
+<p> 如果它在由<a href="#minimumSize">minimumSize</a>()和<a href="#maximumSize">maximumSize</a>()定义的范围之外，大小组件被调整。
+<p> <a href="#setGeometry">setGeometry</a>()是虚的，并且所有Qt中其它重载setGeometry()的重新实现调用它。
+<p> <b>警告：</b>在resizeEvent()或moveEvent()中调用setGeometry()会导致无限循环。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#frameGeometry-prop">frameGeometry</a>、<a href="#rect-prop">rect</a>、<a href="#pos-prop">pos</a>、<a href="#size-prop">size</a>、<a href="#moveEvent">moveEvent</a>()、<a href="#resizeEvent">resizeEvent</a>()、<a href="#minimumSize-prop">minimumSize</a>和<a href="#maximumSize-prop">maximumSize</a>。
+<p>通过<a href="#setGeometry">setGeometry</a>()设置属性值并且通过<a href="#geometry">geometry</a>()来获得属性值。
+
+<h3 class=fn>int <a name="height-prop"></a>height</h3>
+<p>这个属性保存的是不包括窗口框架的窗口部件的高度。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#geometry-prop">geometry</a>、<a href="#width-prop">width</a>和<a href="#size-prop">size</a>。
+<p>通过<a href="#height">height</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="hidden-prop"></a>hidden</h3> 
+<p>这个属性保存的是窗口部件是否明确地隐藏。
+<p>如果为假，这个窗口部件是可视的或者如果它的所有祖先变为可视，它将变为可视的。
+<p> <p>也可以参考<a href="#hide">hide</a>()、<a href="#show">show</a>()、<a href="#visible-prop">visible</a>和<a href="#isVisibleTo">isVisibleTo</a>()。
+<p>通过<a href="#isHidden">isHidden</a>()来获得属性值。
+
+<h3 class=fn><a href="qpixmap.html">QPixmap</a> <a name="icon-prop"></a>icon</h3> 
+<p>这个属性保存的是窗口部件图标像素映射。
+<p>这个属性只对顶级窗口部件有效。如果没有图标被设置，<a href="#icon">icon</a>()返回0。
+<p> <p>也可以参考<a href="#iconText-prop">iconText</a>、<a href="#caption-prop">caption</a>和<a href="appicon.html">设置应用程序图标</a>。
+<p>通过<a href="#setIcon">setIcon</a>()设置属性值并且通过<a href="#icon">icon</a>()来获得属性值。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="iconText-prop"></a>iconText</h3> 
+<p>这个属性保存的是窗口部件图标文本。
+<p>这个属性只对顶级窗口部件有效。如果没有图标文本被设置，这个函数返回<a href="qstring.html#QString-null">QString::null</a>。
+<p> <p>也可以参考<a href="#icon-prop">icon</a>和<a href="#caption-prop">caption</a>。
+<p>通过<a href="#setIconText">setIconText</a>()设置属性值并且通过<a href="#iconText">iconText</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isActiveWindow-prop"></a>isActiveWindow</h3> 
+<p>这个属性保存的是窗口部件或者它的一个子对象是否是活动窗口。
+<p>活动窗口是有<a href="focus.html#keyboard-focus">键盘焦点</a>的窗口
+<p> 当弹出窗口是可视的，这个属性对于活动窗口<em>和</em>这个弹出窗口都是真。
+<p> <p>也可以参考<a href="#setActiveWindow">setActiveWindow</a>()和<a href="qapplication.html#activeWindow">QApplication::activeWindow</a>()。
+<p>通过<a href="#isActiveWindow">isActiveWindow</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isDesktop-prop"></a>isDesktop</h3>
+<p>这个属性保存的是窗口部件是否是桌面窗口部件，比如，代表桌面。
+<p>一个桌面窗口部件也是顶级窗口部件。
+<p> <p>也可以参考<a href="#isTopLevel-prop">isTopLevel</a>和<a href="qapplication.html#desktop">QApplication::desktop</a>()。
+<p>通过<a href="#isDesktop">isDesktop</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isDialog-prop"></a>isDialog</h3>
+<p>这个属性保存的是窗口部件是否是对话框窗口部件。
+<p>对话框窗口部件是次要的顶级窗口部件，比如一个有父对象的顶级窗口部件。
+<p> <p>也可以参考<a href="#isTopLevel-prop">isTopLevel</a>和<a href="qdialog.html">QDialog</a>。
+<p>通过<a href="#isDialog">isDialog</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isModal-prop"></a>isModal</h3>
+<p>这个属性保存的是窗口部件是否是模式窗口部件。
+<p>这个属性只对顶级窗口部件有效。一个模式窗口部件防止对其它所有顶级窗口部件得到任何输入。
+<p> <p>也可以参考<a href="#isTopLevel-prop">isTopLevel</a>、<a href="#isDialog-prop">isDialog</a>和<a href="qdialog.html">QDialog</a>。
+<p>通过<a href="#isModal">isModal</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isPopup-prop"></a>isPopup</h3>
+<p>这个属性保存的是窗口部件是否是弹出窗口部件。
+<p>一个弹出窗口部件是在窗口部件的构造函数中使用<a href="qt.html#WidgetFlags">窗口部件标记</a><a href="qt.html#WidgetFlags-enum">WType_Popup</a>创建的。一个弹出窗口部件也是一个顶级窗口部件。
+<p> <p>也可以参考<a href="#isTopLevel-prop">isTopLevel</a>。
+<p>通过<a href="#isPopup">isPopup</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="isTopLevel-prop"></a>isTopLevel</h3>
+<p>This property holds whether the widget is a top-level widget.
+这个属性保存的是窗口部件是否是顶级窗口部件。
+<p>顶级窗口部件通常有框架和<a href="#caption-prop">标题</a>。<a href="#isPopup">弹出</a>和<a href="#isDesktop">桌面</a>窗口部件也是顶级窗口部件。
+<p> 顶级窗口部件可以有<a href="#parentWidget">父窗口部件</a>。然后它和它的父窗口部件就形成一个组并且当它的父对象被删除或最小化等等时，它也被删除或最小化等等。如果被窗口部件支持的话，它和它的父对象一样也有一个普通任务栏条目。
+<p> <a href="qdialog.html">QDialog</a>和<a href="qmainwindow.html">QMainWindow</a>窗口部件默认是顶级的，尽管在构造函数中被指定一个父窗口部件。这个行为是由<a href="qt.html#WidgetFlags-enum">WType_TopLevel</a>窗口部件标记指定的。
+<p> <p>也可以参考<a href="#topLevelWidget">topLevelWidget</a>()、<a href="#isDialog-prop">isDialog</a>、<a href="#isModal-prop">isModal</a>、<a href="#isPopup-prop">isPopup</a>、<a href="#isDesktop-prop">isDesktop</a>和<a href="#parentWidget">parentWidget</a>()。
+<p>通过<a href="#isTopLevel">isTopLevel</a>()来获得属性值。
+
+<h3 class=fn>int <a name="maximumHeight-prop"></a>maximumHeight</h3>
+<p>这个属性保存的是窗口部件的最大高度。
+<p>这个属性和<a href="#maximumSize">maximumSize</a>().<a href="#height">height</a>()一致。
+<p> <p>也可以参考<a href="#maximumSize-prop">maximumSize</a>和<a href="#maximumWidth-prop">maximumWidth</a>。
+<p>通过<a href="#setMaximumHeight">setMaximumHeight</a>()设置属性值并且通过<a href="#maximumHeight">maximumHeight</a>().来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="maximumSize-prop"></a>maximumSize</h3>
+<p>这个属性保存的是窗口部件的最大大小。
+<p>这个窗口部件不能被重定义为比这个最大大小更大的大小了。
+<p> <p>也可以参考<a href="#maximumWidth-prop">maximumWidth</a>、<a href="#maximumHeight-prop">maximumHeight</a>、<a href="#maximumSize-prop">maximumSize</a>、<a href="#minimumSize-prop">minimumSize</a>和<a href="#sizeIncrement-prop">sizeIncrement</a>。
+<p>通过<a href="#setMaximumSize">setMaximumSize</a>()设置属性值并且通过<a href="#maximumSize">maximumSize</a>()来获得属性值。
+
+<h3 class=fn>int <a name="maximumWidth-prop"></a>maximumWidth</h3>
+<p>这个属性保存的是窗口部件的最大宽度。
+<p>这个属性和<a href="#maximumSize">maximumSize</a>().<a href="#width">width</a>()一致。
+<p> <p>也可以参考<a href="#maximumSize-prop">maximumSize</a>和<a href="#maximumHeight-prop">maximumHeight</a>。
+<p>通过<a href="#setMaximumWidth">setMaximumWidth</a>()设置属性值并且通过<a href="#maximumWidth">maximumWidth</a>()来获得属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="microFocusHint-prop"></a>microFocusHint</h3> 
+<p>这个属性保存的是窗口部件的当前设置的微焦点提示。
+<p>更多信息请参考<a href="#setMicroFocusHint">setMicroFocusHint</a>()的文档。
+<p>通过<a href="#microFocusHint">microFocusHint</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="minimized-prop"></a>minimized</h3> 
+<p>这个属性保存的是窗口部件是否是最小化的（变为图标了）。
+<p>这个属性和顶级窗口部件相关。
+<p> <p>也可以参考<a href="#showMinimized">showMinimized</a>()、<a href="#visible-prop">visible</a>、<a href="#show">show</a>()、<a href="#hide">hide</a>()和<a href="#showNormal">showNormal</a>()。
+<p>通过<a href="#isMinimized">isMinimized</a>()来获得属性值。
+
+<h3 class=fn>int <a name="minimumHeight-prop"></a>minimumHeight</h3>
+<p>这个属性保存的是窗口部件的最小高度。
+<p>这个属性和<a href="#minimumSize">minimumSize</a>().<a href="#height">height</a>()一致。
+<p> <p>也可以参考<a href="#minimumSize-prop">minimumSize</a>和<a href="#minimumWidth-prop">minimumWidth</a>。
+<p>通过<a href="#setMinimumHeight">setMinimumHeight</a>()设置属性值并且通过<a href="#minimumHeight">minimumHeight</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="minimumSize-prop"></a>minimumSize</h3>
+<p>这个属性保存的是窗口部件的最小大小。
+<p>这个窗口部件不能被重定义比这个最小大小更小的大笑了。如果当前大小更小的话，窗口部件的大小被强制为最小大小。
+<p> 如果你在这个窗口部件中使用了布局，最小大小将会被这个布局设置，而不是<a href="#setMinimumSize">setMinimumSize</a>()，除非你设置布局的重定义大小模式为QLayout::FreeResize。
+<p> <p>也可以参考<a href="#minimumWidth-prop">minimumWidth</a>、<a href="#minimumHeight-prop">minimumHeight</a>、<a href="#maximumSize-prop">maximumSize</a>、<a href="#sizeIncrement-prop">sizeIncrement</a>和<a href="qlayout.html#resizeMode-prop">QLayout::resizeMode</a>。
+<p>通过<a href="#setMinimumSize">setMinimumSize</a>()设置属性值并且通过<a href="#minimumSize">minimumSize</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="minimumSizeHint-prop"></a>minimumSizeHint</h3> 
+<p>这个属性保存的是建议的窗口部件最小大小。
+<p>如果这个属性值是无效的大小，那么就没有被建议的最小大小了。
+<p> 如果这个窗口部件中没有布局，<a href="#minimumSizeHint">minimumSizeHint</a>()默认实现返回无效大小并且否则的话返回布局的最小大小。绝大多数内置窗口部件重新实现了minimumSizeHint()。
+<p> <a href="qlayout.html">QLayout</a>从来不会重定义窗口部件大小小于minimumSizeHint。
+<p> <p>也可以参考<a href="qsize.html#isValid">QSize::isValid</a>()、<a href="#size-prop">size</a>、<a href="#minimumSize-prop">minimumSize</a>和<a href="#sizePolicy-prop">sizePolicy</a>。
+<p>通过<a href="#minimumSizeHint">minimumSizeHint</a>()来获得属性值。
+
+<h3 class=fn>int <a name="minimumWidth-prop"></a>minimumWidth</h3>
+<p>这个属性保存的是窗口部件的最小宽度。
+<p>这个属性和<a href="#minimumSize">minimumSize</a>().<a href="#width">width</a>()一致。
+<p> <p>也可以参考<a href="#minimumSize-prop">minimumSize</a>和<a href="#minimumHeight-prop">minimumHeight</a>。
+<p>通过<a href="#setMinimumWidth">setMinimumWidth</a>()设置属性值并且通过<a href="#minimumWidth">minimumWidth</a>()来得到属性值。
+
+<h3 class=fn>bool <a name="mouseTracking-prop"></a>mouseTracking</h3> 
+<p>这个属性保存的是窗口部件跟踪鼠标是否生效。
+<p>如果鼠标跟踪失效（默认），当鼠标被移动的时候只有在至少一个鼠标按键被按下时，这个窗口部件才会接收鼠标移动事件。
+<p> 如果鼠标跟踪生效，如果没有按键被按下，这个窗口部件也会接收鼠标移动事件。
+<p> <p>也可以参考<a href="#mouseMoveEvent">mouseMoveEvent</a>()和<a href="qapplication.html#setGlobalMouseTracking">QApplication::setGlobalMouseTracking</a>()。
+<p>通过<a href="#setMouseTracking">setMouseTracking</a>()设置属性值并且通过<a href="#hasMouseTracking">hasMouseTracking</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="ownCursor-prop"></a>ownCursor</h3> 
+<p>这个属性保存的是窗口部件是否使用它自己的光标。
+<p>如果为假，这个窗口部件使用它父窗口部件的光标。
+<p> <p>也可以参考<a href="#cursor-prop">cursor</a>。
+<p>通过<a href="#ownCursor">ownCursor</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="ownFont-prop"></a>ownFont</h3> 
+<p>这个属性保存的是窗口部件是否使用它自己的字体。
+<p>如果为假，这个窗口部件使用它父窗口部件的字体。
+<p> <p>也可以参考<a href="#font-prop">font</a>。
+<p>通过<a href="#ownFont">ownFont</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="ownPalette-prop"></a>ownPalette</h3> 
+<p>这个属性保存的是窗口部件是否使用它自己的调色板。
+<p>如果为假，这个窗口部件使用它父窗口部件的调色板。
+<p> <p>也可以参考<a href="#palette-prop">palette</a>。
+<p>通过<a href="#ownPalette">ownPalette</a>()来获得属性值。
+
+<h3 class=fn><a href="qpalette.html">QPalette</a> <a name="palette-prop"></a>palette</h3>
+<p>这个属性保存的是窗口部件的调色板。
+<p>只要没有特定的调色板被设置，或者在<a href="#unsetPalette">unsetPalette</a>()被调用之后，这个窗口部件的特定调色板就是父窗口部件的调色板或者（如果这个窗口部件是顶级窗口部件）默认的应用程序调色板。
+<p> 可以替代定义整个新的调色板的，你也可以使用<a href="#paletteBackgroundColor-prop">paletteBackgroundColor</a>、<a href="#paletteBackgroundPixmap-prop">paletteBackgroundPixmap</a>和<a href="#paletteForegroundColor-prop">paletteForegroundColor</a>方便的属性来只改变窗口部件的背景和前景外观。
+<p> <p>也可以参考<a href="#ownPalette-prop">ownPalette</a>、<a href="#colorGroup-prop">colorGroup</a>和<a href="qapplication.html#palette">QApplication::palette</a>()。
+<p>通过<a href="#setPalette">setPalette</a>()设置属性值，通过<a href="#palette">palette</a>()来获得属性值并且通过<a href="#unsetPalette">unsetPalette</a>()重置属性值。
+
+<h3 class=fn><a href="qcolor.html">QColor</a> <a name="paletteBackgroundColor-prop"></a>paletteBackgroundColor</h3>
+<p>这个属性保存的是窗口部件的背景色。
+<p>这个调色板背景色通常被<a href="#setBackgroundMode">setBackgroundMode</a>()隐含地设置，尽管它也可以由<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()明显地设置。setPaletteBackgroundColor()是一个创建和设置通过<a href="#setPalette">setPalette</a>()修改过的<a href="qpalette.html">QPalette</a>方便函数。这个调色板根据窗口部件的背景模式被修改。例如，如果背景模式是<a href="qt.html#BackgroundMode-enum">PaletteButton</a>，调色板的<a href="qcolorgroup.html#ColorRole-enum">QColorGroup::Button</a>颜色条目所用的颜色被设置。
+<p> 如果有一个背景像素映射（使用<a href="#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap</a>()设置的），那么这个函数的返回值是不确定的。
+<p> <p>也可以参考<a href="#paletteBackgroundPixmap-prop">paletteBackgroundPixmap</a>、<a href="#paletteForegroundColor-prop">paletteForegroundColor</a>、<a href="#palette-prop">palette</a>和<a href="#colorGroup-prop">colorGroup</a>。
+<p>通过<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()设置属性值，通过<a href="#paletteBackgroundColor">paletteBackgroundColor</a>()来获得属性值并且通过<a href="#unsetPalette">unsetPalette</a>()重置属性值。
+
+<h3 class=fn><a href="qpixmap.html">QPixmap</a> <a name="paletteBackgroundPixmap-prop"></a>paletteBackgroundPixmap</h3>
+<p>这个属性保存的是窗口部件的背景像素映射。
+<p>这个调色板背景像素映射通常被<a href="#setBackgroundMode">setBackgroundMode</a>()隐含地设置，尽管它也可以由<a href="#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap</a>()明显地设置。setPaletteBackgroundPixmap()是一个创建和设置通过<a href="#setPalette">setPalette</a>()修改过的<a href="qpalette.html">QPalette</a>方便函数。这个调色板根据窗口部件的背景模式被修改。例如，如果背景模式是<a href="qt.html#BackgroundMode-enum">PaletteButton</a>，调色板的<a href="qcolorgroup.html#ColorRole-enum">QColorGroup::Button</a>颜色条目所用的像素映射被设置。
+<p> 如果有一个简单的背景颜色（使用<a href="#setPaletteBackgroundColor">setPaletteBackgroundColor</a>()设置的），那么这个函数返回0。
+<p> <p>也可以参考<a href="#paletteBackgroundColor-prop">paletteBackgroundColor</a>、<a href="#paletteForegroundColor-prop">paletteForegroundColor</a>、<a href="#palette-prop">palette</a>和<a href="#colorGroup-prop">colorGroup</a>。
+<p>通过<a href="#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap</a>()设置属性值，通过<a href="#paletteBackgroundPixmap">paletteBackgroundPixmap</a>()来获得属性值并且通过<a href="#unsetPalette">unsetPalette</a>()重置属性值。
+
+<h3 class=fn><a href="qcolor.html">QColor</a> <a name="paletteForegroundColor-prop"></a>paletteForegroundColor</h3>
+<p>这个属性保存的是窗口部件的前景色。
+<p>setPaletteForegroundColor()是一个创建和设置通过<a href="#setPalette">setPalette</a>()修改过的<a href="qpalette.html">QPalette</a>方便函数。这个调色板根据窗口部件的背景模式被修改。例如，如果背景模式是<a href="qt.html#BackgroundMode-enum">PaletteButton</a>，调色板的<a href="qcolorgroup.html#ColorRole-enum">QColorGroup::ButtonText</a>颜色条目所用的颜色被设置。
+<p> <p>也可以参考<a href="#palette-prop">palette</a>、<a href="qapplication.html#setPalette">QApplication::setPalette</a>()、<a href="#backgroundMode-prop">backgroundMode</a>、<a href="#foregroundColor">foregroundColor</a>()、<a href="#backgroundMode-prop">backgroundMode</a>和<a href="#setEraseColor">setEraseColor</a>()。
+<p>通过<a href="#setPaletteForegroundColor">setPaletteForegroundColor</a>()设置属性值，通过<a href="#paletteForegroundColor">paletteForegroundColor</a>()来获得属性值并且通过<a href="#unsetPalette">unsetPalette</a>().重置属性值。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="pos-prop"></a>pos</h3>
+<p>这个属性保存的是窗口部件在它的父窗口部件中的位置。
+<p>如果这个窗口部件是顶级窗口部件，那它的位置就是在桌面上包括它的框架的窗口部件的位置。
+<p> 当改变位置时，这个窗口部件如果可视，会立即接收一个移动事件（<a href="#moveEvent">moveEvent</a>()）。如果这个窗口部件当前不是可视的，它被保证会在它被显示之前收到这个事件。
+<p> <a href="#move">move</a>()是虚函数，并且Qt中所有其它重载move()的重新实现都调用它。
+<p> <b>警告：</b>在moveEvent()调用move()或<a href="#setGeometry">setGeometry</a>()会导致无限循环。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#frameGeometry-prop">frameGeometry</a>、<a href="#size-prop">size</a>、<a href="#x-prop">x</a>和<a href="#y-prop">y</a>。
+<p>通过<a href="#move">move</a>()设置属性值并且通过<a href="#pos">pos</a>()来获得属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="rect-prop"></a>rect</h3>
+<p>这个属性保存的是不包含任何窗口框架的窗口部件的内部几何形状。
+<p>这个矩形属性等于<a href="qrect.html">QRect</a>(0, 0, <a href="#width">width</a>(), <a href="#height">height</a>())。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#size-prop">size</a>。
+<p>通过<a href="#rect">rect</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="size-prop"></a>size</h3>
+<p>这个属性保存的是不包含任何窗口框架的窗口部件的大小。
+<p>当重新定义大小时，这个窗口部件如果可视，会立即收到一个重新定义大小事件（<a href="#resizeEvent">resizeEvent</a>()）。如果这个窗口部件当前不是可视的，它被保证会在它被显示之前收到这个事件。
+<p> 如果这个大小在<a href="#minimumSize">minimumSize</a>()和a href="#maximumSize">maximumSize</a>()定义的范围之外，它被调整。此外，这个大小总是至少为<a href="qsize.html">QSize</a>(1, 1)。
+<p> <a href="#resize">resize</a>()是虚函数，并且Qt中所有其它重载resize()的重新实现都调用它。
+<p> <b>警告：</b>在resizeEvent()调用resize()或<a href="#setGeometry">setGeometry</a>()会导致无限循环。
+<p> <p>也可以参考<a href="#pos-prop">pos</a>、<a href="#geometry-prop">geometry</a>、<a href="#minimumSize-prop">minimumSize</a>、<a href="#maximumSize-prop">maximumSize</a>和<a href="#resizeEvent">resizeEvent</a>()。
+<p>通过<a href="#resize">resize</a>()设置属性值并且通过<a href="#size">size</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="sizeHint-prop"></a>sizeHint</h3> 
+<p>这个属性保存的是建议的窗口部件大小。
+<p>如果这个属性值是无效的大小，那么就没有大小被建议。
+<p> 如果这个窗口部件没有布局，<a href="#sizeHint">sizeHint</a>()的默认实现返回一个无效大小，并且否则的话就返回布局的首选大小。
+<p> <p>也可以参考<a href="qsize.html#isValid">QSize::isValid</a>()、<a href="#minimumSizeHint-prop">minimumSizeHint</a>、<a href="#sizePolicy-prop">sizePolicy</a>、<a href="#minimumSize-prop">minimumSize</a>和<a href="#updateGeometry">updateGeometry</a>()。
+<p>通过<a href="#sizeHint">sizeHint</a>()来获得属性值。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="sizeIncrement-prop"></a>sizeIncrement</h3>
+<p>这个属性保存的是窗口部件的大小增量。
+<p>当用户重新定义窗口的大小时，大小会在水平方向上按<a href="#sizeIncrement">sizeIncrement</a>().<a href="#width">width</a>()像素和垂直方向上按sizeIncrement.<a href="#height">height</a>()像素来逐步变化，基础大小为<a href="#baseSize">baseSize</a>() 。首选的窗口部件大小为非负整数<em>i</em>和<em>j</em>：
+<pre>
+        <a href="#width-prop">width</a> = <a href="#baseSize">baseSize</a>().width() + i * sizeIncrement().width();
+        <a href="#height-prop">height</a> = <a href="#baseSize">baseSize</a>().height() + j * sizeIncrement().height();
+    </pre>
+ 
+<p> 注意，当你为所有的窗口部件设置大小增量时，它只对顶级窗口部件有效。
+<p> <b>警告：</b>大小增量在Windows下没有效果，并且也许会被X上的窗口管理器忽视。
+<p> <p>也可以参考<a href="#size-prop">size</a>、<a href="#minimumSize-prop">minimumSize</a>和<a href="#maximumSize-prop">maximumSize</a>。
+<p>通过<a href="#setSizeIncrement">setSizeIncrement</a>()设置属性值并且通过<a href="#sizeIncrement">sizeIncrement</a>()来获得属性值。
+
+<h3 class=fn><a href="qsizepolicy.html">QSizePolicy</a> <a name="sizePolicy-prop"></a>sizePolicy</h3> 
+<p>这个属性保存的是窗口部件的默认布局行为。
+<p>如果有一个<a href="qlayout.html">QLayout</a>管理这个窗口部件的子对象，这个大小策略由布局使用的大小策略指定。如果没有这样的QLayout，那么这个函数的结果被使用。
+<p> 默认策略是首选/首选，也就是说窗口部件可以被自由地重新定义大小，但是首选的是<a href="#sizeHint">sizeHint</a>()返回的大小。具有按钮特征的窗口部件设置它们的大小策略为水平方向可以伸展，但垂直方向固定。这同样适用于行编辑控件（比如<a href="qlineedit.html">QLineEdit</a>、<a href="qspinbox.html">QSpinBox</a>或可编辑的<a href="qcombobox.html">QComboBox</a>）和其它水平方向的窗口部件（比如<a href="qprogressbar.html">QProgressBar</a>）。<a href="qtoolbutton.html">QToolButton</a>的大小策略通常是允许两个方向都可以变化。支持不同方向的窗口部件（比如<a href="qslider.html">QSlider</a>、<a href="qscrollbar.html">QScrollBar</a>或<a href="qheader.html">QHeader</a>）仅仅按被指定的方向变化。可以提供滚动条的窗口部件（通常是<a href="qscrollview.html">QScrollView</a>的子类）趋向于指定它们可以使用额外的空间，并且它们可以在小于sizeHint()时正常工作。
+<p> <p>也可以参考<a href="#sizeHint-prop">sizeHint</a>、<a href="qlayout.html">QLayout</a>、<a href="qsizepolicy.html">QSizePolicy</a>和<a href="#updateGeometry">updateGeometry</a>()。
+<p>通过<a href="#setSizePolicy">setSizePolicy</a>()设置属性值并且通过<a href="#sizePolicy">sizePolicy</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="underMouse-prop"></a>underMouse</h3>
+<p>这个属性保存的是窗口部件是否在鼠标光标下。
+<p>这个值在拖放操作期间不会被完全地更新。
+<p> <p>也可以参考<a href="qevent.html#Type-enum">QEvent::Enter</a>和<a href="qevent.html#Type-enum">QEvent::Leave</a>。
+<p>通过<a href="#hasMouse">hasMouse</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="updatesEnabled-prop"></a>updatesEnabled</h3> 
+<p>这个属性保存的是更新是否生效。
+<p>如果更新失效，调用<a href="#update">update</a>()和<a href="#repaint">repaint</a>()是没有效果的。如果更新失效，来自窗口系统的绘制事件会被正常处理。
+<p> <a href="#setUpdatesEnabled">setUpdatesEnabled</a>()通常被用于在一小段事件内使更新失效，例如为了避免在大的变化期间发生屏幕闪烁。
+<p> 实例：
+<pre>
+    <a href="#setUpdatesEnabled">setUpdatesEnabled</a>( FALSE );
+    bigVisualChanges();
+    <a href="#setUpdatesEnabled">setUpdatesEnabled</a>( TRUE );
+    <a href="#repaint">repaint</a>();
+  </pre>
+ 
+<p> <p>也可以参考<a href="#update">update</a>()、<a href="#repaint">repaint</a>()和<a href="#paintEvent">paintEvent</a>()。
+<p>通过<a href="#setUpdatesEnabled">setUpdatesEnabled</a>()设置属性值并且通过<a href="#isUpdatesEnabled">isUpdatesEnabled</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="visible-prop"></a>visible</h3> 
+<p>这个属性保存的是窗口部件是否可视。
+<p>如果窗口部件的父窗口部件直到顶级窗口部件是可视的，调用<a href="#show">show</a>()设置它为可视的。如果有一个祖先是不可视的，直到它的所有祖先被显示时，这个窗口部件才会变为可视。
+<p> 调用<a href="#hide">hide</a>()明显地隐藏一个窗口部件。一个明显地被隐藏的窗口部件永远不会被变为可视，尽管它的所有祖先都变为可视，除非你显示它。
+<p> 图标化的顶级窗口部件也处在隐藏状态，也就是<a href="#isMinimized">isMinimized</a>()返回真。存在于另一个虚拟桌面上的窗口（在一些支持这个概念的平台上）也处在隐藏状态。
+<p> 一个窗口部件会因为屏幕上其它可视的窗口部件而变暗。
+<p> 当窗口部件的可视状态发生变化时，它接收显示和隐藏事件。隐藏和显示事件都不需要浪费CPU在准备或显示信息给用户。例如，一个视频应用程序也许只是简单地停止产生新的帧。
+<p> <p>也可以参考<a href="#show">show</a>(), <a href="#hide">hide</a>()、<a href="#hidden-prop">hidden</a>、<a href="#isVisibleTo">isVisibleTo</a>()、<a href="#minimized-prop">minimized</a>、<a href="#showEvent">showEvent</a>()和<a href="#hideEvent">hideEvent</a>()。
+<p>通过<a href="#isVisible">isVisible</a>()来获得属性值。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="visibleRect-prop"></a>visibleRect</h3> 
+<p>这个属性保存的是窗口部件的当前可视矩形。
+<p>这个属性对于优化窗口部件的立即重新绘制很有用。典型用法是：
+<pre>
+    <a href="#repaint">repaint</a>( w-&gt;visibleRect() );
+  </pre>
+ 
+或
+<pre>
+    <a href="#repaint">repaint</a>( w-&gt;visibleRect(), FALSE );
+  </pre>
+ 
+<p> 如果没有什么是可视的，这个返回的矩形为空。
+<p>通过<a href="#visibleRect">visibleRect</a>()来获得属性值。
+
+<h3 class=fn>int <a name="width-prop"></a>width</h3>
+<p>这个属性保存的是不包含任何窗口框架的窗口部件宽度。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#geometry-prop">geometry</a>、<a href="#height-prop">height</a>和<a href="#size-prop">size</a>。
+<p>通过<a href="#width">width</a>()来获得属性值。
+
+<h3 class=fn>int <a name="x-prop"></a>x</h3> 
+<p>这个属性保存的是相对于它的父对象包含任何窗口框架的窗口部件的x坐标。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#frameGeometry-prop">frameGeometry</a>、<a href="#y-prop">y</a>和<a href="#pos-prop">pos</a>。
+<p>通过<a href="#x">x</a>()来获得属性值。
+
+<h3 class=fn>int <a name="y-prop"></a>y</h3>
+<p>这个属性保存的是相对于它的父对象包含任何窗口框架的窗口部件的y坐标。
+<p>对于顶级窗口部件的几何形状的概述请参考<a href="geometry.html">窗口几何形状文档</a>。
+<p> <p>也可以参考<a href="#frameGeometry-prop">frameGeometry</a>、<a href="#x-prop">x</a>和<a href="#pos-prop">pos</a>。
+<p>通过<a href="#y">y</a>()来获得属性值。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 

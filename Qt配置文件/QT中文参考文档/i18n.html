@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/doc/i18n.doc:36 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>以Qt国际化</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>Qt国际化</h1>
+
+ 
+<p> <!-- index internationalization --><a name="internationalization"></a>
+<p>应用的国际化就是使应用成为能被非本国的人使用的过程。
+<p>有的情况下，国际化很简单，例如，使一个US应用可被Australian或者British用户理解，工作可能少于几个拼写修正。但是使一个US应用可以被Japanese用户使用，或者一个Korean应用可被German用户使用，就会需要软件不仅工作于不同语言下，还要使用不同的输入技术、字符编码和表达习惯。
+<p>也参见<a href="linguist-manual.html">Qt语言学家</a>手册。
+<p> <h2>Step by Step
+</h2>
+<a name="1"></a><p>以Qt来编写多平台国际化的软件是一个和缓的、逐步增加的过程。你的软件可以按下面的几个阶段实现国际化：
+<p> <h3>对所有用户可见的文本使用<a href="qstring.html">QString</a>
+</h3>
+<a name="1-1"></a><p>既然QString内部就使用Unicode编码，那么使用常见的文本处理手段，就可以透彻地处理世界上的每种语言。同时，既然所有向用户呈现文本的Qt函数都把QString作为参数，也就没有了char*到QString的转换的时间开销。
+<p>在“程序员空间”（例如<a href="qobject.html">QObject</a>的名称和文件格式文本）的字符串不需要使用QString；传统的char*或者<a href="qcstring.html">QCString</a>类就够用了。
+<p>你不大可能注意到你在使用Unicode；QString和<a href="qchar.html">QChar</a>就如同早期版本的传统C中的粗糙的const char*和char。
+<p> <h3>对所有文字形式的文本使用<a href="qobject.html#tr">tr()</a>
+</h3>
+<a name="1-2"></a><p>无论你的程序在哪里对将会呈现给用户的文本使用了<tt>"quoted text"</tt>，要确保它被<a href="qapplication.html#translate">QApplication::translate</a>()函数处理过。其实做到这一点只需要使用<a href="qobject.html#tr">QObject::tr</a>()。例如，假设<tt>LoginWidget</tt>是QWidget的一个子类：
+<p> <pre>
+    LoginWidget::LoginWidget()
+    {
+        <a href="qlabel.html">QLabel</a> *label = new <a href="qlabel.html">QLabel</a>( tr("Password:"), this );
+        ...
+    }
+</pre>
+ 
+<p>这就解决了你可能要写的用户可见的字符串的99％。
+<p>如果这些quoted text不是在<a href="qobject.html">QObject</a>子类的成员函数中，可以使用一个适当的类的tr()函数，或者直接使用<a href="qapplication.html#translate">QApplication::translate</a>()函数：
+<p> <pre>
+    void some_global_function( LoginWidget *logwid )
+    {
+        <a href="qlabel.html">QLabel</a> *label = new <a href="qlabel.html">QLabel</a>(
+                LoginWidget::tr("Password:"), logwid );
+    }
+
+    void same_global_function( LoginWidget *logwid )
+    {
+        <a href="qlabel.html">QLabel</a> *label = new <a href="qlabel.html">QLabel</a>(
+                qApp-&gt;<a href="qapplication.html#translate">translate</a>("LoginWidget", "Password:"),
+                logwid );
+    }
+</pre>
+
+<p>如果你需要不在函数里的可翻译文本，有两个宏可以帮忙：QT_TR_NOOP()和QT_TRANSLATE_NOOP()。它们仅仅标示出文本，以便于被下面描述的<em>lupdate</em>工具提取。宏扩展为只是文本（没有上下文）。
+<p>QT_TR_NOOP()的例子：
+<pre>
+    QString FriendlyConversation::greeting( int greet_type )
+    {
+        static const char* greeting_strings[] = {
+            QT_TR_NOOP( "Hello" ),
+            QT_TR_NOOP( "Goodbye" )
+        };
+        return tr( greeting_strings[greet_type] );
+    }
+</pre>
+ 
+<p>QT_TRANSLATE_NOOP()的例子：
+<pre>
+    static const char* greeting_strings[] = {
+        QT_TRANSLATE_NOOP( "FriendlyConversation", "Hello" ),
+        QT_TRANSLATE_NOOP( "FriendlyConversation", "Goodbye" )
+    };
+
+    QString FriendlyConversation::greeting( int greet_type )
+    {
+        return tr( greeting_strings[greet_type] );
+    }
+
+    <a href="qstring.html">QString</a> global_greeting( int greet_type )
+    {
+        return qApp-&gt;<a href="qapplication.html#translate">translate</a>( "FriendlyConversation",
+                                greeting_strings[greet_type] );
+    }
+</pre>
+
+<p>如果你使用定义的宏QT_NO_CAST_ASCII编译你的软件，从而关闭了从const char*到<a href="qstring.html">QString</a>的自动转换，你很可能会捕捉到你错过的字符串。更多信息参见<a href="qstring.html#fromLatin1">QString::fromLatin1</a>()。关闭这个转换会使编程有点儿麻烦。
+<p>如果你的源码语言使用Latin-1之外的字符集，你会发现<a href="qobject.html#trUtf8">QObject::trUtf8</a>()比<a href="qobject.html#tr">QObject::tr</a>()更好用，因为tr()依赖于<a href="qapplication.html#defaultCodec">QApplication::defaultCodec</a>()，这使它比QObject::trUtf8()更脆弱。
+<p> <h3>对于加速键值（Accelerator value）使用<a href="qkeysequence.html">QKeySequence</a>()
+</h3>
+<a name="1-3"></a><p>加速键值，例如Ctrl+Q或者Alt+F，也需要翻译。
+如果你的应用给“Quit”直接编码（hardcode）为<tt>CTRL+Key_Q</tt>，翻译者就不能重载它了。正确的习惯用法是
+<p> <pre>
+    <a href="qpopupmenu.html">QPopupMenu</a> *file = new <a href="qpopupmenu.html">QPopupMenu</a>( this );
+    file-&gt;<a href="qmenudata.html#insertItem">insertItem</a>( tr("&amp;Quit"), this, SLOT(quit()),
+                      QKeySequence(tr("Ctrl+Q", "File|Quit")) );
+</pre>
+
+<p> <h3>对简单参数使用<a href="qstring.html#arg">QString::arg</a>()
+</h3>
+<a name="1-4"></a><p>对于国际化的文本，在字符串中类似printf()风格的插入参数一般是不好的选择，因为有时候有必要在翻译时改变参数的顺序。不管怎样，QString::arg()函数为参数替换提供了一种简单的途径：
+<pre>
+    void FileCopier::showProgress( int done, int total,
+                                   const <a href="qstring.html">QString</a>&amp; current_file )
+    {
+        label.setText( tr("%1 of %2 files copied.\nCopying: %3")
+                        .arg(done)
+                        .arg(total)
+                        .arg(current_file) );
+    }
+</pre>
+
+<p> <h3>创作译本
+</h3>
+<a name="1-5"></a><p>在应用中通篇使用tr()之后，你就可以开始创作程序中用户可见的文本的译本了。
+<p> <a href="linguist-manual.html">Qt语言学家</a>手册提供了关于Qt翻译工具、<em>Qt语言学家</em>、<em>lupdate</em>和<em>lrelease</em>的进一步信息。
+<p>Qt应用的翻译过程分为三步：
+<p> <ol type=1>
+<li>运行<em>lupdate</em>，以提取出Qt应用的C++源代码中的可翻译文本，会产生一个给翻译者的信息文件（.ts文件）。该工具识别出tr()结构和上面描述的QT_*_NOOP宏，产生.ts文件（通常每种语言一个）。
+<li>使用Qt语言学家提供.ts文件中源文本的译文。既然.ts文件是XML格式，你也可以手工编辑它们。
+<li>运行<em>lrelease</em>，以从.ts文件中得到只适用于最后使用的轻量级的信息文件（.qm文件）。你可以把.ts文件看成“源文件”，把.qm文件看成“目标文件”。翻译者编辑的是.ts文件，可是你的应用的用户只需要.qm文件。这两种文件都是平台和地区（locale）无关的。
+</ol>
+<p>典型地，你将对应用地每个发表版本重复这几步。<em>lupdate</em>工具会尽力重用以前的发表版本的译文。
+<p>在你运行<em>lupdate</em>之前，你应该准备一个项目文件。这是一个项目文件（.pro文件）的例子：
+<p> <pre>
+    HEADERS         = funnydialog.h \
+                      wackywidget.h
+    SOURCES         = funnydialog.cpp \
+                      main.cpp \
+                      wackywidget.cpp
+    FORMS           = fancybox.ui
+    TRANSLATIONS    = superapp_dk.ts \
+                      superapp_fi.ts \
+                      superapp_no.ts \
+                      superapp_se.ts
+</pre>
+
+<p>当你运行<em>lupdate</em>或者<em>lrelease</em>时，你必须以命令行参数给出项目文件的名称。
+<p>在本例中，支持四种语言：Danish、Finnish、Norwegian和Swedish。如果你使用qmake（或者tmake），你一般不需要给<em>lupdate</em>的附加项目文件；只要你加上TRANSLATIONS条目，你的qmake项目文件就会正常工作。
+<p>在应用中，你必须使用<a href="qtranslator.html#load">QTranslator::load</a>()来装载对应用户语言的译文文件，再使用<a href="qapplication.html#installTranslator">QApplication::installTranslator</a>()来安装它们。
+<p>如果你一直使用以前的Qt工具（findtr、msg2qm和mergetr），可以使用<em>qm2ts</em>来转换你以前的.qm文件。
+<p> <em>语言学家</em>、<em>lupdate</em>和<em>lrelease</em>安装在<tt>$QTDIR/bin</tt>。在Qt语言学家中点击Help|Manual，就可访问用户手册，它包含了让你起步的演示教程。
+<p>虽然这些工具提供了生成.qm文件的方便途径，可任何能编写.qm文件的系统也都够用。你可以制做一个应用，以利用<a href="qtranslator.html#insert">QTranslator::insert</a>()把译文加入到<a href="qtranslator.html">QTranslator</a>中，接着再利用<a href="qtranslator.html#save">QTranslator::save</a>()写出一个.qm文件。
+用这种办法可以从任何你选择的源文件中产生译文。
+<p> <a name="qt-itself"></a>
+Qt本身包含有大约400个也需要翻译为目标语言的字符串。在<tt>$QTDIR/translations</tt>下，你会找到French和German的译文文件，也可以作为翻译为其他语言的模板。
+<p>典型地，你的应用的main()函数会类似这样：
+<pre>
+    int main( int argc, char **argv )
+    {
+        <a href="qapplication.html">QApplication</a> app( argc, argv );
+
+        // translation file for Qt
+        <a href="qtranslator.html">QTranslator</a> qt( 0 );
+        qt.<a href="qtranslator.html#load">load</a>( QString( "qt_" ) + QTextCodec::locale(), "." );
+        app.<a href="qapplication.html#installTranslator">installTranslator</a>( &amp;qt );
+
+        // translation file for application strings
+        <a href="qtranslator.html">QTranslator</a> myapp( 0 );
+        myapp.<a href="qtranslator.html#load">load</a>( QString( "myapp_" ) + QTextCodec::locale(), "." );
+        app.<a href="qapplication.html#installTranslator">installTranslator</a>( &amp;myapp );
+
+        ...
+
+        return app.<a href="qapplication.html#exec">exec</a>();
+    }
+</pre>
+ 
+<p> <h3>编码支持
+</h3>
+<a name="1-6"></a><p><a href="qtextcodec.html">QTextCodec</a>类和<a href="qtextstream.html">QTextStream</a>中的工具，方便你支持很多对于用户数据的输入输出编码。当应用启动时，机器的地区（locale）决定了处理8-bit数据——例如对于字体选择、文本显示、8-bit文本I/O和字符输入——所用的8-bit编码。
+<p>应用有时会需要不同于缺省本地8-bit编码的编码。例如，一个Cyrillic KOI8-R locale（俄罗斯的事实标准locale）的应用
+可能需要以ISO 8859-5编码输出Cyrillic。这样的代码可能会是：
+<p> <pre>
+    <a href="qstring.html">QString</a> string = ...; // some Unicode text
+
+    <a href="qtextcodec.html">QTextCodec</a>* codec = QTextCodec::<a href="qtextcodec.html#codecForName">codecForName</a>( "ISO 8859-5" );
+    <a href="qcstring.html">QCString</a> encoded_string = codec-&gt;<a href="qtextcodec.html#fromUnicode">fromUnicode</a>( string );
+
+    ...; // use encoded_string in 8-bit operations
+</pre>
+
+<p>对于把Unicode转换为本地8-bit编码，有一个快捷办法：<a href="qstring.html">QString</a>的<a href="qstring.html#local8Bit">local8Bit</a>()方法返回的就是这样的8-bit数据。另一个有用的快捷办法是<a href="qstring.html#utf8">utf8</a>()方法，它以8-bit的UTF-8编码返回文本——有趣之处在于，
+如果Unicode完全是US-ASCII的话，它可以完全保留Unicode信息，而看起来又是一般的US-ASCII。
+<p>至于其他方式的转换，有<a href="qstring.html#fromUtf8">QString::fromUtf8</a>()和<a href="qstring.html#fromLocal8Bit">QString::fromLocal8Bit</a>()两个方便的函数，或者通用的代码，按下面从ISO 8859-5 Cyrillic到Unicode所演示：
+<p> <pre>
+    <a href="qcstring.html">QCString</a> encoded_string = ...; // Some ISO 8859-5 encoded text.
+
+    <a href="qtextcodec.html">QTextCodec</a>* codec = QTextCodec::<a href="qtextcodec.html#codecForName">codecForName</a>("ISO 8859-5");
+    <a href="qstring.html">QString</a> string = codec-&gt;<a href="qtextcodec.html#toUnicode">toUnicode</a>(encoded_string);
+
+    ...; // Use string in all of Qt's QString operations.
+</pre>
+ 
+<p>理想状态下应该使用Unicode的I/O，因为这最大地提高了世界各地的用户之间的文档兼容性。可实际上，支持所有适当的你的用户为处理已存在的文档而会需要用到的编码，也是有用的。通常，Unicode（UTF16或者UTF8）最适于在任何人之间传递信息，然而在同一语言或者民族群体内部，一种本地标准一般更为合适。
+要支持的最重要的编码是由<a href="qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>()所返回的那个，因为这是用户最可能需要用来与其他人和应用（这是local8Bit()所使用的编码器）通讯的一个。
+<p>考虑到大多数Unix系统对本地8-bit编码和Unicode之间的转换没有内建支持，可能有必要编写你自己的<a href="qtextcodec.html">QTextCodec</a>子类。视紧迫程度而定，可以联系Trolltech的技术支持或者询问qt-interest邮件列表以看看是否已经有别人已经致力于支持某种编码。
+一个有用的过渡办法是，可以使用<a href="qtextcodec.html#loadCharmapFile">QTextCodec::loadCharmapFile</a>()函数以构造一个数据驱动的编码器，虽然这种办法会有内存和速度上的恶化，尤其是带有动态装载库。关于编写自己的QTextCodec详情，参见QTextCodec主类的文档。
+<p> <!-- index localization --><a name="localization"></a>
+<p> <h3>本地化
+</h3>
+<a name="1-7"></a><p>本地化是适应本地习惯比如日期时间表达方式的过程。
+这样的本地化可以使用适当的tr()字符串完成，即使是"magic" words，像这个有些做作的例子所示意的：
+<p> <pre>
+    void Clock::setTime(const <a href="qtime.html">QTime</a>&amp; t)
+    {
+        if ( tr("AMPM") == "AMPM" ) {
+            // 12-hour clock
+        } else {
+            // 24-hour clock
+        }
+    }
+</pre>
+
+<p>图象本地化不推荐。请选择清晰的适用于任何地区的图标，而不要依赖于当地的双关语或者引申的暗喻。
+<p> <h2>系统支持
+</h2>
+<a name="2"></a><p>支持Unicode的操作系统和窗口系统还处于开发初期。底层系统所能得到的支持程度会影响Qt在该平台上所提供的支持，但是以Qt编写的应用一般不必太关心实际限制。
+<p> <h3>Unix/X11
+</h3>
+<a name="2-1"></a><p> <ul>
+<li>本地导向的（Locale-oriented）字体和输入法。Qt隐藏了这些，而代之以Unicode输入和输出。
+<li>在一些Unix变种的文件系统中的约定，例如<a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a>，正在开发中。所有Qt的文件函数都认可Unicode，但把所有的文件名转换为本地8-bit编码，因为这是Unix的惯例（研究代用的编码，参见<a href="qfile.html#setEncodingFunction">QFile::setEncodingFunction</a>()）。
+<li>文件I/O缺省为本地8-bit编码，在<a href="qtextstream.html">QTextStream</a>中带有Unicode选项。
+</ul>
+<p> <h3>Windows 95/98/NT
+</h3>
+<a name="2-2"></a><p> <ul>
+<li>Qt提供完整的Unicode支持，包括输入法、字体、剪贴板、拖放和文件名。
+<li>文件I/O缺省为Latin-1，在QTextStream中带有Unicode选项。注意，有的Windows程序并不能领会高位在前（big-endian）的Unicode文本文件，即使这是没有更高级的协议时Unicode标准所规定的次序。
+<li>不像使用MFC或者一般winlib的程序，Qt程序可以在Windows 95/98和Windows NT之间移植。<em>你不需要不同的二进制码以支持Unicode。</em>
+</ul>
+<p> <h2>支持更多的输入法
+</h2>
+<a name="3"></a><p>Trolltech并没有那么多资源或者专门技术，可以在Qt里立即加入世界上所有语言的支持。所以我们很期待与有这些专门技术的人一起工作。在下几个次版本号中，我们希望能对你选择的语言加入支持，直到任何人都可以使用Qt和以Qt开发的所有程序，而不管他们使用什么语言。
+<p>单字节编码（European Latin-1和KOI8-R等）和多字节编码（East Asian EUC-JP等）的语言都已支持。
+对于那些“复杂”的编码——需要从右至左输入或者复杂字符组成的编码（例如Arabic、Hebrew和Thai script）——已经实现，但是Indic script的范畴（Hindi、Devanagari、Bengali等）还在开发中。现在的情况是：
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top">编码<th valign="top">状态
+<tr bgcolor="#f0f0f0"> 
+<td valign="top">Windows上的所有编码
+<td valign="top">本地的编码总是支持。
+<tr bgcolor="#d0d0d0">
+<td valign="top">ISO标准编码
+ISO 8859-1、
+ISO 8859-2、
+ISO 8859-3、
+ISO 8859-4、
+ISO 8859-5、
+ISO 8859-7、
+ISO 8859-9和
+ISO 8859-15
+<td valign="top">完全支持。
+<tr bgcolor="#f0f0f0">
+<td valign="top">KOI8-R
+<td valign="top">完全支持。
+<tr bgcolor="#d0d0d0">
+<td valign="top">eucJP、JIS和ShiftJIS
+<td valign="top">完全支持。在X11上对于XIM协议使用eucJP，在Japanese Windows NT上使用IME Windows NT。Serika Kurusugawa和其他人正在介入这个工作。<a href="ftp://ftp.sra.co.jp/pub/x11/kinput2/">kinput2</a>是X11上测试过的输入法。
+<tr bgcolor="#f0f0f0">
+<td valign="top">eucKR
+<td valign="top">支持。Mizi Research正在介入这个工作。<a href="http://www.mizi.com">hanIM</a>是测试过的输入法。
+<tr bgcolor="#d0d0d0">
+<td valign="top">Big5
+<td valign="top">Qt包含着一个由Ming Che-Chuang开发的Big5编解码器。正在xcin (2.5.x) XIM server上展开测试。
+<tr bgcolor="#f0f0f0">
+<td valign="top">eucTW
+<td valign="top">外部开发中。
+</table></center>
+<p>关于Qt中对不同的writing system的支持，更多信息参见<a href="scripts.html">关于writing systems的文档</a>。
+<p>如果你有兴趣参与已有的成果，或是支持以上提到的之外的新编码，你的工作可以被考虑包括在Qt官方发布中，或者只是与你的应用打包在一起。
+<p>最后，我们希望能帮助Unix成为面向Unicode（Unicode-oriented），正如Windows正在做的那样。这就意味着，在字体服务器中使用新的进展而带来的更好的字体支持，例如<a href="http://www.dcs.ed.ac.uk/home/jec/programs/xfsft/">xfsft</a>、<a href="ftp://sunsite.unc.edu/pub/Linux/X11/fonts/">xfstt</a>和x-tt；同时还有<a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a>（一种Unicode编码）文件名，比如使用<a href="http://www.sun.com/software/white-papers/wp-unicode/">Solaris 7上的Unicode支持</a>。
+<p> <h2>关于X11上的Locale的注意事项
+</h2>
+<a name="4"></a><p>对于有的locale，很多Unix发布版只包括部分支持。例如，如果你有<tt>/usr/share/locale/ja_JP.EUC</tt>目录，这并不一定意味着你可以显示Japanese文本；你还需要JIS编码的字体（或者Unicode字体），以及<tt>/usr/share/locale/ja_JP.EUC</tt>目录，才能够达到目的。要达到最好的结果，使用你的系统提供商那里来的完全locale。
+<p> <h2>有关的Qt类
+</h2>
+<a name="5"></a><p>这些类同国际化Qt应用有关。
+
+<p><table width="100%">
+<tr bgcolor=#f0f0f0><td><b><a href="qeucjpcodec.html">QEucJpCodec</a></b><td>从和到EUC-JP字符集的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qeuckrcodec.html">QEucKrCodec</a></b><td>从和到EUC-KR字符集的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qgb18030codec.html">QGb18030Codec</a></b><td>从和到Chinese GB18030/GBK/GB2312编码的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qgbkcodec.html">QGbkCodec</a></b><td>从和到Chinese GBK编码的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qhebrewcodec.html">QHebrewCodec</a></b><td>从和到visually ordered Hebrew的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qjiscodec.html">QJisCodec</a></b><td>从和到JIS字符集的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qsjiscodec.html">QSjisCodec</a></b><td>从和到Shift-JIS的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qtextcodec.html">QTextCodec</a></b><td>文本编码之间的转换
+<tr bgcolor=#f0f0f0><td><b><a href="qtextdecoder.html">QTextDecoder</a></b><td>基于状态（State-based）的解码器
+<tr bgcolor=#f0f0f0><td><b><a href="qtextencoder.html">QTextEncoder</a></b><td>基于状态的编码器
+<tr bgcolor=#f0f0f0><td><b><a href="qtranslator.html">QTranslator</a></b><td>文本输出的国际化支持
+<tr bgcolor=#f0f0f0><td><b><a href="qtranslatormessage.html">QTranslatorMessage</a></b><td>Translator的信息及其属性
+<tr bgcolor=#f0f0f0><td><b><a href="qtsciicodec.html">QTsciiCodec</a></b><td>从和到Tamil TSCII编码的转换
+</table>
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

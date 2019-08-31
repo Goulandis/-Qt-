@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/kernel/qrect.cpp:42 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QRect类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QRect类参考</h1>
+
+<p>QRect类定了平面上的矩形。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qrect-h.html">qrect.h</a>&gt;</tt>
+<p><a href="qrect-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QRect"><b>QRect</b></a> ()</div></li>
+<li><div class=fn><a href="#QRect-2"><b>QRect</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;topLeft, const&nbsp;QPoint&nbsp;&amp;&nbsp;bottomRight )</div></li>
+<li><div class=fn><a href="#QRect-3"><b>QRect</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;topLeft, const&nbsp;QSize&nbsp;&amp;&nbsp;size )</div></li>
+<li><div class=fn><a href="#QRect-4"><b>QRect</b></a> ( int&nbsp;left, int&nbsp;top, int&nbsp;width, int&nbsp;height )</div></li>
+<li><div class=fn>bool <a href="#isNull"><b>isNull</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isEmpty"><b>isEmpty</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isValid"><b>isValid</b></a> () const</div></li>
+<li><div class=fn>QRect <a href="#normalize"><b>normalize</b></a> () const</div></li>
+<li><div class=fn>int <a href="#left"><b>left</b></a> () const</div></li>
+<li><div class=fn>int <a href="#top"><b>top</b></a> () const</div></li>
+<li><div class=fn>int <a href="#right"><b>right</b></a> () const</div></li>
+<li><div class=fn>int <a href="#bottom"><b>bottom</b></a> () const</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#rLeft"><b>rLeft</b></a> ()</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#rTop"><b>rTop</b></a> ()</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#rRight"><b>rRight</b></a> ()</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#rBottom"><b>rBottom</b></a> ()</div></li>
+<li><div class=fn>int <a href="#x"><b>x</b></a> () const</div></li>
+<li><div class=fn>int <a href="#y"><b>y</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setLeft"><b>setLeft</b></a> ( int&nbsp;pos )</div></li>
+<li><div class=fn>void <a href="#setTop"><b>setTop</b></a> ( int&nbsp;pos )</div></li>
+<li><div class=fn>void <a href="#setRight"><b>setRight</b></a> ( int&nbsp;pos )</div></li>
+<li><div class=fn>void <a href="#setBottom"><b>setBottom</b></a> ( int&nbsp;pos )</div></li>
+<li><div class=fn>void <a href="#setX"><b>setX</b></a> ( int&nbsp;x )</div></li>
+<li><div class=fn>void <a href="#setY"><b>setY</b></a> ( int&nbsp;y )</div></li>
+<li><div class=fn>QPoint <a href="#topLeft"><b>topLeft</b></a> () const</div></li>
+<li><div class=fn>QPoint <a href="#bottomRight"><b>bottomRight</b></a> () const</div></li>
+<li><div class=fn>QPoint <a href="#topRight"><b>topRight</b></a> () const</div></li>
+<li><div class=fn>QPoint <a href="#bottomLeft"><b>bottomLeft</b></a> () const</div></li>
+<li><div class=fn>QPoint <a href="#center"><b>center</b></a> () const</div></li>
+<li><div class=fn>void <a href="#rect"><b>rect</b></a> ( int&nbsp;*&nbsp;x, int&nbsp;*&nbsp;y, int&nbsp;*&nbsp;w, int&nbsp;*&nbsp;h ) const</div></li>
+<li><div class=fn>void <a href="#coords"><b>coords</b></a> ( int&nbsp;*&nbsp;xp1, int&nbsp;*&nbsp;yp1, int&nbsp;*&nbsp;xp2, int&nbsp;*&nbsp;yp2 ) const</div></li>
+<li><div class=fn>void <a href="#moveTopLeft"><b>moveTopLeft</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#moveBottomRight"><b>moveBottomRight</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#moveTopRight"><b>moveTopRight</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#moveBottomLeft"><b>moveBottomLeft</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#moveCenter"><b>moveCenter</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#moveBy"><b>moveBy</b></a> ( int&nbsp;dx, int&nbsp;dy )</div></li>
+<li><div class=fn>void <a href="#setRect"><b>setRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#setCoords"><b>setCoords</b></a> ( int&nbsp;xp1, int&nbsp;yp1, int&nbsp;xp2, int&nbsp;yp2 )</div></li>
+<li><div class=fn>void <a href="#addCoords"><b>addCoords</b></a> ( int&nbsp;xp1, int&nbsp;yp1, int&nbsp;xp2, int&nbsp;yp2 )</div></li>
+<li><div class=fn>QSize <a href="#size"><b>size</b></a> () const</div></li>
+<li><div class=fn>int <a href="#width"><b>width</b></a> () const</div></li>
+<li><div class=fn>int <a href="#height"><b>height</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setWidth"><b>setWidth</b></a> ( int&nbsp;w )</div></li>
+<li><div class=fn>void <a href="#setHeight"><b>setHeight</b></a> ( int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#setSize"><b>setSize</b></a> ( const&nbsp;QSize&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QRect <a href="#operator|"><b>operator|</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r ) const</div></li>
+<li><div class=fn>QRect <a href="#operator-and"><b>operator&amp;</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r ) const</div></li>
+<li><div class=fn>QRect &amp; <a href="#operator|-eq"><b>operator|=</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>QRect &amp; <a href="#operator-and-eq"><b>operator&amp;=</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>bool <a href="#contains"><b>contains</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, bool&nbsp;proper = FALSE ) const</div></li>
+<li><div class=fn>bool <a href="#contains-2"><b>contains</b></a> ( int&nbsp;x, int&nbsp;y, bool&nbsp;proper = FALSE ) const</div></li>
+<li><div class=fn>bool <a href="#contains-3"><b>contains</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, bool&nbsp;proper = FALSE ) const</div></li>
+<li><div class=fn>QRect <a href="#unite"><b>unite</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r ) const</div></li>
+<li><div class=fn>QRect <a href="#intersect"><b>intersect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r ) const</div></li>
+<li><div class=fn>bool <a href="#intersects"><b>intersects</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r ) const</div></li>
+</ul>
+<h2>相关函数</h2>
+<ul>
+<li><div class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r1, const&nbsp;QRect&nbsp;&amp;&nbsp;r2 )</div></li>
+<li><div class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r1, const&nbsp;QRect&nbsp;&amp;&nbsp;r2 )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-lt-lt"><b>operator&lt;&lt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-gt-gt"><b>operator&gt;&gt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, QRect&nbsp;&amp;&nbsp;r )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QRect类定了平面上的矩形。
+<p> 
+
+
+<p> 一个矩形在内部是由左上角和右下角表示的，但是通常它所表达到是一个左上角和一个大小。
+<p> 坐标类型是QCOORD（和<tt>int</tt>一样在<a href="qwindowdefs-h.html">qwindowdefs.h</a>中定义的）。QCOORD的最小值是QCOORD_MIN（-2147483648），最大值是QCOORD_MAX（2147483647）。
+<p> 注意矩形的大小（宽和高）也许与你通常所用的所有不同。如果左上角和右下角相同，那么这个矩形的宽和高都为1。
+<p> 通常情况下，<em>width = right - left + 1</em>并且<em>height = bottom - top + 1</em>。我们这样设计是因为这样就可以使矩形空间可以用在绘制函数中，它的宽高就说明了所要绘制的象素。例如，我们画一个宽和高都为1的矩形为一个单一点象素。
+<p> 默认坐标系统的原点(0,0)在左上角。y轴的正方向向下，并且x轴的正方向从左到右。
+<p> 一个QRect可以用一组上、左、宽、高四个整数，或者从两个QPoint或者从一个<a href="qpoint.html">QPoint</a>和一个<a href="qsize.html">QSize</a>来构造。创建之后，空间可以被改变，比如使用<a href="#setLeft">setLeft</a>()、<a href="#setRight">setRight</a>()、<a href="#setTop">setTop</a>()和<a href="#setBottom">setBottom</a>()，或者通过设置，比如<a href="#setWidth">setWidth</a>()、<a href="#setHeight">setHeight</a>()和<a href="#setSize">setSize</a>()。空间也可以通过移动函数来改变，比如<a href="#moveBy">moveBy</a>()、<a href="#moveCenter">moveCenter</a>()和<a href="#moveBottomRight">moveBottomRight</a>()等等。你也可以用<a href="#addCoords">addCoords</a>()给矩形加上坐标。
+<p> 你也可以通过<a href="#contains">contains</a>()测试来看一个QRect是否包含一个特定点。你也可以通过<a href="#intersects">intersects</a>()测试来看两个QRect是否相交（也可以参考<a href="#intersect">intersect</a>()）。可以使用<a href="#unite">unite</a>()来获得两个QRect的边界长方形。
+<p> <p>也可以参考<a href="qpoint.html">QPoint</a>、<a href="qsize.html">QSize</a>、<a href="graphics.html">图形类</a>和<a href="images.html">图像处理类</a>。
+
+<hr><h2>成员函数文档</h2>
+
+<h3 class=fn><a name="QRect"></a>QRect::QRect ()
+</h3>
+<p> 构造一个无效的矩形。
+
+<h3 class=fn><a name="QRect-2"></a>QRect::QRect ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;topLeft, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;bottomRight )
+</h3>
+构造一个左上角为<em>topLeft</em>，右下角为<em>bottomRight</em>的矩形。
+
+<h3 class=fn><a name="QRect-3"></a>QRect::QRect ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;topLeft, const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp;&nbsp;size )
+</h3>
+构造一个左上角为<em>topLeft</em>并且矩形大小为<em>size</em>的矩形。
+
+<h3 class=fn><a name="QRect-4"></a>QRect::QRect ( int&nbsp;left, int&nbsp;top, int&nbsp;width, int&nbsp;height )
+</h3>
+<p> 构造一个上、左、宽、高分别为<em>top</em>、<em>left</em>、<em>width</em>和<em>height</em>的矩形。
+<p> 实例（创建三个同样的矩形）：
+<pre>
+        QRect r1( QPoint(100,200), QPoint(110,215) );
+        QRect r2( QPoint(100,200), QSize(11,16) );
+        QRect r3( 100, 200, 11, 16 );
+    </pre>
+ 
+
+<h3 class=fn>void <a name="addCoords"></a>QRect::addCoords ( int&nbsp;xp1, int&nbsp;yp1, int&nbsp;xp2, int&nbsp;yp2 )
+</h3>
+分别给矩形已经存在的坐标加上<em>xp1</em>、<em>yp1</em>、<em>xp2</em>和<em>yp2</em>。
+
+<h3 class=fn>int <a name="bottom"></a>QRect::bottom () const
+</h3>
+<p> 返回矩形的下坐标。
+<p> <p>也可以参考<a href="#top">top</a>()、<a href="#setBottom">setBottom</a>()、<a href="#bottomLeft">bottomLeft</a>()和<a href="#bottomRight">bottomRight</a>()。
+<p>实例：<a href="desktop-example.html#x1786">desktop/desktop.cpp</a>、<a href="helpviewer-example.html#x1010">helpviewer/helpwindow.cpp</a>、<a href="qfd-example.html#x1985">qfd/fontdisplayer.cpp</a>、<a href="scribble-example.html#x946">scribble/scribble.cpp</a>和<a href="themes-example.html#x197">themes/wood.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="bottomLeft"></a>QRect::bottomLeft () const
+</h3>
+<p> 返回矩形的左下位置。
+<p> <p>也可以参考<a href="#moveBottomLeft">moveBottomLeft</a>()、<a href="#bottomRight">bottomRight</a>()、<a href="#topLeft">topLeft</a>()、<a href="#topRight">topRight</a>()、<a href="#bottom">bottom</a>()和<a href="#left">left</a>()。
+<p>实例：<a href="tictac-example.html#x128">tictac/tictac.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="bottomRight"></a>QRect::bottomRight () const
+</h3>
+<p> 返回矩形的右下位置。
+<p> <p>也可以参考<a href="#moveBottomRight">moveBottomRight</a>()、<a href="#bottomLeft">bottomLeft</a>()、<a href="#topLeft">topLeft</a>()、<a href="#topRight">topRight</a>()、<a href="#bottom">bottom</a>()和<a href="#right">right</a>()。
+<p>实例：<a href="tictac-example.html#x129">tictac/tictac.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="center"></a>QRect::center () const
+</h3>
+<p> 返回矩形中心点。
+<p> <p>也可以参考<a href="#moveCenter">moveCenter</a>()、<a href="#topLeft">topLeft</a>()、<a href="#topRight">topRight</a>()、<a href="#bottomLeft">bottomLeft</a>()和<a href="#bottomRight">bottomRight</a>()。
+<p>实例：<a href="tooltip-example.html#x566">tooltip/tooltip.cpp</a>。
+
+<h3 class=fn>bool <a name="contains"></a>QRect::contains ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, bool&nbsp;proper = FALSE ) const
+</h3>
+如果点<em>p</em>在矩形内或者在矩形边缘上，返回真，否则返回假。
+<p> 如果<em>proper</em>为真，这个函数只有在<em>p</em>在矩形里面时（不在边界上）的情况下，返回真。
+<p>实例：<a href="tutorial1-14.html#x2413">t14/cannon.cpp</a>。
+
+<h3 class=fn>bool <a name="contains-2"></a>QRect::contains ( int&nbsp;x, int&nbsp;y, bool&nbsp;proper = FALSE ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 如果点<em>x</em>、<em>y</em>在矩形内，返回真，否则返回假。
+<p> 如果<em>proper</em>为真，这个函数只有在<em>p</em>在矩形里面时（不在边界上）的情况下，返回真。
+
+<h3 class=fn>bool <a name="contains-3"></a>QRect::contains ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, bool&nbsp;proper = FALSE ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 如果矩形<em>r</em>在这个矩形里面，返回真，否则返回假。
+<p> 如果<em>proper</em>为真，这个函数只有在<em>p</em>在矩形里面时（不在边界上）的情况下，返回真。
+<p> <p>也可以参考<a href="#unite">unite</a>()、<a href="#intersect">intersect</a>()和<a href="#intersects">intersects</a>()。
+
+<h3 class=fn>void <a name="coords"></a>QRect::coords ( int&nbsp;*&nbsp;xp1, int&nbsp;*&nbsp;yp1, int&nbsp;*&nbsp;xp2, int&nbsp;*&nbsp;yp2 ) const
+</h3>
+提取矩形的参数作为左上点<em>*xp1</em>、<em>*yp1</em>和右下点<em>*xp2</em>、<em>*yp2</em>。
+<p> <p>也可以参考<a href="#setCoords">setCoords</a>()和<a href="#rect">rect</a>()。
+<p>实例：<a href="themes-example.html#x257">themes/metal.cpp</a>和<a href="themes-example.html#x198">themes/wood.cpp</a>。
+
+<h3 class=fn>int <a name="height"></a>QRect::height () const
+</h3>
+<p> 返回矩形的高。这个高包括左和下边界，比如height = bottom - top + 1。
+<p> <p>也可以参考<a href="#width">width</a>()、<a href="#size">size</a>()和<a href="#setHeight">setHeight</a>()。
+<p>实例：<a href="coordsys.html#x2438">aclock/aclock.cpp</a>、<a href="desktop-example.html#x1787">desktop/desktop.cpp</a>、<a href="movies-example.html#x466">movies/main.cpp</a>、<a href="scribble-example.html#x947">scribble/scribble.cpp</a>、<a href="themes-example.html#x258">themes/metal.cpp</a>、<a href="themes-example.html#x199">themes/wood.cpp</a>和<a href="xform-example.html#x1452">xform/xform.cpp</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="intersect"></a>QRect::intersect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+返回这个矩形和矩形<em>r</em>交集。<tt>r.intersect(s)</tt>与<tt>r&amp;s</tt>是相同的。
+
+<h3 class=fn>bool <a name="intersects"></a>QRect::intersects ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+如果这个矩形和矩形<em>r</em>相交（至少两个矩形有一个相同象素），返回真，否则返回假。
+<p> <p>也可以参考<a href="#intersect">intersect</a>()和<a href="#contains">contains</a>()。
+<p>实例：<a href="tutorial1-11.html#x2357">t11/cannon.cpp</a>、<a href="tutorial1-12.html#x2380">t12/cannon.cpp</a>、<a href="tutorial1-13.html#x2393">t13/cannon.cpp</a>和<a href="tutorial1-14.html#x2414">t14/cannon.cpp</a>。
+
+<h3 class=fn>bool <a name="isEmpty"></a>QRect::isEmpty () const
+</h3>
+<p> 如果这个矩形是空的，返回真，否则返回假。
+<p> 一个空的矩形的<a href="#left">left</a>()&gt;<a href="#right">right</a>()或者<a href="#top">top</a>()&gt;<a href="#bottom">bottom</a>()。
+<p> 一个空矩形是无效的。<tt>isEmpty()==!isValid()</tt>
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#isValid">isValid</a>()。
+
+<h3 class=fn>bool <a name="isNull"></a>QRect::isNull () const
+</h3>
+<p> 如果一个矩形是零矩形，返回真，否则返回假。
+<p> 一个零矩形的宽和高都设置为0，并且<a href="#right">right</a>()==<a href="#left">left</a>()-1并且<a href="#bottom">bottom</a>()==<a href="#top">top</a>()-1。
+<p> 注意如果right()==left()并且bottom()==top()，那么这个矩形的宽和高都为1。
+<p> 一个零矩形也是空的。
+<p> 一个零矩形是无效的。
+<p> <p>也可以参考<a href="#isEmpty">isEmpty</a>()和<a href="#isValid">isValid</a>()。
+
+<h3 class=fn>bool <a name="isValid"></a>QRect::isValid () const
+</h3>
+
+<p> Returns TRUE if the rectangle is valid or FALSE if it is invalid
+(empty)。
+如果一个矩形是有效的，反会诊，否则如果它是无效的（空的）就返回假。
+<p> 一个有效的矩形中，<a href="#left">left</a>()&lt;=<a href="#right">right</a>()和<a href="#top">top</a>()&lt;=<a href="#bottom">bottom</a>()。
+<p> <tt>isValid()==!isEmpty()</tt>
+<p> <p>也可以参考<a href="#isNull">isNull</a>()、<a href="#isEmpty">isEmpty</a>()和<a href="#normalize">normalize</a>()。
+<p>实例：<a href="themes-example.html#x259">themes/metal.cpp</a>和<a href="tooltip-example.html#x567">tooltip/tooltip.cpp</a>。
+
+<h3 class=fn>int <a name="left"></a>QRect::left () const
+</h3>
+<p> 返回矩形的左坐标.与<a href="#x">x</a>()相同.
+<p> <p>也可以参考<a href="#x">x</a>()、<a href="#top">top</a>()、<a href="#right">right</a>()、<a href="#setLeft">setLeft</a>()、<a href="#topLeft">topLeft</a>()和<a href="#bottomLeft">bottomLeft</a>()。
+<p>实例：<a href="coordsys.html#x2439">aclock/aclock.cpp</a>、<a href="desktop-example.html#x1788">desktop/desktop.cpp</a>、<a href="qfd-example.html#x1986">qfd/fontdisplayer.cpp</a>、<a href="scribble-example.html#x948">scribble/scribble.cpp</a>、<a href="tictac-example.html#x131">tictac/tictac.cpp</a>和<a href="xform-example.html#x1453">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="moveBottomLeft"></a>QRect::moveBottomLeft ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+设置矩形的左下坐标为<em>p</em>，而大小不被改变。
+<p> <p>也可以参考<a href="#bottomLeft">bottomLeft</a>()、<a href="#moveBottomRight">moveBottomRight</a>()、<a href="#moveTopLeft">moveTopLeft</a>()、<a href="#moveTopRight">moveTopRight</a>()、<a href="#setBottom">setBottom</a>()和<a href="#setLeft">setLeft</a>()。
+<p>实例：<a href="tutorial1-10.html#x2347">t10/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="moveBottomRight"></a>QRect::moveBottomRight ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+设置矩形的右下坐标为<em>p</em>，而大小不被改变。
+<p> <p>也可以参考<a href="#bottomRight">bottomRight</a>()、<a href="#moveBottomLeft">moveBottomLeft</a>()、<a href="#moveTopLeft">moveTopLeft</a>()、<a href="#moveTopRight">moveTopRight</a>()、<a href="#setBottom">setBottom</a>()和<a href="#setRight">setRight</a>()。
+
+<h3 class=fn>void <a name="moveBy"></a>QRect::moveBy ( int&nbsp;dx, int&nbsp;dy )
+</h3>
+矩形相对于当前位置在x轴上移动<em>dx</em>，在y轴上移动<em>dy</em>。（正值时，向右和/或下移动矩形。）
+<p>实例：<a href="helpviewer-example.html#x1013">helpviewer/helpwindow.cpp</a>、<a href="themes-example.html#x200">themes/wood.cpp</a>和<a href="xform-example.html#x1454">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="moveCenter"></a>QRect::moveCenter ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+设置矩形的中点为<em>p</em>，而大小不被改变。
+<p> <p>也可以参考<a href="#center">center</a>()、<a href="#moveTopLeft">moveTopLeft</a>()、<a href="#moveTopRight">moveTopRight</a>()、<a href="#moveBottomLeft">moveBottomLeft</a>()和<a href="#moveBottomRight">moveBottomRight</a>()。
+<p>实例：<a href="tutorial1-11.html#x2358">t11/cannon.cpp</a>和<a href="tutorial1-12.html#x2381">t12/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="moveTopLeft"></a>QRect::moveTopLeft ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+设置矩形的左上坐标为<em>p</em>，而大小不被改变。
+<p> <p>也可以参考<a href="#topLeft">topLeft</a>()、<a href="#moveTopRight">moveTopRight</a>()、<a href="#moveBottomLeft">moveBottomLeft</a>()、<a href="#moveBottomRight">moveBottomRight</a>()、<a href="#setTop">setTop</a>()和<a href="#setLeft">setLeft</a>()。
+<p>实例：<a href="xform-example.html#x1455">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="moveTopRight"></a>QRect::moveTopRight ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+设置矩形的右上坐标为<em>p</em>，而大小不被改变。
+<p> <p>也可以参考<a href="#topRight">topRight</a>()、<a href="#moveTopLeft">moveTopLeft</a>()、<a href="#moveBottomLeft">moveBottomLeft</a>()、<a href="#moveBottomRight">moveBottomRight</a>()、<a href="#setTop">setTop</a>()和<a href="#setRight">setRight</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="normalize"></a>QRect::normalize () const
+</h3>
+返回一个标准化的矩形，比如，一个宽高都为非负的矩形。
+<p> 如果<a href="#left">left</a>()&gt;<a href="#right">right</a>()，交换左右，并且如果<a href="#top">top</a>()&gt;<a href="#bottom">bottom</a>()，交换上下。
+<p> <p>也可以参考<a href="#isValid">isValid</a>()。
+<p>实例：<a href="scribble-example.html#x949">scribble/scribble.cpp</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="operator-and"></a>QRect::operator&amp; ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+返回这个矩形和矩形<em>r</em>的交集。
+<p> 如果没有交集，返回一个空矩形。
+<p> <p>也可以参考<a href="#operator-and-eq">operator&amp;=</a>()、<a href="#operator|">operator|</a>()、<a href="#isEmpty">isEmpty</a>()、<a href="#intersects">intersects</a>()和<a href="#contains">contains</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a>&nbsp;&amp; <a name="operator-and-eq"></a>QRect::operator&amp;= ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这个矩形和矩形<em>r</em>的交集。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="operator|"></a>QRect::operator| ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+返回这个矩形和矩形<em>r</em>的边界矩形。
+<p> 一个非空矩形和一个空矩形或者一个无效矩形的边界矩形定义为一个非空矩形。
+<p> <p>也可以参考<a href="#operator|-eq">operator|=</a>()、<a href="#operator-and">operator&amp;</a>()、<a href="#intersects">intersects</a>()和<a href="#contains">contains</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a>&nbsp;&amp; <a name="operator|-eq"></a>QRect::operator|= ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这个矩形和矩形<em>r</em>的并集。
+
+<h3 class=fn>QCOORD &amp; <a name="rBottom"></a>QRect::rBottom ()
+</h3>
+<p> 返回矩形的下坐标引用。
+<p> <p>也可以参考<a href="#rLeft">rLeft</a>()、<a href="#rTop">rTop</a>()和<a href="#rRight">rRight</a>()。
+
+<h3 class=fn>QCOORD &amp; <a name="rLeft"></a>QRect::rLeft ()
+</h3>
+<p> 返回矩形的左坐标引用。
+<p> <p>也可以参考<a href="#rTop">rTop</a>()、<a href="#rRight">rRight</a>()和<a href="#rBottom">rBottom</a>()。
+
+<h3 class=fn>QCOORD &amp; <a name="rRight"></a>QRect::rRight ()
+</h3>
+<p> 返回矩形的右坐标引用。
+<p> <p>也可以参考<a href="#rLeft">rLeft</a>()、<a href="#rTop">rTop</a>()和<a href="#rBottom">rBottom</a>()。
+
+<h3 class=fn>QCOORD &amp; <a name="rTop"></a>QRect::rTop ()
+</h3>
+<p> 返回矩形的上坐标引用。
+<p> <p>也可以参考<a href="#rLeft">rLeft</a>()、<a href="#rRight">rRight</a>()和<a href="#rBottom">rBottom</a>()。
+
+<h3 class=fn>void <a name="rect"></a>QRect::rect ( int&nbsp;*&nbsp;x, int&nbsp;*&nbsp;y, int&nbsp;*&nbsp;w, int&nbsp;*&nbsp;h ) const
+</h3>
+提取矩形参数为位置<em>*x</em>、<em>*y</em>和宽<em>*w</em>和高<em>*h</em>。
+<p> <p>也可以参考<a href="#setRect">setRect</a>()和<a href="#coords">coords</a>()。
+<p>实例：<a href="themes-example.html#x260">themes/metal.cpp</a>和<a href="themes-example.html#x201">themes/wood.cpp</a>。
+
+<h3 class=fn>int <a name="right"></a>QRect::right () const
+</h3>
+<p> 返回矩形的右坐标。
+<p> <p>也可以参考<a href="#left">left</a>()、<a href="#setRight">setRight</a>()、<a href="#topRight">topRight</a>()和<a href="#bottomRight">bottomRight</a>()。
+<p>实例：<a href="customlayout-example.html#x1353">customlayout/flow.cpp</a>、<a href="desktop-example.html#x1789">desktop/desktop.cpp</a>、<a href="helpviewer-example.html#x1014">helpviewer/helpwindow.cpp</a>、<a href="qfd-example.html#x1987">qfd/fontdisplayer.cpp</a>、<a href="scribble-example.html#x950">scribble/scribble.cpp</a>、<a href="tutorial1-11.html#x2359">t11/cannon.cpp</a>和<a href="themes-example.html#x202">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="setBottom"></a>QRect::setBottom ( int&nbsp;pos )
+</h3>
+<p> 设置矩形的下边缘为<em>pos</em>。也许改变高度，但决不会改变矩形的上边缘。
+<p> <p>也可以参考<a href="#bottom">bottom</a>()、<a href="#setTop">setTop</a>()和<a href="#setHeight">setHeight</a>()。
+<p>实例：<a href="scribble-example.html#x951">scribble/scribble.cpp</a>。
+
+<h3 class=fn>void <a name="setCoords"></a>QRect::setCoords ( int&nbsp;xp1, int&nbsp;yp1, int&nbsp;xp2, int&nbsp;yp2 )
+</h3>
+设置矩形的左上角的坐标为<em>(xp1,yp1)</em>，并且它的右下角坐标为<em>(xp2,yp2)</em>。
+<p> <p>也可以参考<a href="#coords">coords</a>()和<a href="#setRect">setRect</a>()。
+
+<h3 class=fn>void <a name="setHeight"></a>QRect::setHeight ( int&nbsp;h )
+</h3>
+设置矩形的高为<em>h</em>。上边缘没有被移动，但是下边缘也许被移动。
+<p> <p>也可以参考<a href="#height">height</a>()、<a href="#setTop">setTop</a>()、<a href="#setBottom">setBottom</a>()和<a href="#setSize">setSize</a>()。
+<p>实例：<a href="desktop-example.html#x1790">desktop/desktop.cpp</a>。
+
+<h3 class=fn>void <a name="setLeft"></a>QRect::setLeft ( int&nbsp;pos )
+</h3>
+<p> 设置矩形的左边缘为<em>pos</em>。也许改变宽度，但决不会改变矩形的右边缘。
+<p> 与<a href="#setX">setX</a>()一样。
+<p> <p>也可以参考<a href="#left">left</a>()、<a href="#setTop">setTop</a>()和<a href="#setWidth">setWidth</a>()。
+<p>实例：<a href="scribble-example.html#x952">scribble/scribble.cpp</a>。
+
+<h3 class=fn>void <a name="setRect"></a>QRect::setRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+设置矩形左上角坐标为<em>(x,y)</em>，并且它的大小为<em>(w,h)</em>。
+<p> <p>也可以参考<a href="#rect">rect</a>()和<a href="#setCoords">setCoords</a>()。
+<p>实例：<a href="themes-example.html#x203">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="setRight"></a>QRect::setRight ( int&nbsp;pos )
+</h3>
+<p> 设置矩形的右边缘为<em>pos</em>。也许改变宽度，但决不会改变矩形的左边缘。
+<p> <p>也可以参考<a href="#right">right</a>()、<a href="#setLeft">setLeft</a>()和<a href="#setWidth">setWidth</a>()。
+<p>实例：<a href="scribble-example.html#x953">scribble/scribble.cpp</a>。
+
+<h3 class=fn>void <a name="setSize"></a>QRect::setSize ( const&nbsp;<a href="qsize.html">QSize</a>&nbsp;&amp;&nbsp;s )
+</h3>
+设置矩形的大小为<em>s</em>。左上角不被移动。
+<p> <p>也可以参考<a href="#size">size</a>()、<a href="#setWidth">setWidth</a>()和<a href="#setHeight">setHeight</a>()。
+<p>实例：<a href="xform-example.html#x1456">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="setTop"></a>QRect::setTop ( int&nbsp;pos )
+</h3>
+<p> 设置矩形的上边缘为<em>pos</em>。也许改变高度，但决不会改变矩形的下边缘。
+<p> 与<a href="#setY">setY</a>()一样。
+<p> <p>也可以参考<a href="#top">top</a>()、<a href="#setBottom">setBottom</a>()和<a href="#setHeight">setHeight</a>()。
+<p>实例：<a href="scribble-example.html#x954">scribble/scribble.cpp</a>。
+
+<h3 class=fn>void <a name="setWidth"></a>QRect::setWidth ( int&nbsp;w )
+</h3>
+Sets the width of the rectangle to <em>w</em>。 The right edge is
+changed, but not the left edge.
+设置矩形的宽为<em>w</em>。右边缘被改变，但是左边缘不会被改变。
+<p> <p>也可以参考<a href="#width">width</a>()、<a href="#setLeft">setLeft</a>()、<a href="#setRight">setRight</a>()和<a href="#setSize">setSize</a>()。
+<p>实例：<a href="desktop-example.html#x1791">desktop/desktop.cpp</a>。
+
+<h3 class=fn>void <a name="setX"></a>QRect::setX ( int&nbsp;x )
+</h3>
+<p> 设置矩形的x位置（它的左边）为<em>x</em>。也许会改变宽度，但是不会改变矩形的右边界。
+<p> 与<a href="#setLeft">setLeft</a>()一样。
+<p> <p>也可以参考<a href="#x">x</a>()和<a href="#setY">setY</a>()。
+
+<h3 class=fn>void <a name="setY"></a>QRect::setY ( int&nbsp;y )
+</h3>
+<p> 设置矩形的y位置（它的上边）为<em>y</em>。也许会改变高度，但是不会改变矩形的下边界。
+<p> 与<a href="#setTop">setTop</a>()一样。
+<p> <p>也可以参考<a href="#y">y</a>()和<a href="#setX">setX</a>()。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="size"></a>QRect::size () const
+</h3>
+<p> 返回矩形的大小。
+<p> <p>也可以参考<a href="#width">width</a>()和<a href="#height">height</a>()。
+<p>实例：<a href="desktop-example.html#x1792">desktop/desktop.cpp</a>、<a href="movies-example.html#x467">movies/main.cpp</a>和<a href="tutorial1-10.html#x2348">t10/cannon.cpp</a>。
+
+<h3 class=fn>int <a name="top"></a>QRect::top () const
+</h3>
+<p> 返回矩形的上坐标。与<a href="#y">y</a>()一样。
+<p> <p>也可以参考<a href="#y">y</a>()、<a href="#left">left</a>()、<a href="#bottom">bottom</a>()、<a href="#setTop">setTop</a>()、<a href="#topLeft">topLeft</a>()和<a href="#topRight">topRight</a>()。
+<p>实例：<a href="coordsys.html#x2440">aclock/aclock.cpp</a>、<a href="desktop-example.html#x1793">desktop/desktop.cpp</a>、<a href="helpviewer-example.html#x1015">helpviewer/helpwindow.cpp</a>、<a href="scribble-example.html#x955">scribble/scribble.cpp</a>、<a href="themes-example.html#x204">themes/wood.cpp</a>、<a href="tictac-example.html#x132">tictac/tictac.cpp</a>和<a href="xform-example.html#x1457">xform/xform.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="topLeft"></a>QRect::topLeft () const
+</h3>
+<p> 返回矩形的左上角位置。
+<p> <p>也可以参考<a href="#moveTopLeft">moveTopLeft</a>()、<a href="#topRight">topRight</a>()、<a href="#bottomLeft">bottomLeft</a>()、<a href="#bottomRight">bottomRight</a>()、<a href="#left">left</a>()和<a href="#top">top</a>()。
+<p>实例：<a href="tutorial1-10.html#x2349">t10/cannon.cpp</a>和<a href="tictac-example.html#x133">tictac/tictac.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="topRight"></a>QRect::topRight () const
+</h3>
+<p> 返回矩形的右上角位置。
+<p> <p>也可以参考<a href="#moveTopRight">moveTopRight</a>()、<a href="#topLeft">topLeft</a>()、<a href="#bottomLeft">bottomLeft</a>()、<a href="#bottomRight">bottomRight</a>()、<a href="#top">top</a>()和<a href="#right">right</a>()。
+<p>实例：<a href="tictac-example.html#x134">tictac/tictac.cpp</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="unite"></a>QRect::unite ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+返回这个矩形和矩形<em>r</em>的边界矩形。<tt>r.unite(s)</tt>与<tt>r|s</tt>相同。
+<p>实例：<a href="tutorial1-11.html#x2360">t11/cannon.cpp</a>、<a href="tutorial1-12.html#x2382">t12/cannon.cpp</a>和<a href="xform-example.html#x1458">xform/xform.cpp</a>。
+
+<h3 class=fn>int <a name="width"></a>QRect::width () const
+</h3>
+<p> 返回矩形的宽度。宽度包括左和右边界，比如width = right - left + 1。
+<p> <p>也可以参考<a href="#height">height</a>()、<a href="#size">size</a>()和<a href="#setHeight">setHeight</a>()。
+<p>实例：<a href="coordsys.html#x2441">aclock/aclock.cpp</a>、<a href="customlayout-example.html#x1376">customlayout/border.cpp</a>、<a href="desktop-example.html#x1794">desktop/desktop.cpp</a>、<a href="movies-example.html#x468">movies/main.cpp</a>、<a href="themes-example.html#x261">themes/metal.cpp</a>、<a href="themes-example.html#x205">themes/wood.cpp</a>和<a href="xform-example.html#x1459">xform/xform.cpp</a>。
+
+<h3 class=fn>int <a name="x"></a>QRect::x () const
+</h3>
+<p> 返回矩形的左坐标。与<a href="#left">left</a>()一样。
+<p> <p>也可以参考<a href="#left">left</a>()、<a href="#y">y</a>()和<a href="#setX">setX</a>()。
+<p>实例：<a href="customlayout-example.html#x1377">customlayout/border.cpp</a>、<a href="desktop-example.html#x1795">desktop/desktop.cpp</a>、<a href="movies-example.html#x469">movies/main.cpp</a>、<a href="scribble-example.html#x957">scribble/scribble.cpp</a>、<a href="tutorial1-12.html#x2383">t12/cannon.cpp</a>、<a href="themes-example.html#x262">themes/metal.cpp</a>和<a href="themes-example.html#x206">themes/wood.cpp</a>。
+
+<h3 class=fn>int <a name="y"></a>QRect::y () const
+</h3>
+<p> 返回矩形的上坐标。与<a href="#top">top</a>()一样。
+<p> <p>也可以参考<a href="#top">top</a>()、<a href="#x">x</a>()和<a href="#setY">setY</a>()。
+<p>实例：<a href="desktop-example.html#x1796">desktop/desktop.cpp</a>、<a href="movies-example.html#x470">movies/main.cpp</a>、<a href="scribble-example.html#x958">scribble/scribble.cpp</a>、<a href="tutorial1-12.html#x2384">t12/cannon.cpp</a>、<a href="tutorial1-14.html#x2416">t14/cannon.cpp</a>、<a href="themes-example.html#x263">themes/metal.cpp</a>和<a href="themes-example.html#x207">themes/wood.cpp</a>。
+
+<hr><h2>相关函数</h2>
+
+<h3 class=fn>bool <a name="operator!-eq"></a>operator!= ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r1, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r2 )
+</h3>
+<p> 如果<em>r1</em>和<em>r2</em>不同，返回真，否则返回假。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-lt-lt"></a>operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+<p> 写这个QRect<em>r</em>到流<em>s</em>中，并且返回这个流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>operator== ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r1, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r2 )
+</h3>
+<p> 如果<em>r1</em>和<em>r2</em>相等，返回真，否则返回假。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-gt-gt"></a>operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, <a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+<p> 从流<em>s</em>读一个QRect到<em>r</em>中，并且返回这个流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

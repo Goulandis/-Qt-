@@ -1,0 +1,1460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/tools/qstring.cpp:12384 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QString类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QString类参考</h1>
+
+<p>QString类提供了一个Unicode文本和经典的C以零结尾的字符数组的抽象。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qstring-h.html">qstring.h</a>&gt;</tt>
+<p><a href="qstring-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QString"><b>QString</b></a> ()</div></li>
+<li><div class=fn><a href="#QString-2"><b>QString</b></a> ( QChar&nbsp;ch )</div></li>
+<li><div class=fn><a href="#QString-3"><b>QString</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn><a href="#QString-4"><b>QString</b></a> ( const&nbsp;QByteArray&nbsp;&amp;&nbsp;ba )</div></li>
+<li><div class=fn><a href="#QString-5"><b>QString</b></a> ( const&nbsp;QChar&nbsp;*&nbsp;unicode, uint&nbsp;length )</div></li>
+<li><div class=fn><a href="#QString-6"><b>QString</b></a> ( const&nbsp;char&nbsp;*&nbsp;str )</div></li>
+<li><div class=fn><a href="#~QString"><b>~QString</b></a> ()</div></li>
+<li><div class=fn>QString &amp; <a href="#operator-eq-2"><b>operator=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator-eq-3"><b>operator=</b></a> ( const&nbsp;char&nbsp;*&nbsp;str )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator-eq-4"><b>operator=</b></a> ( const&nbsp;QCString&nbsp;&amp;&nbsp;cs )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator-eq"><b>operator=</b></a> ( QChar&nbsp;c )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator-eq-5"><b>operator=</b></a> ( char&nbsp;c )</div></li>
+<li><div class=fn>bool <a href="#isNull"><b>isNull</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isEmpty"><b>isEmpty</b></a> () const</div></li>
+<li><div class=fn>uint <a href="#length"><b>length</b></a> () const</div></li>
+<li><div class=fn>void <a href="#truncate"><b>truncate</b></a> ( uint&nbsp;newLen )</div></li>
+<li><div class=fn>QString &amp; <a href="#fill"><b>fill</b></a> ( QChar&nbsp;c, int&nbsp;len = -1 )</div></li>
+<li><div class=fn>QString copy () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>QString <a href="#arg-2"><b>arg</b></a> ( long&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-3"><b>arg</b></a> ( ulong&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-4"><b>arg</b></a> ( int&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-5"><b>arg</b></a> ( uint&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-6"><b>arg</b></a> ( short&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-7"><b>arg</b></a> ( ushort&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-8"><b>arg</b></a> ( char&nbsp;a, int&nbsp;fieldwidth = 0 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-9"><b>arg</b></a> ( QChar&nbsp;a, int&nbsp;fieldwidth = 0 ) const</div></li>
+<li><div class=fn>QString <a href="#arg"><b>arg</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;a, int&nbsp;fieldwidth = 0 ) const</div></li>
+<li><div class=fn>QString <a href="#arg-a"><b>arg</b></a> ( double&nbsp;a, int&nbsp;fieldwidth = 0, char&nbsp;fmt = 'g', int&nbsp;prec = -1 ) const</div></li>
+<li><div class=fn>QString &amp; <a href="#sprintf"><b>sprintf</b></a> ( const&nbsp;char&nbsp;*&nbsp;cformat, ... )</div></li>
+<li><div class=fn>int <a href="#find-2"><b>find</b></a> ( QChar&nbsp;c, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#find-3"><b>find</b></a> ( char&nbsp;c, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#find-4"><b>find</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#find"><b>find</b></a> ( const&nbsp;QRegExp&nbsp;&amp;&nbsp;rx, int&nbsp;index = 0 ) const</div></li>
+<li><div class=fn>int <a href="#find-5"><b>find</b></a> ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;index = 0 ) const</div></li>
+<li><div class=fn>int <a href="#findRev-2"><b>findRev</b></a> ( QChar&nbsp;c, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#findRev-3"><b>findRev</b></a> ( char&nbsp;c, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#findRev-4"><b>findRev</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#findRev-5"><b>findRev</b></a> ( const&nbsp;QRegExp&nbsp;&amp;&nbsp;rx, int&nbsp;index = -1 ) const</div></li>
+<li><div class=fn>int <a href="#findRev"><b>findRev</b></a> ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;index = -1 ) const</div></li>
+<li><div class=fn>int <a href="#contains"><b>contains</b></a> ( QChar&nbsp;c, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#contains-2"><b>contains</b></a> ( char&nbsp;c, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#contains-3"><b>contains</b></a> ( const&nbsp;char&nbsp;*&nbsp;str, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#contains-4"><b>contains</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str, bool&nbsp;cs = TRUE ) const</div></li>
+<li><div class=fn>int <a href="#contains-5"><b>contains</b></a> ( const&nbsp;QRegExp&nbsp;&amp;&nbsp;rx ) const</div></li>
+<li><div class=fn>enum <a href="#SectionFlags-enum"><b>SectionFlags</b></a> { SectionDefault = 0x00, SectionSkipEmpty = 0x01, SectionIncludeLeadingSep = 0x02, SectionIncludeTrailingSep = 0x04, SectionCaseInsensitiveSeps = 0x08 }</div></li>
+<li><div class=fn>QString <a href="#section"><b>section</b></a> ( QChar&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const</div></li>
+<li><div class=fn>QString <a href="#section-2"><b>section</b></a> ( char&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const</div></li>
+<li><div class=fn>QString <a href="#section-3"><b>section</b></a> ( const&nbsp;char&nbsp;*&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const</div></li>
+<li><div class=fn>QString <a href="#section-4"><b>section</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const</div></li>
+<li><div class=fn>QString <a href="#section-5"><b>section</b></a> ( const&nbsp;QRegExp&nbsp;&amp;&nbsp;reg, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const</div></li>
+<li><div class=fn>QString <a href="#left"><b>left</b></a> ( uint&nbsp;len ) const</div></li>
+<li><div class=fn>QString <a href="#right"><b>right</b></a> ( uint&nbsp;len ) const</div></li>
+<li><div class=fn>QString <a href="#mid"><b>mid</b></a> ( uint&nbsp;index, uint&nbsp;len = 0xffffffff ) const</div></li>
+<li><div class=fn>QString <a href="#leftJustify"><b>leftJustify</b></a> ( uint&nbsp;width, QChar&nbsp;fill = ' ', bool&nbsp;truncate = FALSE ) const</div></li>
+<li><div class=fn>QString <a href="#rightJustify"><b>rightJustify</b></a> ( uint&nbsp;width, QChar&nbsp;fill = ' ', bool&nbsp;truncate = FALSE ) const</div></li>
+<li><div class=fn>QString <a href="#lower"><b>lower</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#upper"><b>upper</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#stripWhiteSpace"><b>stripWhiteSpace</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#simplifyWhiteSpace"><b>simplifyWhiteSpace</b></a> () const</div></li>
+<li><div class=fn>QString &amp; <a href="#insert"><b>insert</b></a> ( uint&nbsp;index, const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QString &amp; <a href="#insert-2"><b>insert</b></a> ( uint&nbsp;index, const&nbsp;QChar&nbsp;*&nbsp;s, uint&nbsp;len )</div></li>
+<li><div class=fn>QString &amp; <a href="#insert-3"><b>insert</b></a> ( uint&nbsp;index, QChar&nbsp;c )</div></li>
+<li><div class=fn>QString &amp; <a href="#insert-4"><b>insert</b></a> ( uint&nbsp;index, char&nbsp;c )</div></li>
+<li><div class=fn>QString &amp; <a href="#append-2"><b>append</b></a> ( char&nbsp;ch )</div></li>
+<li><div class=fn>QString &amp; <a href="#append-3"><b>append</b></a> ( QChar&nbsp;ch )</div></li>
+<li><div class=fn>QString &amp; <a href="#append"><b>append</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>QString &amp; <a href="#prepend-2"><b>prepend</b></a> ( char&nbsp;ch )</div></li>
+<li><div class=fn>QString &amp; <a href="#prepend-3"><b>prepend</b></a> ( QChar&nbsp;ch )</div></li>
+<li><div class=fn>QString &amp; <a href="#prepend"><b>prepend</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QString &amp; <a href="#remove"><b>remove</b></a> ( uint&nbsp;index, uint&nbsp;len )</div></li>
+<li><div class=fn>QString &amp; <a href="#replace"><b>replace</b></a> ( uint&nbsp;index, uint&nbsp;len, const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QString &amp; <a href="#replace-2"><b>replace</b></a> ( uint&nbsp;index, uint&nbsp;len, const&nbsp;QChar&nbsp;*&nbsp;s, uint&nbsp;slen )</div></li>
+<li><div class=fn>QString &amp; <a href="#replace-3"><b>replace</b></a> ( const&nbsp;QRegExp&nbsp;&amp;&nbsp;rx, const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>short <a href="#toShort"><b>toShort</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>ushort <a href="#toUShort"><b>toUShort</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>int <a href="#toInt"><b>toInt</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>uint <a href="#toUInt"><b>toUInt</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>long <a href="#toLong"><b>toLong</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>ulong <a href="#toULong"><b>toULong</b></a> ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const</div></li>
+<li><div class=fn>float <a href="#toFloat"><b>toFloat</b></a> ( bool&nbsp;*&nbsp;ok = 0 ) const</div></li>
+<li><div class=fn>double <a href="#toDouble"><b>toDouble</b></a> ( bool&nbsp;*&nbsp;ok = 0 ) const</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-2"><b>setNum</b></a> ( short&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-3"><b>setNum</b></a> ( ushort&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-4"><b>setNum</b></a> ( int&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-5"><b>setNum</b></a> ( uint&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum"><b>setNum</b></a> ( long&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-6"><b>setNum</b></a> ( ulong&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-7"><b>setNum</b></a> ( float&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )</div></li>
+<li><div class=fn>QString &amp; <a href="#setNum-8"><b>setNum</b></a> ( double&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )</div></li>
+<li><div class=fn>void setExpand ( uint&nbsp;index, QChar&nbsp;c ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>QString &amp; <a href="#operator+-eq"><b>operator+=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator+-eq-2"><b>operator+=</b></a> ( QChar&nbsp;c )</div></li>
+<li><div class=fn>QString &amp; <a href="#operator+-eq-3"><b>operator+=</b></a> ( char&nbsp;c )</div></li>
+<li><div class=fn>QChar <a href="#at"><b>at</b></a> ( uint&nbsp;i ) const</div></li>
+<li><div class=fn>QChar <a href="#operator[]"><b>operator[]</b></a> ( int&nbsp;i ) const</div></li>
+<li><div class=fn>QCharRef <a href="#at-2"><b>at</b></a> ( uint&nbsp;i )</div></li>
+<li><div class=fn>QCharRef <a href="#operator[]-2"><b>operator[]</b></a> ( int&nbsp;i )</div></li>
+<li><div class=fn>QChar <a href="#constref"><b>constref</b></a> ( uint&nbsp;i ) const</div></li>
+<li><div class=fn>QChar &amp; <a href="#ref"><b>ref</b></a> ( uint&nbsp;i )</div></li>
+<li><div class=fn>const QChar * <a href="#unicode"><b>unicode</b></a> () const</div></li>
+<li><div class=fn>const char * ascii () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>const char * <a href="#latin1"><b>latin1</b></a> () const</div></li>
+<li><div class=fn>QCString <a href="#utf8"><b>utf8</b></a> () const</div></li>
+<li><div class=fn>QCString <a href="#local8Bit"><b>local8Bit</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#operator!"><b>operator!</b></a> () const</div></li>
+<li><div class=fn><a href="#operator-const-char-*"><b>operator const char *</b></a> () const</div></li>
+<li><div class=fn>QString &amp; <a href="#setUnicode"><b>setUnicode</b></a> ( const&nbsp;QChar&nbsp;*&nbsp;unicode, uint&nbsp;len )</div></li>
+<li><div class=fn>QString &amp; <a href="#setUnicodeCodes"><b>setUnicodeCodes</b></a> ( const&nbsp;ushort&nbsp;*&nbsp;unicode_as_ushorts, uint&nbsp;len )</div></li>
+<li><div class=fn>QString &amp; <a href="#setLatin1"><b>setLatin1</b></a> ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;len = -1 )</div></li>
+<li><div class=fn>int <a href="#compare-2"><b>compare</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>int <a href="#localeAwareCompare-2"><b>localeAwareCompare</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>void <a href="#compose"><b>compose</b></a> ()</div></li>
+<li><div class=fn>const char * data () const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>bool <a href="#startsWith"><b>startsWith</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>bool <a href="#endsWith"><b>endsWith</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>void <a href="#setLength"><b>setLength</b></a> ( uint&nbsp;newLen )</div></li>
+</ul>
+<h2>静态公有成员</h2>
+<ul>
+<li><div class=fn>QString <a href="#number"><b>number</b></a> ( long&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString <a href="#number-2"><b>number</b></a> ( ulong&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString <a href="#number-3"><b>number</b></a> ( int&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString <a href="#number-4"><b>number</b></a> ( uint&nbsp;n, int&nbsp;base = 10 )</div></li>
+<li><div class=fn>QString <a href="#number-5"><b>number</b></a> ( double&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )</div></li>
+<li><div class=fn>QString <a href="#fromLatin1"><b>fromLatin1</b></a> ( const&nbsp;char&nbsp;*&nbsp;chars, int&nbsp;len = -1 )</div></li>
+<li><div class=fn>QString <a href="#fromUtf8"><b>fromUtf8</b></a> ( const&nbsp;char&nbsp;*&nbsp;utf8, int&nbsp;len = -1 )</div></li>
+<li><div class=fn>QString <a href="#fromLocal8Bit"><b>fromLocal8Bit</b></a> ( const&nbsp;char&nbsp;*&nbsp;local8Bit, int&nbsp;len = -1 )</div></li>
+<li><div class=fn>int <a href="#compare"><b>compare</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>int <a href="#localeAwareCompare"><b>localeAwareCompare</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+</ul>
+<h2>相关函数</h2>
+<ul>
+<li><div class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-eq-eq-2"><b>operator==</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-eq-eq-3"><b>operator==</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator!-eq-2"><b>operator!=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator!-eq-3"><b>operator!=</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-lt"><b>operator&lt;</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-lt-2"><b>operator&lt;</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-lt-eq"><b>operator&lt;=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-lt-eq-2"><b>operator&lt;=</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-gt"><b>operator&gt;</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-gt-2"><b>operator&gt;</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-gt-eq"><b>operator&gt;=</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>bool <a href="#operator-gt-eq-2"><b>operator&gt;=</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>const QString <a href="#operator+"><b>operator+</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>const QString <a href="#operator+-2"><b>operator+</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )</div></li>
+<li><div class=fn>const QString <a href="#operator+-3"><b>operator+</b></a> ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;QString&nbsp;&amp;&nbsp;s2 )</div></li>
+<li><div class=fn>const QString <a href="#operator+-4"><b>operator+</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s, char&nbsp;c )</div></li>
+<li><div class=fn>const QString <a href="#operator+-5"><b>operator+</b></a> ( char&nbsp;c, const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-lt-lt"><b>operator&lt;&lt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-gt-gt"><b>operator&gt;&gt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, QString&nbsp;&amp;&nbsp;str )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+<p>QString类提供了一个Unicode文本和经典的C以零结尾的字符数组的抽象。
+
+<p> QString使用<a href="shclass.html">隐含共享</a>，这使它非常有效率并且很容易使用。
+<p> 所有的QString的方法都使用<tt>const char *</tt>参数，<tt>const char *</tt>被解释为经典的C风格的以零结尾的ASCII字符串。所以<tt>const char *</tt>参数为0是合法的。如果<tt>const char *</tt>不是以零结尾的，结果是不确定的。把经典的C字符串复制到QString的函数将不会复制结尾的0字符。QString的<a href="qchar.html">QChar</a>数组（可以通过<a href="#unicode">unicode</a>()返回）通常不以零结尾。如果你需要把QString传递到一个需要C的以零结尾的字符串，请使用<a href="#latin1">latin1</a>()。
+<p> <!-- index QString::null --><a name="QString-null"></a>没有分配任何东西的QString是<em>零</em>，也就是长度和数据指针都为0。引用空字符串（“”，一个单一的'&#92;0'字符）的QString是<em>空</em>。零和空这两个QString在方法中都是合法的。把<tt>(const char *) 0</tt>赋值给QString给定了一个零QString。为了方便，<a href="qstring.html#QString-null">QString::null</a>是一个零QString。当排序的时候，空字符串在最前面，然后是非空字符串，然后才是零字符串。我们建议使用<tt>if ( !str.isNull() )</tt>，而不是<tt>if ( !str )</tt>来检测非零字符串，关于解释说明也可以参考<a href="#operator!">operator!</a>()。
+<p> 注意如果你发现你正在混合使用<a href="qcstring.html">QCString</a>、QString和<a href="qbytearray.html">QByteArray</a>，这将会导致很多不必要的复制并且也许会预示着你正在处理的真实自然数据是不确定的。如果数据是以零结尾的八位数据，请使用<a href="qcstring.html">QCString</a>；如果它是没有结尾的（也就是包含0）八位数据，请使用<a href="qbytearray.html">QByteArray</a>；如果它是文本，请使用QString。
+<p> 字符串列表可以使用<a href="qstringlist.html">QStringList</a>类来处理。你可以使用<a href="qstringlist.html#split">QStringList::split</a>()来把一个字符串分割为一个字符串列表，并且可以使用<a href="qstringlist.html#join">QStringList::join</a>()把一个字符串列表连接成一个使用随意间隔符的字符串。你也可以使用<a href="qstringlist.html#grep">QStringList::grep</a>()从一个字符串列表中获得包含特定子字符串或者包含匹配特定的<a href="qregexp.html">regex</a>的字符串列表。
+<p> <b>C程序员的注意事项</b>
+<p> 由于C++的类型系统和QString是<a href="shclass.html#implicitly-shared">隐含共享</a>的事实，QString也许会被看做整型或者其它简单基本类型。例如：
+<p> <pre>
+    QString boolToString( bool b )
+    {
+        QString result;
+        if ( b )
+            result = "True";
+        else
+            result = "False";
+        return result;
+    }
+  </pre>
+ 
+<p> 变量result是一个分配在栈中的自动变量。当return被调用时，因为我们正在返回值，复制构造函数被调用并且这个字符串的一个复制被返回。（我们要感谢<a href="shclass.html#implicit-sharing">隐含共享</a>，没有实际的复制发生，请看下面。）
+<p> 在Qt的源代码中，你将会遇到想这样的QString的用法：
+<pre>
+    QString func( const QString&amp; input )
+    {
+        QString output = input;
+        // 处理输出
+        return output;
+    }
+  </pre>
+ 
+<p> 从input到output的“复制”几乎和复制指针一样快，因为后面的场景复制是通过增加引用计数器来实现的。QString操作是基于写时复制的，只有在实例发生实际改变时，才会被复制。
+<p> 如果你想不丢失任何Unicode信息的情况下创建一个QString的<a href="shclass.html#deep-copy">深度复制</a>，那么你应该使用QString中用<a href="qchar.html">QChar</a>*作为参数的构造函数。例如：
+<p> <pre>
+    QString a("abcd");
+    QString b( a.<a href="#unicode">unicode</a>(), b.<a href="#length">length</a>() );
+  </pre>
+ 
+<p> 另外，使用QString中用const char*参数的构造函数就足够了。例如：
+<p> <pre>
+    QString a("abcd");
+    QString b( a.<a href="#latin1">latin1</a>() );
+  </pre>
+ 
+<p> <p>也可以参考<a href="qchar.html">QChar</a>、<a href="qcstring.html">QCString</a>、<a href="qbytearray.html">QByteArray</a>、<a href="qconststring.html">QConstString</a>、<a href="shared.html">隐含和明显共享类</a>、<a href="text.html">文本相关类</a>和<a href="tools.html">非图形用户界面类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="SectionFlags-enum"></a>QString::SectionFlags</h3>
+
+<ul>
+<li><tt>QString::SectionDefault</tt> - 空的部分被考虑，开始的和结尾的分隔符不被包含并且区分大小写来比较分隔符。
+<li><tt>QString::SectionSkipEmpty</tt> - 把空的部分看做就像它们不存在一样，也就是说它们不被考虑为有关的<em>start</em>和<em>end</em>。
+<li><tt>QString::SectionIncludeLeadingSep</tt> - 在结果字符串中包含开始的分隔符（如果有的话）。
+<li><tt>QString::SectionIncludeTrailingSep</tt> - 在结果字符串中包含末尾的分隔符（如果有的话）。
+<li><tt>QString::SectionCaseInsensitiveSeps</tt> - 不区分大小写来比较分隔符。
+</ul><p> 最后的四个值可以被或运算在一起来形成一个标记。
+<p> <p>也可以参考<a href="#section">section</a>()。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QString"></a>QString::QString ()
+</h3>
+<p> 构造一个零字符串。这是一个不被分配任何东西的字符串，也就是说长度和数据指针都为0。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a name="QString-2"></a>QString::QString ( <a href="qchar.html">QChar</a>&nbsp;ch )
+</h3>
+构造一个长度为一个字符，内容为给定字符<em>ch</em>的字符串。
+
+<h3 class=fn><a name="QString-3"></a>QString::QString ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3>
+构造一个<em>s</em>的<a href="shclass.html#implicitly-shared">隐含共享</a>的复制。这是短时间的，因为<a href="shclass.html#reference-counting">引用计数</a>被使用。
+
+<h3 class=fn><a name="QString-4"></a>QString::QString ( const&nbsp;<a href="qbytearray.html">QByteArray</a>&nbsp;&amp;&nbsp;ba )
+</h3>
+构造一个被解释为经典C字符串的<em>ba</em>的<a href="shclass.html#deep-copy">深度复制</a>的字符串。
+
+<h3 class=fn><a name="QString-5"></a>QString::QString ( const&nbsp;<a href="qchar.html">QChar</a>&nbsp;*&nbsp;unicode, uint&nbsp;length )
+</h3>
+构造一个<a href="qchar.html">QChar</a>数组中开始<em>length</em>个字符的<a href="shclass.html#deep-copy">深度复制</a>的字符串。
+<p> 如果<em>unicode</em>和<em>length</em>为0，那么一个零字符串被创建。
+<p> 如果只是<em>unicode</em>为0，字符串为空，但是被分配为<em>length</em>个字符空间——无论如何QString可以自动扩展，但是这也许会在一些情况下提高速度。我们建议根据这个目的使用简单的构造函数和<a href="#setLength">setLength</a>()，因为它的结果是有更多的可读代码。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#setLength">setLength</a>()。
+
+<h3 class=fn><a name="QString-6"></a>QString::QString ( const&nbsp;char&nbsp;*&nbsp;str )
+</h3>
+构造一个被解释为经典C字符串的<em>str</em>的<a href="shclass.html#deep-copy">深度复制</a>的字符串。
+<p> 如果<em>str</em>，那么一个零字符串被创建。
+<p> 这是一个抛出构造函数，但是它是完全安全的：把一个Latin1的const char*转化到QString保存了所有的信息。当你编译你的应用程序时，你可以通过定义QT_NO_CAST_ASCII来关闭这个构造函数。你可以使用<a href="#setLatin1">setLatin1</a>()、<a href="#fromLatin1">fromLatin1</a>()、<a href="#fromLocal8Bit">fromLocal8Bit</a>()和<a href="#fromUtf8">fromUtf8</a>()来生成QString。或者无论什么适合你的八位数据的编码方式。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a name="~QString"></a>QString::~QString ()
+</h3> 
+<p> 销毁这个字符串并且如果这是这个字符串的最后一个复制，就释放“真实的”字符串。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="append"></a>QString::append ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+把<em>str</em>添加到字符串中并且返回结果的引用。
+<p> <pre>
+    string = "Test";
+    string.append( "ing" );        // string == "Testing"
+  </pre>
+ 
+<p> 等于<a href="#operator+-eq">operator+=</a>()。
+<p>实例：<a href="dirview-example.html#x1739">dirview/dirview.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="append-2"></a>QString::append ( char&nbsp;ch )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把字符<em>ch</em>添加到字符串中并且返回结果的引用。
+<p> 等于<a href="#operator+-eq">operator+=</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="append-3"></a>QString::append ( <a href="qchar.html">QChar</a>&nbsp;ch )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把字符<em>ch</em>添加到字符串中并且返回结果的引用。
+<p> 等于<a href="#operator+-eq">operator+=</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg"></a>QString::arg ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;a, int&nbsp;fieldwidth = 0 ) const
+</h3>
+<p> 这个函数将返回使用<em>a</em>来替换最低层出现的<tt>%i</tt>（<tt>i</tt>为'1'或'2'或……'9'）的字符串。
+<p> <em>fieldwidth</em>值指定了填充到<em>a</em>中的最小空间。正值将产生右对齐文本，负值将产生左对齐文本。
+<p> <pre>
+    QString firstName( "Joe" );
+    QString lastName( "Bloggs" );
+    QString fullName;
+    fullName = <a href="#QString">QString</a>( "First name is '%1', last name is '%2'" )
+               .arg( firstName )
+               .arg( lastName );
+
+    // fullName == First name is 'Joe', last name is 'Bloggs'
+  </pre>
+ 
+<p> <b>警告：</b>如果你是用<a href="#arg">arg</a>()来构造一个想上面实例中的“真正”的句子，那么这可能导致一些翻译的问题（当你使用tr()函数时）。
+<p> 如果没有<tt>%i</tt>模式，一个警告信息（<a href="qapplication.html#qWarning">qWarning</a>()）被输出并且这个文本被添加到字符串的末尾。这被做为错误恢复的功能并且不应该在正确的代码中出现。
+<p> <p>也可以参考<a href="qobject.html#tr">QObject::tr</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-2"></a>QString::arg ( long&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>fieldwidth</em>值指定了填充到<em>a</em>中的最小空间。正值将产生右对齐文本，负值将产生左对齐文本。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+<p> <pre>
+    QString str;
+    str = <a href="#QString">QString</a>( "Decimal 63 is %1 in hexadecimal" )
+          .arg( 63, 0, 16 );
+    // str == "Decimal 63 is 3f in hexadecimal"
+  </pre>
+ 
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-3"></a>QString::arg ( ulong&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-4"></a>QString::arg ( int&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-5"></a>QString::arg ( uint&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-6"></a>QString::arg ( short&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-7"></a>QString::arg ( ushort&nbsp;a, int&nbsp;fieldwidth = 0, int&nbsp;base = 10 ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-8"></a>QString::arg ( char&nbsp;a, int&nbsp;fieldwidth = 0 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <em>a</em>被假设在Latin1字符集中。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-9"></a>QString::arg ( <a href="qchar.html">QChar</a>&nbsp;a, int&nbsp;fieldwidth = 0 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="arg-a"></a>QString::arg ( double&nbsp;a, int&nbsp;fieldwidth = 0, char&nbsp;fmt = 'g', int&nbsp;prec = -1 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <a name="arg-formats"></a>
+<p> 根据<em>fmt</em>指定的格式，参数<em>a</em>被格式化，<tt>g</tt>为默认情况并且可以为下列之一：
+<p> <ul>
+<li> <tt>e</tt> - 格式化为[-]9.9e[+|-]999
+<li> <tt>E</tt> - 格式化为[-]9.9E[+|-]999
+<li> <tt>f</tt> - 格式化为[-]9.9
+<li> <tt>g</tt> - 使用<tt>e</tt>或<tt>f</tt>格式，看哪一个更简练
+<li> <tt>G</tt> - 使用<tt>E</tt>或<tt>f</tt>格式，看哪一个更简练
+</ul>
+<p> 在所有的情况下，小数点之后数字的个数等于<em>prec</em>指定的精度。
+<p> <pre>
+    double d = 12.34;
+    QString ds = <a href="#QString">QString</a>( "'E' format, precision 3, gives %1" )
+                 .arg( d, 0, 'E', 3 );
+    // ds == "1.234E+001"
+  </pre>
+ 
+<h3 class=fn>const char * <a name="ascii"></a>QString::ascii () const
+</h3>
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 这个函数简单的调用<a href="#latin1">latin1</a>()并且返回结果。
+<p>实例：<a href="networkprotocol-example.html#x619">network/networkprotocol/nntp.cpp</a>。
+
+<h3 class=fn><a href="qchar.html">QChar</a> <a name="at"></a>QString::at ( uint&nbsp;i ) const
+</h3>
+<p> 返回在索引<em>i</em>处的字符，或者如果<em>i</em>超过字符串的长度返回0。
+<p> <pre>
+    const QString string( "abcdefgh" );
+    <a href="qchar.html">QChar</a> ch = string.<a href="#at">at</a>( 4 );
+    // ch == 'e'
+  </pre>
+ 
+<p> 如果QString不是常量（也就是const QString）或者const&（也就是const QString&），那么<a href="#at">at</a>()的非常量重载将被用来替代。
+
+<h3 class=fn><a href="qcharref.html">QCharRef</a> <a name="at-2"></a>QString::at ( uint&nbsp;i )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数返回在索引<em>i</em>处的字符的引用。这个结果引用在这之后可以被分配，或者立即使用，但是一旦超过原字符串进行根多的修改，它将会变为无效。
+<p> 如果<em>i</em>超过了字符串的长度，那么这个字符串将会被使用QChar::null扩大。
+
+<h3 class=fn>int <a name="compare"></a>QString::compare ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )<tt> [静态]</tt>
+</h3> 
+<p> 对<em>s1</em>和<em>s2</em>进行词典比较，如果<em>s1</em>小于、等于或者大于<em>s2</em>，就返回小于、等于或者大于0的整数。
+<p> 这个比较是专有的基于字符的数字Unicode值并且非常快，但是不是人们所期待的。排序用户界面字符串请考虑使用<a href="#localeAwareCompare">QString::localeAwareCompare</a>()。
+<p> <pre>
+    int a = QString::<a href="#compare">compare</a>( "def", "abc" );   // a &gt; 0
+    int b = QString::<a href="#compare">compare</a>( "abc", "def" );   // b &lt; 0
+    int c = QString::<a href="#compare">compare</a>(" abc", "abc" );   // c == 0
+  </pre>
+ 
+<h3 class=fn>int <a name="compare-2"></a>QString::compare ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 对这个字符串和<em>s</em>进行词典比较，如果它小于、等于或者大于<em>s</em>，就返回小于、等于或者大于0的整数。
+
+<h3 class=fn>void <a name="compose"></a>QString::compose ()
+</h3>
+注意这个函数在Qt 3.0中不被支持并且仅仅用于实验和说明目的。它主要是关注于阿拉伯的和其它多成分文本的实验。
+<p> 适用于可能带连字的QString。当多成分文本需要表现缺乏象形字的字体时非常有用，但是它也可以制造像<a href="qchar.html">QChar</a>(0x0041)（'A'）和QChar(0x0308)（Unicode accent diaresis），给定的QChar(0x00c4)（德语的A元音变音）。
+
+<h3 class=fn><a href="qchar.html">QChar</a> <a name="constref"></a>QString::constref ( uint&nbsp;i ) const
+</h3>
+<p> 返回在索引<em>i</em>处的<a href="qchar.html">QChar</a>的值。
+<p> 等于<a href="#at">at</a>(<em>i</em>)。
+<p> <p>也可以参考<a href="#ref">ref</a>()。
+
+<h3 class=fn>int <a name="contains"></a>QString::contains ( <a href="qchar.html">QChar</a>&nbsp;c, bool&nbsp;cs = TRUE ) const
+</h3>
+返回在这个字符串中字符<em>c</em>出现的次数。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> <pre>
+    QString string( "Trolltech and Qt" );
+    int i = string.<a href="#contains">contains</a>( 't', FALSE );  // i == 3
+  </pre>
+ 
+<p>实例：<a href="fileiconview-example.html#x865">fileiconview/qfileiconview.cpp</a>和<a href="mdi-example.html#x2037">mdi/application.cpp</a>。
+
+<h3 class=fn>int <a name="contains-2"></a>QString::contains ( char&nbsp;c, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+
+<h3 class=fn>int <a name="contains-3"></a>QString::contains ( const&nbsp;char&nbsp;*&nbsp;str, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回在这个字符串中字符串<em>str</em>出现的次数。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+
+<h3 class=fn>int <a name="contains-4"></a>QString::contains ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回在这个字符串中<em>str</em>出现的次数。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> 这个函数计算重叠的字符串，所以在下面的实例中，“bananas”中有两个“ana”的实例。
+<p> <pre>
+    QString str( "bananas" );
+    int i = str.<a href="#contains">contains</a>( "ana" );  // i == 2
+  </pre>
+ 
+<p> <p>也可以参考<a href="#findRev">findRev</a>()。
+
+<h3 class=fn>int <a name="contains-5"></a>QString::contains ( const&nbsp;<a href="qregexp.html">QRegExp</a>&nbsp;&amp;&nbsp;rx ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回在字符串中正则表达式<em>rx</em>出现的次数。
+<p> 这个函数计算重叠的字符串，所以在下面的实例中，有四个“ana”或者“ama”的实例。
+<p> <pre>
+    QString str = "banana and panama";
+    <a href="qregexp.html">QRegExp</a> rxp = QRegExp( "a[nm]a", TRUE, FALSE );
+    int i = str.<a href="#contains">contains</a>( rxp );    // i == 4
+  </pre>
+ 
+<p> <p>也可以参考<a href="#find">find</a>()和<a href="#findRev">findRev</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="copy"></a>QString::copy () const
+</h3>
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 在Qt 2.0和以后的版本中，对这个函数的所有调用都是不需要的。只要移除它们就可以了。
+
+<h3 class=fn>const char * <a name="data"></a>QString::data () const
+</h3>
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 返回以零结尾的经典的C字符串的指针。
+<p> 在Qt 1.x中，这将返回按自己顺序允许直接维护的字符串的char*。在Qt 2.x中，QString是一个Unicode字符串，char*变换构造了一个临时字符串，并且因此直接字符处理是没有意义的了。
+
+<h3 class=fn>bool <a name="endsWith"></a>QString::endsWith ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s ) const
+</h3>
+如果字符串以<em>s</em>结尾，返回真，否则返回假。
+<p> <p>也可以参考<a href="#startsWith">startsWith</a>()。
+<p>实例：<a href="tutorial2-04.html#x2466">chart/main.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="fill"></a>QString::fill ( <a href="qchar.html">QChar</a>&nbsp;c, int&nbsp;len = -1 )
+</h3>
+填充字符串为<em>len</em>个字符的值<em>c</em>，并且返回字符串的引用。
+<p> 如果<em>len</em>为负数（默认），当前字符串长度被使用。
+<p> <pre>
+    QString str;
+    str.<a href="#fill">fill</a>( 'g', 5 );      // string == "ggggg"
+  </pre>
+ 
+<h3 class=fn>int <a name="find"></a>QString::find ( const&nbsp;<a href="qregexp.html">QRegExp</a>&nbsp;&amp;&nbsp;rx, int&nbsp;index = 0 ) const
+</h3>
+从位置<em>index</em>开始，找到常量<a href="qregexp.html#regular-expression">正则表达式</a><em>rx</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。（对于反向搜索也可以参考<a href="#findRev">findRev</a>()。）
+<p> 返回<em>rx</em>第一次出现的位置，如果<em>rx</em>没有被找到，返回-1。
+<p> <pre>
+    QString string( "bananas" );
+    int i = string.<a href="#find">find</a>( QRegExp("an"), 0 );    // i == 1
+  </pre>
+ 
+<p> <p>也可以参考<a href="#findRev">findRev</a>()、<a href="#replace">replace</a>()和<a href="#contains">contains</a>()。
+<p>实例：<a href="mail-example.html#x761">network/mail/smtp.cpp</a>。
+
+<h3 class=fn>int <a name="find-2"></a>QString::find ( <a href="qchar.html">QChar</a>&nbsp;c, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始，找到字符<em>c</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。（对于反向搜索也可以参考<a href="#findRev">findRev</a>()。）
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> 返回<em>c</em>第一次出现的位置，如果<em>c</em>没有被找到，返回-1。
+
+<h3 class=fn>int <a name="find-3"></a>QString::find ( char&nbsp;c, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始，找到字符<em>c</em>第一次出现的位置。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+
+<h3 class=fn>int <a name="find-4"></a>QString::find ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str, int&nbsp;index = 0, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始，找到字符串<em>str</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。（对于反向搜索也可以参考<a href="#findRev">findRev</a>()。）
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> 返回<em>str</em>第一次出现的位置，如果<em>str</em>没有被找到，返回-1。
+
+<h3 class=fn>int <a name="find-5"></a>QString::find ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;index = 0 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 等于<a href="#find">find</a>(QString(<em>str</em>), <em>index</em>)。
+
+<h3 class=fn>int <a name="findRev"></a>QString::findRev ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;index = -1 ) const
+</h3>
+<p> 等于<a href="#findRev">findRev</a>(QString(<em>str</em>), <em>index</em>)。
+
+<h3 class=fn>int <a name="findRev-2"></a>QString::findRev ( <a href="qchar.html">QChar</a>&nbsp;c, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始并且反向搜索，找到字符<em>c</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。
+<p> 返回<em>c</em>第一次出现的位置，如果<em>c</em>没有被找到，返回-1。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> <pre>
+    QString string( "bananas" );
+    int i = string.<a href="#findRev">findRev</a>( 'a' );      // i == 5
+  </pre>
+ 
+<h3 class=fn>int <a name="findRev-3"></a>QString::findRev ( char&nbsp;c, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始并且反向搜索，找到字符<em>c</em>第一次出现的位置。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+
+<h3 class=fn>int <a name="findRev-4"></a>QString::findRev ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str, int&nbsp;index = -1, bool&nbsp;cs = TRUE ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始并且反向搜索，找到字符串<em>str</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。
+<p> 返回<em>str</em>第一次出现的位置，如果<em>str</em>没有被找到，返回-1。
+<p> 如果<em>cs</em>为真，那么匹配是区分大小写的。如果<em>cs</em>为假，那么匹配是不区分大小写的。
+<p> <pre>
+    QString string("bananas");
+    int i = string.<a href="#findRev">findRev</a>( "ana" );      // i == 3
+  </pre>
+ 
+<h3 class=fn>int <a name="findRev-5"></a>QString::findRev ( const&nbsp;<a href="qregexp.html">QRegExp</a>&nbsp;&amp;&nbsp;rx, int&nbsp;index = -1 ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从位置<em>index</em>开始并且反向搜索，找到正则表达式<em>rx</em>第一次出现的位置。如果<em>index</em>为-1，搜索从最后一个字符开始，如果是-1，从紧挨着最后一个字符的字符开始，依此类推。
+<p> 返回<em>rx</em>第一次出现的位置，如果<em>rx</em>没有被找到，返回-1。
+<p> <pre>
+    QString string( "bananas" );
+    int i = string.<a href="#findRev">findRev</a>( QRegExp("an") );      // i == 3
+  </pre>
+ 
+<p> <p>也可以参考<a href="#find">find</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="fromLatin1"></a>QString::fromLatin1 ( const&nbsp;char&nbsp;*&nbsp;chars, int&nbsp;len = -1 )<tt> [静态]</tt>
+</h3>
+返回从<em>chars</em>的前<em>len</em>个字符解码得到的Unicode字符串，忽略<em>chars</em>的其余字符。如果<em>len</em>为-1，那么<em>chars</em>的长度将被使用。如果<em>len</em>大于<em>chars</em>的长度，那么<em>chars</em>的长度将被使用。
+<p> 这个和QString(const char*)构造函数一样，但是如果你在编译的时候定义了QT_NO_CAST_ASCII，你可以使那个构造函数不可见，在这种情况下你可以使用这个函数来从Latin-1文本中明显地创建一个QString。
+<p> <pre>
+    QString str = QString::<a href="#fromLatin1">fromLatin1</a>( "123456789", 5 );
+    // str == "12345"
+  </pre>
+ 
+<p> 
+<p>实例：<a href="listbox-example.html#x1329">listbox/listbox.cpp</a>和<a href="mail-example.html#x762">network/mail/smtp.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="fromLocal8Bit"></a>QString::fromLocal8Bit ( const&nbsp;char&nbsp;*&nbsp;local8Bit, int&nbsp;len = -1 )<tt> [静态]</tt>
+</h3>
+返回从<em>local8Bit</em>的前<em>len</em>个字符解码得到的Unicode字符串，忽略<em>local8Bit</em>的其余字符。如果<em>len</em>为-1，那么<em>local8Bit</em>的长度将被使用。如果<em>len</em>大于<em>chars</em>的长度，那么<em>local8Bit</em>的长度将被使用。
+<p> <pre>
+    QString str = QString::<a href="#fromLocal8Bit">fromLocal8Bit</a>( "123456789", 5 );
+    // str == "12345"
+  </pre>
+ 
+<p> <em>local8Bit</em>被假设使用本地指定的格式编码的。
+<p> 关于Unicode字符串的编码/解码更多变化请参考<a href="qtextcodec.html">QTextCodec</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="fromUtf8"></a>QString::fromUtf8 ( const&nbsp;char&nbsp;*&nbsp;utf8, int&nbsp;len = -1 )<tt> [静态]</tt>
+</h3>
+返回从<em>utf8</em>的前<em>len</em>个字符解码得到的Unicode字符串，忽略<em>utf8</em>的其余字符。如果<em>len</em>为-1，那么<em>utf8</em>的长度将被使用。如果<em>len</em>大于<em>chars</em>的长度，那么<em>utf8</em>的长度将被使用。
+<p> <pre>
+    QString str = QString::<a href="#fromUtf8">fromUtf8</a>( "123456789", 5 );
+    // str == "12345"
+  </pre>
+ 
+<p> 关于Unicode字符串的编码/解码更多变化请参考<a href="qtextcodec.html">QTextCodec</a>。
+<p>实例：<a href="simple-qfont-demo-walkthrough.html#x2122">fonts/simple-qfont-demo/viewer.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="insert"></a>QString::insert ( uint&nbsp;index, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3>
+把<em>s</em>插入到字符串的<em>index</em>位置之前。
+<p> 如果<em>index</em>超过字符串的结尾，字符串被填充空格扩展到<em>index</em>长度并且然后<em>s</em>被添加，返回这个字符串的引用。
+<p> <pre>
+    QString string( "I like fish" );
+    str = string.<a href="#insert">insert</a>( 2, "don't " );
+    // str == "I don't like fish"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#remove">remove</a>()和<a href="#replace">replace</a>()。
+<p>实例：<a href="themes-example.html#x297">themes/themes.cpp</a>和<a href="xform-example.html#x1465">xform/xform.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="insert-2"></a>QString::insert ( uint&nbsp;index, const&nbsp;<a href="qchar.html">QChar</a>&nbsp;*&nbsp;s, uint&nbsp;len )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把<em>s</em>中的字符插入到字符串的<em>index</em>位置之前<em>len</em>次并且返回这个字符串的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="insert-3"></a>QString::insert ( uint&nbsp;index, <a href="qchar.html">QChar</a>&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把<em>c</em>插入到字符串的<em>index</em>位置之前并且返回这个字符串的引用。
+<p> 如果<em>index</em>超过字符串的结尾，字符串被填充空格（ASCII码为32）扩展到<em>index</em>长度并且然后<em>s</em>被添加，返回这个字符串的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="insert-4"></a>QString::insert ( uint&nbsp;index, char&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在<em>index</em>位置插入字符<em>c</em>。
+
+<h3 class=fn>bool <a name="isEmpty"></a>QString::isEmpty () const
+</h3>
+<p> 如果字符串为空，也就是如果<a href="#length">length</a>() == 0，返回真。因此，零字符串也是空字符串。
+<p> <pre>
+    QString a( "" );
+    a.<a href="#isEmpty">isEmpty</a>();        // 真
+    a.<a href="#isNull">isNull</a>();         // 假
+
+    QString b;
+    b.<a href="#isEmpty">isEmpty</a>();        // 真
+    b.<a href="#isNull">isNull</a>();         // 真
+  </pre>
+ 
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#length">length</a>()。
+<p>实例：<a href="addressbook-example.html#x520">addressbook/mainwindow.cpp</a>、<a href="canvas-chart-example.html#x2611">chart/chartform.cpp</a>、<a href="tutorial2-06.html#x2481">chart/chartform_canvas.cpp</a>、<a href="networkprotocol-example.html#x620">network/networkprotocol/nntp.cpp</a>、<a href="qmag-example.html#x1645">qmag/qmag.cpp</a>和<a href="qwerty-example.html#x388">qwerty/qwerty.cpp</a>。
+
+<h3 class=fn>bool <a name="isNull"></a>QString::isNull () const
+</h3>
+<p> 如果字符串为零，返回真。零字符串总是空的。
+<p> <pre>
+    QString a;          // a.<a href="#unicode">unicode</a>() == 0，a.<a href="#length">length</a>() == 0
+    a.<a href="#isNull">isNull</a>();         // 真，因为a.<a href="#unicode">unicode</a>() == 0
+    a.<a href="#isEmpty">isEmpty</a>();        // 真
+  </pre>
+ 
+<p> <p>也可以参考<a href="#isEmpty">isEmpty</a>()和<a href="#length">length</a>()。
+<p>实例：<a href="i18n-example.html#x1934">i18n/main.cpp</a>和<a href="qdir-example.html#x1835">qdir/qdir.cpp</a>。
+
+<h3 class=fn>const char * <a name="latin1"></a>QString::latin1 () const
+</h3>
+返回字符串的Latin-1表述。注意如果字符串包含非Latin-1字符，返回值是不确定的。如果你想把字符串转化为Unicode以为的格式，请参考<a href="qtextcodec.html">QTextCodec</a>类。
+<p> 这个函数主要对于使用Unicode的开机时的老程序有用处。
+<p> 只要源字符串的一个未修改复制存在，这个结果就保持有效。
+<p> <p>也可以参考<a href="#utf8">utf8</a>()和<a href="#local8Bit">local8Bit</a>()。
+<p>实例：<a href="fileiconview-example.html#x867">fileiconview/qfileiconview.cpp</a>和<a href="networkprotocol-example.html#x621">network/networkprotocol/nntp.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="left"></a>QString::left ( uint&nbsp;len ) const
+</h3>
+返回包含字符串最左面的<em>len</em>个字符的子字符串。
+<p> 如果<em>len</em>超过字符串的长度，则整个字符串被返回。
+<p> <pre>
+    QString s = "Pineapple";
+    QString t = s.<a href="#left">left</a>( 4 );    // t == "Pine"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#right">right</a>()、<a href="#mid">mid</a>()和<a href="#isEmpty">isEmpty</a>()。
+<p>实例：<a href="themes-example.html#x298">themes/themes.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="leftJustify"></a>QString::leftJustify ( uint&nbsp;width, <a href="qchar.html">QChar</a>&nbsp;fill = ' ', bool&nbsp;truncate = FALSE ) const
+</h3>
+返回一个长度为<em>width</em>的，包含这个字符串，并且用<em>fill</em>填补的字符串。
+<p> 如果<em>truncate</em>为假并且字符串的长度超过<em>width</em>，那么返回的字符串是这个字符串的复制。
+<p> 如果<em>truncate</em>为真并且字符串的长度超过<em>width</em>，那么这个字符串的复制中超过<em>width</em>长度的任何字符都被移除并且这个复制被返回。
+<p> <pre>
+    QString s( "apple" );
+    QString t = s.<a href="#leftJustify">leftJustify</a>( 8, '.' );        // t == "apple..."
+  </pre>
+ 
+<p> <p>也可以参考<a href="#rightJustify">rightJustify</a>()。
+
+<h3 class=fn>uint <a name="length"></a>QString::length () const
+</h3>
+<p> 返回字符串的长度。
+<p> 零字符串和空字符串的长度都为0。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#isEmpty">isEmpty</a>()。
+<p>实例：<a href="fileiconview-example.html#x868">fileiconview/qfileiconview.cpp</a>、<a href="networkprotocol-example.html#x622">network/networkprotocol/nntp.cpp</a>、<a href="rot-example.html#x1558">rot13/rot13.cpp</a>和<a href="themes-example.html#x299">themes/themes.cpp</a>。
+
+<h3 class=fn><a href="qcstring.html">QCString</a> <a name="local8Bit"></a>QString::local8Bit () const
+</h3>
+返回被编码为本地指定格式的字符串。在X11上，这是<a href="qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>()。在Windows上，它是系统定义的编码方式。在Mac OS X上，总是使用utf8作为编码方式。
+<p> 关于Unicode字符串的编码/解码更多变化请参考<a href="qtextcodec.html">QTextCodec</a>。
+<p> <p>也可以参考<a href="#fromLocal8Bit">QString::fromLocal8Bit</a>()、<a href="#latin1">latin1</a>()和<a href="#utf8">utf8</a>()。
+
+<h3 class=fn>int <a name="localeAwareCompare"></a>QString::localeAwareCompare ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )<tt> [静态]</tt>
+</h3> 
+<p> 对<em>s1</em>和<em>s2</em>进行比较，如果<em>s1</em>小于、等于或者大于<em>s2</em>，就返回小于、等于或者大于0的整数。
+<p> 这个比较是基于本地的并且也是基于平台的方式。使用这个函数可以把排好序的字符串列表呈现给用户。
+<p> <p>也可以参考<a href="#compare">QString::compare</a>()和<a href="qtextcodec.html#locale">QTextCodec::locale</a>()。
+
+<h3 class=fn>int <a name="localeAwareCompare-2"></a>QString::localeAwareCompare ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s ) const
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 对这个字符串和<em>s</em>进行比较。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="lower"></a>QString::lower () const
+</h3>
+返回由这个字符串转换的小写字符串。
+<p> <pre>
+    QString string( "TROlltECH" );
+    str = string.<a href="#lower">lower</a>();   // str == "trolltech"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#upper">upper</a>()。
+<p>实例：<a href="scribble-example.html#x962">scribble/scribble.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="mid"></a>QString::mid ( uint&nbsp;index, uint&nbsp;len = 0xffffffff ) const
+</h3>
+返回包含这个字符串从<em>index</em>位置开始<em>len</em>个字符的字符串。
+<p> 如果这个字符串为空或者<em>index</em>超出范围，返回零。如果<em>index+len</em>超过这个字符串的长度，返回从<em>index</em>开始的整个字符串。
+<p> <pre>
+    QString s( "Five pineapples" );
+    QString t = s.<a href="#mid">mid</a>( 5, 4 );                  // t == "pine"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#left">left</a>()和<a href="#right">right</a>()。
+<p>实例：<a href="mail-example.html#x763">network/mail/smtp.cpp</a>、<a href="qmag-example.html#x1646">qmag/qmag.cpp</a>和<a href="themes-example.html#x300">themes/themes.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="number"></a>QString::number ( long&nbsp;n, int&nbsp;base = 10 )<tt> [静态]</tt>
+</h3>
+一个把数字<em>n</em>转换为字符串的方便函数，<em>n</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+<p> <pre>
+    long a = 63;
+    QString str = QString::<a href="#number">number</a>( a, 16 );             // str == "3f"
+    QString str = QString::<a href="#number">number</a>( a, 16 ).upper();     // str == "3F"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#setNum">setNum</a>()。
+<p>实例：<a href="qaction-application-example.html#x1088">action/application.cpp</a>、<a href="simple-application-example.html#x1533">application/application.cpp</a>、<a href="canvas-chart-example.html#x2612">chart/chartform.cpp</a>、<a href="simple-qfont-demo-walkthrough.html#x2123">fonts/simple-qfont-demo/viewer.cpp</a>、<a href="mdi-example.html#x2039">mdi/application.cpp</a>和<a href="sql.html#x2192">sql/overview/extract/main.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="number-2"></a>QString::number ( ulong&nbsp;n, int&nbsp;base = 10 )<tt> [静态]</tt>
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <p>也可以参考<a href="#setNum">setNum</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="number-3"></a>QString::number ( int&nbsp;n, int&nbsp;base = 10 )<tt> [静态]</tt>
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <p>也可以参考<a href="#setNum">setNum</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="number-4"></a>QString::number ( uint&nbsp;n, int&nbsp;base = 10 )<tt> [静态]</tt>
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 一个把数字<em>n</em>转换为字符串表示的方便制造函数，<em>n</em>被基于<em>base</em>表示，默认为10，并且必须在2到36之间。
+<p> <p>也可以参考<a href="#setNum">setNum</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="number-5"></a>QString::number ( double&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )<tt> [静态]</tt>
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 根据<em>fmt</em>指定的格式，参数<em>n</em>被格式化，<tt>g</tt>为默认情况并且可以为下列之一：
+<p> <ul>
+<li> <tt>e</tt> - 格式化为[-]9.9e[+|-]999
+<li> <tt>E</tt> - 格式化为[-]9.9E[+|-]999
+<li> <tt>f</tt> - 格式化为[-]9.9
+<li> <tt>g</tt> - 使用<tt>e</tt>或<tt>f</tt>格式，看哪一个更简练
+<li> <tt>G</tt> - 使用<tt>E</tt>或<tt>f</tt>格式，看哪一个更简练
+</ul>
+<p> 在所有的情况下，小数点之后数字的个数等于<em>prec</em>指定的精度。
+<p> <pre>
+    double d = 12.34;
+    QString ds = <a href="#QString">QString</a>( "'E' format, precision 3, gives %1" )
+                 .arg( d, 0, 'E', 3 );
+    // ds == "1.234E+001"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#setNum">setNum</a>()。
+
+<h3 class=fn><a name="operator-const-char-*"></a>QString::operator const char * () const
+</h3>
+<p> 返回<a href="#latin1">latin1</a>()。请确定已经看到这里的警告文档。注意对于你希望严格遵守Unicode的新代码，当你编译你的代码时，你可以定义QT_NO_ASCII_CAST宏来隐藏这个函数，这样自动抛出就不会被完成。这样可以添加你可以抓住在<a href="#operator!">operator!</a>()下描述的编程错误的优点。
+
+<h3 class=fn>bool <a name="operator!"></a>QString::operator! () const
+</h3>
+如果它不是零字符串，返回真，否则返回假。
+<p> <pre>
+    QString name = getName();
+    if ( !name )
+        name = "Rodney";
+  </pre>
+ 
+<p> 注意如果你这样做
+<p> <pre>
+    QString name = getName();
+    if ( name )
+        doSomethingWith(name);
+  </pre>
+ 
+<p> 它将调用“operator const char*()”，这是没有效率的，当你希望写遵守Unicode的代码时，你可以定义QT_NO_ASCII_CAST宏。
+<p> 当你想使用上述的语义时，请使用：
+<p> <pre>
+    QString name = getName();
+    if ( !name.<a href="#isNull">isNull</a>() )
+        doSomethingWith(name);
+  </pre>
+ 
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator+-eq"></a>QString::operator+= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+把<em>str</em>添加到字符串中并且返回结果的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator+-eq-2"></a>QString::operator+= ( <a href="qchar.html">QChar</a>&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把字符<em>c</em>添加到字符串中并且返回结果的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator+-eq-3"></a>QString::operator+= ( char&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把字符<em>c</em>添加到字符串中并且返回结果的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator-eq"></a>QString::operator= ( <a href="qchar.html">QChar</a>&nbsp;c )
+</h3>
+设置字符串只包含单个字符<em>c</em>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator-eq-2"></a>QString::operator= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把<em>s</em>的一个<a href="shclass.html#shallow-copy">浅度复制</a>赋值给这个字符串并且返回这个字符串的引用。这是非常快的，因为字符串没有被实际复制。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator-eq-3"></a>QString::operator= ( const&nbsp;char&nbsp;*&nbsp;str )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把解释为经典C字符串的<em>str</em>的一个<a href="shclass.html#deep-copy">深度复制</a>赋值给这个字符串并且返回这个字符串的引用。
+<p> 如果<em>str</em>为0，那么零字符串被创建。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator-eq-4"></a>QString::operator= ( const&nbsp;<a href="qcstring.html">QCString</a>&nbsp;&amp;&nbsp;cs )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 把解释为经典C字符串的<em>cs</em>的一个<a href="shclass.html#deep-copy">深度复制</a>赋值给这个字符串并且返回这个字符串的引用。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="operator-eq-5"></a>QString::operator= ( char&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置字符串只包含单个字符<em>c</em>。
+
+<h3 class=fn><a href="qchar.html">QChar</a> <a name="operator[]"></a>QString::operator[] ( int&nbsp;i ) const
+</h3>
+<p> 返回在索引<em>i</em>处的字符，或者如果<em>i</em>超过字符串的长度返回QChar::null。
+<p> 如果QString不是常量（也就是const QString）或者const&amp;（也就是const QString&amp;），那么operator[]的非常量重载将被使用来替代它。
+
+<h3 class=fn><a href="qcharref.html">QCharRef</a> <a name="operator[]-2"></a>QString::operator[] ( int&nbsp;i )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数返回在索引<em>i</em>处的字符的引用。这个结果引用可以立即被赋值或者使用，但是一旦初始字符串发生了改变，它将会变为无效。
+<p> 如果<em>i</em>超过了字符串的长度，那么字符串将会被使用QChar::null来扩展，这样<a href="qcharref.html">QCharRef</a>就可以引用字符串中的有效（零）字符。
+<p> QCharRef内部类可以被常量<a href="qchar.html">QChar</a>使用，但是如果你对它赋值，你就会改变初始字符串（它将会自动分离，因为QString是写时复制）。如果你试图把结果作为QChar以外的东西使用，你将得到编译错误。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="prepend"></a>QString::prepend ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3>
+<p> 在字符串开始处插入<em>s</em>并且返回这个字符串的引用。
+<p> 等于<a href="#insert">insert</a>(0, <em>s</em>)。
+<p> <pre>
+    QString string = "42";
+    string.<a href="#prepend">prepend</a>( "The answer is " );
+    // string == "The answer is 42"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#insert">insert</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="prepend-2"></a>QString::prepend ( char&nbsp;ch )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在字符串开始处插入<em>ch</em>并且返回这个字符串的引用。
+<p> 等于<a href="#insert">insert</a>(0, <em>ch</em>)。
+<p> <p>也可以参考<a href="#insert">insert</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="prepend-3"></a>QString::prepend ( <a href="qchar.html">QChar</a>&nbsp;ch )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在字符串开始处插入<em>ch</em>并且返回这个字符串的引用。
+<p> 等于<a href="#insert">insert</a>(0, <em>ch</em>)。
+<p> <p>也可以参考<a href="#insert">insert</a>()。
+
+<h3 class=fn><a href="qchar.html">QChar</a>&nbsp;&amp; <a name="ref"></a>QString::ref ( uint&nbsp;i )
+</h3>
+<p> 返回在索引<em>i</em>的<a href="qchar.html">QChar</a>的引用，如果需要就是用QChar::null扩展字符串。这个结果引用可以立即被赋值或者使用，但是一旦初始字符串发生了改变，它将会变为无效。
+<p> <pre>
+    QString string("ABCDEF");
+    <a href="qchar.html">QChar</a> ch = string.<a href="#ref">ref</a>( 3 );         // ch == 'D'
+  </pre>
+ 
+<p> <p>也可以参考<a href="#constref">constref</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="remove"></a>QString::remove ( uint&nbsp;index, uint&nbsp;len )
+</h3>
+从字符串中的<em>index</em>位置开始移除<em>len</em>个字符并且返回这个字符串的引用。
+<p> 如果<em>index</em>超出字符串的长度，就什么也不发生。如果<em>index</em>在字符串中间，但是<em>index</em>加上<em>len</em>超过字符串的结尾，这个字符串将从<em>index</em>开始被截短。
+<p> <pre>
+    QString string( "Montreal" );
+    string.<a href="#remove">remove</a>( 1, 4 );      // string == "Meal"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#insert">insert</a>()和<a href="#replace">replace</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="replace"></a>QString::replace ( uint&nbsp;index, uint&nbsp;len, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3>
+从字符串中的<em>index</em>位置开始使用<em>s</em>替换<em>len</em>个字符，并且返回这个字符串的引用。
+<p> 如果<em>index</em>超出字符串的长度，就什么也不被删除并且<em>s</em>被添加到字符串结尾。如果 <em>index</em>有效并且<em>index</em>加上<em>len</em>超过字符串的结尾，那么这个字符串将从<em>index</em>开始被截短，并且<em>s</em>被添加到字符串结尾。
+<p> <pre>
+    QString string( "Say yes!" );
+    string = string.<a href="#replace">replace</a>( 4, 3, "NO" );
+    // string == "Say NO!"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#insert">insert</a>()和<a href="#remove">remove</a>()。
+<p>实例：<a href="listviews-example.html#x349">listviews/listviews.cpp</a>、<a href="networkprotocol-example.html#x623">network/networkprotocol/nntp.cpp</a>和<a href="qmag-example.html#x1647">qmag/qmag.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="replace-2"></a>QString::replace ( uint&nbsp;index, uint&nbsp;len, const&nbsp;<a href="qchar.html">QChar</a>&nbsp;*&nbsp;s, uint&nbsp;slen )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 从字符串中的<em>index</em>位置开始使用<em>s</em>中的<em>slen</em>个字符的<a href="qchar.html">QChar</a>数据替换<em>len</em>个字符，并且返回这个字符串的引用。
+<p> <p>也可以参考<a href="#insert">insert</a>()和<a href="#remove">remove</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="replace-3"></a>QString::replace ( const&nbsp;<a href="qregexp.html">QRegExp</a>&nbsp;&amp;&nbsp;rx, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 用<em>str</em>替换字符串中出现的每一个正则表达式<em>rx</em>。返回这个字符串的引用。
+<p> <pre>
+    QString string = "banana";
+    string = string.<a href="#replace">replace</a>( QRegExp("an"), "" ); // string == "ba"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#find">find</a>()和<a href="#findRev">findRev</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="right"></a>QString::right ( uint&nbsp;len ) const
+</h3>
+返回包含字符串最右面的<em>len</em>个字符的子字符串。
+<p> 如果<em>len</em>超过字符串的长度，则整个字符串被返回。
+<p> <pre>
+    QString string( "Pineapple" );
+    QString t = string.<a href="#right">right</a>( 5 );   // t == "apple"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#left">left</a>()、<a href="#mid">mid</a>()和<a href="#isEmpty">isEmpty</a>()。
+<p>实例：<a href="fileiconview-example.html#x869">fileiconview/qfileiconview.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="rightJustify"></a>QString::rightJustify ( uint&nbsp;width, <a href="qchar.html">QChar</a>&nbsp;fill = ' ', bool&nbsp;truncate = FALSE ) const
+</h3>
+返回一个长度为<em>width</em>的，包含<em>fill</em>填补的字符串，后面跟着这个字符串。
+<p> 如果<em>truncate</em>为假并且字符串的长度超过<em>width</em>，那么返回的字符串是这个字符串的复制。
+<p> 如果<em>truncate</em>为真并且字符串的长度超过<em>width</em>，那么这个字符串的复制中超过<em>width</em>长度的任何字符都被移除并且这个复制被返回。
+<p> <pre>
+    QString string( "apple" );
+    QString t = string.<a href="#rightJustify">rightJustify</a>( 8, '.' );  // t == "...apple"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#leftJustify">leftJustify</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="section"></a>QString::section ( <a href="qchar.html">QChar</a>&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const
+</h3>
+<p> 这个函数用来返回字符串的一部分。
+<p> 这个字符串被看作由字符<em>sep</em>分隔开的顺序的区段。返回的从位置<em>start</em>到位置<em>end</em>（两个都包含）的区段组成的字符串。如果<em>end</em>没有被指定，那么从位置<em>start</em>开始到字符串的结尾的所有区段都被返回。区段是从左面是0、1、2等等计数，或者从右面-1、-2等等计数的。
+<p> <em>flags</em>参数可以用来影响这个函数行为的特征，例如是否区分大小写，是否忽略空区段并且如何处理开始和结尾的分隔符，请参考<a href="#SectionFlags-enum">SectionFlags</a>。
+<p> <pre>
+    QString csv( "forename,middlename,surname,phone" );
+    QString s = csv.<a href="#section">section</a>( ',', 2, 2 );   // s == "surname"
+
+    QString path( "/usr/local/bin/myapp" ); // First field is empty
+    QString s = path.<a href="#section">section</a>( '/', 3, 4 );  // s == "bin/myapp"
+    QString s = path.<a href="#section">section</a>( '/', 3, 3, SectionSkipEmpty ); // s == "myapp"
+    </pre>
+ 
+<p> 如果<em>start</em>或者<em>end</em>为负数，我们就从字符串的右面开始计数，最右面的是-1，接着是-2，依此类推。
+<p> <pre>
+    QString csv( "forename,middlename,surname,phone" );
+    QString s = csv.<a href="#section">section</a>( ',', -3, -2 );  // s == "middlename,surname"
+
+    QString path( "/usr/local/bin/myapp" ); // First field is empty
+    QString s = path.<a href="#section">section</a>( '/', -1 ); // s == "myapp"
+    </pre>
+ 
+<p> <p>也可以参考<a href="qstringlist.html#split">QStringList::split</a>()。
+<p>实例：<a href="tutorial2-03.html#x2454">chart/element.cpp</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="section-2"></a>QString::section ( char&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="section-3"></a>QString::section ( const&nbsp;char&nbsp;*&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="section-4"></a>QString::section ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;sep, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数用来返回字符串的一部分。
+<p> 这个字符串被看作由字符串<em>sep</em>分隔开的顺序的区段。返回的从位置<em>start</em>到位置<em>end</em>（两个都包含）的区段组成的字符串。如果<em>end</em>没有被指定，那么从位置<em>start</em>开始到字符串的结尾的所有区段都被返回。区段是从左面是0、1、2等等计数，或者从右面-1、-2等等计数的。
+<p> <em>flags</em>参数可以用来影响这个函数行为的特征，例如是否区分大小写，是否忽略空区段并且如何处理开始和结尾的分隔符，请参考<a href="#SectionFlags-enum">SectionFlags</a>。
+<p> <pre>
+    QString data( "forename**middlename**surname**phone" );
+    QString s = data.<a href="#section">section</a>( "**", 2, 2 ); // s == "surname"
+    </pre>
+ 
+<p> 如果<em>start</em>或者<em>end</em>为负数，我们就从字符串的右面开始计数，最右面的是-1，接着是-2，依此类推。
+<p> <pre>
+    QString data( "forename**middlename**surname**phone" );
+    QString s = data.<a href="#section">section</a>( "**", -3, -2 ); // s == "middlename**surname"
+    </pre>
+ 
+<p> <p>也可以参考<a href="qstringlist.html#split">QStringList::split</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="section-5"></a>QString::section ( const&nbsp;<a href="qregexp.html">QRegExp</a>&nbsp;&amp;&nbsp;reg, int&nbsp;start, int&nbsp;end = 0xffffffff, int&nbsp;flags = SectionDefault ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个函数用来返回字符串的一部分。
+<p> 这个字符串被看作由<a href="qregexp.html#regular-expression">正则表达式</a><em>reg</em>分隔开的顺序的区段。返回的从位置<em>start</em>到位置<em>end</em>（两个都包含）的区段组成的字符串。如果<em>end</em>没有被指定，那么从位置<em>start</em>开始到字符串的结尾的所有区段都被返回。区段是从左面是0、1、2等等计数，或者从右面-1、-2等等计数的。
+<p> <em>flags</em>参数可以用来影响这个函数行为的特征，例如是否区分大小写，是否忽略空区段并且如何处理开始和结尾的分隔符，请参考<a href="#SectionFlags-enum">SectionFlags</a>。
+<p> <pre>
+    QString line( "forename\tmiddlename  surname \t \t phone" );
+    <a href="qregexp.html">QRegExp</a> sep( "\s+" );
+    QString s = line.<a href="#section">section</a>( sep, 2, 2 ); // s == "surname"
+    </pre>
+ 
+<p> 如果<em>start</em>或者<em>end</em>为负数，我们就从字符串的右面开始计数，最右面的是-1，接着是-2，依此类推。
+<p> <pre>
+    QString line( "forename\tmiddlename  surname \t \t phone" );
+    <a href="qregexp.html">QRegExp</a> sep( "\\s+" );
+    QString s = line.<a href="#section">section</a>( sep, -3, -2 ); // s == "middlename  surname"
+    </pre>
+ 
+<p> <b>警告：</b> <a href="qregexp.html">QRegExp</a>这一部分比其它字符串和字符的重载版本要花费更多。
+<p> <p>也可以参考<a href="qstringlist.html#split">QStringList::split</a>()和<a href="#simplifyWhiteSpace">simplifyWhiteSpace</a>()。
+
+<h3 class=fn>void <a name="setExpand"></a>QString::setExpand ( uint&nbsp;index, <a href="qchar.html">QChar</a>&nbsp;c )
+</h3> 
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 设置在<em>index</em>位置的字符为<em>c</em>并且如果需要使用空格来扩展这个字符串。
+<p> 这个方法在Qt 3.x中是多余的，因为operator[]可以在需要的时候扩展字符串。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setLatin1"></a>QString::setLatin1 ( const&nbsp;char&nbsp;*&nbsp;str, int&nbsp;len = -1 )
+</h3>
+设置这个字符串为解释为经典的Latin1的C字符串的<em>str</em>。如果<em>len</em>为-1（默认），那么它将被设置为strlen(str)。
+<p> 如果<em>str</em>为0，那么零字符串被创建。如果<em>str</em>为“”，那么空字符串被创建。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#isEmpty">isEmpty</a>()。
+
+<h3 class=fn>void <a name="setLength"></a>QString::setLength ( uint&nbsp;newLen )
+</h3>
+确保至少<em>newLen</em>个字符被分配给这个字符串，并且设置这个字符串的长度为<em>newLen</em>。任何分配的新空间保留任意的数据。
+<p> 如果<em>newLen</em>为0，那么这个字符串将变为空，除非这个字符串是零，这种情况下它仍保持为零。
+<p> 如果不能分配足够的内存，字符串保持不变。
+<p> 这个函数总是把这个字符串和有同样数据的其它引用分离。
+<p> 这个函数对于需要构建一个长字符创并且想避免重复重新分配空间的代码很有用。在这个实例中，我们想添加字符串，直到条件为真，并且我们十分确信分配给它的大小是足够大的：
+<pre>
+    QString result;
+    int resultLength = 0;
+    result.<a href="#setLength">setLength</a>( newLen ) // 分配一些空间
+    while ( ... ) {
+        result[resultLength++] = ... // 填充（部分的）空格作为数据
+    }
+    result.truncate[resultLength]; // 并且去掉不确定的垃圾
+  </pre>
+ 
+<p> 如果<em>newLen</em>是不足的话，最坏的情况就是将会循环将会变慢。
+<p> <p>也可以参考<a href="#truncate">truncate</a>()、<a href="#isNull">isNull</a>()、<a href="#isEmpty">isEmpty</a>()和<a href="#length">length</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum"></a>QString::setNum ( long&nbsp;n, int&nbsp;base = 10 )
+</h3>
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+<p> <pre>
+    QString string;
+    string = string.<a href="#setNum">setNum</a>( 1234 );     // string == "1234"
+  </pre>
+ 
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-2"></a>QString::setNum ( short&nbsp;n, int&nbsp;base = 10 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-3"></a>QString::setNum ( ushort&nbsp;n, int&nbsp;base = 10 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-4"></a>QString::setNum ( int&nbsp;n, int&nbsp;base = 10 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-5"></a>QString::setNum ( uint&nbsp;n, int&nbsp;base = 10 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-6"></a>QString::setNum ( ulong&nbsp;n, int&nbsp;base = 10 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+设置字符串为打印的数据<em>n</em>，<em>n</em>是基于<em>base</em>并且返回这个字符串的引用。
+<p> <em>base</em>默认为10并且必须在2到36之间。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-7"></a>QString::setNum ( float&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置字符串为打印的由格式<em>f</em>和精度<em>prec</em>格式化的数据<em>n</em>并且返回这个字符串的引用。
+<p> 格式<em>f</em>可以为“f”、“F”、“e”、“E”、“g”或者“G”。关于这些格式的解释请参考<a href="#arg-formats">arg</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setNum-8"></a>QString::setNum ( double&nbsp;n, char&nbsp;f = 'g', int&nbsp;prec = 6 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置字符串为打印的由格式<em>f</em>和精度<em>prec</em>格式化的数据<em>n</em>并且返回这个字符串的引用。
+<p> 格式<em>f</em>可以为“f”、“F”、“e”、“E”、“g”或者“G”。关于这些格式的解释请参考<a href="#arg-formats">arg</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setUnicode"></a>QString::setUnicode ( const&nbsp;<a href="qchar.html">QChar</a>&nbsp;*&nbsp;unicode, uint&nbsp;len )
+</h3>
+重新定义字符串的大小为<em>len</em>并且把<em>unicode</em>复制到字符串中。如果<em>unicode</em>为零，什么都不被复制，但是字符串还是被重新定义为<em>len</em>。如果<em>len</em>为0，那么字符串变为<a href="#isNull">零</a>字符串。
+<p> <p>也可以参考<a href="#setLatin1">setLatin1</a>()和<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="setUnicodeCodes"></a>QString::setUnicodeCodes ( const&nbsp;ushort&nbsp;*&nbsp;unicode_as_ushorts, uint&nbsp;len )
+</h3>
+重新定义字符串的大小为<em>len</em>并且把<em>unicode_as_ushorts</em>复制到字符串中（在一些X11客户端平台上这将进入到二进制缓存通道中）。
+<p> 如果<em>unicode_as_ushorts</em>为零，什么都不被复制，但是字符串还是被重新定义为<em>len</em>。如果<em>len</em>为0，那么字符串变为<a href="#isNull">零</a>字符串。
+<p> <p>也可以参考<a href="#setLatin1">setLatin1</a>()和<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="simplifyWhiteSpace"></a>QString::simplifyWhiteSpace () const
+</h3>
+返回一个移除了这个字符串的开始和结尾的空白符号的字符串，并且内部的空白符号都被替代为单一的空格。
+<p> 空白符号是指任何<a href="qchar.html#isSpace">QChar::isSpace</a>()返回真的字符。这里面包括十进制为9（TAB）、10（LF）、11（VT）、12（FF）、13（CR）和32（Space）的UNICODE字符。
+<p> <pre>
+    QString string = "  lots\t of\nwhite    space ";
+    QString t = string.<a href="#simplifyWhiteSpace">simplifyWhiteSpace</a>();
+    // t == "lots of white space"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#stripWhiteSpace">stripWhiteSpace</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a>&nbsp;&amp; <a name="sprintf"></a>QString::sprintf ( const&nbsp;char&nbsp;*&nbsp;cformat, ... )
+</h3>
+从一个格式化字符串<em>cformat</em>和一个任意的参数列表安全地构建一个格式化的字符串。
+<p> %s转义序列希望一个<a href="#utf8">utf8</a>()编码字符串。格式化字符串<em>cformat</em>希望是一个Latin1的。如果你需要一个Unicode格式字符串，使用<a href="#arg">arg</a>()来替代。为了完全支持Unicode的类型安全的字符串构建，你可以像这样使用<a href="qtextostream.html">QTextOStream</a>：
+<p> <pre>
+    QString str;
+    QString s = ...;
+    int x = ...;
+    QTextOStream( &amp;str ) &lt;&lt; s &lt;&lt; " : " &lt;&lt; x;
+  </pre>
+ 
+<p> 对于<a href="qobject.html#tr">翻译</a>，特别是如果字符串包含超过一个的转义序列，你应该考虑使用arg()来替代它。这将允许翻译者来控制替换的顺序并且支持Unicode。
+<p> <p>也可以参考<a href="#arg">arg</a>()。
+<p>实例：<a href="dclock-example.html#x903">dclock/dclock.cpp</a>、<a href="forever-example.html#x798">forever/forever.cpp</a>、<a href="layout-example.html#x493">layout/layout.cpp</a>、<a href="qmag-example.html#x1648">qmag/qmag.cpp</a>、<a href="scrollview-example.html#x743">scrollview/scrollview.cpp</a>、<a href="tooltip-example.html#x568">tooltip/tooltip.cpp</a>和<a href="xform-example.html#x1466">xform/xform.cpp</a>。
+
+<h3 class=fn>bool <a name="startsWith"></a>QString::startsWith ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s ) const
+</h3>
+如果字符串以<em>s</em>开始，返回真，否则返回假。
+<p> <pre>
+    QString string("Bananas");
+    bool a = string.<a href="#startsWith">startsWith</a>("Ban");      //  a == TRUE
+  </pre>
+ 
+<p> <p>也可以参考<a href="#endsWith">endsWith</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="stripWhiteSpace"></a>QString::stripWhiteSpace () const
+</h3>
+返回一个移除了这个字符串的开始和结尾的空白符号的字符串，并且内部的空白符号都被替代为单一的空格。
+<p> 空白符号是指任何<a href="qchar.html#isSpace">QChar::isSpace</a>()返回真的字符。这里面包括十进制为9（TAB）、10（LF）、11（VT）、12（FF）、13（CR）和32（Space）的UNICODE字符。
+<p> <pre>
+    QString string = "   white space   ";
+    QString s = string.<a href="#stripWhiteSpace">stripWhiteSpace</a>();       // s == "white space"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#simplifyWhiteSpace">simplifyWhiteSpace</a>()。
+
+<h3 class=fn>double <a name="toDouble"></a>QString::toDouble ( bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+返回由这个字符串转化的<tt>double</tt>值。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <pre>
+    QString string( "1234.56" );
+    double a = string.<a href="#toDouble">toDouble</a>();   // a == 1234.56
+  </pre>
+ 
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>float <a name="toFloat"></a>QString::toFloat ( bool&nbsp;*&nbsp;ok = 0 ) const
+</h3> 
+返回由这个字符串转化的<tt>float</tt>值。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>int <a name="toInt"></a>QString::toInt ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3>
+返回由这个字符串转化的<tt>int</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <pre>
+    QString str( "FF" );
+    bool ok;
+    int hex = str.<a href="#toInt">toInt</a>( &amp;ok, 16 );     // hex == 255, ok == TRUE
+    int dec = str.<a href="#toInt">toInt</a>( &amp;ok, 10 );     // dec == 0, ok == FALSE
+  </pre>
+ 
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>long <a name="toLong"></a>QString::toLong ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3> 
+返回由这个字符串转化的<tt>long</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>short <a name="toShort"></a>QString::toShort ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3> 
+返回由这个字符串转化的<tt>short</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+
+<h3 class=fn>uint <a name="toUInt"></a>QString::toUInt ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3> 
+返回由这个字符串转化的<tt>unsigned int</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>ulong <a name="toULong"></a>QString::toULong ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3> 
+返回由这个字符串转化的<tt>unsigned long</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+<p> <p>也可以参考<a href="#number">number</a>()。
+
+<h3 class=fn>ushort <a name="toUShort"></a>QString::toUShort ( bool&nbsp;*&nbsp;ok = 0, int&nbsp;base = 10 ) const
+</h3> 
+返回由这个字符串转化的<tt>unsigned short</tt>值，是基于<em>base</em>的，默认为10并且必须在2到36之间。
+<p> 如果转化发生错误，<em>*ok</em>被设置为假（除非<em>ok</em>为0，这是默认的）并且0被返回。否则<em>*ok</em>被设置为真。
+
+<h3 class=fn>void <a name="truncate"></a>QString::truncate ( uint&nbsp;newLen )
+</h3>
+如果<em>newLen</em>小于字符串的长度，那么字符串将从<em>newLen</em>位置被截短。否则就什么也不发生。
+<p> <pre>
+    QString s = "truncate me";
+    s.<a href="#truncate">truncate</a>( 5 );            // s == "trunc"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#setLength">setLength</a>()。
+<p>实例：<a href="mail-example.html#x764">network/mail/smtp.cpp</a>。
+
+<h3 class=fn>const&nbsp;<a href="qchar.html">QChar</a>&nbsp;* <a name="unicode"></a>QString::unicode () const
+</h3>
+<p> 返回这个字符串的Unicode表述。直到这个字符串被修改，这个结果保持有效。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="upper"></a>QString::upper () const
+</h3>
+返回由这个字符串转换的大写字符串。
+<p> <pre>
+    QString string( "TeXt" );
+    str = string.<a href="#upper">upper</a>();     // t == "TEXT"
+  </pre>
+ 
+<p> <p>也可以参考<a href="#lower">lower</a>()。
+<p>实例：<a href="scribble-example.html#x963">scribble/scribble.cpp</a>和<a href="sql.html#x2239">sql/overview/custom1/main.cpp</a>。
+
+<h3 class=fn><a href="qcstring.html">QCString</a> <a name="utf8"></a>QString::utf8 () const
+</h3>
+返回按UTF8格式编码的字符串。
+<p> 关于Unicode字符串的编码/解码更多变化请参考<a href="qtextcodec.html">QTextCodec</a>。
+<p> <p>也可以参考<a href="#fromUtf8">QString::fromUtf8</a>()、<a href="#local8Bit">local8Bit</a>()和<a href="#latin1">latin1</a>()。
+
+<hr><h2>相关函数</h2>
+<h3 class=fn>bool <a name="operator!-eq"></a>operator!= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中不等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>bool <a name="operator!-eq-2"></a>operator!= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中不等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>bool <a name="operator!-eq-3"></a>operator!= ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中不等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>const&nbsp;<a href="qstring.html">QString</a> <a name="operator+"></a>operator+ ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3>
+<p> 返回字符串<em>s1</em>和字符串<em>s2</em>连接的结果的字符串。
+<p> 等于<em>s1</em>.<a href="#append">append</a>(<em>s2</em>)。
+
+<h3 class=fn>const&nbsp;<a href="qstring.html">QString</a> <a name="operator+-2"></a>operator+ ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回字符串<em>s1</em>和字符串<em>s2</em>连接的结果的字符串。
+<p> 等于<em>s1</em>.<a href="#append">append</a>(<em>s2</em>)。
+
+<h3 class=fn>const&nbsp;<a href="qstring.html">QString</a> <a name="operator+-3"></a>operator+ ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回字符串<em>s1</em>和字符串<em>s2</em>连接的结果的字符串。
+
+<h3 class=fn>const&nbsp;<a href="qstring.html">QString</a> <a name="operator+-4"></a>operator+ ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s, char&nbsp;c )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回字符串<em>s</em>和字符<em>c</em>连接的结果的字符串。
+<p> 等于<em>s</em>.<a href="#append">append</a>(<em>c</em>)。
+
+<h3 class=fn>const&nbsp;<a href="qstring.html">QString</a> <a name="operator+-5"></a>operator+ ( char&nbsp;c, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回字符<em>c</em>和字符串<em>s</em>连接的结果的字符串。
+<p> 等于<em>s</em>.<a href="#prepend">prepend</a>(<em>c</em>)。
+
+<h3 class=fn>bool <a name="operator-lt"></a>operator&lt; ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中小于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &lt; 0。
+
+<h3 class=fn>bool <a name="operator-lt-2"></a>operator&lt; ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中小于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &lt; 0。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-lt-lt"></a>operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+把字符串<em>str</em>写到流<em>s</em>中。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<h3 class=fn>bool <a name="operator-lt-eq"></a>operator&lt;= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中小于或等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>,<em>s2</em>) &lt;= 0。
+
+<h3 class=fn>bool <a name="operator-lt-eq-2"></a>operator&lt;= ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中小于或等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>,<em>s2</em>) &lt;= 0。
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>operator== ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>bool <a name="operator-eq-eq-2"></a>operator== ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>bool <a name="operator-eq-eq-3"></a>operator== ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) != 0。
+
+<h3 class=fn>bool <a name="operator-gt"></a>operator&gt; ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中大于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &gt; 0。
+
+<h3 class=fn>bool <a name="operator-gt-2"></a>operator&gt; ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中大于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &gt; 0。
+
+<h3 class=fn>bool <a name="operator-gt-eq"></a>operator&gt;= ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s1, const&nbsp;char&nbsp;*&nbsp;s2 )
+</h3>
+<p> 
+如果<em>s1</em>在词典中大于或等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &gt;= 0。
+
+<h3 class=fn>bool <a name="operator-gt-eq-2"></a>operator&gt;= ( const&nbsp;char&nbsp;*&nbsp;s1, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s2 )
+</h3> 
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 
+如果<em>s1</em>在词典中大于或等于<em>s2</em>，返回真，否则如果不是，返回假。这个比较是区分大小写的。注意一个零字符串不等于一个非零的空字符串。
+<p> 等于<a href="#compare">compare</a>(<em>s1</em>, <em>s2</em>) &gt;= 0。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-gt-gt"></a>operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, <a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )
+</h3>
+从流<em>s</em>中读取一个字符串到字符串<em>str</em>中。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

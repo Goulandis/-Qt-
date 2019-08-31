@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/table/qtable.cpp:964 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QComboTableItem类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QComboTableItem类参考<br><small>[<a href="table.html">表格模块</a>]</small></h1>
+
+<p>QComboTableItem类提供了QTable中使用组合框的一种方式。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;</tt>
+<p>继承了<a href="qtableitem.html">QTableItem</a>。
+<p><a href="qcombotableitem-members.html">所有成员函数的列表。</a>
+<h2>公共成员</h2>
+<ul>
+<li><div class=fn><a href="#QComboTableItem"><b>QComboTableItem</b></a> ( QTable&nbsp;*&nbsp;table, const&nbsp;QStringList&nbsp;&amp;&nbsp;list, bool&nbsp;editable = FALSE )</div></li>
+<li><div class=fn>virtual void <a href="#setCurrentItem"><b>setCurrentItem</b></a> ( int&nbsp;i )</div></li>
+<li><div class=fn>virtual void <a href="#setCurrentItem-2"><b>setCurrentItem</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>int <a href="#currentItem"><b>currentItem</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#currentText"><b>currentText</b></a> () const</div></li>
+<li><div class=fn>int <a href="#count"><b>count</b></a> () const</div></li>
+<li><div class=fn>QString <a href="#text"><b>text</b></a> ( int&nbsp;i ) const</div></li>
+<li><div class=fn>virtual void <a href="#setEditable"><b>setEditable</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#isEditable"><b>isEditable</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setStringList"><b>setStringList</b></a> ( const&nbsp;QStringList&nbsp;&amp;&nbsp;l )</div></li>
+<li><div class=fn>virtual int <a href="#rtti"><b>rtti</b></a> () const</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+ 
+
+<p>QComboTableItem类提供了QTable中使用组合框的一种方式。
+<p> 
+<p>一个QComboTableItem是一个表项，其外观和行为如同组合框。使用QComboTableItem而不是真实的组合框的好处在于，在<a href="qtable.html">QTable</a>中QComboTableItem要比真实的多选框节省很多资源。当单元格具有焦点时，QComboTableItem显示一个与用户交互的真实组合框。当单元格没有焦点时，单元格<em>看起来</em>像是一个组合框。只有文本表项（就是说没有象素映射）能用于QComboTableItem。
+<p>QComboTableItem表项具有编辑类型<a href="qtableitem.html#EditType-enum">WhenCurrent</a>（参见<a href="qtableitem.html#EditType-enum">EditType</a>）。QComboTableItem的条目列表由传递给构造器的<a href="qstringlist.html">QStringList</a>提供。
+<p>条目列表可以使用<a href="#setStringList">setStringList</a>()来改变。用<a href="#setCurrentItem">setCurrentItem</a>()设置当前条目，用<a href="#currentItem">currentItem</a>()来得到当前条目。当前条目的文本用<a href="#currentText">currentText</a>()获得，具体某个条目的文本用<a href="#text">text</a>()获得。
+<p>如果<a href="#isEditable">isEditable</a>()未TRUE，QComboTableItem允许用户要么选择一个已存在的条目，要么输入自己的文本以生成新的条目；否则，用户只能选择一个已有的条目。
+<p>使用<a href="qtable.html#setItem">QTable::setItem</a>以把QComboTableItem填充进一个表格单元格。
+<p> QComboTableItems may be deleted with <a href="qtable.html#clearCell">QTable::clearCell</a>()。
+<p>使用运行时类型判别（参见<a href="#rtti">rtti</a>()）值，可以辨别QComboTableItem与<a href="qtableitem.html">QTableItem</a>和<a href="qchecktableitem.html">QCheckTableItem</a>。
+<p> <center><img src="qtableitems.png" alt="Table Items"></center> 
+<p> <p>也参见<a href="qchecktableitem.html">QCheckTableItem</a>、<a href="qtableitem.html">QTableItem</a>和<a href="advanced.html">高级部件</a>。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QComboTableItem"></a>QComboTableItem::QComboTableItem ( <a href="qtable.html">QTable</a>&nbsp;*&nbsp;table, const&nbsp;<a href="qstringlist.html">QStringList</a>&nbsp;&amp;&nbsp;list, bool&nbsp;editable = FALSE )
+</h3>为表格<em>table</em>生成一个组合表项。组合框的条目列表在参数<em>list</em>中传入。如果<em>editable</em>为TRUE，用户可以输入新的条目；如果<em>editable</em>为FALSE，用户只能从提供的条目中选择。
+<p>由于<a href="qtableitem.html#isReplaceable">isReplaceable</a>()缺省返回FALSE，缺省情况下QComboTableItem不能被其他表项替换。
+<p> <p>也参见<a href="qtable.html#clearCell">QTable::clearCell</a>()和<a href="qtableitem.html#EditType-enum">EditType</a>。
+
+<h3 class=fn>int <a name="count"></a>QComboTableItem::count () const
+</h3>返回组合表项中的条目列表总数。
+
+<h3 class=fn>int <a name="currentItem"></a>QComboTableItem::currentItem () const
+</h3>
+返回组合表项的当前条目的索引。
+<p> <p>也参见<a href="#setCurrentItem">setCurrentItem</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="currentText"></a>QComboTableItem::currentText () const
+</h3>
+返回组合表项的当前条目的文本。
+<p> <p>也参见<a href="#currentItem">currentItem</a>()和<a href="#text">text</a>()。
+
+<h3 class=fn>bool <a name="isEditable"></a>QComboTableItem::isEditable () const
+</h3>返回用户是否可以向组合列表中添加自己的条目。
+<p> <p>也参见<a href="#setEditable">setEditable</a>()。
+
+<h3 class=fn>int <a name="rtti"></a>QComboTableItem::rtti () const<tt> [virtual]</tt>
+</h3> 
+<p>对于QComboTableItem本函数返回的运行时类型判别值为1。
+<p> <p>也参见<a href="qtableitem.html#rtti">QTableItem::rtti</a>()。
+
+<p>由<a href="qtableitem.html#rtti">QTableItem</a>处重新实现。
+<h3 class=fn>void <a name="setCurrentItem"></a>QComboTableItem::setCurrentItem ( int&nbsp;i )<tt> [virtual]</tt>
+</h3>
+把条目<em>i</em>设置为组合表项的当前条目。
+<p> <p>也参见<a href="#currentItem">currentItem</a>()。
+
+<p>例子：<a href="small-table-example-example.html#x2644">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="setCurrentItem-2"></a>QComboTableItem::setCurrentItem ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s )<tt> [virtual]</tt>
+</h3>这是重载的成员函数，为便利原因提供。本质上类似上一个函数。
+<p>把文本为<em>s</em>的条目设置为组合表项的当前条目。如果没有这样的条目，什么也不做。
+<p> <p>也参见<a href="#currentItem">currentItem</a>()。
+
+<h3 class=fn>void <a name="setEditable"></a>QComboTableItem::setEditable ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>如果<em>b</em>为TRUE，组合表项可以被编辑，也就是说，用户可以自己输入新的文本条目。如果<em>b</em>为FALSE，用户只能在已有条目中选择。
+<p> <p>也参见<a href="#isEditable">isEditable</a>()。
+
+<h3 class=fn>void <a name="setStringList"></a>QComboTableItem::setStringList ( const&nbsp;<a href="qstringlist.html">QStringList</a>&nbsp;&amp;&nbsp;l )<tt> [virtual]</tt>
+</h3>把本QComboTableItem的条目列表设置为字符串列表<em>l</em>中的字符串。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="text"></a>QComboTableItem::text ( int&nbsp;i ) const
+</h3>返回组合表项中索引为<em>i</em>的条目的文本。
+<p> <p>也参见<a href="#currentText">currentText</a>()。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/table/qtable.cpp:1221 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QCheckTableItem类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QCheckTableItem类参考<br><small>[<a href="table.html">表格模块</a>]</small></h1>
+
+<p>QCheckTableItem类提供了QTable中的多选框。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;</tt>
+<p>继承了<a href="qtableitem.html">QTableItem</a>。
+<p><a href="qchecktableitem-members.html">所有成员函数的列表。</a>
+<h2>公共成员</h2>
+<ul>
+<li><div class=fn><a href="#QCheckTableItem"><b>QCheckTableItem</b></a> ( QTable&nbsp;*&nbsp;table, const&nbsp;QString&nbsp;&amp;&nbsp;txt )</div></li>
+<li><div class=fn>virtual void <a href="#setChecked"><b>setChecked</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#isChecked"><b>isChecked</b></a> () const</div></li>
+<li><div class=fn>virtual int <a href="#rtti"><b>rtti</b></a> () const</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+ 
+
+<p>QCheckTableItem类提供了QTable中的多选框。
+<p>
+<p>一个QCheckTableItem是一个表项，其外观和行为如同多选框。使用QCheckTableItem而不是真实的多选框的好处在于，在<a href="qtable.html">QTable</a>中QCheckTableItem要比真实的多选框节省很多资源。当单元格具有焦点时，QCheckTableItem显示一个与用户交互的真实多选框。当单元格没有焦点时，单元格<em>看起来</em>像是一个多选框。象素映射不能用于QCheckTableItem。
+<p>QCheckTableItem表项具有编辑类型<a href="qtableitem.html#EditType-enum">WhenCurrent</a>（参见<a href="qtableitem.html#EditType-enum">EditType</a>）。
+<p>要改变多选框的标签，使用<a href="qtableitem.html#setText">setText</a>()。多选框可以通过<a href="#setChecked">setChecked</a>()来设置选中和不选中，其状态可以通过<a href="#isChecked">isChecked</a>()得到。
+<p>使用<a href="qtable.html#setItem">QTable::setItem</a>()以把QCheckTableItem填充进一个表格单元格。
+<p>使用运行时类型判别（rtti）值，可以辨别QCheckTableItem与<a href="qtableitem.html">QTableItem</a>和<a href="qcombotableitem.html">QComboTableItem</a>。
+<p> <center><img src="qtableitems.png" alt="Table Items"></center> 
+<p> <p>也参见<a href="#rtti">rtti</a>()、<a href="qtableitem.html#EditType-enum">EditType</a>、<a href="qcombotableitem.html">QComboTableItem</a>、<a href="qtableitem.html">QTableItem</a>和<a href="advanced.html">高级部件</a>。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QCheckTableItem"></a>QCheckTableItem::QCheckTableItem ( <a href="qtable.html">QTable</a>&nbsp;*&nbsp;table, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;txt )
+</h3>生成一个QCheckTableItem作为<em>表格</em>的子部件，其<a href="qtableitem.html#EditType-enum">EditType</a>为<a href="qtableitem.html#EditType-enum">WhenCurrent</a>。多选框初始为不选中，标签设置为字符串<em>txt</em>。
+<p> 
+<h3 class=fn>bool <a name="isChecked"></a>QCheckTableItem::isChecked () const
+</h3>如果多选框表项选中，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setChecked">setChecked</a>()。
+
+<h3 class=fn>int <a name="rtti"></a>QCheckTableItem::rtti () const<tt> [virtual]</tt>
+</h3> 
+<p>返回2。
+<p>让你的派生类为<a href="#rtti">rtti</a>()返回自己的值，以区别于其他表项子类。你应该使用大于1000的值，最好是大的随机数，以允许对该类的扩展。
+<p> <p>也参见<a href="qtableitem.html#rtti">QTableItem::rtti</a>()。
+
+<p>由<a href="qtableitem.html#rtti">QTableItem</a>处重新实现。
+<h3 class=fn>void <a name="setChecked"></a>QCheckTableItem::setChecked ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>如果<em>b</em>为TRUE，多选框被选中；如果<em>b</em>为FALSE，多选框未被选中。
+<p> <p>也参见<a href="#isChecked">isChecked</a>()。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/doc/qmemarray.doc:41 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QMemArray类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QMemArray类参考</h1>
+
+<p>QMemArray类是一个提供简单类型的数组的模板类。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qmemarray-h.html">qmemarray.h</a>&gt;</tt>
+<p>被<a href="qbytearray.html">QByteArray</a>和<a href="qpointarray.html">QPointArray</a>继承。
+<p><a href="qmemarray-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn>typedef type&nbsp;*&nbsp;<a href="#Iterator"><b>Iterator</b></a></div></li>
+<li><div class=fn>typedef const&nbsp;type&nbsp;*&nbsp;<a href="#ConstIterator"><b>ConstIterator</b></a></div></li>
+<li><div class=fn><a href="#QMemArray-2"><b>QMemArray</b></a> ()</div></li>
+<li><div class=fn><a href="#QMemArray-3"><b>QMemArray</b></a> ( int&nbsp;size )</div></li>
+<li><div class=fn><a href="#QMemArray-4"><b>QMemArray</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a )</div></li>
+<li><div class=fn><a href="#~QMemArray"><b>~QMemArray</b></a> ()</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a )</div></li>
+<li><div class=fn>type * <a href="#data"><b>data</b></a> () const</div></li>
+<li><div class=fn>uint <a href="#nrefs"><b>nrefs</b></a> () const</div></li>
+<li><div class=fn>uint <a href="#size"><b>size</b></a> () const</div></li>
+<li><div class=fn>uint <a href="#count"><b>count</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isEmpty"><b>isEmpty</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isNull"><b>isNull</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#resize"><b>resize</b></a> ( uint&nbsp;size )</div></li>
+<li><div class=fn>bool <a href="#truncate"><b>truncate</b></a> ( uint&nbsp;pos )</div></li>
+<li><div class=fn>bool <a href="#fill"><b>fill</b></a> ( const&nbsp;type&nbsp;&amp;&nbsp;v, int&nbsp;size = -1 )</div></li>
+<li><div class=fn>virtual void <a href="#detach"><b>detach</b></a> ()</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; <a href="#copy"><b>copy</b></a> () const</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#assign"><b>assign</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a )</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#assign-2"><b>assign</b></a> ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#duplicate"><b>duplicate</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a )</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#duplicate-2"><b>duplicate</b></a> ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )</div></li>
+<li><div class=fn>QMemArray&lt;type&gt; &amp; <a href="#setRawData"><b>setRawData</b></a> ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )</div></li>
+<li><div class=fn>void <a href="#resetRawData"><b>resetRawData</b></a> ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )</div></li>
+<li><div class=fn>int <a href="#find"><b>find</b></a> ( const&nbsp;type&nbsp;&amp;&nbsp;v, uint&nbsp;index = 0 ) const</div></li>
+<li><div class=fn>int <a href="#contains"><b>contains</b></a> ( const&nbsp;type&nbsp;&amp;&nbsp;v ) const</div></li>
+<li><div class=fn>void <a href="#sort"><b>sort</b></a> ()</div></li>
+<li><div class=fn>int <a href="#bsearch"><b>bsearch</b></a> ( const&nbsp;type&nbsp;&amp;&nbsp;v ) const</div></li>
+<li><div class=fn>type &amp; <a href="#operator[]"><b>operator[]</b></a> ( int&nbsp;index ) const</div></li>
+<li><div class=fn>type &amp; <a href="#at"><b>at</b></a> ( uint&nbsp;index ) const</div></li>
+<li><div class=fn><a href="#operator-const-type-*"><b>operator const type *</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a ) const</div></li>
+<li><div class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;QMemArray&lt;type&gt;&nbsp;&amp;&nbsp;a ) const</div></li>
+<li><div class=fn>Iterator <a href="#begin"><b>begin</b></a> ()</div></li>
+<li><div class=fn>Iterator <a href="#end"><b>end</b></a> ()</div></li>
+<li><div class=fn>ConstIterator <a href="#begin-2"><b>begin</b></a> () const</div></li>
+<li><div class=fn>ConstIterator <a href="#end-2"><b>end</b></a> () const</div></li>
+</ul>
+<h2>保护成员</h2>
+<ul>
+<li><div class=fn><a href="#QMemArray"><b>QMemArray</b></a> ( int, int )</div></li>
+</ul>
+<h2>相关函数</h2>
+<ul>
+<li><div class=fn>Q_UINT16 <a href="#qChecksum"><b>qChecksum</b></a> ( const&nbsp;char&nbsp;*&nbsp;data, uint&nbsp;len )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-lt-lt"><b>operator&lt;&lt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, const&nbsp;QByteArray&nbsp;&amp;&nbsp;a )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-gt-gt"><b>operator&gt;&gt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, QByteArray&nbsp;&amp;&nbsp;a )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QMemArray是一个提供简单类型的数组的模板类。
+<p> 
+<p> QMemArray是作为模板类实现的。定义一个模板实例QMemArray&lt;X&gt;可以创建一个包含X数据项的数组。
+<p> QMemArray直接在数组中存储数组元素。它只能处理简单类型（比如，C++类型、结构体和没有构造函数、析构函数和虚函数的类）。QMemArray使用逐位的操作来复制和比较数组元素。
+<p> <a href="qptrvector.html">QPtrVector</a>集合类也是一种数组。就像所有的<a href="collection.html">集合类</a>一样，它存储的是指向所包含的数据项的指针。
+<p> QMemArray通过一个引用计数器使用明显<a href="shclass.html">共享</a>。如果超过一个的数组共享公有的数据并且，一个数组被修改的时候，所有的数组都将被修改。
+<p> 共享的好处就是程序可以在不被需要复制的时候就不必再复制了，这样的结果就是可以减少的内存使用和数据复制了。
+<p> 实例：
+<pre>
+    #include &lt;<a href="qmemarray-h.html">qmemarray.h</a>&gt;
+    #include &lt;stdio.h&gt;
+
+    QMemArray&lt;int&gt; fib( int num ) // 返回斐波纳契数列
+    {
+        <a href="qapplication.html#Q_ASSERT">Q_ASSERT</a>( num &gt; 2 );
+        QMemArray&lt;int&gt; f( num ); // 整形数组
+
+        f[0] = f[1] = 1;
+        for ( int i = 2; i &lt; num; i++ )
+            f[i] = f[i-1] + f[i-2];
+
+        return f;
+    }
+
+    int main()
+    {
+        QMemArray&lt;int&gt; a = fib( 6 ); // get 6 first fibonaccis
+        for ( int i = 0; i &lt; a.<a href="#size">size</a>(); i++ )
+            <a href="qapplication.html#qDebug">qDebug</a>( "%d: %d", i, a[i] );
+
+        <a href="qapplication.html#qDebug">qDebug</a>( "1 is found %d times", a.<a href="#contains">contains</a>(1) );
+        <a href="qapplication.html#qDebug">qDebug</a>( "5 is found at index %d", a.<a href="#find">find</a>(5) );
+
+        return 0;
+    }
+  </pre>
+ 
+<p> 程序输出：
+<pre>
+    0: 1
+    1: 1
+    2: 2
+    3: 3
+    4: 5
+    5: 8
+    1 is found 2 times
+    5 is found at index 4
+  </pre>
+ 
+<p> 使用QMemArray来操作结构体或者类的时候需要注意：编译器经常会在结构体后面加一些不定长的东西从而达到最近的字边界。这就将是QMemArray用来做逐位元素比较的大小了。因为剩余的字节将不被初始化，这将导致<a href="#find">find</a>()等等在查找元素时失败。实例：
+<p> <pre>
+    // MyStruct也许会被加上4或8字节
+    struct MyStruct
+    {
+        short i; // 2 bytes
+        char c;  // 1 byte
+    };
+
+    QMemArray&lt;MyStruct&gt; a(1);
+    a[0].i = 5;
+    a[0].c = 't';
+
+    MyStruct x;
+    x.i = '5';
+    x.c = 't';
+    int i = a.<a href="#find">find</a>( x ); // 如果所加上的字节不同，也许会返回-1
+  </pre>
+ 
+<p> 为了能在这种情况下工作，确认你使用的结构体使用sizeof()返回到大小和各个成员的大小之和相同，否则通过改变结构体成员的类型或者加入一些虚构的成员来解决这个问题。
+<p> QMemArray数据可以通过迭代器来遍历（请看<a href="#begin">begin</a>()和<a href="#end">end</a>()）。数据项的数量可以由<a href="#count">count</a>()返回。可以用<a href="#resize">resize</a>()重新定义数组的大小并且用<a href="#fill">fill</a>()填充。
+<p> 你可以使用a href="#assign">assign</a>()（或者<a href="#operator-eq">operator=</a>()）来做<a href="shclass.html#shallow-copy">浅复制</a>，可以使用<a href="#duplicate">duplicate</a>()来做<a href="shclass.html#deep-copy">深复制</a>。
+<p> 在数组中搜索值可以用<a href="#find">find</a>()和<a href="#contains">contains</a>()。在排过序的数组（请看<a href="#sort">sort</a>()）中搜索可以使用<a href="#bsearch">bsearch</a>()。
+<p> 你可以直接使用<a href="#setRawData">setRawData</a>()和<a href="#resetRawData">resetRawData</a>()来直接设置数据，但是这需要注意。
+<p> <p>也可以参考<a href="shclass.html">共享类</a>和<a href="tools.html">非GUI的类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="ConstIterator"></a>QMemArray::ConstIterator</h3> 
+一个常量的QMemArray迭代器。
+<p>也可以参考<a href="#begin">begin</a>()和<a href="#end">end</a>()。
+
+<h3 class=fn><a name="Iterator"></a>QMemArray::Iterator</h3> 
+一个QMemArray迭代器。
+<p>也可以参考<a href="#begin">begin</a>()和<a href="#end">end</a>()。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QMemArray"></a>QMemArray::QMemArray ( int, int )<tt> [保护]</tt>
+</h3>
+构造一个数组<em>但不分配</em>数组空间。参数必须为(0, 0)。使用的时候你要自己承担风险。
+
+<h3 class=fn><a name="QMemArray-2"></a>QMemArray::QMemArray ()
+</h3>
+构造一个空数组。
+<p>也可以参考<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a name="QMemArray-3"></a>QMemArray::QMemArray ( int&nbsp;size )
+</h3>
+构造一个为<em>size</em>个元素提供空间的数组。如果<em>size</em>==0，就是一个空数组。
+<p> 元素没有被初始化。
+<p> <p>也可以参考<a href="#resize">resize</a>()和<a href="#isNull">isNull</a>()。
+
+<h3 class=fn><a name="QMemArray-4"></a>QMemArray::QMemArray ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a )
+</h3>
+构造一个<em>a</em>的<a href="shclass.html#shallow-copy">浅复制</a>。
+<p>也可以参考<a href="#assign">assign</a>()。
+
+<h3 class=fn><a name="~QMemArray"></a>QMemArray::~QMemArray ()
+</h3>
+数组数据的引用计数减一并且如果这是最后一个引用就删除它。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="assign"></a>QMemArray::assign ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a )
+</h3>
+<a href="shclass.html#shallow-copy">浅复制</a>。数组数据的引用计数减一并且相反地引用<em>a</em>中包含的数据。返回这个数组的引用。
+<p>也可以参考<a href="#operator-eq">operator=</a>()。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="assign-2"></a>QMemArray::assign ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <a href="shclass.html#shallow-copy">浅复制</a>。数组数据的引用计数减一并且相反地引用包含了<em>size</em>个元素的数组数据<em>data</em>。返回这个数组的引用。
+<p> 在这之后不要删除<em>data</em>，QMemArray会维护它的。
+
+<h3 class=fn>type &amp; <a name="at"></a>QMemArray::at ( uint&nbsp;index ) const
+</h3>
+返回数组中在<em>index</em>位置的元素的引用。
+<p> 这个可以用来读写一个元素。
+<p> <p>也可以参考<a href="#operator[]">operator[]</a>()。
+
+<h3 class=fn><a href="qmemarray.html#Iterator">Iterator</a> <a name="begin"></a>QMemArray::begin ()
+</h3>
+返回指向数组开始的一个迭代器。这个迭代器与如<a href="qvaluelist.html">QValueList</a>和<a href="qmap.html">QMap</a>中的迭代器使用方法相同。实际上，它不仅行为和指针相似，它就是一个指针。
+
+<h3 class=fn><a href="qmemarray.html#ConstIterator">ConstIterator</a> <a name="begin-2"></a>QMemArray::begin () const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回指向数组开始的一个常量迭代器。这个迭代器与如<a href="qvaluelist.html">QValueList</a>和<a href="qmap.html">QMap</a>中的迭代器使用方法相同。实际上，它不仅行为和指针相似，它就是一个指针。
+
+<h3 class=fn>int <a name="bsearch"></a>QMemArray::bsearch ( const&nbsp;type&nbsp;&amp;&nbsp;v ) const
+</h3>
+在排过序的数组中，通过使用二进制搜索找到第一个出现的<em>v</em>。对于排过序的数组，它通常比做线性搜索的<a href="#find">find</a>()快很多。
+<p> 返回<em>v</em>的位置，或者如果<em>v</em>没有被找到，返回-1。
+<p> <p>也可以参考<a href="#sort">sort</a>()和<a href="#find">find</a>()。
+
+<h3 class=fn>int <a name="contains"></a>QMemArray::contains ( const&nbsp;type&nbsp;&amp;&nbsp;v ) const
+</h3>
+返回数组中<em>v</em>出现的次数。
+<p>也可以参考<a href="#find">find</a>()。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt; <a name="copy"></a>QMemArray::copy () const
+</h3>
+返回一个数组的<a href="shclass.html#deep-copy">深复制</a>。
+<p>也可以参考<a href="#detach">detach</a>()和<a href="#duplicate">duplicate</a>()。
+
+<h3 class=fn>uint <a name="count"></a>QMemArray::count () const
+</h3>
+返回和<a href="#size">size</a>()一样的值。
+<p> <p>也可以参考<a href="#size">size</a>()。
+<p>实例：<a href="scribble-example.html#x934">scribble/scribble.cpp</a>。
+
+<h3 class=fn>type * <a name="data"></a>QMemArray::data () const
+</h3>
+返回实际数组数据的指针。
+<p> 如果<a href="#data">data</a>()==0（空指针），这个数组为空数组。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()。
+<p>实例：<a href="fileiconview-example.html#x851">fileiconview/qfileiconview.cpp</a>和<a href="networkprotocol-example.html#x600">network/networkprotocol/nntp.cpp</a>。
+
+<h3 class=fn>void <a name="detach"></a>QMemArray::detach ()<tt> [虚]</tt>
+</h3>
+把这个数组从共享内存数据中分离出来，比如它做了一次秘密的数据的<a href="shclass.html#deep-copy">深复制</a>。
+<p> 复制操作只有在<a href="#nrefs">引用计数</a>比一大的时候执行。
+<p> <p>也可以参考<a href="#copy">copy</a>()。
+<p>在<a href="qbitarray.html#detach">QBitArray</a>中被重新实现。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="duplicate"></a>QMemArray::duplicate ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a )
+</h3>
+<a href="shclass.html#deep-copy">深复制</a>。当前数组数据的引用计数减一并且相反地获得<em>a</em>中包含的数据的复制。返回这个数组的引用。
+<p>也可以参考<a href="#copy">copy</a>()。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="duplicate-2"></a>QMemArray::duplicate ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <a href="shclass.html#deep-copy">深复制</a>。当前数组数据的引用计数减一并且相反地获得数组数据<em>data</em>中复制。返回这个数组的引用。数组的大小由<em>size</em>给定。
+<p>也可以参考<a href="#copy">copy</a>()。
+
+<h3 class=fn><a href="qmemarray.html#Iterator">Iterator</a> <a name="end"></a>QMemArray::end ()
+</h3>
+返回指向数组最后一个元素之后的一个迭代器。这个迭代器与如<a href="qvaluelist.html">QValueList</a>和<a href="qmap.html">QMap</a>中的迭代器使用方法相同。实际上，它不仅行为和指针相似，它就是一个指针。
+
+
+<h3 class=fn><a href="qmemarray.html#ConstIterator">ConstIterator</a> <a name="end-2"></a>QMemArray::end () const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回指向数组最后一个元素之后的一个迭代器。这个迭代器与如<a href="qvaluelist.html">QValueList</a>和<a href="qmap.html">QMap</a>中的迭代器使用方法相同。实际上，它不仅行为和指针相似，它就是一个指针。
+
+<h3 class=fn>bool <a name="fill"></a>QMemArray::fill ( const&nbsp;type&nbsp;&amp;&nbsp;v, int&nbsp;size = -1 )
+</h3>
+用值<em>v</em>来填充数组。如果<em>size</em>被指定为与-1不同的值，数组将在填充之前被重新定义大小。
+<p> 如果成功，返回真，或者如果不能分配内存时（只有当<em>size</em>!=-1时），返回假。
+<p> <p>也可以参考<a href="#resize">resize</a>()。
+
+<h3 class=fn>int <a name="find"></a>QMemArray::find ( const&nbsp;type&nbsp;&amp;&nbsp;v, uint&nbsp;index = 0 ) const
+</h3>
+查找从<em>index</em>位置开始，<em>v</em>第一次出现的位置。
+<p> 返回<em>v</em>的位置，或者如果<em>v</em>没有找到，返回-1。
+<p> <p>也可以参考<a href="#contains">contains</a>()。
+
+<h3 class=fn>bool <a name="isEmpty"></a>QMemArray::isEmpty () const
+</h3>
+如果数组是空的，返回真，否则返回假。
+<p> 对于QMemArray，<a href="#isEmpty">isEmpty</a>()与<a href="#isNull">isNull</a>()相同。（这一点与<a href="qstring.html">QString</a>不同）
+
+<h3 class=fn>bool <a name="isNull"></a>QMemArray::isNull () const
+</h3>
+<p> 如果数组为空，返回真，否则返回假。
+<p> 一个空数组的<a href="#size">size</a>()==0并且<a href="#data">data</a>()==0。
+
+<h3 class=fn>uint <a name="nrefs"></a>QMemArray::nrefs () const
+</h3>
+返回共享数组数据的引用计数。这个引用计数总是比零大。
+
+<h3 class=fn><a name="operator-const-type-*"></a>QMemArray::operator const type * () const
+</h3>
+强制性操作符。返回数组的指针。
+<p>也可以参考<a href="#data">data</a>()。
+
+<h3 class=fn>bool <a name="operator!-eq"></a>QMemArray::operator!= ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a ) const
+</h3>
+如果这个数组与<em>a</em>不同，返回真，否则返回假。
+<p> 两个数组进行逐位比较。
+<p> <p>也可以参考<a href="#operator-eq-eq">operator==</a>()。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="operator-eq"></a>QMemArray::operator= ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a )
+</h3>
+分配<em>a</em>的一个<a href="shclass.html#shallow-copy">浅复制</a>到这个数组并且返回这个数组的引用。
+<p> 与 <a href="#assign">assign</a>( a )相同。
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>QMemArray::operator== ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp;&nbsp;a ) const
+</h3>
+Returns TRUE if this array is equal to <em>a</em>; otherwise returns FALSE.
+如果这个数组与<em>a</em>相同，返回真，否则返回假。
+<p> 两个数组进行逐位比较。
+<p> <p>也可以参考<a href="#operator!-eq">operator!=</a>()。
+
+<h3 class=fn>type &amp; <a name="operator[]"></a>QMemArray::operator[] ( int&nbsp;index ) const
+</h3>
+返回数组中<em>index</em>位置的元素的引用。
+<p> 这个可以用来读写一个元素。与<a href="#at">at</a>()相同。
+<p> <p>也可以参考<a href="#at">at</a>()。
+
+<h3 class=fn>void <a name="resetRawData"></a>QMemArray::resetRawData ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )
+</h3>
+使用<a href="#setRawData">setRawData</a>()重新设置原始数据。
+<p> 参数必须为<em>data</em>和长度<em>size</em>，它们将被传递给setRawData()。这里是为了一致性检验。
+<p> <p>也可以参考<a href="#setRawData">setRawData</a>()。
+
+<h3 class=fn>bool <a name="resize"></a>QMemArray::resize ( uint&nbsp;size )
+</h3>
+<p> 重新定义数组的大小为<em>size</em>个元素（扩大或者缩小）。如果<em>size</em>==0，数组将变为空数组。
+<p> 如果成功，返回真，或者如果不能分配内存时，返回假。
+<p> 新元素没有被初始化。
+<p> <p>也可以参考<a href="#size">size</a>()。
+<p>例子：<a href="fileiconview-example.html#x852">fileiconview/qfileiconview.cpp</a>。
+
+<h3 class=fn><a href="qmemarray.html">QMemArray</a>&lt;type&gt;&nbsp;&amp; <a name="setRawData"></a>QMemArray::setRawData ( const&nbsp;type&nbsp;*&nbsp;data, uint&nbsp;size )
+</h3>
+<p> 设置原始数据并且返回数组的引用。
+<p> 当前数组数据的引用计数减一并且设置新的数组数据为<em>data</em>并且新数组大小为<em>size</em>。当原始数据已经被设定之后，不要试图重新定义数组的大小。
+Call <a href="#resetRawData">resetRawData</a>(<em>data</em>, <em>size</em>) to reset the array.
+<p> 设置原始数据是有用的因为它设置QMemArray数据而没有分配内存或者复制数据。
+<p> 实例一（故意使用）：
+<pre>
+    static char bindata[] = { 231, 1, 44, ... };
+    <a href="qbytearray.html">QByteArray</a>  a;
+    a.<a href="#setRawData">setRawData</a>( bindata, sizeof(bindata) );   // a指向bindata
+    <a href="qdatastream.html">QDataStream</a> s( a, <a href="qfile.html#open">IO_ReadOnly</a> );            // 打开a的数据
+    s &gt;&gt; &lt;something&gt;;                           // 读取原始的bindata
+    a.<a href="#resetRawData">resetRawData</a>( bindata, sizeof(bindata) ); // 完成
+  </pre>
+ 
+<p> 实例二（如果你不想这么做）：
+<pre>
+    static char bindata[] = { 231, 1, 44, ... };
+    <a href="qbytearray.html">QByteArray</a>  a, b;
+    a.<a href="#setRawData">setRawData</a>( bindata, sizeof(bindata) );   // a指向bindata
+    a.<a href="#resize">resize</a>( 8 );                              // 将会崩溃
+    b = a;                                      // 将会崩溃
+    a[2] = 123;                                 // 也许会崩溃
+    // 忘了resetRawData：将会崩溃
+  </pre>
+ 
+<p> <b>警告：</b>如果你没有调用<a href="#resetRawData">resetRawData</a>()，QMemArray将会试图解除分配或者重新分配原始数据，这也许太不好了。请注意。
+<p> <p>也可以参考<a href="#resetRawData">resetRawData</a>()。
+
+<h3 class=fn>uint <a name="size"></a>QMemArray::size () const
+</h3>
+返回数组大小（元素的最大数量）。
+<p> 如果<a href="#size">size</a>()==0，这个数组是一个空数组。
+<p> <p>也可以参考<a href="#isNull">isNull</a>()和<a href="#resize">resize</a>()。
+
+<h3 class=fn>void <a name="sort"></a>QMemArray::sort ()
+</h3>
+把数据元素按升序排列，使用逐位比较（memcmp()）。
+<p> <p>也可以参考<a href="#bsearch">bsearch</a>()。
+
+<h3 class=fn>bool <a name="truncate"></a>QMemArray::truncate ( uint&nbsp;pos )
+</h3>
+<p> 从<em>pos</em>位置截短数组。
+<p> 如果成功，返回真，或者如果不能分配内存时，返回假。
+<p> 与<a href="#resize">resize</a>(<em>pos</em>)相同。
+<p> <p>也可以参考<a href="#resize">resize</a>()。
+
+<hr><h2>相关函数</h2>
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-lt-lt"></a>operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, const&nbsp;<a href="qbytearray.html">QByteArray</a>&nbsp;&amp;&nbsp;a )
+</h3>
+从字节数组<em>a</em>写到<em>s</em>流中并且返回流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格</a>。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-gt-gt"></a>operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, <a href="qbytearray.html">QByteArray</a>&nbsp;&amp;&nbsp;a )
+</h3>
+从<em>s</em>流中到读取字节数组<em>a</em>中并且返回流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<h3 class=fn>Q_UINT16 <a name="qChecksum"></a>qChecksum ( const&nbsp;char&nbsp;*&nbsp;data, uint&nbsp;len )
+</h3>
+返回<em>data</em>开始的<em>len</em>字节的CRC-16的校验和。
+<p> 校验和与字节顺序无关。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

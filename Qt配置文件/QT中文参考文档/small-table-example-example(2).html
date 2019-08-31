@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/examples/table/small-table-demo/small-table-demo.doc:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>小表格样例</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>小表格样例</h1>
+
+   
+<p>本样例显示<a href="qtable.html">QTable</a>与<a href="qtableitem.html">QTableItem</a>。
+<p> <hr>
+<p>实现：
+<p> <pre>/****************************************************************************
+** $Id:  qt/main.cpp   3.0.5   edited May 7 17:30 $
+**
+** Copyright (C) 1992-2000 Trolltech AS.  All rights reserved.
+**
+** This file is part of an example program for Qt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">qapplication.h</a>&gt;
+#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;
+#include &lt;<a href="qimage-h.html">qimage.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">qpixmap.h</a>&gt;
+#include &lt;<a href="qstringlist-h.html">qstringlist.h</a>&gt;
+
+// Qt logo: static const char *qtlogo_xpm[]
+#include "qtlogo.xpm"
+
+// Table size
+
+const int numRows = 30;
+const int numCols = 10;
+
+// The program starts here.
+
+int main( int argc, char **argv )
+{
+    <a href="qapplication.html">QApplication</a> app( argc, argv );
+
+    <a href="qtable.html">QTable</a> table( numRows, numCols );
+
+<a name="x2648"></a>    <a href="qheader.html">QHeader</a> *header = table.<a href="qtable.html#horizontalHeader">horizontalHeader</a>();
+<a name="x2645"></a>    header-&gt;<a href="qheader.html#setLabel">setLabel</a>( 0, QObject::tr( "Tiny" ), 40 );
+    header-&gt;<a href="qheader.html#setLabel">setLabel</a>( 1, QObject::tr( "Checkboxes" ) );
+    header-&gt;<a href="qheader.html#setLabel">setLabel</a>( 5, QObject::tr( "Combos" ) );
+<a name="x2646"></a>    header-&gt;<a href="qheader.html#setMovingEnabled">setMovingEnabled</a>(TRUE);
+
+    <a href="qimage.html">QImage</a> img( qtlogo_xpm );
+<a name="x2649"></a><a name="x2647"></a>    <a href="qpixmap.html">QPixmap</a> pix = img.<a href="qimage.html#scaleHeight">scaleHeight</a>( table.<a href="qtable.html#rowHeight">rowHeight</a>(3) );
+<a name="x2651"></a>    table.<a href="qtable.html#setPixmap">setPixmap</a>( 3, 2, pix );
+<a name="x2652"></a>    table.<a href="qtable.html#setText">setText</a>( 3, 2, "A Pixmap" );
+
+    <a href="qstringlist.html">QStringList</a> comboEntries;
+    comboEntries &lt;&lt; "one" &lt;&lt; "two" &lt;&lt; "three" &lt;&lt; "four";
+
+    for ( int i = 0; i &lt; numRows; ++i ){
+        <a href="qcombotableitem.html">QComboTableItem</a> * item = new <a href="qcombotableitem.html">QComboTableItem</a>( &amp;table, comboEntries, FALSE );
+<a name="x2644"></a>        item-&gt;<a href="qcombotableitem.html#setCurrentItem">setCurrentItem</a>( i % 4 );
+<a name="x2650"></a>        table.<a href="qtable.html#setItem">setItem</a>( i, 5, item );
+    }
+    for ( int j = 0; j &lt; numRows; ++j )
+        table.<a href="qtable.html#setItem">setItem</a>( j, 1, new <a href="qchecktableitem.html">QCheckTableItem</a>( &amp;table, "Check me" ) );
+
+    app.<a href="qapplication.html#setMainWidget">setMainWidget</a>( &amp;table );
+    table.<a href="qwidget.html#show">show</a>();
+    return app.<a href="qapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>也参见<a href="table-examples.html">表格例程</a>。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

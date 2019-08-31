@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/doc/dnd.doc:36 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>拖放</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>拖放</h1>
+
+ 
+<p> 拖放提供了一种用户可以在应用程序之间或之内传递信息的一种简单视觉效果机制。（在术语中，这被称为“直接操作模型”。）拖放和剪贴板的剪切和粘贴的机制相似。
+<p> <ul>
+<li><a href="#dragging">拖动</a></li>
+<li><a href="#dropping">放下</a></li>
+<li><a href="#the-clipboard">剪贴板</a></li>
+<li><a href="#drag-and-drop-action">拖放操作</a></li>
+<li><a href="#adding-new-drag-and-drop-types">添加新的拖放类型</a></li>
+<li><a href="#advanced">增强的拖放</a></li>
+<li><a href="#inter-operating-with-other-applications">和其它应用程序之间的操作</a></li>
+</ul>
+<p> 对于拖放的实例，请参考（随着复杂度的增加的顺序）：<tt>qt/examples/iconview/simple_dd</tt>、<tt>qt/examples/dragdrop</tt>和<tt>qt/examples/fileiconview</tt>。也可以参考QMultiLineEdit窗口部件的源码。
+<p> <h3><a name="dragging">拖动</a></h3>
+<p> 开始一个拖动，比如是在<a href="qwidget.html#mouseMoveEvent">鼠标移动事件</a>，创建一个适合你的媒体的<a href="qdragobject.html">QDragObject</a>的子类的对象，比如对于文本使用<a href="qtextdrag.html">QTextDrag</a>，对于图片使用<a href="qimagedrag.html">QImageDrag</a>。然后调用drag()方法。这就是我们对现有类型简单的拖动所要做的一切。
+<p> 例如，从一个窗口部件中开始拖动一些文本：
+<pre>
+  void MyWidget::startDrag()
+  {
+    <a href="qdragobject.html">QDragObject</a> *d = new <a href="qtextdrag.html">QTextDrag</a>( myHighlightedText(), this );
+    d-&gt;<a href="qdragobject.html#dragCopy">dragCopy</a>();
+    // 不要删除d。
+  }
+  </pre>
+ 
+<p> 注意在拖动之后，QDragObject没有被删除。这个QDragObject需要被保存直到拖放明显完成——它也许还要和其它进程通讯。最后Qt会删除这个对象。如果拥有拖动对象的窗口部件在这之前被删除，任何没有完成的放下将会被取消并且拖动对象会被删除。因为这个原因，你应该注意对象引用的是什么。
+<p> <h3><a name="dropping">放下</a></h3>
+<p> 为了能在一个窗口部件中接收被放下的媒体，在这个窗口部件中调用<a href="qwidget.html#setAcceptDrops">setAcceptDrops(TRUE)</a>（比如在它的构造函数中），并且重载事件处理方法<a href="qwidget.html#dragEnterEvent">dragEnterEvent()</a>和<a href="qwidget.html#dropEvent">dropEvent()</a>。对于更复杂的应用程序，重载<a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a>和<a href="qwidget.html#dragLeaveEvent">dragLeaveEvent()</a>也是必需的。
+<p> 例如，为了接受被放下的文本和图片：
+<pre>
+  MyWidget::MyWidget(...) :
+    <a href="qwidget.html">QWidget</a>(...)
+  {
+    ...
+    setAcceptDrops(TRUE);
+  }
+
+  void MyWidget::dragEnterEvent(QDragEnterEvent* event)
+  {
+    event-&gt;accept(
+        QTextDrag::<a href="qtextdrag.html#canDecode">canDecode</a>(event) ||
+        QImageDrag::<a href="qimagedrag.html#canDecode">canDecode</a>(event)
+    );
+  }
+
+  void MyWidget::dropEvent(QDropEvent* event)
+  {
+    <a href="qimage.html">QImage</a> image;
+    <a href="qstring.html">QString</a> text;
+
+    if ( QImageDrag::<a href="qimagedrag.html#decode">decode</a>(event, image) ) {
+      insertImageAt(image, event-&gt;pos());
+    } else if ( QTextDrag::<a href="qtextdrag.html#decode">decode</a>(event, text) ) {
+      insertTextAt(text, event-&gt;pos());
+    }
+  }
+  </pre>
+ 
+<p> <h3><a name="the-clipboard">剪贴板</a></h3>
+<p> <a href="qdragobject.html">QDragObject</a>、<a href="qdragenterevent.html">QDragEnterEvent</a>、<a href="qdragmoveevent.html">QDragMoveEvent</a>和<a href="qdropevent.html">QDropEvent</a>类都是<a href="qmimesource.html">QMimeSource</a>（提供类型信息的类）的子类。如果你在QDragObject中基于你的数据进行传递，你不仅要使用拖放，而且要使用使用传统的剪切和粘贴——<a href="qclipboard.html">QClipboard</a>有两个函数：
+<pre>
+      setData(QMimeSource*)
+      <a href="qmimesource.html">QMimeSource</a>* data()const
+  </pre>
+ 
+使用这些函数，你就可以很容易地把你的拖放初始信息放到剪贴板中：
+<pre>
+  void MyWidget::copy()
+  {
+    QApplication::<a href="qapplication.html#clipboard">clipboard</a>()-&gt;setData(
+        new <a href="qtextdrag.html">QTextDrag</a>(myHighlightedText())
+    );
+  }
+
+  void MyWidget::paste()
+  {
+    <a href="qstring.html">QString</a> text;
+    if ( QTextDrag::<a href="qtextdrag.html#decode">decode</a>(QApplication::<a href="qapplication.html#clipboard">clipboard</a>()-&gt;data(), text) )
+        insertText( text );
+  }
+  </pre>
+ 
+你甚至可以使用<a href="qdragobject.html">QDragObject</a>的子类作为文件输入输出的部分。例如，如果你的程序有一个QDragObject的子类来把CAD设计编码为DXF格式，你的保存和载入代码也许可以是：
+<pre>
+  void MyWidget::save()
+  {
+    <a href="qfile.html">QFile</a> out(current_file_name);
+    out.<a href="qfile.html#open">open</a>(IO_WriteOnly);
+    MyCadDrag tmp(current_design);
+    out.<a href="qiodevice.html#writeBlock">writeBlock</a>( tmp-&gt;encodedData( "image/x-dxf" ) );
+  }
+
+  void MyWidget::load()
+  {
+    <a href="qfile.html">QFile</a> in(current_file_name);
+    in.<a href="qfile.html#open">open</a>(IO_ReadOnly);
+    if ( !MyCadDrag::decode(in.<a href="qiodevice.html#readAll">readAll</a>(), current_design) ) {
+        QMessageBox::<a href="qmessagebox.html#warning">warning</a>( this, "Format error",
+            tr("The file \"%1\" is not in any supported format")
+             .arg(current_file_name)
+        );
+    }
+  }
+  </pre>
+ 
+注意QDragObject的子类叫做“MyCadDrag”，而不是“MyDxfDrag”——因为以后也许你要把它扩展为DXF、DWG、SVF、WMF，或者甚至是<a href="qpicture.html">QPicture</a>数据到其它应用程序中。
+<p> <h3><a name="drag-and-drop-action">拖放操作</a></h3>
+<p> 在一些简单的情况下，拖放的目标接收一个被拖动的数据的复制并且由源来决定是否删除初始的拖动对象。这就是<a href="qdropevent.html">QDropEvent</a>中的“Copy”操作。目标也可以选择理解其它操作，特别是“Move”和“Link”操作。如果目标理解了“Move”操作，<em>目标</em>就会对复制和删除操作负责并且源自己不会再试图删除数据。如果目标理解了“Link”操作，它存储它自己的初始信息的引用，并且源也不会删除初始信息的。最通用的拖放操作是在同一个窗口部件中执行一个“Move”——请参考下面的<a href=#advanced>增强的拖放</a>一节。
+<p> 拖动操作的另一个主要用法是当使用一个引用类型，比如text/uri-list，实际被拖动的数据引用了文件或对象。
+<p> <h3><a name="adding-new-drag-and-drop-types">添加新的拖放类型</a></h3>
+<p> 就像上面的DXF例子中建议的一样，拖放不仅仅局限于文本和图片。任何信息都可以被拖放。在应用程序之间拖放信息，两个应用程序必须使用它们都能接受和产生的数据格式。这个可以使用<i><a href="http://www.rfc-editor.org/rfc/rfc1341.txt">MIME类型</a></i>来达到——拖动的源提供一个它能缠身的MIME类型的类标（按从最常用的到比较少用到的顺序排列），并且拖动目标选择一种它能接受的。例如，<a href="qtextdrag.html">QTextDrag</a>提供了“<tt>text/plain</tt>”MIME类型（普通的没有格式的文本）和并且Unicode格式是“<tt>text/utf16</tt>”和“<tt>text/utf8</tt>”的支持，<a href="qimagedrag.html">QImageDrag</a>提供了“<tt>image/</tt><tt>*</tt>”的支持，<tt>*</tt>是<a href="qimageio.html">QImageIO</a>支持的任何一种图片格式，并且<a href="quridrag.html">QUriDrag</a>子类提供了“<tt>text/uri-list</tt>”的支持，一个文件（或URL）的列表传输的标准格式。
+<p> 为了实现<a href="qdragobject.html">QDragObject</a>子类中没有支持的拖放信息的类型，首先和最重要的步骤是查找一下现存的格式中哪个是适合的——<a href="http://www.iana.org">IANA</a>（Internet Assigned Numbers Authority）在<a href="http://www.isi.edu">ISI</a>（Information Sciences Institute）提供了一个<a href="http://www.isi.edu/in-notes/iana/assignments/media-types/">MIME媒体类型的分级列表</a>。使用标准的MIME类型将会使你的应用程序和现在以及未来的其它软件在互相操作中能够最优化。
+<p> 为了支持另外的媒体类型，继承QDragObject或<a href="qstoreddrag.html">QStoredDrag</a>。当你需要提供对多类型进行支持，继承QDragObject。当一个类型就足够的时候，继承更加简单的QStoredDrag。
+<p> QDragObject的子类将会重载<a href="qmimesource.html#format">const char* format(int i) const</a>和<a href="qmimesource.html#encodedData">QByteArray encodedData(const char* mimetype) const</a>成员，并且提供对媒体数据进行编码和静态成员canDecode()和对进入的数据进行解码的decode()一套方法，和<a href="qimagedrag.html">QImageDrag</a>的<a href="qimagedrag.html#canDecode">bool canDecode(QMimeSource*) const</a>和<a href="qimagedrag.html#decode">QByteArray decode(QMimeSource*) const</a>很相似。当然，你也可以通过省略其中的一些方法对一种媒体数据只支持拖或只支持放。
+<p> QStoredDrag的子类提供了对媒体数据进行编码和静态成员canDecode()和对进入的数据进行解码的decode()一套方法。
+<p> <h3><a name="advanced">增强的拖放</a></h3>
+<p> 在剪贴板模式中，用户可以<em>剪切</em>或<em>复制</em>源信息，然后粘贴它。相似地，在拖放模式中，用户可以拖动信息的<em>复制</em>或者它们能够自己拖动信息到一个新的位置（<em>移动</em>它）。拖放模式无论如何对于程序员来说都是额外的复杂：程序直到放下（粘贴）完成才会知道用户是想剪切还是复制！在应用程序之间拖动，这个没有什么影响，但是在一个应用程序之内进行拖动，应用程序必须多加注意以免踩到自己的脚。例如，在文档中拖动文本，拖动的开始点和放下事件也许是这样：
+<p> <pre>
+  void MyEditor::startDrag()
+  {
+    <a href="qdragobject.html">QDragObject</a> *d = new <a href="qtextdrag.html">QTextDrag</a>(myHighlightedText(), this);
+    if ( d-&gt;<a href="qdragobject.html#drag">drag</a>() &amp;&amp; d-&gt;<a href="qdragobject.html#target">target</a>() != this )
+      cutMyHighlightedText();
+  }
+
+  void MyEditor::dropEvent(QDropEvent* event)
+  {
+    <a href="qstring.html">QString</a> text;
+
+    if ( QTextDrag::<a href="qtextdrag.html#decode">decode</a>(event, text) ) {
+      if ( event-&gt;source() == this &amp;&amp; event-&gt;action() == QDropEvent::Move ) {
+        // 注意不要踩到自己的脚
+        event-&gt;acceptAction();
+        moveMyHighlightedTextTo(event-&gt;pos());
+      } else {
+        pasteTextAt(text, event-&gt;pos());
+      }
+    }
+  }
+  </pre>
+ 
+<p> 一些窗口部件在数据被拖动到它们上面时会问一个“是”或“否”的细节。比如，一个CAD程序也许只接收在视图中的文本对象上放下的文本。在这种情况下，<a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a>被使用并且给定一个<em>区域</em>是接受或者忽略拖动：
+<pre>
+  void MyWidget::dragMoveEvent(QDragMoveEvent* event)
+  {
+    if ( QTextDrag::<a href="qtextdrag.html#canDecode">canDecode</a>(event) ) {
+      MyCadItem* item = findMyItemAt(event-&gt;pos());
+      if ( item )
+        event-&gt;accept();
+    }
+  }
+  </pre>
+ 
+如果搜索对象的计算指令特别地慢，如果你告诉系统你允许那些区域接受请求的话，你也许可以达到更好的效果：
+<pre>
+  void MyWidget::dragMoveEvent(QDragMoveEvent* event)
+  {
+    if ( QTextDrag::<a href="qtextdrag.html#canDecode">canDecode</a>(event) ) {
+      MyCadItem* item = findMyItemAt(event-&gt;pos());
+      if ( item ) {
+        <a href="qrect.html">QRect</a> r = item-&gt;areaRelativeToMeClippedByAnythingInTheWay();
+        if ( item-&gt;type() == MyTextType )
+          event-&gt;accept( r );
+        else
+          event-&gt;ignore( r );
+      }
+    }
+  }
+  </pre>
+ 
+<p> 如果你需要在拖动进程开始定时器、开始滚动窗口或者合适的情况（但是不要忘记在dragMoveEvent()中停止滚动和定时器）中给出视觉效果，dragMoveEvent()也可以被使用。
+<p> <h3><a name="inter-operating-with-other-applications">和其它应用程序之间的操作</a></h3>
+在X11上，公有的<a class="r" href="http://www.newplanetsoftware.com/xdnd/">XDND协议</a>被使用，而Qt在Windows上使用OLE标准，并且Qt在Mac上使用Carbon拖动管理器。在X11上，XDND使用MIME，所以不需要转换。Qt的应用编程接口与平台无关。在Windows上，可以识别MIME的应用程序可以通过使用MIME类型命名的剪贴板格式进行通讯。一些Windows引用程序已经在它们的剪贴板格式中使用MIME命名约定了。在内部，Qt也有在专有的剪贴板格式和MIME类型之间转换的能力。在适当时候，这个接口应该被公开，但是如果你现在需要这样的转换，请和你的Qt技术支持服务进行联系。
+<p> 在X11上，Qt也支持使用Motif拖放协议的拖动。重新实现中合并了由Daniel Dardailler写的一些代码，并且由Qt的Matt Koss &lt;koss@napri.sk&gt;和Trolltech修改过。这里是初始版权通告：
+<p> 
+<p> Copyright 1996 Daniel Dardailler。
+<p> 允许任何目的地使用、复制、修改、发布和销售这个软件并且允许没有任何费用，上面的版权通告必须出现在所有的复制当中并且版权通告和这个允许通告要在支持文档中出现，并且Daniel Dardailler的姓名在没有被特定允许的情况下不能出现在和所发布的软件相关的广告和宣传中。Daniel Dardailler对于这个软件的任何目的的适用性都没有任何责任。它仅仅提供的是“它自己”，而没有明确或暗示任何责任。
+<p> Copyright 1999 Matt Koss修改，和上面的协议相同。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

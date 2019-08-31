@@ -1,0 +1,701 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/widgets/qscrollview.cpp:342 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QScrollView类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QScrollView类参考</h1>
+
+<p>QScrollView窗口部件提供了一块在需要时可以出现滚动条的滚动区域。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qscrollview-h.html">qscrollview.h</a>&gt;</tt>
+<p>继承了<a href="qframe.html">QFrame</a>。
+<p>被<a href="qcanvasview.html">QCanvasView</a>、<a href="qtable.html">QTable</a>、<a href="qgridview.html">QGridView</a>、<a href="qiconview.html">QIconView</a>、<a href="qlistbox.html">QListBox</a>、<a href="qlistview.html">QListView</a>和<a href="qtextedit.html">QTextEdit</a>继承。
+<p><a href="qscrollview-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QScrollView"><b>QScrollView</b></a> ( QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )</div></li>
+<li><div class=fn><a href="#~QScrollView"><b>~QScrollView</b></a> ()</div></li>
+<li><div class=fn>enum <a href="#ResizePolicy-enum"><b>ResizePolicy</b></a> { Default, Manual, AutoOne, AutoOneFit }</div></li>
+<li><div class=fn>virtual void <a href="#setResizePolicy"><b>setResizePolicy</b></a> ( ResizePolicy )</div></li>
+<li><div class=fn>ResizePolicy <a href="#resizePolicy"><b>resizePolicy</b></a> () const</div></li>
+<li><div class=fn>void <a href="#removeChild"><b>removeChild</b></a> ( QWidget&nbsp;*&nbsp;child )</div></li>
+<li><div class=fn>virtual void <a href="#addChild"><b>addChild</b></a> ( QWidget&nbsp;*&nbsp;child, int&nbsp;x = 0, int&nbsp;y = 0 )</div></li>
+<li><div class=fn>virtual void <a href="#moveChild"><b>moveChild</b></a> ( QWidget&nbsp;*&nbsp;child, int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>int <a href="#childX"><b>childX</b></a> ( QWidget&nbsp;*&nbsp;child )</div></li>
+<li><div class=fn>int <a href="#childY"><b>childY</b></a> ( QWidget&nbsp;*&nbsp;child )</div></li>
+<li><div class=fn>bool childIsVisible ( QWidget&nbsp;*&nbsp;child ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void showChild ( QWidget&nbsp;*&nbsp;child, bool&nbsp;y = TRUE ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>enum <a href="#ScrollBarMode-enum"><b>ScrollBarMode</b></a> { Auto, AlwaysOff, AlwaysOn }</div></li>
+<li><div class=fn>ScrollBarMode <a href="#vScrollBarMode"><b>vScrollBarMode</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setVScrollBarMode"><b>setVScrollBarMode</b></a> ( ScrollBarMode )</div></li>
+<li><div class=fn>ScrollBarMode <a href="#hScrollBarMode"><b>hScrollBarMode</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setHScrollBarMode"><b>setHScrollBarMode</b></a> ( ScrollBarMode )</div></li>
+<li><div class=fn>QWidget * <a href="#cornerWidget"><b>cornerWidget</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setCornerWidget"><b>setCornerWidget</b></a> ( QWidget&nbsp;*&nbsp;corner )</div></li>
+<li><div class=fn>QScrollBar * <a href="#horizontalScrollBar"><b>horizontalScrollBar</b></a> () const</div></li>
+<li><div class=fn>QScrollBar * <a href="#verticalScrollBar"><b>verticalScrollBar</b></a> () const</div></li>
+<li><div class=fn>QWidget * <a href="#viewport"><b>viewport</b></a> () const</div></li>
+<li><div class=fn>QWidget * <a href="#clipper"><b>clipper</b></a> () const</div></li>
+<li><div class=fn>int <a href="#visibleWidth"><b>visibleWidth</b></a> () const</div></li>
+<li><div class=fn>int <a href="#visibleHeight"><b>visibleHeight</b></a> () const</div></li>
+<li><div class=fn>int <a href="#contentsWidth"><b>contentsWidth</b></a> () const</div></li>
+<li><div class=fn>int <a href="#contentsHeight"><b>contentsHeight</b></a> () const</div></li>
+<li><div class=fn>int <a href="#contentsX"><b>contentsX</b></a> () const</div></li>
+<li><div class=fn>int <a href="#contentsY"><b>contentsY</b></a> () const</div></li>
+<li><div class=fn>void <a href="#updateContents"><b>updateContents</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#updateContents-2"><b>updateContents</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#updateContents-3"><b>updateContents</b></a> ()</div></li>
+<li><div class=fn>void <a href="#repaintContents"><b>repaintContents</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>void <a href="#repaintContents-2"><b>repaintContents</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>void <a href="#repaintContents-3"><b>repaintContents</b></a> ( bool&nbsp;erase = TRUE )</div></li>
+<li><div class=fn>void <a href="#contentsToViewport"><b>contentsToViewport</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;&amp;&nbsp;vx, int&nbsp;&amp;&nbsp;vy ) const</div></li>
+<li><div class=fn>void <a href="#viewportToContents"><b>viewportToContents</b></a> ( int&nbsp;vx, int&nbsp;vy, int&nbsp;&amp;&nbsp;x, int&nbsp;&amp;&nbsp;y ) const</div></li>
+<li><div class=fn>QPoint <a href="#contentsToViewport-2"><b>contentsToViewport</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p ) const</div></li>
+<li><div class=fn>QPoint <a href="#viewportToContents-2"><b>viewportToContents</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;vp ) const</div></li>
+<li><div class=fn>void <a href="#enableClipper"><b>enableClipper</b></a> ( bool&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#setStaticBackground"><b>setStaticBackground</b></a> ( bool&nbsp;y )</div></li>
+<li><div class=fn>bool <a href="#hasStaticBackground"><b>hasStaticBackground</b></a> () const</div></li>
+<li><div class=fn>QSize <a href="#viewportSize"><b>viewportSize</b></a> ( int&nbsp;x, int&nbsp;y ) const</div></li>
+<li><div class=fn>virtual void <a href="#setDragAutoScroll"><b>setDragAutoScroll</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#dragAutoScroll"><b>dragAutoScroll</b></a> () const</div></li>
+</ul>
+<h2>公有槽</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#resizeContents"><b>resizeContents</b></a> ( int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#scrollBy"><b>scrollBy</b></a> ( int&nbsp;dx, int&nbsp;dy )</div></li>
+<li><div class=fn>virtual void <a href="#setContentsPos"><b>setContentsPos</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#ensureVisible"><b>ensureVisible</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#ensureVisible-2"><b>ensureVisible</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;xmargin, int&nbsp;ymargin )</div></li>
+<li><div class=fn>void <a href="#center"><b>center</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#center-2"><b>center</b></a> ( int&nbsp;x, int&nbsp;y, float&nbsp;xmargin, float&nbsp;ymargin )</div></li>
+<li><div class=fn>void <a href="#updateScrollBars"><b>updateScrollBars</b></a> ()</div></li>
+</ul>
+<h2>信号</h2>
+<ul>
+<li><div class=fn>void <a href="#contentsMoving"><b>contentsMoving</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+</ul>
+<h2>属性</h2>
+<ul>
+<li><div class=fn>int <a href="#contentsHeight-prop"><b>contentsHeight</b></a>&nbsp;- 内容区域的高度&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#contentsWidth-prop"><b>contentsWidth</b></a>&nbsp;- 内容区域的宽度&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#contentsX-prop"><b>contentsX</b></a>&nbsp;- 在视口的左边缘的内容的X坐标&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#contentsY-prop"><b>contentsY</b></a>&nbsp;- 在视口的左边缘的内容的Y坐标&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>bool <a href="#dragAutoScroll-prop"><b>dragAutoScroll</b></a>&nbsp;- 在拖动移动事件中自动滚动是否生效</div></li>
+<li><div class=fn>ScrollBarMode <a href="#hScrollBarMode-prop"><b>hScrollBarMode</b></a>&nbsp;- 水平滚动条模式</div></li>
+<li><div class=fn>ResizePolicy <a href="#resizePolicy-prop"><b>resizePolicy</b></a>&nbsp;- 当前重定义大小策略</div></li>
+<li><div class=fn>ScrollBarMode <a href="#vScrollBarMode-prop"><b>vScrollBarMode</b></a>&nbsp;- 垂直滚动条模式</div></li>
+<li><div class=fn>int <a href="#visibleHeight-prop"><b>visibleHeight</b></a>&nbsp;- 可视内容的垂直总量&nbsp;<em>（只读）</em></div></li>
+<li><div class=fn>int <a href="#visibleWidth-prop"><b>visibleWidth</b></a>&nbsp;- 可视内容的水平总量&nbsp;<em>（只读）</em></div></li>
+</ul>
+<h2>保护成员</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#drawContents"><b>drawContents</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;clipx, int&nbsp;clipy, int&nbsp;clipw, int&nbsp;cliph )</div></li>
+<li><div class=fn>virtual void <a href="#drawContentsOffset"><b>drawContentsOffset</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;offsetx, int&nbsp;offsety, int&nbsp;clipx, int&nbsp;clipy, int&nbsp;clipw, int&nbsp;cliph )</div></li>
+<li><div class=fn>virtual void <a href="#contentsMousePressEvent"><b>contentsMousePressEvent</b></a> ( QMouseEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsMouseReleaseEvent"><b>contentsMouseReleaseEvent</b></a> ( QMouseEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsMouseDoubleClickEvent"><b>contentsMouseDoubleClickEvent</b></a> ( QMouseEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsMouseMoveEvent"><b>contentsMouseMoveEvent</b></a> ( QMouseEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragEnterEvent"><b>contentsDragEnterEvent</b></a> ( QDragEnterEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragMoveEvent"><b>contentsDragMoveEvent</b></a> ( QDragMoveEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragLeaveEvent"><b>contentsDragLeaveEvent</b></a> ( QDragLeaveEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDropEvent"><b>contentsDropEvent</b></a> ( QDropEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#contentsWheelEvent"><b>contentsWheelEvent</b></a> ( QWheelEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#contentsContextMenuEvent"><b>contentsContextMenuEvent</b></a> ( QContextMenuEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#viewportPaintEvent"><b>viewportPaintEvent</b></a> ( QPaintEvent&nbsp;*&nbsp;pe )</div></li>
+<li><div class=fn>virtual void <a href="#viewportResizeEvent"><b>viewportResizeEvent</b></a> ( QResizeEvent * )</div></li>
+<li><div class=fn>virtual void <a href="#setMargins"><b>setMargins</b></a> ( int&nbsp;left, int&nbsp;top, int&nbsp;right, int&nbsp;bottom )</div></li>
+<li><div class=fn>int <a href="#leftMargin"><b>leftMargin</b></a> () const</div></li>
+<li><div class=fn>int <a href="#topMargin"><b>topMargin</b></a> () const</div></li>
+<li><div class=fn>int <a href="#rightMargin"><b>rightMargin</b></a> () const</div></li>
+<li><div class=fn>int <a href="#bottomMargin"><b>bottomMargin</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setHBarGeometry"><b>setHBarGeometry</b></a> ( QScrollBar&nbsp;&amp;&nbsp;hbar, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>virtual void <a href="#setVBarGeometry"><b>setVBarGeometry</b></a> ( QScrollBar&nbsp;&amp;&nbsp;vbar, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>virtual bool <a href="#eventFilter"><b>eventFilter</b></a> ( QObject&nbsp;*&nbsp;obj, QEvent&nbsp;*&nbsp;e )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QScrollView窗口部件提供了一块在需要时可以出现滚动条的滚动区域。
+<p> 
+
+<p> QScrollView是一个很大的画布——可能比底下窗口系统通常支持的坐标系统大得多。这很重要，因为它很容易超越这些限制（例如，一些网页的高度超过32000像素）。另外，QScrollView可以有一个被放置的QWidget，可以在画出的内容上滚动。这些子窗口部件也可以放在普通坐标范围的外面（但是它们还被限制在大小之内）。
+<p> 为了提供窗口部件的内容，QScrollView中继承的，重新实现了<a href="#drawContents">drawContents</a>()并且使用<a href="#resizeContents">resizeContents</a>()设置查看区域的大小。使用<a href="#addChild">addChild</a>()和<a href="#moveChild">moveChild</a>()在视图中定位窗口部件。
+<p> 为了有效地使用QScrollView，理解它所使用的三种风格的窗口部件结构是很重要的：一个单一的大的子窗口部件，一个大的放置一些窗口部件的平面区域和一个大的放置很多窗口部件的平面区域。
+<p> <h3> 使用一个大的窗口部件
+</h3>
+<a name="1"></a><p> <img src=qscrollview-vp2.png>
+<p> 首先，QScrollView的最简单的用法（就像上面描述的）适合任何一个维度不超过4000像素的滚动区域（这是X11服务器的最大可靠大小）。在这种方法中，你只需要把一个大的子窗口部件放在QScrollView中。这个孩子是滚动视图中的<a href="#viewport">viewport</a>()的孩子并且通过addChild()添加：
+<pre>
+    QScrollView* sv = new QScrollView(...);
+    <a href="qvbox.html">QVBox</a>* big_box = new <a href="qvbox.html">QVBox</a>(sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(big_box);
+</pre>
+ 
+你也可以像对任何窗口部件一样，继续在滚动视图中单一孩子中添加任意子窗口部件：
+<pre>
+    <a href="qlabel.html">QLabel</a>* child1 = new <a href="qlabel.html">QLabel</a>("CHILD", big_box);
+    <a href="qlabel.html">QLabel</a>* child2 = new <a href="qlabel.html">QLabel</a>("CHILD", big_box);
+    <a href="qlabel.html">QLabel</a>* child3 = new <a href="qlabel.html">QLabel</a>("CHILD", big_box);
+    ...
+</pre>
+ 
+<p> 这里QScrollView有四个孩子：viewport()、<a href="#verticalScrollBar">verticalScrollBar</a>()、<a href="#horizontalScrollBar">horizontalScrollBar</a>()和一个小的<a href="#cornerWidget">cornerWidget</a>()。viewport()有一个孩子——大的<a href="qvbox.html">QVBox</a>。这个QVBox有三个<a href="qlabel.html">QLabel</a>对象作为子窗口部件。当视图被滚动，QVBox被移动，它的孩子就像通常的子窗口部件那样被移动。
+<p> <h3> 使用一个放置一些窗口部件的非常大的视图
+</h3>
+<a name="1-1"></a><p> <img src=qscrollview-vp.png>
+<p> QScrollView的第二种用法（就像上面描述的）适合有少量窗口部件的任何一个维度超过4000像素的非常大的滚动区域。在这种情况下，你调用<a href="#resizeContents">resizeContents</a>()来设置区域的大小并且重新实现<a href="#drawContents">drawContents</a>()来绘制内容。你也可以通过让它们成为<a href="#viewport">viewport</a>()的孩子来添加窗口部件并且使用<a href="#addChild">addChild</a>()来添加它们（这和上面的单一大窗口部件的用法相同）：
+<pre>
+    QScrollView* sv = new QScrollView(...);
+    <a href="qlabel.html">QLabel</a>* child1 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child1);
+    <a href="qlabel.html">QLabel</a>* child2 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child2);
+    <a href="qlabel.html">QLabel</a>* child3 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child3);
+</pre>
+ 
+这里，QScrollView有同样的四个孩子：viewport()、<a href="#verticalScrollBar">verticalScrollBar</a>()、<a href="#horizontalScrollBar">horizontalScrollBar</a>()和一个小的<a href="#cornerWidget">cornerWidget</a>()。<a href="#viewport">viewport</a>()有三个<a href="qlabel.html">QLabel</a>对象作为子窗口部件。当视图被滚动，滚动视图会分别移动这些子窗口部件。
+<p> <h3> 使用一个放置很多窗口部件的非常大的视图
+<a name="enableclipper"></a>
+<img src=qscrollview-cl.png>
+</h3>
+<a name="1-2"></a><p> QScrollView的最后一个用法（就像上面描述的）适合有很多窗口部件的任何一个维度超过4000像素的非常大的滚动区域。在这种用法中，你可以调用<a href="#resizeContents">resizeContents</a>()来设置区域的大小并且重新实现<a href="#drawContents">drawContents</a>()来绘制内容。然后你调用<a href="#enableClipper">enableClipper</a>(TRUE)并且添加窗口部件，再一次把它们作为viewport()的孩子并且通过<a href="#addChild">addChild</a>()添加它们：
+<pre>
+    QScrollView* sv = new QScrollView(...);
+    sv-&gt;<a href="#enableClipper">enableClipper</a>(TRUE);
+    <a href="qlabel.html">QLabel</a>* child1 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child1);
+    <a href="qlabel.html">QLabel</a>* child2 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child2);
+    <a href="qlabel.html">QLabel</a>* child3 = new <a href="qlabel.html">QLabel</a>("CHILD", sv-&gt;<a href="#viewport">viewport</a>());
+    sv-&gt;<a href="#addChild">addChild</a>(child3);
+</pre>
+ 
+<p> 这里，QScrollView有四个孩子：<a href="#clipper">clipper</a>()（这次不是<a href="#viewport">viewport</a>()）、<a href="#verticalScrollBar">verticalScrollBar</a>()、<a href="#horizontalScrollBar">horizontalScrollBar</a>()和一个小的<a href="#cornerWidget">cornerWidget</a>()。clipper()有一个孩子：viewport()。viewport()有同样的三个标签作为子窗口部件。当视图被滚动时，viewport()被移动，它的孩子就像通常的子窗口部件那样被移动。
+<p> <a name="allviews"></a>
+<h3> 有关所有视图的详细资料
+</h3>
+<a name="1-3"></a><p> 如果你想在视图中使用任何子窗口部件，通常你将使用三种方法中的第一种。
+<p> 注意你在滚动区域中看到的窗口部件是viewport()窗口部件，不是QScrollView本身。所以例如如果要打开鼠标跟踪，请使用viewport()->setMouseTracking(TRUE)。
+<p> 为了使拖放生效，你应该在QScrollView上使用<a href="qwidget.html#setAcceptDrops">setAcceptDrops</a>(TRUE)（因为拖放事件被传送给父对象）。但是为了算出在视图中的合理位置，你将需要把拖动坐标从相对于QScrollView映射到相对于内容，为了做到这点使用<a href="#viewportToContents">viewportToContents</a>()函数。
+<p> 为了在滚动区域中处理鼠标事件，就像继承其它窗口部件那样继承滚动视图，但是不要重新实现<a href="qwidget.html#mousePressEvent">mousePressEvent</a>()，请重新实现<a href="#contentsMousePressEvent">contentsMousePressEvent</a>()来替代它。内容特定事件处理器提供滚动视图坐标系统中的转换事件。如果你重新实现mousePressEvent()，你将只会当QScrollView的部分被点击时得到调用——并且这个唯一的部分就是那个“角”（如果你没有设置<a href="#cornerWidget">cornerWidget</a>()）和框架，其它的任何事物都被视口、clipper或者滚动条隐藏。
+<p> 当你构造一个QScrollView，一些窗口部件标记应用于<a href="#viewport">viewport</a>()而不是被发送给QScrollView中<a href="qwidget.html">QWidget</a>的构造函数。这适用于<a href="qt.html#WidgetFlags-enum">WResizeNoErase</a>、<a href="qt.html#WidgetFlags-enum">WStaticContents</a>、<a href="qt.html#WidgetFlags-enum">WRepaintNoErase</a>和<a href="qt.html#WidgetFlags-enum">WPaintClever</a>。关于这些标记请参考<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>文档。这里有一些实例：
+<p> <ul>
+<p> <li> 一个操作图像的窗口部件将使用<tt>WResizeNoErase|WStaticContents</tt>，因为当它的大小增加时，这个窗口部件自己绘制所有的像素，它对于新的部分只需要一个绘制事件，因为旧的部分保持不变。
+<p> <li> 一个字处理窗口部件也许使用<a href="qt.html#WidgetFlags-enum">WResizeNoErase</a>并且一行一行地重新绘制自己来得到比较少闪烁的重定义大小。如果这个窗口部件处在没有文本合理化发生的模式中，它也可以使用<a href="qt.html#WidgetFlags-enum">WStaticContents</a>，这样它对于新的可视部分只得到一个重绘。
+<p> <li> 一个当任务移动时背景滚动的滚动游戏窗口部件也许使用<a href="qt.html#WidgetFlags-enum">WRepaintNoErase</a>（除了<a href="qt.html#WidgetFlags-enum">WStaticContents</a>和<a href="qt.html#WidgetFlags-enum">WResizeNoErase</a>之外），这样在滚动进入和滚动退出期间窗口系统背景不闪烁。
+</ul>
+<p> 子窗口部件可以使用<a href="#addChild">addChild</a>()或<a href="#moveChild">moveChild</a>()来移动。使用<a href="#childX">childX</a>()和<a href="#childY">childY</a>()来得到子窗口部件的位置。
+<p> 一个窗口部件可以通过<a href="#setCornerWidget">setCornerWidget</a>()被放置到垂直滚动条和水平滚动条之间的角里。你可以使用<a href="#horizontalScrollBar">horizontalScrollBar</a>()和<a href="#verticalScrollBar">verticalScrollBar</a>()获得到滚动条的访问，并且使用<a href="#viewport">viewport</a>()来得到视口。滚动视图可以使用<a href="#scrollBy">scrollBy</a>()、<a href="#ensureVisible">ensureVisible</a>()、<a href="#setContentsPos">setContentsPos</a>()或<a href="#center">center</a>()来被滚动。
+<p> 可视区域由<a href="#visibleWidth">visibleWidth</a>()和<a href="#visibleHeight">visibleHeight</a>()给定，并且内容区域由<a href="#contentsWidth">contentsWidth</a>()和<a href="#contentsHeight">contentsHeight</a>()给定。内容可以使用<a href="#repaintContents">repaintContents</a>()或<a href="#updateContents">updateContents</a>()之一来重新绘制。
+<p> 坐标转换由<a href="#contentsToViewport">contentsToViewport</a>()和<a href="#viewportToContents">viewportToContents</a>()提供。
+<p> <a href="#contentsMoving">contentsMoving</a>()信号正好在内容被移动到新位置之前被发射。
+<p> <b>警告：</b><a href="qt.html#WidgetFlags-enum">WResizeNoErase</a>是当前的默认设置，也就是说你在滚动视图的子类中一直不得不手工清除背景。这一点将在Qt的未来版本中发生改变并且我们推荐明确地指定这个标记。
+<p> <img src=qscrollview-m.png> <img src=qscrollview-w.png>
+<p>也可以参考<a href="abstractwidgets.html">抽象窗口部件类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="ResizePolicy-enum"></a>QScrollView::ResizePolicy</h3> 
+<p> 这个枚举类型用来控制QScrollView对重新定义大小事件的反应。这里有四个可能的设置：
+<ul>
+<li><tt>QScrollView::Default</tt> - QScrollView当它不得不选择时，它自动地选择其它设置中的一个。在Qt的这个版本中，如果你使用<a href="#resizeContents">resizeContents</a>()重新定义内容的大小，QScrollView改变为<a href="#ResizePolicy-enum">Manual</a>，如果一个孩子被添加，改变为<a href="#ResizePolicy-enum">AutoOne</a>。
+<li><tt>QScrollView::Manual</tt> - 视图保持为resizeContents()设定的大小。
+<li><tt>QScrollView::AutoOne</tt> - 如果只有一个子窗口部件，视图保持为那个窗口部件的大小，否则这个行为是未定义的。
+<li><tt>QScrollView::AutoOneFit</tt> - 如果只有一个子窗口部件，视图保持为那个窗口部件的<a href="qwidget.html#sizeHint">sizeHint</a>()。如果滚动视图被重新定义为大于孩子的sizeHint()的大小时，孩子将被重新定义大小适合它。如果超过一个孩子，这个行为是未定义的。
+</ul><p> 
+<h3 class=fn><a name="ScrollBarMode-enum"></a>QScrollView::ScrollBarMode</h3> 
+<p> 这个枚举变量描述QScrollView的滚动条的不同模式。定义的模式有：
+<ul>
+<li><tt>QScrollView::Auto</tt> - 当内容大于所要适合的QScrollView，它显示滚动条，并且否则就不显示。这是默认值。
+<li><tt>QScrollView::AlwaysOff</tt> - QScrollView从不显示滚动条。
+<li><tt>QScrollView::AlwaysOn</tt> - QScrollView一直显示显示滚动条。。
+</ul><p> （对于水平和垂直滚动条的模式是互相独立的。）
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QScrollView"></a>QScrollView::QScrollView ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )
+</h3>
+<p> 构造一个使用<em>parent</em>、<em>name</em>和窗口部件标记<em>f</em>的QScrollView。
+<p> 这个窗口部件标记<a href="qt.html#WidgetFlags-enum">WStaticContents</a>、 <a href="qt.html#WidgetFlags-enum">WRepaintNoErase</a>和<a href="qt.html#WidgetFlags-enum">WPaintClever</a>被传递给<a href="#viewport">viewport</a>()窗口部件。其它窗口部件标记就像通常一样传递给父对象的构造函数。
+
+<h3 class=fn><a name="~QScrollView"></a>QScrollView::~QScrollView ()
+</h3>
+销毁这个QScrollView。任何通过<a href="#addChild">addChild</a>()添加的孩子都将被删除。
+
+<h3 class=fn>void <a name="addChild"></a>QScrollView::addChild ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child, int&nbsp;x = 0, int&nbsp;y = 0 )<tt> [虚]</tt>
+</h3>
+插入窗口部件<em>child</em>到滚动区域的(<em>x</em>, <em>y</em>)位置。位置默认为(0, 0)。如果这个孩子已经在视图中存在，它只被移动。
+<p> 如果你添加大量的窗口部件，你也许要调用<a href="#enableClipper">enableClipper</a>(TRUE)。
+<p>例如：<a href="scrollview-example.html#x732">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>int <a name="bottomMargin"></a>QScrollView::bottomMargin () const<tt> [保护]</tt>
+</h3>
+返回下边距。
+<p>也可以参考<a href="#setMargins">setMargins</a>()。
+
+<h3 class=fn>void <a name="center"></a>QScrollView::center ( int&nbsp;x, int&nbsp;y )<tt> [槽]</tt>
+</h3>
+滚动内容，这样<em>(x, y)</em>点在可视区域中央。
+<p>实例：<a href="scrollview-example.html#x733">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>void <a name="center-2"></a>QScrollView::center ( int&nbsp;x, int&nbsp;y, float&nbsp;xmargin, float&nbsp;ymargin )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 滚动内容，这样<em>(x, y)</em>点在<em>xmargin</em>和<em>ymargin</em>为边缘（作为可视区域）的范围内可视。
+<p> 实例：
+<ul>
+<li> 边缘0.0允许(x, y)在可视区域的边缘。
+<li> 边缘0.5确保(x, y)在可视区域的中间50％内。
+<li> 边缘1.0确保(x, y)在可视区域的中央。
+</ul>
+
+<h3 class=fn>bool <a name="childIsVisible"></a>QScrollView::childIsVisible ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child )
+</h3> 
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 如果<em>child</em>是可视的，返回真。这和child->isVisible()一致。
+
+<h3 class=fn>int <a name="childX"></a>QScrollView::childX ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child )
+</h3>
+返回给定的<em>child</em>窗口部件的X位置。对于已经添加到视图中的窗口部件，请使用这个而不是<a href="qwidget.html#x">QWidget::x</a>()。
+
+<h3 class=fn>int <a name="childY"></a>QScrollView::childY ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child )
+</h3>
+返回给定的<em>child</em>窗口部件的Y位置。对于已经添加到视图中的窗口部件，请使用这个而不是<a href="qwidget.html#y">QWidget::y</a>()。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="clipper"></a>QScrollView::clipper () const
+</h3>
+返回clipper窗口部件。滚动视图中的内容最终被省略来进入clipper窗口部件。
+<p> <p>也可以参考<a href="#visibleWidth-prop">visibleWidth</a>和<a href="#visibleHeight-prop">visibleHeight</a>。
+
+<h3 class=fn>void <a name="contentsContextMenuEvent"></a>QScrollView::contentsContextMenuEvent ( <a href="qcontextmenuevent.html">QContextMenuEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#contextMenuEvent">contextMenuEvent</a>()，这个事件处理器就被调用——鼠标位置被转换为内容中的一个点。
+<p>实例：<a href="tutorial2-06.html#x2489">chart/canvasview.cpp</a>。
+
+<h3 class=fn>void <a name="contentsDragEnterEvent"></a>QScrollView::contentsDragEnterEvent ( <a href="qdragenterevent.html">QDragEnterEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#dragEnterEvent">dragEnterEvent</a>()，这个事件处理器就被调用——拖动位置被转换为内容中的一个点。
+<p>在<a href="qtable.html#contentsDragEnterEvent">QTable</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsDragLeaveEvent"></a>QScrollView::contentsDragLeaveEvent ( <a href="qdragleaveevent.html">QDragLeaveEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#dragLeaveEvent">dragLeaveEvent</a>()，这个事件处理器就被调用——拖动位置被转换为内容中的一个点。
+<p>在<a href="qtable.html#dragLeaveEvent">QTable</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsDragMoveEvent"></a>QScrollView::contentsDragMoveEvent ( <a href="qdragmoveevent.html">QDragMoveEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#dragMoveEvent">dragMoveEvent</a>()，这个事件处理器就被调用——拖动位置被转换为内容中的一个点。
+<p>在<a href="qtable.html#dragMoveEvent">QTable</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsDropEvent"></a>QScrollView::contentsDropEvent ( <a href="qdropevent.html">QDropEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#dropEvent">dropEvent</a>()，这个事件处理器就被调用——放下位置被转换为内容中的一个点。
+<p>在<a href="qtable.html#dropEvent">QTable</a>中被重新实现。
+
+<h3 class=fn>int <a name="contentsHeight"></a>QScrollView::contentsHeight () const
+</h3>
+<p>返回内容区域的高度。详细情况请参考<a href="qscrollview.html#contentsHeight-prop">“contentsHeight”</a>属性。
+
+<h3 class=fn>void <a name="contentsMouseDoubleClickEvent"></a>QScrollView::contentsMouseDoubleClickEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>()，这个事件处理器就被调用——点击位置被转换为内容中的一个点。
+<p>在<a href="qlistview.html#contentsMouseDoubleClickEvent">QListView</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsMouseMoveEvent"></a>QScrollView::contentsMouseMoveEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#mouseMoveEvent">mouseMoveEvent</a>()，这个事件处理器就被调用——鼠标位置被转换为内容中的一个点。
+<p>实例：<a href="canvas-example.html#x2726">canvas/canvas.cpp</a>和<a href="tutorial2-06.html#x2490">chart/canvasview.cpp</a>。
+<p>在<a href="qlistview.html#contentsMouseMoveEvent">QListView</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsMousePressEvent"></a>QScrollView::contentsMousePressEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#mousePressEvent">mousePressEvent</a>()，这个事件处理器就被调用——按下位置被转换为内容中的一个点。
+<p>实例：<a href="canvas-example.html#x2727">canvas/canvas.cpp</a>和<a href="tutorial2-06.html#x2491">chart/canvasview.cpp</a>。
+<p>在<a href="qlistview.html#contentsMousePressEvent">QListView</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsMouseReleaseEvent"></a>QScrollView::contentsMouseReleaseEvent ( <a href="qmouseevent.html">QMouseEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#mouseReleaseEvent">mouseReleaseEvent</a>()，这个事件处理器就被调用——释放位置被转换为内容中的一个点。
+<p>在<a href="qlistview.html#contentsMouseReleaseEvent">QListView</a>中被重新实现。
+
+<h3 class=fn>void <a name="contentsMoving"></a>QScrollView::contentsMoving ( int&nbsp;x, int&nbsp;y )<tt> [signal]</tt>
+</h3>
+<p> 这个信号正好在内容被移动到<em>(x, y)</em>位置之前被发射。
+<p> <p>也可以参考<a href="#contentsX-prop">contentsX</a>和<a href="#contentsY-prop">contentsY</a>。
+
+<h3 class=fn>void <a name="contentsToViewport"></a>QScrollView::contentsToViewport ( int&nbsp;x, int&nbsp;y, int&nbsp;&amp;&nbsp;vx, int&nbsp;&amp;&nbsp;vy ) const
+</h3>
+把内容中的点(<em>x</em>, <em>y</em>)转换为<a href="#viewport">viewport</a>()窗口部件中的点(<em>vx</em>, <em>vy</em>)。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="contentsToViewport-2"></a>QScrollView::contentsToViewport ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回转换为<a href="#viewport">viewport</a>()窗口部件的点的点<em>p</em>。
+
+<h3 class=fn>void <a name="contentsWheelEvent"></a>QScrollView::contentsWheelEvent ( <a href="qwheelevent.html">QWheelEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+只要QScrollView收到<a href="qwidget.html#wheelEvent">wheelEvent</a>()，这个事件处理器就被调用——鼠标位置被转换为内容中的一个点。
+
+<h3 class=fn>int <a name="contentsWidth"></a>QScrollView::contentsWidth () const
+</h3>
+<p>返回内容区域的宽度。详细情况请参考<a href="qscrollview.html#contentsWidth-prop">“contentsWidth”</a>属性。
+
+<h3 class=fn>int <a name="contentsX"></a>QScrollView::contentsX () const
+</h3>
+<p>返回在视口的左边缘的内容的X坐标。详细情况请参考<a href="qscrollview.html#contentsX-prop">“contentsX”</a>属性。
+
+<h3 class=fn>int <a name="contentsY"></a>QScrollView::contentsY () const
+</h3>
+<p><p>返回在视口的左边缘的内容的Y坐标。详细情况请参考<a href="qscrollview.html#contentsY-prop">“contentsY”</a>属性。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="cornerWidget"></a>QScrollView::cornerWidget () const
+</h3>
+返回在两个滚动条之间的角落里的窗口部件。
+<p> 默认情况下，没有角落窗口部件出现。
+<p>实例：<a href="scrollview-example.html#x734">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>bool <a name="dragAutoScroll"></a>QScrollView::dragAutoScroll () const
+</h3>
+<p>如果在拖动移动事件中自动滚动生效，返回真，否则返回假。详细情况请参考<a href="qscrollview.html#dragAutoScroll-prop">“dragAutoScroll”</a>属性。
+
+<h3 class=fn>void <a name="drawContents"></a>QScrollView::drawContents ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;clipx, int&nbsp;clipy, int&nbsp;clipw, int&nbsp;cliph )<tt> [虚 保护]</tt>
+</h3>
+<p> 如果你正在查看绘制的区域而不是窗口部件，请重新实现这个函数。
+<p> 这个函数应该使用绘制工具<em>p</em>来绘制内容中的矩形(<em>clipx</em>, <em>clipy</em>, <em>clipw</em>, <em>cliph</em>)。这个裁剪矩形在滚动视图的坐标中。
+<p> 实例：
+<pre>
+  {
+    // 在(100000,150000)点填充一个40000*50000的矩形
+
+    // 计算坐标……
+    int x1 = 100000, y1 = 150000;
+    int x2 = x1+40000-1, y2 = y1+50000-1;
+
+    // 裁剪坐标，这样X/Windows将不会发生问题……
+    if (x1 &lt; clipx) x1=clipx;
+    if (y1 &lt; clipy) y1=clipy;
+    if (x2 &gt; clipx+clipw-1) x2=clipx+clipw-1;
+    if (y2 &gt; clipy+cliph-1) y2=clipy+cliph-1;
+
+    // 使用小的坐标来绘制……
+    if ( x2 &gt;= x1 &amp;&amp; y2 &gt;= y1 )
+        p-&gt;fillRect(x1, y1, x2-x1+1, y2-y1+1, red);
+  }
+  </pre>
+ 
+<p> 裁剪矩形和绘制工具<em>p</em>的转化已经被适当地设置了。
+<p>实例：<a href="qdir-example.html#x1830">qdir/qdir.cpp</a>。
+<p>在<a href="qcanvasview.html#drawContents">QCanvasView</a>和<a href="qtable.html#drawContents">QTable</a>中被重新实现。
+
+<h3 class=fn>void <a name="drawContentsOffset"></a>QScrollView::drawContentsOffset ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;offsetx, int&nbsp;offsety, int&nbsp;clipx, int&nbsp;clipy, int&nbsp;clipw, int&nbsp;cliph )<tt> [虚 保护]</tt>
+</h3>
+仅仅是为了向后兼容。它比使用<a href="#drawContents">drawContents</a>(<a href="qpainter.html">QPainter</a>*,int,int,int,int)更容易。
+<p> 默认实现是适当地转化绘制工具并且调用drawContents(QPainter*,int,int,int,int)。对于参数<em>p</em>、<em>offsetx</em>、<em>offsety</em>、<em>clipx</em>、<em>clipy</em>、<em>clipw</em>和<em>cliph</em>的解释请参考drawContents。
+<p>在<a href="qlistview.html#drawContentsOffset">QListView</a>中被重新实现。
+
+<h3 class=fn>void <a name="enableClipper"></a>QScrollView::enableClipper ( bool&nbsp;y )
+</h3>
+当大量的子窗口部件在滚动视图中时，特别是如果它们被一起关闭，滚动的效果可能会损失很多。如果<em>y</em>为真，滚动视图将使用一个额外的窗口部件来把这些子窗口部件组合起来。
+<p> 注意你只能在添加窗口部件之前调用<a href="#enableClipper">enableClipper</a>()。
+<p> 对于一个完全的讨论，请参考这个类的<a href="#enableclipper">详细描述</a>。
+<p>实例：<a href="scrollview-example.html#x735">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>void <a name="ensureVisible"></a>QScrollView::ensureVisible ( int&nbsp;x, int&nbsp;y )<tt> [槽]</tt>
+</h3>
+滚动内容，所以点<em>(x, y)</em>在至少50像素的边距内是可视的（如果可能，否则会放在中间）。
+
+<h3 class=fn>void <a name="ensureVisible-2"></a>QScrollView::ensureVisible ( int&nbsp;x, int&nbsp;y, int&nbsp;xmargin, int&nbsp;ymargin )<tt> [槽]</tt>
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 滚动内容，所以点<em>(x, y)</em>在至少<em>xmargin</em>和<em>ymargin</em>的边距内是可视的（如果可能，否则会放在中间）。
+
+<h3 class=fn>bool <a name="eventFilter"></a>QScrollView::eventFilter ( <a href="qobject.html">QObject</a>&nbsp;*&nbsp;obj, <a href="qevent.html">QEvent</a>&nbsp;*&nbsp;e )<tt> [虚 保护]</tt>
+</h3>
+这个事件过滤器保证当一个单一内容窗口部件被重新定义大小、显示、隐藏或者销毁时，滚动条会被更新，它把鼠标事件传递给QScrollView。这个事件在<em>e</em>中并且这个对象在<em>obj</em>中。
+<p>从<a href="qobject.html#eventFilter">QObject</a>中重新实现的。
+<p>在<a href="qlistview.html#eventFilter">QListView</a>中被重新实现。
+
+<h3 class=fn><a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> <a name="hScrollBarMode"></a>QScrollView::hScrollBarMode () const
+</h3>
+<p>返回水平滚动条的模式。详细情况请参考<a href="qscrollview.html#hScrollBarMode-prop">“hScrollBarMode”</a>属性。
+
+<h3 class=fn>bool <a name="hasStaticBackground"></a>QScrollView::hasStaticBackground () const
+</h3>
+如果QScrollView使用静态背景，返回真，否则返回假。
+<p>也可以参考<a href="#setStaticBackground">setStaticBackground</a>()。
+
+<h3 class=fn><a href="qscrollbar.html">QScrollBar</a>&nbsp;* <a name="horizontalScrollBar"></a>QScrollView::horizontalScrollBar () const
+</h3>
+返回水平滚动条。它被用来允许快捷键、自动滚动等等和允许改变箭头滚动速度，也就是bar->setSteps( rate, bar->pageStep() )。
+<p> 它不应该被其他方式操作。
+<p> 这个函数从来不会返回0。
+
+<h3 class=fn>int <a name="leftMargin"></a>QScrollView::leftMargin () const<tt> [保护]</tt>
+</h3>
+返回左边距。
+<p>也可以参考<a href="#setMargins">setMargins</a>()。
+
+<h3 class=fn>void <a name="moveChild"></a>QScrollView::moveChild ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child, int&nbsp;x, int&nbsp;y )<tt> [虚]</tt>
+</h3>
+重新定义<em>child</em>窗口部件的位置为(<em>x</em>, <em>y</em>)。这个函数和<a href="#addChild">addChild</a>()是一样的。
+
+<h3 class=fn>void <a name="removeChild"></a>QScrollView::removeChild ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child )
+</h3>
+从滚动区域中移除<em>child</em>窗口部件。注意如果<em>child</em>被删除，这个操作将会自动发生。
+
+<h3 class=fn>void <a name="repaintContents"></a>QScrollView::repaintContents ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, bool&nbsp;erase = TRUE )
+</h3>
+在一个被适当转化的有<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>定义的矩形上调用<a href="qwidget.html#repaint">repaint</a>()。如果这个矩形不是可视的，那么就什么也没有被重新绘制。如果<em>erase</em>为真，背景会使用背景色来清空。
+<p> <p>也可以参考<a href="#updateContents">updateContents</a>()。
+
+<h3 class=fn>void <a name="repaintContents-2"></a>QScrollView::repaintContents ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, bool&nbsp;erase = TRUE )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 重新绘制矩形<em>r</em>的内容。如果<em>erase</em>为真，背景会使用背景色来清空。
+
+<h3 class=fn>void <a name="repaintContents-3"></a>QScrollView::repaintContents ( bool&nbsp;erase = TRUE )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 重新绘制内容。如果<em>erase</em>为真，背景会使用背景色来清空。
+
+<h3 class=fn>void <a name="resizeContents"></a>QScrollView::resizeContents ( int&nbsp;w, int&nbsp;h )<tt> [virtual slot]</tt>
+</h3>
+设置内容区域的大小为<em>w</em>像素宽，<em>h</em>像素高并且因此更新视口。
+
+<h3 class=fn><a href="qscrollview.html#ResizePolicy-enum">ResizePolicy</a> <a name="resizePolicy"></a>QScrollView::resizePolicy () const
+</h3>
+<p>返回当前重新定义大小的策略。详细情况请参考<a href="qscrollview.html#resizePolicy-prop">“resizePolicy”</a>属性。
+
+<h3 class=fn>int <a name="rightMargin"></a>QScrollView::rightMargin () const<tt> [保护]</tt>
+</h3>
+返回右边距。
+<p>也可以参考<a href="#setMargins">setMargins</a>()。
+
+<h3 class=fn>void <a name="scrollBy"></a>QScrollView::scrollBy ( int&nbsp;dx, int&nbsp;dy )<tt> [槽]</tt>
+</h3>
+向左<em>dx</em>、向上<em>dy</em>滚动内容。
+
+<h3 class=fn>void <a name="setContentsPos"></a>QScrollView::setContentsPos ( int&nbsp;x, int&nbsp;y )<tt> [virtual slot]</tt>
+</h3>
+滚动内容使点<em>(x, y)</em>在左上角。
+<p>实例：<a href="process-example.html#x70">process/process.cpp</a>。
+
+<h3 class=fn>void <a name="setCornerWidget"></a>QScrollView::setCornerWidget ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;corner )<tt> [虚]</tt>
+</h3>
+设置两个滚动条之间的窗口部件为<em>corner</em>。
+<p> 你将也需要设置是少一个滚动条的默认为<a href="#ScrollBarMode-enum">AlwaysOn</a>。
+<p> 传递0会在角落里不显示窗口部件。
+<p> 任何以前的<em>corner</em>窗口部件被隐藏。
+<p> 你可以多次调用使用同一个窗口部件的<a href="#setCornerWidget">setCornerWidget</a>()。
+<p> 你在这里设置的所有窗口部件在QScrollView被销毁的时候都会被它删除，除非在设置完一些其它角落窗口部件（或者0）之后，把这个窗口部件重新定义父对象。
+<p> 任何<em>最新</em>被放置的窗口部件不应该有当前的父对象。
+<p> 默认情况下，没有角落窗口部件存在。
+<p> <p>也可以参考<a href="#vScrollBarMode-prop">vScrollBarMode</a>和<a href="#hScrollBarMode-prop">hScrollBarMode</a>。
+<p>实例：<a href="scrollview-example.html#x738">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>void <a name="setDragAutoScroll"></a>QScrollView::setDragAutoScroll ( bool&nbsp;b )<tt> [虚]</tt>
+</h3>
+<p>设置在拖动移动事件中自动滚动是否生效为<em>b</em>。详细情况请参考<a href="qscrollview.html#dragAutoScroll-prop">“dragAutoScroll”</a>属性。
+
+<h3 class=fn>void <a name="setHBarGeometry"></a>QScrollView::setHBarGeometry ( <a href="qscrollbar.html">QScrollBar</a>&nbsp;&amp;&nbsp;hbar, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )<tt> [虚 保护]</tt>
+</h3>
+当水平滚动条几何形状发生变化，被调用。它被提供为保护函数这样子类可以做一些有趣的事情，比如在通常由滚动条使用的一些空间上提供额外的按钮。
+<p> 默认实现简单地把所有的空间给<em>hbar</em>。新的几何形状由<em>x</em>、<em>y</em>、<em>w</em>和<em>h</em>给定。
+<p> <p>也可以参考<a href="#setVBarGeometry">setVBarGeometry</a>()。
+
+<h3 class=fn>void <a name="setHScrollBarMode"></a>QScrollView::setHScrollBarMode ( <a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> )<tt> [虚]</tt>
+</h3>
+<p>设置水平滚动条的模式。详细情况请参考<a href="qscrollview.html#hScrollBarMode-prop">“hScrollBarMode”</a>属性。
+
+<h3 class=fn>void <a name="setMargins"></a>QScrollView::setMargins ( int&nbsp;left, int&nbsp;top, int&nbsp;right, int&nbsp;bottom )<tt> [虚 保护]</tt>
+</h3>
+设置滚动区域周围的边距为<em>left</em>、<em>top</em>、<em>right</em>和<em>bottom</em>。这对于一些像电子制表软件要“锁定”行或列的应用程序很有用。边距空间在<a href="qframe.html#frameRect">frameRect</a>()<em>之内</em>并且是空白的，重新实现<a href="#drawContents">drawContents</a>()或者在没有被使用的区域放上窗口部件。
+<p> 默认情况下，所有边距为0。
+<p> <p>也可以参考<a href="qframe.html#frameChanged">frameChanged</a>()。
+
+<h3 class=fn>void <a name="setResizePolicy"></a>QScrollView::setResizePolicy ( <a href="qscrollview.html#ResizePolicy-enum">ResizePolicy</a> )<tt> [虚]</tt>
+</h3>
+<p>设置当前重新定义大小的策略。详细情况请参考<a href="qscrollview.html#resizePolicy-prop">“resizePolicy”</a>属性。
+
+<h3 class=fn>void <a name="setStaticBackground"></a>QScrollView::setStaticBackground ( bool&nbsp;y )
+</h3>
+如果<em>y</em>为真，设置滚动视图有一个静态背景，否则如果<em>y</em>为假，就是一个滚动背景。默认情况，背景是滚动的。
+<p> 要知道这种方式是非常慢的，比如，每一个内容移动都不得不触发可视区域完全重新绘制。
+<p> <p>也可以参考<a href="#hasStaticBackground">hasStaticBackground</a>()。
+
+<h3 class=fn>void <a name="setVBarGeometry"></a>QScrollView::setVBarGeometry ( <a href="qscrollbar.html">QScrollBar</a>&nbsp;&amp;&nbsp;vbar, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )<tt> [虚 保护]</tt>
+</h3>
+当垂直滚动条几何形状发生变化，被调用。它被提供为保护函数这样子类可以做一些有趣的事情，比如在通常由滚动条使用的一些空间上提供额外的按钮。
+<p> 默认实现简单地把所有的空间给<em>vbar</em>。新的几何形状由<em>x</em>、<em>y</em>、<em>w</em>和<em>h</em>给定。
+<p> <p>也可以参考<a href="#setHBarGeometry">setHBarGeometry</a>()。
+
+<h3 class=fn>void <a name="setVScrollBarMode"></a>QScrollView::setVScrollBarMode ( <a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> )<tt> [虚]</tt>
+</h3>
+<p>设置垂直滚动条的模式。详细情况请参考<a href="qscrollview.html#vScrollBarMode-prop">“vScrollBarMode”</a>属性。
+
+<h3 class=fn>void <a name="showChild"></a>QScrollView::showChild ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;child, bool&nbsp;y = TRUE )
+</h3> 
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 设置<em>child</em>的可视性。等于<a href="qwidget.html#show">QWidget::show</a>()或<a href="qwidget.html#hide">QWidget::hide</a>()。
+
+<h3 class=fn>int <a name="topMargin"></a>QScrollView::topMargin () const<tt> [保护]</tt>
+</h3>
+返回上边距。
+<p>也可以参考<a href="#setMargins">setMargins</a>()。
+
+<h3 class=fn>void <a name="updateContents"></a>QScrollView::updateContents ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+在一个被适当转化的有<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>定义的矩形上调用<a href="qwidget.html#update">update</a>()。如果这个矩形不是可视的，那么就什么也没有被重新绘制。
+<p> <p>也可以参考<a href="#repaintContents">repaintContents</a>()。
+
+<h3 class=fn>void <a name="updateContents-2"></a>QScrollView::updateContents ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 更新矩形<em>r</em>中的内容。
+
+<h3 class=fn>void <a name="updateContents-3"></a>QScrollView::updateContents ()
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+
+<h3 class=fn>void <a name="updateScrollBars"></a>QScrollView::updateScrollBars ()<tt> [槽]</tt>
+</h3>
+更新滚动条——所有可能性都被考虑了。你应该永远不需要在你的代码中调用这个函数。
+
+<h3 class=fn><a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> <a name="vScrollBarMode"></a>QScrollView::vScrollBarMode () const
+</h3>
+<p>返回垂直滚动条的模式。详细情况请参考<a href="qscrollview.html#vScrollBarMode-prop">“vScrollBarMode”</a>属性。
+
+<h3 class=fn><a href="qscrollbar.html">QScrollBar</a>&nbsp;* <a name="verticalScrollBar"></a>QScrollView::verticalScrollBar () const
+</h3>
+返回垂直滚动条。它被用来允许快捷键、自动滚动等等和允许改变箭头滚动速度，也就是bar->setSteps( rate, bar->pageStep() )。
+<p> 它不应该被其他方式操作。
+<p> 这个函数从来不会返回0。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="viewport"></a>QScrollView::viewport () const
+</h3>
+返回滚动视图中的视口窗口部件。这个窗口部件包含内容窗口部件或者要画的区域。
+<p>实例：<a href="scrollview-example.html#x742">scrollview/scrollview.cpp</a>。
+
+<h3 class=fn>void <a name="viewportPaintEvent"></a>QScrollView::viewportPaintEvent ( <a href="qpaintevent.html">QPaintEvent</a>&nbsp;*&nbsp;pe )<tt> [虚 保护]</tt>
+</h3>
+这是一个绘制视口内容的低水平的绘制常规程序。如果<a href="#drawContents">drawContents</a>()太高水平的话（例如，如果你不想在视口上打开<a href="qpainter.html">QPainter</a>），重新实现这个函数。绘制事件被传递进<em>pe</em>。
+
+<h3 class=fn>void <a name="viewportResizeEvent"></a>QScrollView::viewportResizeEvent ( <a href="qresizeevent.html">QResizeEvent</a>&nbsp;* )<tt> [虚 保护]</tt>
+</h3>
+提供内容上的事件的简单处理，这个函数接收所有发送给视口的重新定义大小事件。
+<p> <p>也可以参考<a href="qwidget.html#resizeEvent">QWidget::resizeEvent</a>()。
+<p>实例：<a href="tutorial2-06.html#x2492">chart/canvasview.cpp</a>。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="viewportSize"></a>QScrollView::viewportSize ( int&nbsp;x, int&nbsp;y ) const
+</h3> 
+返回视口的大小(<em>x</em>, <em>y</em>)。
+<p> 视口大小依赖于<em>(x, y)</em>（内容的大小）、这个窗口部件的大小和水平和垂直滚动条的模式。
+<p> 这个函数允许窗口部件互相交换垂直和水平空间来更好地控制滚动条的外观。例如，一个字处理器或者网页浏览器可以精确地控制右边距的宽度来决定它是否需要一个垂直滚动条。
+
+<h3 class=fn>void <a name="viewportToContents"></a>QScrollView::viewportToContents ( int&nbsp;vx, int&nbsp;vy, int&nbsp;&amp;&nbsp;x, int&nbsp;&amp;&nbsp;y ) const
+</h3>
+把<a href="#viewport">viewport</a>()窗口部件中的点(<em>vx</em>, <em>vy</em>)转换为内容中的点(<em>x</em>, <em>y</em>)。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="viewportToContents-2"></a>QScrollView::viewportToContents ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;vp ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> <p> 返回转换为内容中的点的视口的点<em>vp</em>。
+
+<h3 class=fn>int <a name="visibleHeight"></a>QScrollView::visibleHeight () const
+</h3>
+<p>返回可视内容的垂直总量。详细情况请参考<a href="qscrollview.html#visibleHeight-prop">“visibleHeight”</a>属性。
+
+<h3 class=fn>int <a name="visibleWidth"></a>QScrollView::visibleWidth () const
+</h3>
+<p><p>返回可视内容的水平总量。详细情况请参考<a href="qscrollview.html#visibleWidth-prop">“visibleWidth”</a>属性。
+
+<hr><h2>属性文档</h2>
+<h3 class=fn>int <a name="contentsHeight-prop"></a>contentsHeight</h3>
+<p>这个属性保存的是内容区域的高度。
+<p>通过<a href="#contentsHeight">contentsHeight</a>()来获得属性值。
+
+<h3 class=fn>int <a name="contentsWidth-prop"></a>contentsWidth</h3>
+<p>这个属性保存的是内容区域的宽度。
+<p>通过<a href="#contentsWidth">contentsWidth</a>()来获得属性值。
+
+<h3 class=fn>int <a name="contentsX-prop"></a>contentsX</h3>
+<p>这个属性保存的是在视口的左边缘的内容的X坐标。
+<p>通过<a href="#contentsX">contentsX</a>()来获得属性值。
+
+<h3 class=fn>int <a name="contentsY-prop"></a>contentsY</h3>
+<p>这个属性保存的是在视口的左边缘的内容的Y坐标。
+<p>通过<a href="#contentsY">contentsY</a>()来获得属性值。
+
+<h3 class=fn>bool <a name="dragAutoScroll-prop"></a>dragAutoScroll</h3>
+<p>这个属性保存的是在拖动移动事件中自动滚动是否生效。
+<p>如果这个属性被设置为真（默认），如果用户移动光标接近视图的边框，QScrollView会在拖动移动事件中自动滚动内容。当然这只在视口允许放下的情况才能工作。指定为假将使自动滚动特征失效。
+<p>通过<a href="#setDragAutoScroll">setDragAutoScroll</a>()来设置属性值并且通过<a href="#dragAutoScroll">dragAutoScroll</a>()来获得属性值。
+
+<h3 class=fn><a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> <a name="hScrollBarMode-prop"></a>hScrollBarMode</h3>
+<p>这个属性保存的是水平滚动条模式。
+<p>默认模式为QScrollView::Auto。
+<p> <p>也可以参考<a href="#vScrollBarMode-prop">vScrollBarMode</a>。
+<p>通过<a href="#setHScrollBarMode">setHScrollBarMode</a>()设置属性值并且通过<a href="#hScrollBarMode">hScrollBarMode</a>()来获得属性值。
+
+<h3 class=fn><a href="qscrollview.html#ResizePolicy-enum">ResizePolicy</a> <a name="resizePolicy-prop"></a>resizePolicy</h3>
+<p>这个属性保存的是当前重定义大小策略。
+<p>默认为<a href="#ResizePolicy-enum">Default</a>。
+<p> <p>也可以参考<a href="#ResizePolicy-enum">ResizePolicy</a>。
+<p>通过<a href="#setResizePolicy">setResizePolicy</a>()设置属性值并且通过<a href="#resizePolicy">resizePolicy</a>()来获得属性值。
+
+<h3 class=fn><a href="qscrollview.html#ScrollBarMode-enum">ScrollBarMode</a> <a name="vScrollBarMode-prop"></a>vScrollBarMode</h3>
+<p>这个属性保存的是垂直滚动条模式。
+<p>默认模式为QScrollView::Auto。
+<p> <p>也可以参考<a href="#hScrollBarMode-prop">hScrollBarMode</a>。
+<p>通过<a href="#setVScrollBarMode">setVScrollBarMode</a>()设置属性值并且通过<a href="#vScrollBarMode">vScrollBarMode</a>()来获得属性值。
+
+<h3 class=fn>int <a name="visibleHeight-prop"></a>visibleHeight</h3>
+<p>这个属性保存的是可视内容的垂直总量。
+<p>通过<a href="#visibleHeight">visibleHeight</a>()来获得属性值。
+
+<h3 class=fn>int <a name="visibleWidth-prop"></a>visibleWidth</h3>
+<p>这个属性保存的是可视内容的水平总量。
+<p>通过<a href="#visibleWidth">visibleWidth</a>()来获得属性值。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

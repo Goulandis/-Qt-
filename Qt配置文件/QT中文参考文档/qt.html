@@ -1,0 +1,749 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-win-commercial-3.0.5/src/kernel/qobject.cpp:62 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>Qt类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>Qt类参考</h1>
+
+<p>Qt类是一个提供所需的像全局变量一样的大量不同的标识符的命名空间。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qnamespace-h.html">qnamespace.h</a>&gt;</tt>
+<p>被<a href="qobject.html">QObject</a>、<a href="qpixmap.html">QPixmap</a>、<a href="qbrush.html">QBrush</a>、<a href="qcanvasitem.html">QCanvasItem</a>、<a href="qcursor.html">QCursor</a>、<a href="qpainter.html">QPainter</a>、<a href="qevent.html">QEvent</a>、<a href="qiconviewitem.html">QIconViewItem</a>、<a href="qkeysequence.html">QKeySequence</a>、<a href="qlistviewitem.html">QListViewItem</a>、<a href="qcustommenuitem.html">QCustomMenuItem</a>、<a href="qpen.html">QPen</a>、<a href="qstylesheetitem.html">QStyleSheetItem</a>、<a href="qtab.html">QTab</a>、<a href="qtableitem.html">QTableItem</a>、<a href="qthread.html">QThread</a>、<a href="qtooltip.html">QToolTip</a>和<a href="qwhatsthis.html">QWhatsThis</a>继承。
+<p><a href="qt-members.html">所有成员函数列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn>enum <a href="#ButtonState-enum"><b>ButtonState</b></a> { NoButton = 0x0000, LeftButton = 0x0001, RightButton = 0x0002, MidButton = 0x0004, MouseButtonMask = 0x00ff, ShiftButton = 0x0100, ControlButton = 0x0200, AltButton = 0x0400, MetaButton = 0x0800, KeyButtonMask = 0x0fff, Keypad = 0x4000 }</div></li>
+<li><div class=fn>enum <a href="#Orientation-enum"><b>Orientation</b></a> { Horizontal = 0, Vertical }</div></li>
+<li><div class=fn>enum <a href="#AlignmentFlags-enum"><b>AlignmentFlags</b></a> { AlignAuto = 0x0000, AlignLeft = 0x0001, AlignRight = 0x0002, AlignHCenter = 0x0004, AlignJustify = 0x0008, AlignHorizontal_Mask = AlignLeft | AlignRight | AlignHCenter | AlignJustify, AlignTop = 0x0010, AlignBottom = 0x0020, AlignVCenter = 0x0040, AlignVertical_Mask = AlignTop | AlignBottom | AlignVCenter, AlignCenter = AlignVCenter | AlignHCenter }</div></li>
+<li><div class=fn>enum <a href="#TextFlags-enum"><b>TextFlags</b></a> { SingleLine = 0x0080, DontClip = 0x0100, ExpandTabs = 0x0200, ShowPrefix = 0x0400, WordBreak = 0x0800, BreakAnywhere = 0x1000, DontPrint = 0x2000, NoAccel = 0x4000 }</div></li>
+<li><div class=fn>enum <a href="#WidgetState-enum"><b>WidgetState</b></a> { WState_Created = 0x00000001, WState_Disabled = 0x00000002, WState_Visible = 0x00000004, WState_ForceHide = 0x00000008, WState_OwnCursor = 0x00000010, WState_MouseTracking = 0x00000020, WState_CompressKeys = 0x00000040, WState_BlockUpdates = 0x00000080, WState_InPaintEvent = 0x00000100, WState_Reparented = 0x00000200, WState_ConfigPending = 0x00000400, WState_Resized = 0x00000800, WState_AutoMask = 0x00001000, WState_Polished = 0x00002000, WState_DND = 0x00004000, WState_Reserved0 = 0x00008000, WState_Reserved1 = 0x00010000, WState_Reserved2 = 0x00020000, WState_Reserved3 = 0x00040000, WState_Maximized = 0x00080000, WState_Minimized = 0x00100000, WState_ForceDisabled = 0x00200000, WState_Exposed = 0x00400000, WState_HasMouse = 0x00800000 }</div></li>
+<li><div class=fn>enum <a href="#WidgetFlags-enum"><b>WidgetFlags</b></a> { WType_TopLevel = 0x00000001, WType_Dialog = 0x00000002, WType_Popup = 0x00000004, WType_Desktop = 0x00000008, WType_Mask = 0x0000000f, WStyle_Customize = 0x00000010, WStyle_NormalBorder = 0x00000020, WStyle_DialogBorder = 0x00000040, WStyle_NoBorder = 0x00002000, WStyle_Title = 0x00000080, WStyle_SysMenu = 0x00000100, WStyle_Minimize = 0x00000200, WStyle_Maximize = 0x00000400, WStyle_MinMax = WStyle_Minimize | WStyle_Maximize, WStyle_Tool = 0x00000800, WStyle_StaysOnTop = 0x00001000, WStyle_ContextHelp = 0x00004000, WStyle_Reserved = 0x00008000, WStyle_Mask = 0x0000fff0, WDestructiveClose = 0x00010000, WPaintDesktop = 0x00020000, WPaintUnclipped = 0x00040000, WPaintClever = 0x00080000, WResizeNoErase = 0x00100000, WMouseNoMask = 0x00200000, WStaticContents = 0x00400000, WRepaintNoErase = 0x00800000, WX11BypassWM = 0x01000000, WWinOwnDC = 0x00000000, WGroupLeader = 0x02000000, WShowModal = 0x04000000, WNoMousePropagation = 0x08000000, WSubWindow = 0x10000000, WNorthWestGravity = WStaticContents, WType_Modal = WType_Dialog | WShowModal, WStyle_Dialog = WType_Dialog, WStyle_NoBorderEx = WStyle_NoBorder }</div></li>
+<li><div class=fn>enum <a href="#ImageConversionFlags-enum"><b>ImageConversionFlags</b></a> { ColorMode_Mask = 0x00000003, AutoColor = 0x00000000, ColorOnly = 0x00000003, MonoOnly = 0x00000002, AlphaDither_Mask = 0x0000000c, ThresholdAlphaDither = 0x00000000, OrderedAlphaDither = 0x00000004, DiffuseAlphaDither = 0x00000008, NoAlpha = 0x0000000c, Dither_Mask = 0x00000030, DiffuseDither = 0x00000000, OrderedDither = 0x00000010, ThresholdDither = 0x00000020, DitherMode_Mask = 0x000000c0, AutoDither = 0x00000000, PreferDither = 0x00000040, AvoidDither = 0x00000080 }</div></li>
+<li><div class=fn>enum <a href="#BGMode-enum"><b>BGMode</b></a> { TransparentMode, OpaqueMode }</div></li>
+<li><div class=fn>enum <a href="#PaintUnit-enum"><b>PaintUnit</b></a> { PixelUnit, LoMetricUnit, HiMetricUnit, LoEnglishUnit, HiEnglishUnit, TwipsUnit }</div></li>
+<li><div class=fn>enum GUIStyle { MacStyle, WindowsStyle, Win3Style, PMStyle, MotifStyle } &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>enum <a href="#Modifier-enum"><b>Modifier</b></a> { SHIFT = 0x00200000, CTRL = 0x00400000, ALT = 0x00800000, MODIFIER_MASK = 0x00e00000, UNICODE_ACCEL = 0x10000000, ASCII_ACCEL = UNICODE_ACCEL }</div></li>
+<li><div class=fn>enum <a href="#Key-enum"><b>Key</b></a> { Key_Escape = 0x1000, Key_Tab = 0x1001, Key_Backtab = 0x1002, Key_BackTab = Key_Backtab, Key_Backspace = 0x1003, Key_BackSpace = Key_Backspace, Key_Return = 0x1004, Key_Enter = 0x1005, Key_Insert = 0x1006, Key_Delete = 0x1007, Key_Pause = 0x1008, Key_Print = 0x1009, Key_SysReq = 0x100a, Key_Home = 0x1010, Key_End = 0x1011, Key_Left = 0x1012, Key_Up = 0x1013, Key_Right = 0x1014, Key_Down = 0x1015, Key_Prior = 0x1016, Key_PageUp = Key_Prior, Key_Next = 0x1017, Key_PageDown = Key_Next, Key_Shift = 0x1020, Key_Control = 0x1021, Key_Meta = 0x1022, Key_Alt = 0x1023, Key_CapsLock = 0x1024, Key_NumLock = 0x1025, Key_ScrollLock = 0x1026, Key_F1 = 0x1030, Key_F2 = 0x1031, Key_F3 = 0x1032, Key_F4 = 0x1033, Key_F5 = 0x1034, Key_F6 = 0x1035, Key_F7 = 0x1036, Key_F8 = 0x1037, Key_F9 = 0x1038, Key_F10 = 0x1039, Key_F11 = 0x103a, Key_F12 = 0x103b, Key_F13 = 0x103c, Key_F14 = 0x103d, Key_F15 = 0x103e, Key_F16 = 0x103f, Key_F17 = 0x1040, Key_F18 = 0x1041, Key_F19 = 0x1042, Key_F20 = 0x1043, Key_F21 = 0x1044, Key_F22 = 0x1045, Key_F23 = 0x1046, Key_F24 = 0x1047, Key_F25 = 0x1048, Key_F26 = 0x1049, Key_F27 = 0x104a, Key_F28 = 0x104b, Key_F29 = 0x104c, Key_F30 = 0x104d, Key_F31 = 0x104e, Key_F32 = 0x104f, Key_F33 = 0x1050, Key_F34 = 0x1051, Key_F35 = 0x1052, Key_Super_L = 0x1053, Key_Super_R = 0x1054, Key_Menu = 0x1055, Key_Hyper_L = 0x1056, Key_Hyper_R = 0x1057, Key_Help = 0x1058, Key_Direction_L = 0x1059, Key_Direction_R = 0x1060, Key_Space = 0x20, Key_Any = Key_Space, Key_Exclam = 0x21, Key_QuoteDbl = 0x22, Key_NumberSign = 0x23, Key_Dollar = 0x24, Key_Percent = 0x25, Key_Ampersand = 0x26, Key_Apostrophe = 0x27, Key_ParenLeft = 0x28, Key_ParenRight = 0x29, Key_Asterisk = 0x2a, Key_Plus = 0x2b, Key_Comma = 0x2c, Key_Minus = 0x2d, Key_Period = 0x2e, Key_Slash = 0x2f, Key_0 = 0x30, Key_1 = 0x31, Key_2 = 0x32, Key_3 = 0x33, Key_4 = 0x34, Key_5 = 0x35, Key_6 = 0x36, Key_7 = 0x37, Key_8 = 0x38, Key_9 = 0x39, Key_Colon = 0x3a, Key_Semicolon = 0x3b, Key_Less = 0x3c, Key_Equal = 0x3d, Key_Greater = 0x3e, Key_Question = 0x3f, Key_At = 0x40, Key_A = 0x41, Key_B = 0x42, Key_C = 0x43, Key_D = 0x44, Key_E = 0x45, Key_F = 0x46, Key_G = 0x47, Key_H = 0x48, Key_I = 0x49, Key_J = 0x4a, Key_K = 0x4b, Key_L = 0x4c, Key_M = 0x4d, Key_N = 0x4e, Key_O = 0x4f, Key_P = 0x50, Key_Q = 0x51, Key_R = 0x52, Key_S = 0x53, Key_T = 0x54, Key_U = 0x55, Key_V = 0x56, Key_W = 0x57, Key_X = 0x58, Key_Y = 0x59, Key_Z = 0x5a, Key_BracketLeft = 0x5b, Key_Backslash = 0x5c, Key_BracketRight = 0x5d, Key_AsciiCircum = 0x5e, Key_Underscore = 0x5f, Key_QuoteLeft = 0x60, Key_BraceLeft = 0x7b, Key_Bar = 0x7c, Key_BraceRight = 0x7d, Key_AsciiTilde = 0x7e, Key_nobreakspace = 0x0a0, Key_exclamdown = 0x0a1, Key_cent = 0x0a2, Key_sterling = 0x0a3, Key_currency = 0x0a4, Key_yen = 0x0a5, Key_brokenbar = 0x0a6, Key_section = 0x0a7, Key_diaeresis = 0x0a8, Key_copyright = 0x0a9, Key_ordfeminine = 0x0aa, Key_guillemotleft = 0x0ab, Key_notsign = 0x0ac, Key_hyphen = 0x0ad, Key_registered = 0x0ae, Key_macron = 0x0af, Key_degree = 0x0b0, Key_plusminus = 0x0b1, Key_twosuperior = 0x0b2, Key_threesuperior = 0x0b3, Key_acute = 0x0b4, Key_mu = 0x0b5, Key_paragraph = 0x0b6, Key_periodcentered = 0x0b7, Key_cedilla = 0x0b8, Key_onesuperior = 0x0b9, Key_masculine = 0x0ba, Key_guillemotright = 0x0bb, Key_onequarter = 0x0bc, Key_onehalf = 0x0bd, Key_threequarters = 0x0be, Key_questiondown = 0x0bf, Key_Agrave = 0x0c0, Key_Aacute = 0x0c1, Key_Acircumflex = 0x0c2, Key_Atilde = 0x0c3, Key_Adiaeresis = 0x0c4, Key_Aring = 0x0c5, Key_AE = 0x0c6, Key_Ccedilla = 0x0c7, Key_Egrave = 0x0c8, Key_Eacute = 0x0c9, Key_Ecircumflex = 0x0ca, Key_Ediaeresis = 0x0cb, Key_Igrave = 0x0cc, Key_Iacute = 0x0cd, Key_Icircumflex = 0x0ce, Key_Idiaeresis = 0x0cf, Key_ETH = 0x0d0, Key_Ntilde = 0x0d1, Key_Ograve = 0x0d2, Key_Oacute = 0x0d3, Key_Ocircumflex = 0x0d4, Key_Otilde = 0x0d5, Key_Odiaeresis = 0x0d6, Key_multiply = 0x0d7, Key_Ooblique = 0x0d8, Key_Ugrave = 0x0d9, Key_Uacute = 0x0da, Key_Ucircumflex = 0x0db, Key_Udiaeresis = 0x0dc, Key_Yacute = 0x0dd, Key_THORN = 0x0de, Key_ssharp = 0x0df, Key_agrave = 0x0e0, Key_aacute = 0x0e1, Key_acircumflex = 0x0e2, Key_atilde = 0x0e3, Key_adiaeresis = 0x0e4, Key_aring = 0x0e5, Key_ae = 0x0e6, Key_ccedilla = 0x0e7, Key_egrave = 0x0e8, Key_eacute = 0x0e9, Key_ecircumflex = 0x0ea, Key_ediaeresis = 0x0eb, Key_igrave = 0x0ec, Key_iacute = 0x0ed, Key_icircumflex = 0x0ee, Key_idiaeresis = 0x0ef, Key_eth = 0x0f0, Key_ntilde = 0x0f1, Key_ograve = 0x0f2, Key_oacute = 0x0f3, Key_ocircumflex = 0x0f4, Key_otilde = 0x0f5, Key_odiaeresis = 0x0f6, Key_division = 0x0f7, Key_oslash = 0x0f8, Key_ugrave = 0x0f9, Key_uacute = 0x0fa, Key_ucircumflex = 0x0fb, Key_udiaeresis = 0x0fc, Key_yacute = 0x0fd, Key_thorn = 0x0fe, Key_ydiaeresis = 0x0ff, Key_unknown = 0xffff }</div></li>
+<li><div class=fn>enum <a href="#ArrowType-enum"><b>ArrowType</b></a> { UpArrow, DownArrow, LeftArrow, RightArrow }</div></li>
+<li><div class=fn>enum <a href="#RasterOp-enum"><b>RasterOp</b></a> { CopyROP, OrROP, XorROP, NotAndROP, EraseROP = NotAndROP, NotCopyROP, NotOrROP, NotXorROP, AndROP, NotEraseROP = AndROP, NotROP, ClearROP, SetROP, NopROP, AndNotROP, OrNotROP, NandROP, NorROP, LastROP = NorROP }</div></li>
+<li><div class=fn>enum <a href="#PenStyle-enum"><b>PenStyle</b></a> { NoPen, SolidLine, DashLine, DotLine, DashDotLine, DashDotDotLine, MPenStyle = 0x0f }</div></li>
+<li><div class=fn>enum <a href="#PenCapStyle-enum"><b>PenCapStyle</b></a> { FlatCap = 0x00, SquareCap = 0x10, RoundCap = 0x20, MPenCapStyle = 0x30 }</div></li>
+<li><div class=fn>enum <a href="#PenJoinStyle-enum"><b>PenJoinStyle</b></a> { MiterJoin = 0x00, BevelJoin = 0x40, RoundJoin = 0x80, MPenJoinStyle = 0xc0 }</div></li>
+<li><div class=fn>enum <a href="#BrushStyle-enum"><b>BrushStyle</b></a> { NoBrush, SolidPattern, Dense1Pattern, Dense2Pattern, Dense3Pattern, Dense4Pattern, Dense5Pattern, Dense6Pattern, Dense7Pattern, HorPattern, VerPattern, CrossPattern, BDiagPattern, FDiagPattern, DiagCrossPattern, CustomPattern = 24 }</div></li>
+<li><div class=fn>enum <a href="#WindowsVersion-enum"><b>WindowsVersion</b></a> { WV_32s = 0x0001, WV_95 = 0x0002, WV_98 = 0x0003, WV_Me = 0x0004, WV_DOS_based = 0x000f, WV_NT = 0x0010, WV_2000 = 0x0020, WV_XP = 0x0030, WV_NT_based = 0x00f0 }</div></li>
+<li><div class=fn>enum <a href="#UIEffect-enum"><b>UIEffect</b></a> { UI_General, UI_AnimateMenu, UI_FadeMenu, UI_AnimateCombo, UI_AnimateTooltip, UI_FadeTooltip }</div></li>
+<li><div class=fn>enum <a href="#CursorShape-enum"><b>CursorShape</b></a> { ArrowCursor, UpArrowCursor, CrossCursor, WaitCursor, IbeamCursor, SizeVerCursor, SizeHorCursor, SizeBDiagCursor, SizeFDiagCursor, SizeAllCursor, BlankCursor, SplitVCursor, SplitHCursor, PointingHandCursor, ForbiddenCursor, WhatsThisCursor, LastCursor = WhatsThisCursor, BitmapCursor = 24 }</div></li>
+<li><div class=fn>enum <a href="#TextFormat-enum"><b>TextFormat</b></a> { PlainText, RichText, AutoText }</div></li>
+<li><div class=fn>enum <a href="#Dock-enum"><b>Dock</b></a> { DockUnmanaged, DockTornOff, DockTop, DockBottom, DockRight, DockLeft, DockMinimized, Unmanaged = DockUnmanaged, TornOff = DockTornOff, Top = DockTop, Bottom = DockBottom, Right = DockRight, Left = DockLeft, Minimized = DockMinimized }</div></li>
+<li><div class=fn>enum <a href="#DateFormat-enum"><b>DateFormat</b></a> { TextDate, ISODate, LocalDate }</div></li>
+<li><div class=fn>enum <a href="#BackgroundMode-enum"><b>BackgroundMode</b></a> { FixedColor, FixedPixmap, NoBackground, PaletteForeground, PaletteButton, PaletteLight, PaletteMidlight, PaletteDark, PaletteMid, PaletteText, PaletteBrightText, PaletteBase, PaletteBackground, PaletteShadow, PaletteHighlight, PaletteHighlightedText, PaletteButtonText, PaletteLink, PaletteLinkVisited, X11ParentRelative }</div></li>
+<li><div class=fn>enum <a href="#StringComparisonMode-enum"><b>StringComparisonMode</b></a> { CaseSensitive = 0x00001, BeginsWith = 0x00002, EndsWith = 0x00004, Contains = 0x00008, ExactMatch = 0x00010 }</div></li>
+<li><div class=fn>typedef void&nbsp;*&nbsp;<b>HANDLE</b></div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+<p> Qt类是一个提供所需的像全局变量一样的大量不同的标识符的命名空间。
+<p> 
+<p> 通常情况下，你可以忽略这个类。<a href="qobject.html">QObject</a>和一些其它类继承了它，所以在这个Qt命名空间中定义的所有标识符通常情况下都可以无限制的使用。
+<p> 然而，有时你也许需要说<tt>Qt::black</tt>，而不仅仅是<tt>black</tt>，特别是在静态功能函数中（比如一些类工厂）。
+<p> <p>参见<a href="misc.html">杂项类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="AlignmentFlags-enum"></a>Qt::AlignmentFlags</h3>
+
+<p> 这个枚举类型是用来描述对齐方式的。它包含水平和垂直标记。
+<p> 水平标记有：
+<ul>
+<li><tt>Qt::AlignAuto</tt> - 根据语言对齐。对于绝大多数是左对齐，对于阿拉伯语和希伯莱语是右对齐。
+<li><tt>Qt::AlignLeft</tt> - 左对齐。
+<li><tt>Qt::AlignRight</tt> - 右对齐。
+<li><tt>Qt::AlignHCenter</tt> - 在可用空间中水平方向中间对齐。
+<li><tt>Qt::AlignJustify</tt> - 在可用空间中调整文本。
+并不是在所有情况下都可以工作，并且在一些情况下会被解释成AlignAuto。
+</ul><p> 垂直标记有：
+<ul>
+<li><tt>Qt::AlignTop</tt> - 上对齐。
+<li><tt>Qt::AlignBottom</tt> - 下对齐。
+<li><tt>Qt::AlignVCenter</tt> - 在可用空间中垂直方向中间对齐。
+</ul><p> 你一次只能使用一次水平标记。这里有一个二维的标记：
+<ul>
+<li><tt>Qt::AlignCenter</tt> - 水平和垂直都中间对齐。
+</ul><p> 你每次最多使用一个水平标记和一个垂直标记。<a href="#AlignmentFlags-enum">AlignCenter</a>既是水平也是垂直。
+<p> 掩码:
+<ul>
+<li><tt>Qt::AlignHorizontal_Mask</tt>
+<li><tt>Qt::AlignVertical_Mask</tt>
+</ul><p> 冲突的标记组合有未定义的意义。
+
+<h3 class=fn><a name="ArrowType-enum"></a>Qt::ArrowType</h3>
+
+<ul>
+<li><tt>Qt::UpArrow</tt>
+<li><tt>Qt::DownArrow</tt>
+<li><tt>Qt::LeftArrow</tt>
+<li><tt>Qt::RightArrow</tt>
+</ul><p> 
+<h3 class=fn><a name="BGMode-enum"></a>Qt::BGMode</h3>
+
+<p> 背景模式
+<ul>
+<li><tt>Qt::TransparentMode</tt>
+<li><tt>Qt::OpaqueMode</tt>
+</ul>
+<h3 class=fn><a name="BackgroundMode-enum"></a>Qt::BackgroundMode</h3>
+
+<p> 这个枚举类型描述了窗口部件的背景是如何变化的，就像窗口部件的调色板变化一样。
+<p> 这里的背景就是当<a href="qwidget.html#paintEvent">paintEvent()</a>被调用的时候窗口部件所包含的东西。为了使闪烁最小化，在窗口部件它应是最普通的颜色或者像素映射。对于<a href="#BackgroundMode-enum">PaletteBackground</a>，使用colorGroup().brush（<a href="qcolorgroup.html#ColorRole-enum">QColorGroup::Background</a>）等等。这里也有三个特殊的值，列在了最后：
+<ul>
+<li><tt>Qt::PaletteForeground</tt>
+<li><tt>Qt::PaletteBackground</tt>
+<li><tt>Qt::PaletteButton</tt>
+<li><tt>Qt::PaletteLight</tt>
+<li><tt>Qt::PaletteMidlight</tt>
+<li><tt>Qt::PaletteDark</tt>
+<li><tt>Qt::PaletteMid</tt>
+<li><tt>Qt::PaletteText</tt>
+<li><tt>Qt::PaletteBrightText</tt>
+<li><tt>Qt::PaletteButtonText</tt>
+<li><tt>Qt::PaletteBase</tt>
+<li><tt>Qt::PaletteShadow</tt>
+<li><tt>Qt::PaletteHighlight</tt>
+<li><tt>Qt::PaletteHighlightedText</tt>
+<li><tt>Qt::NoBackground</tt> - 窗口部件在paintEvent()之前不被清空。如果窗口部件的绘画事件一直在所有的像素上绘画，使用这个模式既会很快也会没有闪烁。
+<li><tt>Qt::FixedColor</tt> - 窗口部件被一个固定的颜色清空，通常情况下不同于paletter()中的那些。使用<a href="qwidget.html#setPaletteBackgroundColor">setPaletteBackgroundColor()</a>来设置。
+<li><tt>Qt::FixedPixmap</tt> - 窗口部件被一个固定的像素映射清空，通常情况下不同于paletter()中的那些。使用<a href="qwidget.html#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap()</a>来设置。
+<li><tt>Qt::PaletteLink</tt>
+<li><tt>Qt::PaletteLinkVisited</tt>
+<li><tt>Qt::X11ParentRelative</tt> - （仅供内部使用）
+</ul><p> 尽管<a href="#BackgroundMode-enum">FixedColor</a>和<a href="#BackgroundMode-enum">FixedPixmap</a>有时是正确的，如果你使用它们，当桌面颜色方案发生变化时，请测试一下你的应用程序。（在X11上，一个快速的测试方法是“./myapp -bg paleblue”。在Windows上，你必须使用控制面板。）
+<p> <p>See also <a href="qwidget.html#backgroundMode-prop">QWidget::backgroundMode</a>, <a href="qwidget.html#backgroundMode-prop">QWidget::backgroundMode</a>, <a href="qwidget.html#setBackgroundPixmap">QWidget::setBackgroundPixmap</a>() and <a href="qwidget.html#paletteBackgroundColor-prop">QWidget::paletteBackgroundColor</a>.
+
+<h3 class=fn><a name="BrushStyle-enum"></a>Qt::BrushStyle</h3>
+
+<ul>
+<li><tt>Qt::NoBrush</tt>
+<li><tt>Qt::SolidPattern</tt>
+<li><tt>Qt::Dense1Pattern</tt>
+<li><tt>Qt::Dense2Pattern</tt>
+<li><tt>Qt::Dense3Pattern</tt>
+<li><tt>Qt::Dense4Pattern</tt>
+<li><tt>Qt::Dense5Pattern</tt>
+<li><tt>Qt::Dense6Pattern</tt>
+<li><tt>Qt::Dense7Pattern</tt>
+<li><tt>Qt::HorPattern</tt>
+<li><tt>Qt::VerPattern</tt>
+<li><tt>Qt::CrossPattern</tt>
+<li><tt>Qt::BDiagPattern</tt>
+<li><tt>Qt::FDiagPattern</tt>
+<li><tt>Qt::DiagCrossPattern</tt>
+<li><tt>Qt::CustomPattern</tt>
+</ul><p> <center><img src="brush-styles.png" alt="Brush Styles"></center> 
+<p> 
+<h3 class=fn><a name="ButtonState-enum"></a>Qt::ButtonState</h3>
+
+<p> 这个枚举类型描述了鼠标和组合键的状态。
+<ul>
+<li><tt>Qt::NoButton</tt> - 当按键状态不指向任何按键时使用（参加<a href="qmouseevent.html#button">QMouseEvent::button</a>()）。
+<li><tt>Qt::LeftButton</tt> - 如果左键被按，或者事件指向左键时被设置。（左键也许是左手用鼠标的右键。）
+<li><tt>Qt::RightButton</tt> - 右键。
+<li><tt>Qt::MidButton</tt> - 中键。
+<li><tt>Qt::ShiftButton</tt> - 键盘上的Shift键也被按下了。
+<li><tt>Qt::ControlButton</tt> - 键盘上的Ctrl键也被按下了。
+<li><tt>Qt::AltButton</tt> - 键盘上的Alt（或者Meta）键也被按下了。
+<li><tt>Qt::MetaButton</tt> - 键盘上的Meta键也被按下了。
+<li><tt>Qt::Keypad</tt> - 小键盘区的按键被按下了。
+<li><tt>Qt::KeyButtonMask</tt> - Shift键、Control键和Alt键的一个掩码。
+<li><tt>Qt::MouseButtonMask</tt> - 左键、右键和中键的一个掩码。
+</ul>
+<h3 class=fn><a name="CursorShape-enum"></a>Qt::CursorShape</h3>
+
+<p> 这个枚举类型定义了可以使用的大量光标。
+<ul>
+<li><tt>Qt::ArrowCursor</tt> - 标准箭头光标
+<li><tt>Qt::UpArrowCursor</tt> - 向上的箭头
+<li><tt>Qt::CrossCursor</tt> - 十字
+<li><tt>Qt::WaitCursor</tt> - 沙漏/观察
+<li><tt>Qt::IbeamCursor</tt> - 文本条目
+<li><tt>Qt::SizeVerCursor</tt> - 垂直重定义大小
+<li><tt>Qt::SizeHorCursor</tt> - 水平重定义大小
+<li><tt>Qt::SizeBDiagCursor</tt> - 斜线重定义大小 (/)
+<li><tt>Qt::SizeFDiagCursor</tt> - 斜线重定义大小 (&#92;)
+<li><tt>Qt::SizeAllCursor</tt> - 所有方向重定义大小
+<li><tt>Qt::BlankCursor</tt> - 空白/不可见光标
+<li><tt>Qt::SplitVCursor</tt> - 垂直分隔
+<li><tt>Qt::SplitHCursor</tt> - 水平分隔
+<li><tt>Qt::PointingHandCursor</tt> - 一个指示手
+<li><tt>Qt::ForbiddenCursor</tt> - 一个带有斜线的圆圈
+<li><tt>Qt::WhatsThisCursor</tt> - 一个带有问好的箭头
+<li><tt>Qt::BitmapCursor</tt>
+</ul><p> ArrowCursor是普通状态下窗口部件的默认值。
+<p> <center><img src="cursors.png" alt="Cursor Shapes"></center> 
+<h3 class=fn><a name="DateFormat-enum"></a>Qt::DateFormat</h3>
+
+<ul>
+<li><tt>Qt::TextDate</tt> - （默认的）Qt格式
+<li><tt>Qt::ISODate</tt> - ISO 8601扩展格式（YYYY-MM-DD，或者带有时间，YYYY-MM-DDTHH:MM:SS）
+<li><tt>Qt::LocalDate</tt> - 由本地决定的格式
+</ul>
+<h3 class=fn><a name="Dock-enum"></a>Qt::Dock</h3>
+
+<p> 每一个锚接窗口的位置可能是如下之一：
+<ul>
+<li><tt>Qt::DockTop</tt> - 在中心窗口部件之上，在菜单条之下。
+<li><tt>Qt::DockBottom</tt> - 在中心窗口部件之下，在状态条之上。
+<li><tt>Qt::DockLeft</tt> - 在中心窗口部件的左面。
+<li><tt>Qt::DockRight</tt> - 在中心窗口部件的右面。
+<li><tt>Qt::DockMinimized</tt> - 锚接窗口没有被显示（这是一个有效的“隐藏”锚接区域）；所有被最小化的锚接窗口的处理被画在菜单条下面的一行里面。
+<li><tt>Qt::DockTornOff</tt> - 锚接窗口作为它自己的顶层窗口浮动着，通常在主窗口之上。
+<li><tt>Qt::DockUnmanaged</tt> - 不被<a href="qmainwindow.html">QMainWindow</a>管理。
+</ul>
+<h3 class=fn><a name="GUIStyle-enum"></a>Qt::GUIStyle</h3>
+
+<p> <b>这个类型是废弃的。</b>它被提供是为了让旧的代码能继续工作。我们强烈建议在新的代码中不要使用它了。
+<p> <ul>
+<li><tt>Qt::WindowsStyle</tt>
+<li><tt>Qt::MotifStyle</tt>
+<li><tt>Qt::MacStyle</tt>
+<li><tt>Qt::Win3Style</tt>
+<li><tt>Qt::PMStyle</tt>
+</ul>
+<h3 class=fn><a name="ImageConversionFlags-enum"></a>Qt::ImageConversionFlags</h3>
+
+<p> 变换标记是下列这些值的位的或运算。被标记为“（默认）”的选项将在没有其它值被设置的时候使用（因为默认值是零）：
+<p> Color/Mono preference (ignored for <a href="qbitmap.html">QBitmap</a>)
+<ul>
+<li><tt>Qt::AutoColor</tt> - （默认）- 如果图片的<a href="qimage.html#depth">深度</a>为1并且仅包含黑色和白色像素，那么像素映射就是黑白的。
+<li><tt>Qt::ColorOnly</tt> - 像素映射被抖动/转换为<a href="qpixmap.html#defaultDepth">本地显示深度</a>。
+<li><tt>Qt::MonoOnly</tt> - 像素映射变为黑白的。如果需要，会使用所选择的抖动算法抖动它。
+</ul><p> RGB通道的抖动模式选择
+<ul>
+<li><tt>Qt::DiffuseDither</tt> - （默认）- 一个高质量的抖动。
+<li><tt>Qt::OrderedDither</tt> - 一个更快的，更加规则的抖动。
+<li><tt>Qt::ThresholdDither</tt> - 没有抖动；最靠近的颜色将被使用。
+</ul><p> Alpha通道的抖动模式选择
+<ul>
+<li><tt>Qt::ThresholdAlphaDither</tt> - （默认）- 没有抖动。
+<li><tt>Qt::OrderedAlphaDither</tt> - 一个更快的，更加规则的抖动。
+<li><tt>Qt::DiffuseAlphaDither</tt> - 一个高质量的抖动。
+<li><tt>Qt::NoAlpha</tt> - 不支持的。
+</ul><p> 颜色匹配与抖动选择
+<ul>
+<li><tt>Qt::PreferDither</tt> - （当转化为像素映射时的默认项）- 当图像被转化为8位时，总是抖动为32为图像。
+<li><tt>Qt::AvoidDither</tt> - （当打算保存为文件而转化时的默认项） - 只有在图像超过256色并且它将被转化为8位时，抖动32位图像。
+<li><tt>Qt::AutoDither</tt> - 不支持的。
+</ul><p> 下面这些不是可以直接使用的值，只是为上述类提供的掩码：
+<ul>
+<li><tt>Qt::ColorMode_Mask</tt> - 颜色模式的掩码。
+<li><tt>Qt::Dither_Mask</tt> - RGB通道的抖动模式的掩码。
+<li><tt>Qt::AlphaDither_Mask</tt> - Alpha通道的抖动模式的掩码。
+<li><tt>Qt::DitherMode_Mask</tt> - 在抖动中决定颜色匹配的选择的模式的掩码。
+</ul><p> 使用0就会把变化标记全部设置为默认选项。
+
+<h3 class=fn><a name="Key-enum"></a>Qt::Key</h3>
+
+<p> Qt中使用的键的名称。
+<ul>
+<li><tt>Qt::Key_Escape</tt>
+<li><tt>Qt::Key_Tab</tt>
+<li><tt>Qt::Key_Backtab</tt>
+<li><tt>Qt::Key_Backspace</tt>
+<li><tt>Qt::Key_Return</tt>
+<li><tt>Qt::Key_Enter</tt>
+<li><tt>Qt::Key_Insert</tt>
+<li><tt>Qt::Key_Delete</tt>
+<li><tt>Qt::Key_Pause</tt>
+<li><tt>Qt::Key_Print</tt>
+<li><tt>Qt::Key_SysReq</tt>
+<li><tt>Qt::Key_Home</tt>
+<li><tt>Qt::Key_End</tt>
+<li><tt>Qt::Key_Left</tt>
+<li><tt>Qt::Key_Up</tt>
+<li><tt>Qt::Key_Right</tt>
+<li><tt>Qt::Key_Down</tt>
+<li><tt>Qt::Key_Prior</tt>
+<li><tt>Qt::Key_Next</tt>
+<li><tt>Qt::Key_Shift</tt>
+<li><tt>Qt::Key_Control</tt>
+<li><tt>Qt::Key_Meta</tt>
+<li><tt>Qt::Key_Alt</tt>
+<li><tt>Qt::Key_CapsLock</tt>
+<li><tt>Qt::Key_NumLock</tt>
+<li><tt>Qt::Key_ScrollLock</tt>
+<li><tt>Qt::Key_F1</tt>
+<li><tt>Qt::Key_F2</tt>
+<li><tt>Qt::Key_F3</tt>
+<li><tt>Qt::Key_F4</tt>
+<li><tt>Qt::Key_F5</tt>
+<li><tt>Qt::Key_F6</tt>
+<li><tt>Qt::Key_F7</tt>
+<li><tt>Qt::Key_F8</tt>
+<li><tt>Qt::Key_F9</tt>
+<li><tt>Qt::Key_F10</tt>
+<li><tt>Qt::Key_F11</tt>
+<li><tt>Qt::Key_F12</tt>
+<li><tt>Qt::Key_F13</tt>
+<li><tt>Qt::Key_F14</tt>
+<li><tt>Qt::Key_F15</tt>
+<li><tt>Qt::Key_F16</tt>
+<li><tt>Qt::Key_F17</tt>
+<li><tt>Qt::Key_F18</tt>
+<li><tt>Qt::Key_F19</tt>
+<li><tt>Qt::Key_F20</tt>
+<li><tt>Qt::Key_F21</tt>
+<li><tt>Qt::Key_F22</tt>
+<li><tt>Qt::Key_F23</tt>
+<li><tt>Qt::Key_F24</tt>
+<li><tt>Qt::Key_F25</tt>
+<li><tt>Qt::Key_F26</tt>
+<li><tt>Qt::Key_F27</tt>
+<li><tt>Qt::Key_F28</tt>
+<li><tt>Qt::Key_F29</tt>
+<li><tt>Qt::Key_F30</tt>
+<li><tt>Qt::Key_F31</tt>
+<li><tt>Qt::Key_F32</tt>
+<li><tt>Qt::Key_F33</tt>
+<li><tt>Qt::Key_F34</tt>
+<li><tt>Qt::Key_F35</tt>
+<li><tt>Qt::Key_Super_L</tt>
+<li><tt>Qt::Key_Super_R</tt>
+<li><tt>Qt::Key_Menu</tt>
+<li><tt>Qt::Key_Hyper_L</tt>
+<li><tt>Qt::Key_Hyper_R</tt>
+<li><tt>Qt::Key_Help</tt>
+<li><tt>Qt::Key_Space</tt>
+<li><tt>Qt::Key_Any</tt>
+<li><tt>Qt::Key_Exclam</tt>
+<li><tt>Qt::Key_QuoteDbl</tt>
+<li><tt>Qt::Key_NumberSign</tt>
+<li><tt>Qt::Key_Dollar</tt>
+<li><tt>Qt::Key_Percent</tt>
+<li><tt>Qt::Key_Ampersand</tt>
+<li><tt>Qt::Key_Apostrophe</tt>
+<li><tt>Qt::Key_ParenLeft</tt>
+<li><tt>Qt::Key_ParenRight</tt>
+<li><tt>Qt::Key_Asterisk</tt>
+<li><tt>Qt::Key_Plus</tt>
+<li><tt>Qt::Key_Comma</tt>
+<li><tt>Qt::Key_Minus</tt>
+<li><tt>Qt::Key_Period</tt>
+<li><tt>Qt::Key_Slash</tt>
+<li><tt>Qt::Key_0</tt>
+<li><tt>Qt::Key_1</tt>
+<li><tt>Qt::Key_2</tt>
+<li><tt>Qt::Key_3</tt>
+<li><tt>Qt::Key_4</tt>
+<li><tt>Qt::Key_5</tt>
+<li><tt>Qt::Key_6</tt>
+<li><tt>Qt::Key_7</tt>
+<li><tt>Qt::Key_8</tt>
+<li><tt>Qt::Key_9</tt>
+<li><tt>Qt::Key_Colon</tt>
+<li><tt>Qt::Key_Semicolon</tt>
+<li><tt>Qt::Key_Less</tt>
+<li><tt>Qt::Key_Equal</tt>
+<li><tt>Qt::Key_Greater</tt>
+<li><tt>Qt::Key_Question</tt>
+<li><tt>Qt::Key_At</tt>
+<li><tt>Qt::Key_A</tt>
+<li><tt>Qt::Key_B</tt>
+<li><tt>Qt::Key_C</tt>
+<li><tt>Qt::Key_D</tt>
+<li><tt>Qt::Key_E</tt>
+<li><tt>Qt::Key_F</tt>
+<li><tt>Qt::Key_G</tt>
+<li><tt>Qt::Key_H</tt>
+<li><tt>Qt::Key_I</tt>
+<li><tt>Qt::Key_J</tt>
+<li><tt>Qt::Key_K</tt>
+<li><tt>Qt::Key_L</tt>
+<li><tt>Qt::Key_M</tt>
+<li><tt>Qt::Key_N</tt>
+<li><tt>Qt::Key_O</tt>
+<li><tt>Qt::Key_P</tt>
+<li><tt>Qt::Key_Q</tt>
+<li><tt>Qt::Key_R</tt>
+<li><tt>Qt::Key_S</tt>
+<li><tt>Qt::Key_T</tt>
+<li><tt>Qt::Key_U</tt>
+<li><tt>Qt::Key_V</tt>
+<li><tt>Qt::Key_W</tt>
+<li><tt>Qt::Key_X</tt>
+<li><tt>Qt::Key_Y</tt>
+<li><tt>Qt::Key_Z</tt>
+<li><tt>Qt::Key_BracketLeft</tt>
+<li><tt>Qt::Key_Backslash</tt>
+<li><tt>Qt::Key_BracketRight</tt>
+<li><tt>Qt::Key_AsciiCircum</tt>
+<li><tt>Qt::Key_Underscore</tt>
+<li><tt>Qt::Key_QuoteLeft</tt>
+<li><tt>Qt::Key_BraceLeft</tt>
+<li><tt>Qt::Key_Bar</tt>
+<li><tt>Qt::Key_BraceRight</tt>
+<li><tt>Qt::Key_AsciiTilde</tt>
+<li><tt>Qt::Key_nobreakspace</tt>
+<li><tt>Qt::Key_exclamdown</tt>
+<li><tt>Qt::Key_cent</tt>
+<li><tt>Qt::Key_sterling</tt>
+<li><tt>Qt::Key_currency</tt>
+<li><tt>Qt::Key_yen</tt>
+<li><tt>Qt::Key_brokenbar</tt>
+<li><tt>Qt::Key_section</tt>
+<li><tt>Qt::Key_diaeresis</tt>
+<li><tt>Qt::Key_copyright</tt>
+<li><tt>Qt::Key_ordfeminine</tt>
+<li><tt>Qt::Key_guillemotleft</tt>
+<li><tt>Qt::Key_notsign</tt>
+<li><tt>Qt::Key_hyphen</tt>
+<li><tt>Qt::Key_registered</tt>
+<li><tt>Qt::Key_macron</tt>
+<li><tt>Qt::Key_degree</tt>
+<li><tt>Qt::Key_plusminus</tt>
+<li><tt>Qt::Key_twosuperior</tt>
+<li><tt>Qt::Key_threesuperior</tt>
+<li><tt>Qt::Key_acute</tt>
+<li><tt>Qt::Key_mu</tt>
+<li><tt>Qt::Key_paragraph</tt>
+<li><tt>Qt::Key_periodcentered</tt>
+<li><tt>Qt::Key_cedilla</tt>
+<li><tt>Qt::Key_onesuperior</tt>
+<li><tt>Qt::Key_masculine</tt>
+<li><tt>Qt::Key_guillemotright</tt>
+<li><tt>Qt::Key_onequarter</tt>
+<li><tt>Qt::Key_onehalf</tt>
+<li><tt>Qt::Key_threequarters</tt>
+<li><tt>Qt::Key_questiondown</tt>
+<li><tt>Qt::Key_Agrave</tt>
+<li><tt>Qt::Key_Aacute</tt>
+<li><tt>Qt::Key_Acircumflex</tt>
+<li><tt>Qt::Key_Atilde</tt>
+<li><tt>Qt::Key_Adiaeresis</tt>
+<li><tt>Qt::Key_Aring</tt>
+<li><tt>Qt::Key_AE</tt>
+<li><tt>Qt::Key_Ccedilla</tt>
+<li><tt>Qt::Key_Egrave</tt>
+<li><tt>Qt::Key_Eacute</tt>
+<li><tt>Qt::Key_Ecircumflex</tt>
+<li><tt>Qt::Key_Ediaeresis</tt>
+<li><tt>Qt::Key_Igrave</tt>
+<li><tt>Qt::Key_Iacute</tt>
+<li><tt>Qt::Key_Icircumflex</tt>
+<li><tt>Qt::Key_Idiaeresis</tt>
+<li><tt>Qt::Key_ETH</tt>
+<li><tt>Qt::Key_Ntilde</tt>
+<li><tt>Qt::Key_Ograve</tt>
+<li><tt>Qt::Key_Oacute</tt>
+<li><tt>Qt::Key_Ocircumflex</tt>
+<li><tt>Qt::Key_Otilde</tt>
+<li><tt>Qt::Key_Odiaeresis</tt>
+<li><tt>Qt::Key_multiply</tt>
+<li><tt>Qt::Key_Ooblique</tt>
+<li><tt>Qt::Key_Ugrave</tt>
+<li><tt>Qt::Key_Uacute</tt>
+<li><tt>Qt::Key_Ucircumflex</tt>
+<li><tt>Qt::Key_Udiaeresis</tt>
+<li><tt>Qt::Key_Yacute</tt>
+<li><tt>Qt::Key_THORN</tt>
+<li><tt>Qt::Key_ssharp</tt>
+<li><tt>Qt::Key_agrave</tt>
+<li><tt>Qt::Key_aacute</tt>
+<li><tt>Qt::Key_acircumflex</tt>
+<li><tt>Qt::Key_atilde</tt>
+<li><tt>Qt::Key_adiaeresis</tt>
+<li><tt>Qt::Key_aring</tt>
+<li><tt>Qt::Key_ae</tt>
+<li><tt>Qt::Key_ccedilla</tt>
+<li><tt>Qt::Key_egrave</tt>
+<li><tt>Qt::Key_eacute</tt>
+<li><tt>Qt::Key_ecircumflex</tt>
+<li><tt>Qt::Key_ediaeresis</tt>
+<li><tt>Qt::Key_igrave</tt>
+<li><tt>Qt::Key_iacute</tt>
+<li><tt>Qt::Key_icircumflex</tt>
+<li><tt>Qt::Key_idiaeresis</tt>
+<li><tt>Qt::Key_eth</tt>
+<li><tt>Qt::Key_ntilde</tt>
+<li><tt>Qt::Key_ograve</tt>
+<li><tt>Qt::Key_oacute</tt>
+<li><tt>Qt::Key_ocircumflex</tt>
+<li><tt>Qt::Key_otilde</tt>
+<li><tt>Qt::Key_odiaeresis</tt>
+<li><tt>Qt::Key_division</tt>
+<li><tt>Qt::Key_oslash</tt>
+<li><tt>Qt::Key_ugrave</tt>
+<li><tt>Qt::Key_uacute</tt>
+<li><tt>Qt::Key_ucircumflex</tt>
+<li><tt>Qt::Key_udiaeresis</tt>
+<li><tt>Qt::Key_yacute</tt>
+<li><tt>Qt::Key_thorn</tt>
+<li><tt>Qt::Key_ydiaeresis</tt>
+<li><tt>Qt::Key_unknown</tt>
+<li><tt>Qt::Key_Direction_L</tt> - 仅供内部使用
+<li><tt>Qt::Key_Direction_R</tt> - 仅供内部使用
+</ul><p> 
+<h3 class=fn><a name="Modifier-enum"></a>Qt::Modifier</h3>
+
+<p> 这个枚举类型描述了Qt支持的键盘组合键。
+<ul>
+<li><tt>Qt::SHIFT</tt> - 所有标准键盘都提供了Shift键。
+<li><tt>Qt::CTRL</tt> - Ctrl键。
+<li><tt>Qt::ALT</tt> - 通常情况下是Alt键，但不是AltGr。
+<li><tt>Qt::MODIFIER_MASK</tt> - 是Shift、Ctrl和Alt的一个掩码。
+<li><tt>Qt::UNICODE_ACCEL</tt> - 加速键被指定作为一个Unicode代码值，不是作为一个Qt键。
+</ul>
+<h3 class=fn><a name="Orientation-enum"></a>Qt::Orientation</h3>
+
+<p> 这个类型被用来使用表示一个对象的方位。
+<ul>
+<li><tt>Qt::Horizontal</tt>
+<li><tt>Qt::Vertical</tt>
+</ul><p> 举例来说，方位在<a href="qscrollbar.html">QScrollBar</a>中被使用。
+
+<h3 class=fn><a name="PaintUnit-enum"></a>Qt::PaintUnit</h3>
+
+<ul>
+<li><tt>Qt::PixelUnit</tt>
+<li><tt>Qt::LoMetricUnit</tt> - <em>obsolete</em>
+<li><tt>Qt::HiMetricUnit</tt> - <em>obsolete</em>
+<li><tt>Qt::LoEnglishUnit</tt> - <em>obsolete</em>
+<li><tt>Qt::HiEnglishUnit</tt> - <em>obsolete</em>
+<li><tt>Qt::TwipsUnit</tt> - <em>obsolete</em>
+</ul>
+<h3 class=fn><a name="PenCapStyle-enum"></a>Qt::PenCapStyle</h3>
+
+<p> 这个枚举类型定义了被Qt支持的画笔顶端风格，比如，线段顶端可以使用<a href="qpainter.html">QPainter</a>画出来。
+<ul>
+<li><tt>Qt::FlatCap</tt> - 一个方形的线段顶端，但不覆盖线段的终点。
+<li><tt>Qt::SquareCap</tt> - 一个方形的线段顶端，覆盖线段的终点并且超过它线段宽度的一半。
+<li><tt>Qt::RoundCap</tt> - 一个圆形的线段顶端。
+<li><tt>Qt::MPenCapStyle</tt> - 画笔顶端风格掩码。
+</ul><p> <center><img src="pen-cap-styles.png" alt="Pen Cap Styles"></center> 
+<h3 class=fn><a name="PenJoinStyle-enum"></a>Qt::PenJoinStyle</h3>
+
+<p> 这个枚举类型定义了Qt支持的画笔连接风格，比如，两个相连的线段可以使用<a href="qpainter.html">QPainter</a>画出来。
+<ul>
+<li><tt>Qt::MiterJoin</tt> - 线的外边界线被延伸并形成一个角度，并且这个区域将被填充。
+<li><tt>Qt::BevelJoin</tt> - 在两个线之间的三角形缺口被填充。
+<li><tt>Qt::RoundJoin</tt> - 在两个线间的圆弧被填充。
+<li><tt>Qt::MPenJoinStyle</tt> - 画笔连接风格掩码。
+</ul><p> <center><img src="pen-join-styles.png" alt="Pen Join Styles"></center> 
+<h3 class=fn><a name="PenStyle-enum"></a>Qt::PenStyle</h3>
+
+<p> 这个枚举类型定义了画笔风格，可以由<a href="qpainter.html">QPainter</a>画出。这些风格有
+<ul>
+<li><tt>Qt::NoPen</tt> - 根本就没有线。比如，<a href="qpainter.html#drawRect">QPainter::drawRect</a>()填充但没有绘制任何边界线。
+<li><tt>Qt::SolidLine</tt> - 一个简单的线。
+<li><tt>Qt::DashLine</tt> - 由一些像素分隔的短线。
+<li><tt>Qt::DotLine</tt> - 由一些像素分隔的点。
+<li><tt>Qt::DashDotLine</tt> - 轮流交替的点和短线。
+<li><tt>Qt::DashDotDotLine</tt> - 一个短线，两个点，一个短线，两个点。
+<li><tt>Qt::MPenStyle</tt> - 画笔风格的掩码。
+</ul><p> <center><img src="pen-styles.png" alt="Pen Styles"></center> 
+<h3 class=fn><a name="RasterOp-enum"></a>Qt::RasterOp</h3>
+
+<p> <!-- index raster operation --><!-- index raster op -->
+<p> 这个枚举类型被用来描述把东西写到绘画设备上的方式。<em>源（src）</em>（你要写的）的每一个位和对应位的<em>目标（dst）</em>像素的相互作用。
+<ul>
+<li><tt>Qt::CopyROP</tt> - dst = src
+<li><tt>Qt::OrROP</tt> - dst = src OR dst
+<li><tt>Qt::XorROP</tt> - dst = src XOR dst
+<li><tt>Qt::NotAndROP</tt> - dst = (NOT src) AND dst
+<li><tt>Qt::EraseROP</tt> - <a href="#RasterOp-enum">NotAndROP</a>的一个别名
+<li><tt>Qt::NotCopyROP</tt> - dst = NOT src
+<li><tt>Qt::NotOrROP</tt> - dst = (NOT src) OR dst
+<li><tt>Qt::NotXorROP</tt> - dst = (NOT src) XOR dst
+<li><tt>Qt::AndROP</tt> - dst = src AND dst
+<li><tt>Qt::NotEraseROP</tt> - <a href="#RasterOp-enum">AndROP</a>的一个别名
+<li><tt>Qt::NotROP</tt> - dst = NOT dst
+<li><tt>Qt::ClearROP</tt> - dst = 0
+<li><tt>Qt::SetROP</tt> - dst = 1
+<li><tt>Qt::NopROP</tt> - dst = dst
+<li><tt>Qt::AndNotROP</tt> - dst = src AND (NOT dst)
+<li><tt>Qt::OrNotROP</tt> - dst = src OR (NOT dst)
+<li><tt>Qt::NandROP</tt> - dst = NOT (src AND dst)
+<li><tt>Qt::NorROP</tt> - dst = NOT (src OR dst)
+</ul><p> 到目前为止，最有用的是<a href="#RasterOp-enum">CopyROP</a>和<a href="#RasterOp-enum">XorROP</a>。
+<p> 在Qt/Mac上，只有<a href="#RasterOp-enum">CopyROP</a>、<a href="#RasterOp-enum">OrROP</a>、<a href="#RasterOp-enum">XorROP</a>、<a href="#RasterOp-enum">NotAndROP</a>、<a href="#RasterOp-enum">NotCopyROP</a>、<a href="#RasterOp-enum">NotOrROP</a>、<a href="#RasterOp-enum">NotXorROP</a>和<a href="#RasterOp-enum">AndROP</a>被支持。
+
+<h3 class=fn><a name="StringComparisonMode-enum"></a>Qt::StringComparisonMode</h3>
+
+<p> 这个枚举类型是当搜索一个条目时被用来设置字符串比较模式的。例如，这是在<a href="qlistbox.html">QListBox</a>、<a href="qlistview.html">QListView</a>和<a href="qiconview.html">QIconView</a>中实现的。我们将用“目标”字符串来指代正在被搜索的字符串。
+<ul>
+<li><tt>Qt::CaseSensitive</tt> - 字符串必须区分大小写。
+<li><tt>Qt::ExactMatch</tt> - 目标字符串和搜索字符串必须正确地匹配。
+<li><tt>Qt::BeginsWith</tt> - 目标字符串必须是由搜索字符串开始的。
+<li><tt>Qt::EndsWith</tt> - 目标字符串必须是由搜索字符串结束的。
+<li><tt>Qt::Contains</tt> - 目标字符串包含搜索字符串。
+</ul><p> 如果你用这些标记的或来搜索（不包括<a href="#StringComparisonMode-enum">CaseSensitive</a>），搜索标准必须按下列顺序：<a href="#StringComparisonMode-enum">ExactMatch</a>、<a href="#StringComparisonMode-enum">BeginsWith</a>、<a href="#StringComparisonMode-enum">EndsWith</a>、<a href="#StringComparisonMode-enum">Contains</a>。
+<p> 除非<a href="#StringComparisonMode-enum">CaseSensitive</a>被设置，匹配将是大小写不敏感的。<a href="#StringComparisonMode-enum">CaseSensitive</a>可以和其它任何标记使用或来组合。
+<p> 
+<h3 class=fn><a name="TextFlags-enum"></a>Qt::TextFlags</h3>
+
+<p> 这个枚举类型是用来定义一些修饰标记。这些标记中的一些只能在文章打印时有意义。
+<ul>
+<li><tt>Qt::SingleLine</tt> - 把所有的控制字符作为空格处理并且都打印在一行之内。
+<li><tt>Qt::DontClip</tt> - 如果不能在给定边界内存在,就打印到外面。
+<li><tt>Qt::ExpandTabs</tt> - 把U+0009字符（ASCII的制表符）字符移动到下一个制表符处。
+<li><tt>Qt::ShowPrefix</tt> - 显示字符“&amp;P”作为<u>P</u>（作为实例，请看<a href="qbutton.html">QButton</a>）。如果要用“与”符号（“&amp;”），请使用“&amp;&amp;”。
+<li><tt>Qt::WordBreak</tt> - 在适当的点换行，比如在字的分界处。
+<li><tt>Qt::BreakAnywhere</tt> - 在任何地方换行，甚至是字的当中。
+<li><tt>Qt::NoAccel</tt> - ShowPrefix的同义词。
+<li><tt>Qt::DontPrint</tt> - （内部的）
+</ul><p> 你可以按你所想用的数量来使用修饰标记，除了<a href="#TextFlags-enum">SingleLine</a>和<a href="#TextFlags-enum">WordBreak</a>不能在一起使用。
+<p> 一个不适当的给定使用的标记（比如，在<a href="qgridlayout.html#addWidget">QGridLayout::addWidget</a>()中使用ShowPrefix）一般被忽略。
+<p> 
+<h3 class=fn><a name="TextFormat-enum"></a>Qt::TextFormat</h3>
+
+<p> 这个枚举类型用在可以显示纯文本和多信息文本的窗口部件中，比如<a href="qlabel.html">QLabel</a>。它用于决定一个文本字符串是否应该解释为它自己或者其它。通过向setTextFormat()函数传递一个这样的枚举值就可以很简单的做到这一点。
+<ul>
+<li><tt>Qt::PlainText</tt> - 文本字符串被解释为纯文本字符串。
+<li><tt>Qt::RichText</tt> - 文本字符串通过使用当前的<a href="qstylesheet.html#defaultSheet">QStyleSheet::defaultSheet</a>()被解释为多信息文本字符串。
+<li><tt>Qt::AutoText</tt> - 如果<a href="qstylesheet.html#mightBeRichText">QStyleSheet::mightBeRichText</a>()返回真，文本字符串被解释为<a href="#TextFormat-enum">RichText</a>，否则为<a href="#TextFormat-enum">PlainText</a>。
+</ul>
+<h3 class=fn><a name="UIEffect-enum"></a>Qt::UIEffect</h3>
+
+<ul>
+<li><tt>Qt::UI_General</tt>
+<li><tt>Qt::UI_AnimateMenu</tt>
+<li><tt>Qt::UI_FadeMenu</tt>
+<li><tt>Qt::UI_AnimateCombo</tt>
+<li><tt>Qt::UI_AnimateTooltip</tt>
+<li><tt>Qt::UI_FadeTooltip</tt>
+</ul><p> 
+<h3 class=fn><a name="WidgetFlags-enum"></a>Qt::WidgetFlags</h3>
+
+<p> <!-- index widget flag -->
+<p> 这个枚举类型是用来指定窗口部件的窗口系统属性的。它们通常情况下没用，但是在一些场合是必需的。这些标记中的一些依赖于窗口管理器是否支持它们。
+<p> 主要类型有
+<ul>
+<li><tt>Qt::WType_TopLevel</tt> - 表明这个窗口部件是顶级的，通常有一个窗口系统框架和其它的。
+<li><tt>Qt::WType_Dialog</tt> - 表明这个窗口部件是顶级的，并且应该被修饰为一个对话框（比如，作为特色，在标题栏中没有最大化和最小化按钮）。如果你想使用它作为一个模式对话框，它应该从另一个窗口中被运行，或者有一个父窗口并且这个标记必须和<a href="#WidgetFlags-enum">WShowModal</a>一起使用。如果你使用了模式对话框，这个对话框将会防止应用程序的其它顶级窗口获得任何输入。<a href="#WidgetFlags-enum">WType_Dialog</a>隐含了<a href="#WidgetFlags-enum">WType_TopLevel</a>。我们指的是作为一个<em>二级</em>窗口作为顶级窗口需要有父窗口。（请参考<a href="#WidgetFlags-enum">WGroupLeader</a>。）
+<li><tt>Qt::WType_Popup</tt> - 表明这个窗口部件是一个弹出式的顶级窗口部件，比如它是模式的，但是供弹出菜单使用的窗口系统框架。<a href="#WidgetFlags-enum">WType_Popup</a>隐含了WType_TopLevel。
+<li><tt>Qt::WType_Desktop</tt> - 表明这个窗口部件是着明。请参考下面的<a href="#WidgetFlags-enum">WPaintDesktop</a>。<a href="#WidgetFlags-enum">WType_Desktop</a>隐含了<a href="#WidgetFlags-enum">WType_TopLevel</a>。
+</ul><p> 这里还有大量的标记可以用来自定义顶级窗口的外观。这些对于其它窗口没有任何效果的：
+<ul>
+<li><tt>Qt::WStyle_Customize</tt> - 表明<tt>WStyle_*</tt>标记应该被用来替换默认标记来构建窗口。
+<li><tt>Qt::WStyle_NormalBorder</tt> - 给窗口一个普通边界。这个不能和<a href="#WidgetFlags-enum">WStyle_DialogBorder</a>或<a href="#WidgetFlags-enum">WStyle_NoBorder</a>一起使用。
+<li><tt>Qt::WStyle_DialogBorder</tt> - 给窗口一个窄的对话框边界。这个不能和<a href="#WidgetFlags-enum">WStyle_NormalBorder</a>或<a href="#WidgetFlags-enum">WStyle_NoBorder</a>。
+<li><tt>Qt::WStyle_NoBorder</tt> - 产生一个没有边界的窗口。注意：用户不可以通过窗口系统来移动或者重新定义无边界窗口的大小。这个标记不可以和<a href="#WidgetFlags-enum">WStyle_NormalBorder</a>或<a href="#WidgetFlags-enum">WStyle_DialogBorder</a>一起使用。在Windows中，这个标记正常工作。在X11中，这个标记的结果取决于窗口管理器和它们对于MOTIF和/或NETWM提示的理解的能力：现在存在的现代窗口管理器中的绝大部分都可以处理这些。通过<a href="#WidgetFlags-enum">WX11BypassWM</a>，你可以完全地绕过窗口管理器。这样的结果就是无边界窗口根本无法被管理了（比如，除非你手工地调用setActiveWindow()就无法获得键盘输入）。
+<li><tt>Qt::WStyle_NoBorderEx</tt> - 这个值是废弃的。它的效果和使用<a href="#WidgetFlags-enum">WStyle_NoBorder</a>是一样的。
+<li><tt>Qt::WStyle_Title</tt> - 给窗口一个标题栏。
+<li><tt>Qt::WStyle_SysMenu</tt> - 添加一个窗口系统菜单。
+<li><tt>Qt::WStyle_Minimize</tt> - 添加一个最小化按钮。注意：在Windows下，为了使它能够正常工作，它必须和<a href="#WidgetFlags-enum">WStyle_SysMenu</a>一起组合使用。
+<li><tt>Qt::WStyle_Maximize</tt> - 添加一个最大化按钮。注意：在Windows下，为了使它能够正常工作，它必须和<a href="#WidgetFlags-enum">WStyle_SysMenu</a>一起组合使用。
+<li><tt>Qt::WStyle_MinMax</tt> - 和<tt>WStyle_Minimize|WStyle_Maximize</tt>是一样的。注意：在Windows下，为了使它能够正常工作，它必须和<a href="#WidgetFlags-enum">WStyle_SysMenu</a>一起组合使用。
+<li><tt>Qt::WStyle_ContextHelp</tt> - 添加一个上下文帮助按钮到对话框上。
+<li><tt>Qt::WStyle_Tool</tt> - 使这个窗口变为一个工具窗口。一个工具窗口经常是一个比含有正常标题栏和休息的窗口更小的窗口，很典型的用于工具按钮的集合。如果它有一个父窗口，工具窗口将总被放在它的上面。如果它没有父窗口，你需要考虑同时传递一个<a href="#WidgetFlags-enum">WStyle_StaysOnTop</a>。如果窗口系统支持它，一个工具窗口将会被使用更亮的框架来修饰。它也可以和<a href="#WidgetFlags-enum">WStyle_NoBorder</a>一起组合使用。
+<li><tt>Qt::WStyle_StaysOnTop</tt> - 通知窗口系统这个窗口应该放在所有其它窗口的上面。
+<li><tt>Qt::WStyle_Dialog</tt> - 表明这个窗口是它的父窗口（比如，一个对话框）的逻辑子窗口。这个窗口将没有自己的任务栏条目并且通过窗口系统它将被保持在它的父窗口上面。通常当它的父窗口最小化时，它也最小化。如果没有自定义，这个窗口将会被一个稍微简单一些的标题栏修饰。这个标记被<a href="qdialog.html">QDialog</a>使用。
+</ul><p> 修饰标记：
+<ul>
+<li><tt>Qt::WDestructiveClose</tt> - 当窗口部件已经接收到closeEvent()，或者当窗口部件试图忽略closeEvent()但不能的时候，使Qt删除这个窗口部件。
+<li><tt>Qt::WPaintDesktop</tt> - 把桌面的绘制事件给这个窗口部件。
+<li><tt>Qt::WPaintUnclipped</tt> - 使在这个窗口部件上的所有的绘制操作都不能被省略。在它前面的这个窗口部件的子窗口部件或者其它窗口部件不能把它上面的绘制区域省略掉。
+<li><tt>Qt::WPaintClever</tt> - 表明Qt<em>不</em>应该试图优化重绘这个窗口部件，但是相反，在窗口系统上直接传递重绘事件。（这样往往会产生更多的事件和更小的重绘区域。）
+<li><tt>Qt::WResizeNoErase</tt> - 表明重新定义窗口部件的大小不应该删除它。这样允许比较聪明的重绘来避免闪烁。
+<li><tt>Qt::WMouseNoMask</tt> - 表明即使这个窗口部件有一个障板，它想获得它的整个矩形区域内的鼠标时间。
+<li><tt>Qt::WStaticContents</tt> - 表明这个窗口部件的内容是向西北方向对齐的并且是静态度。当重新定义大小的时候，这个窗口部件将只接收它自己之内的新的可见的部分的绘制事件。
+<li><tt>Qt::WRepaintNoErase</tt> - 表明这个窗口绘制所有的象素。更新、滚动和焦点改变都不会因此删除这个窗口部件。这样允许比较聪明的重绘来避免闪烁。
+<li><tt>Qt::WGroupLeader</tt> - 使这个窗口为一个组领导。一个组领导<em>不</em>应该有父窗口（比如，它应该是一个顶级窗口）。组领导的任何子孙窗口（直接的或见解的）都在它这个组里，其它窗口不在。如果你从一个组中显示一个次要的窗口（比如，显示一个最上端父窗口为组领导的窗口），对于组内其它窗口它是模式的，但对于组外的它是非模式的。
+</ul><p> 其它标记。
+<ul>
+<li><tt>Qt::WShowModal</tt> - 参看WType_Dialog
+</ul><p> 内部标记。
+<ul>
+<li><tt>Qt::WNoMousePropagation</tt>
+<li><tt>Qt::WStaticContents</tt>
+<li><tt>Qt::WStyle_Reserved</tt>
+<li><tt>Qt::WSubWindow</tt>
+<li><tt>Qt::WType_Modal</tt>
+<li><tt>Qt::WWinOwnDC</tt>
+<li><tt>Qt::WX11BypassWM</tt>
+<li><tt>Qt::WStyle_Mask</tt>
+<li><tt>Qt::WType_Mask</tt>
+</ul><p> 
+<h3 class=fn><a name="WidgetState-enum"></a>Qt::WidgetState</h3>
+
+<p> 内部标记。
+<ul>
+<li><tt>Qt::WState_Created</tt>
+<li><tt>Qt::WState_Disabled</tt>
+<li><tt>Qt::WState_Visible</tt>
+<li><tt>Qt::WState_ForceHide</tt>
+<li><tt>Qt::WState_OwnCursor</tt>
+<li><tt>Qt::WState_MouseTracking</tt>
+<li><tt>Qt::WState_CompressKeys</tt>
+<li><tt>Qt::WState_BlockUpdates</tt>
+<li><tt>Qt::WState_InPaintEvent</tt>
+<li><tt>Qt::WState_Reparented</tt>
+<li><tt>Qt::WState_ConfigPending</tt>
+<li><tt>Qt::WState_Resized</tt>
+<li><tt>Qt::WState_AutoMask</tt>
+<li><tt>Qt::WState_Polished</tt>
+<li><tt>Qt::WState_DND</tt>
+<li><tt>Qt::WState_Reserved0</tt>
+<li><tt>Qt::WState_Reserved1</tt>
+<li><tt>Qt::WState_Reserved2</tt>
+<li><tt>Qt::WState_Reserved3</tt>
+<li><tt>Qt::WState_Maximized</tt>
+<li><tt>Qt::WState_Minimized</tt>
+<li><tt>Qt::WState_ForceDisabled</tt>
+<li><tt>Qt::WState_Exposed</tt>
+<li><tt>Qt::WState_HasMouse</tt>
+</ul>
+<h3 class=fn><a name="WindowsVersion-enum"></a>Qt::WindowsVersion</h3>
+
+<ul>
+<li><tt>Qt::WV_32s</tt>
+<li><tt>Qt::WV_95</tt>
+<li><tt>Qt::WV_98</tt>
+<li><tt>Qt::WV_Me</tt>
+<li><tt>Qt::WV_DOS_based</tt>
+<li><tt>Qt::WV_NT</tt>
+<li><tt>Qt::WV_2000</tt>
+<li><tt>Qt::WV_XP</tt>
+<li><tt>Qt::WV_NT_based</tt>
+</ul><p> 
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

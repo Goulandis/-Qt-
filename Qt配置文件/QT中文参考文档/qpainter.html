@@ -1,0 +1,1248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/kernel/qpainter.cpp:59 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QPainter类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QPainter类参考</h1>
+
+<p>QPainter类低水平的绘制，例如在窗口部件上。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qpainter-h.html">qpainter.h</a>&gt;</tt>
+<p>继承了<a href="qt.html">Qt</a>。
+<p>被<a href="qdirectpainter.html">QDirectPainter</a>继承。
+<p><a href="qpainter-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn>enum <a href="#CoordinateMode-enum"><b>CoordinateMode</b></a> { CoordDevice, CoordPainter }</div></li>
+<li><div class=fn><a href="#QPainter"><b>QPainter</b></a> ()</div></li>
+<li><div class=fn><a href="#QPainter-2"><b>QPainter</b></a> ( const&nbsp;QPaintDevice&nbsp;*&nbsp;pd, bool&nbsp;unclipped = FALSE )</div></li>
+<li><div class=fn><a href="#QPainter-3"><b>QPainter</b></a> ( const&nbsp;QPaintDevice&nbsp;*&nbsp;pd, const&nbsp;QWidget&nbsp;*&nbsp;copyAttributes, bool&nbsp;unclipped = FALSE )</div></li>
+<li><div class=fn><a href="#~QPainter"><b>~QPainter</b></a> ()</div></li>
+<li><div class=fn>bool <a href="#begin"><b>begin</b></a> ( const&nbsp;QPaintDevice&nbsp;*&nbsp;pd, bool&nbsp;unclipped = FALSE )</div></li>
+<li><div class=fn>bool <a href="#begin-2"><b>begin</b></a> ( const&nbsp;QPaintDevice&nbsp;*&nbsp;pd, const&nbsp;QWidget&nbsp;*&nbsp;copyAttributes, bool&nbsp;unclipped = FALSE )</div></li>
+<li><div class=fn>bool <a href="#end"><b>end</b></a> ()</div></li>
+<li><div class=fn>QPaintDevice * <a href="#device"><b>device</b></a> () const</div></li>
+<li><div class=fn>QGfx * <b>internalGfx</b> ()</div></li>
+<li><div class=fn>bool <a href="#isActive"><b>isActive</b></a> () const</div></li>
+<li><div class=fn>void <a href="#flush"><b>flush</b></a> ( const&nbsp;QRegion&nbsp;&amp;&nbsp;region, CoordinateMode&nbsp;cm = CoordDevice )</div></li>
+<li><div class=fn>void <a href="#flush-2"><b>flush</b></a> ()</div></li>
+<li><div class=fn>void <a href="#save"><b>save</b></a> ()</div></li>
+<li><div class=fn>void <a href="#restore"><b>restore</b></a> ()</div></li>
+<li><div class=fn>QFontMetrics <a href="#fontMetrics"><b>fontMetrics</b></a> () const</div></li>
+<li><div class=fn>QFontInfo <a href="#fontInfo"><b>fontInfo</b></a> () const</div></li>
+<li><div class=fn>const QFont &amp; <a href="#font"><b>font</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setFont"><b>setFont</b></a> ( const&nbsp;QFont&nbsp;&amp;&nbsp;font )</div></li>
+<li><div class=fn>const QPen &amp; <a href="#pen"><b>pen</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setPen"><b>setPen</b></a> ( const&nbsp;QPen&nbsp;&amp;&nbsp;pen )</div></li>
+<li><div class=fn>void <a href="#setPen-2"><b>setPen</b></a> ( PenStyle&nbsp;style )</div></li>
+<li><div class=fn>void <a href="#setPen-3"><b>setPen</b></a> ( const&nbsp;QColor&nbsp;&amp;&nbsp;color )</div></li>
+<li><div class=fn>const QBrush &amp; <a href="#brush"><b>brush</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setBrush-2"><b>setBrush</b></a> ( const&nbsp;QBrush&nbsp;&amp;&nbsp;brush )</div></li>
+<li><div class=fn>void <a href="#setBrush"><b>setBrush</b></a> ( BrushStyle&nbsp;style )</div></li>
+<li><div class=fn>void <a href="#setBrush-3"><b>setBrush</b></a> ( const&nbsp;QColor&nbsp;&amp;&nbsp;color )</div></li>
+<li><div class=fn>QPoint <a href="#pos"><b>pos</b></a> () const</div></li>
+<li><div class=fn>const QColor &amp; <a href="#backgroundColor"><b>backgroundColor</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setBackgroundColor"><b>setBackgroundColor</b></a> ( const&nbsp;QColor&nbsp;&amp;&nbsp;c )</div></li>
+<li><div class=fn>BGMode <a href="#backgroundMode"><b>backgroundMode</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setBackgroundMode"><b>setBackgroundMode</b></a> ( BGMode&nbsp;m )</div></li>
+<li><div class=fn>RasterOp <a href="#rasterOp"><b>rasterOp</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setRasterOp"><b>setRasterOp</b></a> ( RasterOp&nbsp;r )</div></li>
+<li><div class=fn>const QPoint &amp; <a href="#brushOrigin"><b>brushOrigin</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setBrushOrigin"><b>setBrushOrigin</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#setBrushOrigin-2"><b>setBrushOrigin</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>bool <a href="#hasViewXForm"><b>hasViewXForm</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#hasWorldXForm"><b>hasWorldXForm</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setViewXForm"><b>setViewXForm</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>QRect <a href="#window"><b>window</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setWindow-2"><b>setWindow</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#setWindow"><b>setWindow</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>QRect <a href="#viewport"><b>viewport</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setViewport-2"><b>setViewport</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#setViewport"><b>setViewport</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#setWorldXForm"><b>setWorldXForm</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>const QWMatrix &amp; <a href="#worldMatrix"><b>worldMatrix</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setWorldMatrix"><b>setWorldMatrix</b></a> ( const&nbsp;QWMatrix&nbsp;&amp;&nbsp;m, bool&nbsp;combine = FALSE )</div></li>
+<li><div class=fn>void saveWorldMatrix () &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void restoreWorldMatrix () &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void <a href="#scale"><b>scale</b></a> ( double&nbsp;sx, double&nbsp;sy )</div></li>
+<li><div class=fn>void <a href="#shear"><b>shear</b></a> ( double&nbsp;sh, double&nbsp;sv )</div></li>
+<li><div class=fn>void <a href="#rotate"><b>rotate</b></a> ( double&nbsp;a )</div></li>
+<li><div class=fn>void <a href="#translate"><b>translate</b></a> ( double&nbsp;dx, double&nbsp;dy )</div></li>
+<li><div class=fn>void <a href="#resetXForm"><b>resetXForm</b></a> ()</div></li>
+<li><div class=fn>QPoint <a href="#xForm"><b>xForm</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pv ) const</div></li>
+<li><div class=fn>QRect <a href="#xForm-2"><b>xForm</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;rv ) const</div></li>
+<li><div class=fn>QPointArray <a href="#xForm-3"><b>xForm</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;av ) const</div></li>
+<li><div class=fn>QPointArray <a href="#xForm-4"><b>xForm</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;av, int&nbsp;index, int&nbsp;npoints ) const</div></li>
+<li><div class=fn>QPoint <a href="#xFormDev-2"><b>xFormDev</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;pd ) const</div></li>
+<li><div class=fn>QRect <a href="#xFormDev"><b>xFormDev</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;rd ) const</div></li>
+<li><div class=fn>QPointArray <a href="#xFormDev-3"><b>xFormDev</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;ad ) const</div></li>
+<li><div class=fn>QPointArray <a href="#xFormDev-4"><b>xFormDev</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;ad, int&nbsp;index, int&nbsp;npoints ) const</div></li>
+<li><div class=fn>void <a href="#setClipping"><b>setClipping</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>bool <a href="#hasClipping"><b>hasClipping</b></a> () const</div></li>
+<li><div class=fn>QRegion <a href="#clipRegion"><b>clipRegion</b></a> ( CoordinateMode&nbsp;m = CoordDevice ) const</div></li>
+<li><div class=fn>void <a href="#setClipRect-2"><b>setClipRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, CoordinateMode&nbsp;m = CoordDevice )</div></li>
+<li><div class=fn>void <a href="#setClipRect"><b>setClipRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, CoordinateMode&nbsp;m = CoordDevice )</div></li>
+<li><div class=fn>void <a href="#setClipRegion"><b>setClipRegion</b></a> ( const&nbsp;QRegion&nbsp;&amp;&nbsp;rgn, CoordinateMode&nbsp;m = CoordDevice )</div></li>
+<li><div class=fn>void <a href="#drawPoint"><b>drawPoint</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#drawPoint-2"><b>drawPoint</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#drawPoints"><b>drawPoints</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;npoints = -1 )</div></li>
+<li><div class=fn>void <a href="#moveTo"><b>moveTo</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#moveTo-2"><b>moveTo</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#lineTo"><b>lineTo</b></a> ( int&nbsp;x, int&nbsp;y )</div></li>
+<li><div class=fn>void <a href="#lineTo-2"><b>lineTo</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>void <a href="#drawLine"><b>drawLine</b></a> ( int&nbsp;x1, int&nbsp;y1, int&nbsp;x2, int&nbsp;y2 )</div></li>
+<li><div class=fn>void <a href="#drawLine-2"><b>drawLine</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p1, const&nbsp;QPoint&nbsp;&amp;&nbsp;p2 )</div></li>
+<li><div class=fn>void <a href="#drawRect"><b>drawRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#drawRect-2"><b>drawRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#drawWinFocusRect-2"><b>drawWinFocusRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#drawWinFocusRect"><b>drawWinFocusRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColor&nbsp;&amp;&nbsp;bgColor )</div></li>
+<li><div class=fn>void <a href="#drawWinFocusRect-3"><b>drawWinFocusRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#drawWinFocusRect-4"><b>drawWinFocusRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QColor&nbsp;&amp;&nbsp;bgColor )</div></li>
+<li><div class=fn>void <a href="#drawRoundRect"><b>drawRoundRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;xRnd = 25, int&nbsp;yRnd = 25 )</div></li>
+<li><div class=fn>void <a href="#drawRoundRect-2"><b>drawRoundRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;xRnd = 25, int&nbsp;yRnd = 25 )</div></li>
+<li><div class=fn>void <a href="#drawEllipse"><b>drawEllipse</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#drawEllipse-2"><b>drawEllipse</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>void <a href="#drawArc"><b>drawArc</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawArc-2"><b>drawArc</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawPie"><b>drawPie</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawPie-2"><b>drawPie</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawChord"><b>drawChord</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawChord-2"><b>drawChord</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )</div></li>
+<li><div class=fn>void <a href="#drawLineSegments"><b>drawLineSegments</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;nlines = -1 )</div></li>
+<li><div class=fn>void <a href="#drawPolyline"><b>drawPolyline</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;npoints = -1 )</div></li>
+<li><div class=fn>void <a href="#drawPolygon"><b>drawPolygon</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;a, bool&nbsp;winding = FALSE, int&nbsp;index = 0, int&nbsp;npoints = -1 )</div></li>
+<li><div class=fn>void <a href="#drawConvexPolygon"><b>drawConvexPolygon</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;pa, int&nbsp;index = 0, int&nbsp;npoints = -1 )</div></li>
+<li><div class=fn>void <a href="#drawCubicBezier"><b>drawCubicBezier</b></a> ( const&nbsp;QPointArray&nbsp;&amp;&nbsp;a, int&nbsp;index = 0 )</div></li>
+<li><div class=fn>void <a href="#drawPixmap"><b>drawPixmap</b></a> ( int&nbsp;x, int&nbsp;y, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pixmap, int&nbsp;sx = 0, int&nbsp;sy = 0, int&nbsp;sw = -1, int&nbsp;sh = -1 )</div></li>
+<li><div class=fn>void <a href="#drawPixmap-2"><b>drawPixmap</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm, const&nbsp;QRect&nbsp;&amp;&nbsp;sr )</div></li>
+<li><div class=fn>void <a href="#drawPixmap-3"><b>drawPixmap</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm )</div></li>
+<li><div class=fn>void <a href="#drawPixmap-4"><b>drawPixmap</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm )</div></li>
+<li><div class=fn>void <a href="#drawImage"><b>drawImage</b></a> ( int&nbsp;x, int&nbsp;y, const&nbsp;QImage&nbsp;&amp;&nbsp;image, int&nbsp;sx = 0, int&nbsp;sy = 0, int&nbsp;sw = -1, int&nbsp;sh = -1, int&nbsp;conversionFlags = 0 )</div></li>
+<li><div class=fn>void <a href="#drawImage-2"><b>drawImage</b></a> ( const QPoint &amp;, const QImage &amp;, const&nbsp;QRect&nbsp;&amp;&nbsp;sr, int&nbsp;conversionFlags = 0 )</div></li>
+<li><div class=fn>void <a href="#drawImage-3"><b>drawImage</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, const&nbsp;QImage&nbsp;&amp;&nbsp;i, int&nbsp;conversion_flags = 0 )</div></li>
+<li><div class=fn>void <a href="#drawImage-4"><b>drawImage</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QImage&nbsp;&amp;&nbsp;i )</div></li>
+<li><div class=fn>void <a href="#drawTiledPixmap"><b>drawTiledPixmap</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pixmap, int&nbsp;sx = 0, int&nbsp;sy = 0 )</div></li>
+<li><div class=fn>void <a href="#drawTiledPixmap-2"><b>drawTiledPixmap</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm, const&nbsp;QPoint&nbsp;&amp;&nbsp;sp )</div></li>
+<li><div class=fn>void <a href="#drawTiledPixmap-3"><b>drawTiledPixmap</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pm )</div></li>
+<li><div class=fn>void drawPicture ( const&nbsp;QPicture&nbsp;&amp;&nbsp;pic ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void <a href="#drawPicture"><b>drawPicture</b></a> ( int&nbsp;x, int&nbsp;y, const&nbsp;QPicture&nbsp;&amp;&nbsp;pic )</div></li>
+<li><div class=fn>void <a href="#drawPicture-3"><b>drawPicture</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, const&nbsp;QPicture&nbsp;&amp;&nbsp;pic )</div></li>
+<li><div class=fn>void <a href="#fillRect"><b>fillRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QBrush&nbsp;&amp;&nbsp;brush )</div></li>
+<li><div class=fn>void <a href="#fillRect-2"><b>fillRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, const&nbsp;QBrush&nbsp;&amp;&nbsp;brush )</div></li>
+<li><div class=fn>void <a href="#eraseRect"><b>eraseRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )</div></li>
+<li><div class=fn>void <a href="#eraseRect-2"><b>eraseRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r )</div></li>
+<li><div class=fn>enum <a href="#TextDirection-enum"><b>TextDirection</b></a> { Auto, RTL, LTR }</div></li>
+<li><div class=fn>void <a href="#drawText-2"><b>drawText</b></a> ( int&nbsp;x, int&nbsp;y, const QString &amp;, int&nbsp;len = -1, TextDirection&nbsp;dir = Auto )</div></li>
+<li><div class=fn>void <a href="#drawText-3"><b>drawText</b></a> ( const QPoint &amp;, const QString &amp;, int&nbsp;len = -1, TextDirection&nbsp;dir = Auto )</div></li>
+<li><div class=fn>void <a href="#drawText-4"><b>drawText</b></a> ( int&nbsp;x, int&nbsp;y, const QString &amp;, int&nbsp;pos, int&nbsp;len, TextDirection&nbsp;dir = Auto )</div></li>
+<li><div class=fn>void <a href="#drawText"><b>drawText</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, const QString &amp;, int&nbsp;pos, int&nbsp;len, TextDirection&nbsp;dir = Auto )</div></li>
+<li><div class=fn>void <a href="#drawText-5"><b>drawText</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;flags, const QString &amp;, int&nbsp;len = -1, QRect&nbsp;*&nbsp;br = 0, QTextParag&nbsp;**&nbsp;internal = 0 )</div></li>
+<li><div class=fn>void <a href="#drawText-6"><b>drawText</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;tf, const&nbsp;QString&nbsp;&amp;&nbsp;str, int&nbsp;len = -1, QRect&nbsp;*&nbsp;brect = 0, QTextParag&nbsp;**&nbsp;internal = 0 )</div></li>
+<li><div class=fn>QRect <a href="#boundingRect"><b>boundingRect</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;flags, const QString &amp;, int&nbsp;len = -1, QTextParag&nbsp;**&nbsp;intern = 0 )</div></li>
+<li><div class=fn>QRect <a href="#boundingRect-2"><b>boundingRect</b></a> ( const&nbsp;QRect&nbsp;&amp;&nbsp;r, int&nbsp;flags, const&nbsp;QString&nbsp;&amp;&nbsp;str, int&nbsp;len = -1, QTextParag&nbsp;**&nbsp;internal = 0 )</div></li>
+<li><div class=fn>int <a href="#tabStops"><b>tabStops</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setTabStops"><b>setTabStops</b></a> ( int&nbsp;ts )</div></li>
+<li><div class=fn>int * <a href="#tabArray"><b>tabArray</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setTabArray"><b>setTabArray</b></a> ( int&nbsp;*&nbsp;ta )</div></li>
+<li><div class=fn>HDC <a href="#handle"><b>handle</b></a> () const</div></li>
+</ul>
+<h2>静态公有成员</h2>
+<ul>
+<li><div class=fn>void <a href="#redirect"><b>redirect</b></a> ( QPaintDevice&nbsp;*&nbsp;pdev, QPaintDevice&nbsp;*&nbsp;replacement )</div></li>
+</ul>
+<h2>相关函数</h2>
+<ul>
+<li><div class=fn>void <a href="#qDrawShadeLine"><b>qDrawShadeLine</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x1, int&nbsp;y1, int&nbsp;x2, int&nbsp;y2, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, int&nbsp;midLineWidth )</div></li>
+<li><div class=fn>void <a href="#qDrawShadeRect"><b>qDrawShadeRect</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, int&nbsp;midLineWidth, const&nbsp;QBrush&nbsp;*&nbsp;fill )</div></li>
+<li><div class=fn>void <a href="#qDrawShadePanel"><b>qDrawShadePanel</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, const&nbsp;QBrush&nbsp;*&nbsp;fill )</div></li>
+<li><div class=fn>void <a href="#qDrawWinButton"><b>qDrawWinButton</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, const&nbsp;QBrush&nbsp;*&nbsp;fill )</div></li>
+<li><div class=fn>void <a href="#qDrawWinPanel"><b>qDrawWinPanel</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, const&nbsp;QBrush&nbsp;*&nbsp;fill )</div></li>
+<li><div class=fn>void <a href="#qDrawPlainRect"><b>qDrawPlainRect</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;QColor&nbsp;&amp;&nbsp;c, int&nbsp;lineWidth, const&nbsp;QBrush&nbsp;*&nbsp;fill )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QPainter类低水平的绘制，例如在窗口部件上。
+<p> 绘制工具为做到绝大部分绘制图形用户界面程序的需要提供了高度优化的函数。QPainter可以绘制从简单的直线到像饼图和弦这样的复杂形状。它也可以绘制排列的文本和像素映射。通常，它在一个“自然的”坐标系统中绘制，但是它也可以在视和世界转换中做到这些。
+<p> 绘图工具的典型用法是：
+<p> <ul>
+<li> 构造一个绘图工具。
+<li> 设置画笔、画刷等等。
+<li> 绘制。
+<li> 销毁这个绘图工具。
+</ul>
+<p> 绝大多数情况下，所有这些是在一个绘制事件中完成的。（实际上，99％的QPainter使用是在<a href="qwidget.html#paintEvent">QWidget::paintEvent</a>()的重新实现中，并且绘制工具已经为这种用法高度优化了。）这里是一个非常简单的实例：
+<p> <pre>
+    void SimpleExampleWidget::paintEvent()
+    {
+        QPainter paint( this );
+        paint.<a href="#setPen">setPen</a>( Qt::blue );
+        paint.<a href="#drawText">drawText</a>( rect(), AlignCenter, "The Text" );
+    }
+    </pre>
+ 
+<p> 使用方法很简单并且这里有你可以使用的许多设置：
+<p> <ul>
+<p> <li> <a href="#font">font</a>()是当前设置的字体。如果你设置一个不可用的字体，Qt会找到一个相近的匹配。实际上，font()返回你使用<a href="#setFont">setFont</a>() 所设置的东西并且<a href="#fontInfo">fontInfo</a>()返回你实际使用的字体（这也许是相同的）。
+<p> <li> <a href="#brush">brush</a>()是当前设置的画刷，用来填充例如圆的颜色或者调色板。
+<p> <li> <a href="#pen">pen</a>()是当前设置的画笔，用来画线或者边缘的颜色或者点画。
+<p> <li> <a href="#backgroundMode">backgroundMode</a>()是<tt>Opaque</tt>或者<tt>Transparent</tt>，也就是是不是使用<a href="#backgroundColor">backgroundColor</a>()。
+<p> <li>  仅仅当backgroundMode()为Opaque并且pen()是一个点画的时候backgroundColor()才适用，它描述了在点画中背景像素的颜色。
+<p> <li> <a href="#rasterOp">rasterOp</a>()是像素绘制和已经存在的像素是如何相互作用的。
+<p> <li> <a href="#brushOrigin">brushOrigin</a>()是平铺的画刷的原点，通常是窗口的原点。
+<p> <li> <a href="#viewport">viewport</a>()、<a href="#window">window</a>()、<a href="#worldMatrix">worldMatrix</a>()和很多其它的构成了绘制工具的坐标转换系统。关于这个的解释请参考<a href="coordsys.html">坐标系统</a>或者参考下面有关这些函数的非常简要的概述。
+<p> <li> clipping()是指绘制工具是否裁剪。（绘制设备也裁剪。）如果绘制工具裁剪，它裁剪到<a href="#clipRegion">clipRegion</a>()。
+<p> <li> <a href="#pos">pos</a>()是当前位置，通过<a href="#moveTo">moveTo</a>()设置并且通过<a href="#lineTo">lineTo</a>()使用。
+<p> </ul>
+<p> 注意这些设置中的一些会镜像到一些绘制设备的设置中，例如<a href="qwidget.html#font">QWidget::font</a>()。<a href="#begin">QPainter::begin</a>()（或者QPainter的构造函数）从绘制设备中复制这些属性。调用，例如<a href="qwidget.html#setFont">QWidget::setFont</a>()直到绘制工具开始在它上面绘制才会生效。
+<p> 把所有的这些设置保存到内部栈中，<a href="#restore">restore</a>()把它们弹出来。
+<p> QPainter的核心功能是绘制，并且这里有最简单的绘制函数：<a href="#drawPoint">drawPoint</a>()、<a href="#drawPoints">drawPoints</a>()、<a href="#drawLine">drawLine</a>()、<a href="#drawRect">drawRect</a>()、<a href="#drawWinFocusRect">drawWinFocusRect</a>()、<a href="#drawRoundRect">drawRoundRect</a>()、<a href="#drawEllipse">drawEllipse</a>()、<a href="#drawArc">drawArc</a>()、<a href="#drawPie">drawPie</a>()、<a href="#drawChord">drawChord</a>()、<a href="#drawLineSegments">drawLineSegments</a>()、<a href="#drawPolyline">drawPolyline</a>()、<a href="#drawPolygon">drawPolygon</a>()、<a href="#drawConvexPolygon">drawConvexPolygon</a>()和<a href="#drawCubicBezier">drawCubicBezier</a>()。所有这些函数使用整数坐标，它们没有浮点数的版本，因为我们想使绘制尽可能快地进行。
+<p> 这里有绘制像素映射/图像的函数，名为<a href="#drawPixmap">drawPixmap</a>()、<a href="#drawImage">drawImage</a>()和<a href="#drawTiledPixmap">drawTiledPixmap</a>()。drawPixmap()和drawImage()产生同样的结果，除了drawPixmap()在屏幕上更快一些并且drawImage()在<a href="qprinter.html">QPrinter</a>和<a href="qpicture.html">QPicture</a>上更快并且有时更好。
+<p> 使用<a href="#drawText">drawText</a>()可以完成文本绘制，并且当你需要良好的定位，<a href="#boundingRect">boundingRect</a>()告诉你哪里是给定的drawText()命令将要绘制的。
+<p> 这里有一个<a href="#drawPicture">drawPicture</a>()函数，用来使用这个绘制工具绘制整个QPicture的内容。drawPicture()是唯一忽视所有绘制工具设置的函数：QPicture有它自己的设置。
+<p> 通常，QPainter在设备自己的坐标系统（通常是像素）上操作，但是QPainter也很好地支持坐标转换。关于更通用的概述和简单实例请参考<a href="coordsys.html">坐标系统</a>。
+<p> 最常用到的函数是<a href="#scale">scale</a>()、<a href="#rotate">rotate</a>()、<a href="#translate">translate</a>()和<a href="#shear">shear</a>()，所有这些在<a href="#worldMatrix">worldMatrix</a>()上操作。<a href="#setWorldMatrix">setWorldMatrix</a>()可以替换或者添加到当前设置的worldMatrix()。
+<p> <a href="#setViewport">setViewport</a>()设置QPainter操作的矩形。默认是整个设备，这通常就很好了，除了在打印机上。<a href="#setWindow">setWindow</a>()设置坐标系统，它是被映射到<a href="#viewport">viewport</a>()的矩形。在<a href="#window">window</a>()中绘制的东西最终会在viewport()中。窗口的默认就是和视口一样，并且如果你没有使用转换，它们会被优化，赢得一点点速度。
+<p> 在所有坐标转换完成之后，QPainter能够把绘制裁剪到一个任意的矩形或者区域。如果QPainter裁剪了，<a href="#hasClipping">hasClipping</a>()为真并且<a href="#clipRegion">clipRegion</a>()返回裁剪区域。你可以使用<a href="#setClipRegion">setClipRegion</a>()或<a href="#setClipRect">setClipRect</a>()来设置它。注意裁剪是很慢的。它是完全依赖系统的，但是单凭经验的方法，你可以假设绘制的速度与裁剪区域中的矩形数量成反比。
+<p> 在QPainter的裁剪之后，绘制设备也可以被裁剪。例如，绝大多数窗口部件按子窗口部件的像素裁剪并且绝大多数打印机按接近纸的边缘裁剪。这些另外的裁剪不会受clipRegion()或hasClipping()的返回值影响。
+<p> QPainter也包括一些比较少用到的函数，它们在当它们被需要的时候是非常有用的。
+<p> <a href="#isActive">isActive</a>()指出绘制工具是否是激活的。<a href="#begin">begin</a>()（和最常用的构造函数）使它激活。<a href="#end">end</a>()（和析构函数）释放它们。如果绘制工具是激活的，<a href="#device">device</a>()返回绘制工具在哪个绘制设备上绘制。
+<p> 有时让其它什么在一个不平常的<a href="qpaintdevice.html">QPaintDevice</a>上绘制是人们想要的。QPainter支持一个静态函数来做这些，<a href="#redirect">redirect</a>()。我们建议不要使用它，但是对于一些老手这是完美的。
+<p> <a href="#setTabStops">setTabStops</a>()和<a href="#setTabArray">setTabArray</a>()可以改变tab在哪里停止，但是它们极少被用到。
+<p> <b>警告：</b>注意QPainter不会试图在底层窗口系统的左边限制周围工作。坐标在+/-4000时，一些平台的行为可能就不正确了。
+
+<p> <p>请参考<a href="qpaintdevice.html">QPaintDevice</a>、<a href="qwidget.html">QWidget</a>、<a href="qpixmap.html">QPixmap</a>、<a href="qprinter.html">QPrinter</a>、<a href="qpicture.html">QPicture</a>、<a href="simple-application.html">应用程序预演</a>、<a href="coordsys.html">坐标系统概述</a>、<a href="graphics.html">图像类</a>和<a href="images.html">图像处理类</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="CoordinateMode-enum"></a>QPainter::CoordinateMode</h3>
+<ul>
+<li><tt>QPainter::CoordDevice</tt>
+<li><tt>QPainter::CoordPainter</tt>
+</ul><p> <p>请参考<a href="#clipRegion">clipRegion</a>()。
+
+<h3 class=fn><a name="TextDirection-enum"></a>QPainter::TextDirection</h3>
+
+<ul>
+<li><tt>QPainter::Auto</tt>
+<li><tt>QPainter::RTL</tt> - 从右到左
+<li><tt>QPainter::LTR</tt> - 从左到右
+</ul><p> <p>请参考<a href="#drawText">drawText</a>()。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QPainter"></a>QPainter::QPainter ()
+</h3>
+构造绘制工具。
+<p> 注意所有绘制工具的设置（setPen、setBrush等等）在当<a href="#begin">begin</a>()被调用时会被重新设置为默认值。
+<p> <p>请参考<a href="#begin">begin</a>()和<a href="#end">end</a>()。
+
+<h3 class=fn><a name="QPainter-2"></a>QPainter::QPainter ( const&nbsp;<a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;pd, bool&nbsp;unclipped = FALSE )
+</h3>
+构造一个立即开始在绘制设备<em>pd</em>绘制的绘制工具。如果<em>unclipped</em>为真，依赖于底层图形系统，绘制工具将在绘制设备的子对象上绘制。
+<p> 这个构造函数对短期的绘制工具是很方便的，例如，在一个<a href="qwidget.html#paintEvent">绘制事件</a>中并且也该被立即使用。构造函数为你调用<a href="#begin">begin</a>()并且QPainter的析构函数会自动调用<a href="#end">end</a>()。
+<p> 这是使用begin()和end()的实例：
+<pre>
+        void MyWidget::paintEvent( <a href="qpaintevent.html">QPaintEvent</a> * )
+        {
+            QPainter p;
+            p.<a href="#begin">begin</a>( this );
+            p.<a href="#drawLine">drawLine</a>( ... );  // 绘制代码
+            p.<a href="#end">end</a>();
+        }
+    </pre>
+ 
+<p> 使用这个构造函数的相同实例：
+<pre>
+        void MyWidget::paintEvent( <a href="qpaintevent.html">QPaintEvent</a> * )
+        {
+            QPainter p( this );
+            p.<a href="#drawLine">drawLine</a>( ... );  // 绘制代码
+        }
+    </pre>
+ 
+<p> <p>请参考<a href="#begin">begin</a>()和<a href="#end">end</a>()。
+
+<h3 class=fn><a name="QPainter-3"></a>QPainter::QPainter ( const&nbsp;<a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;pd, const&nbsp;<a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;copyAttributes, bool&nbsp;unclipped = FALSE )
+</h3>
+构造一个立即开始在绘制设备<em>pd</em>绘制的绘制工具，默认参数来自于<em>copyAttributes</em>。如果<em>unclipped</em>为真，依赖于底层图形系统，绘制工具将在绘制设备的子对象上绘制（尽管这个不是在所有平台上都被支持）。
+<p> <p>请参考<a href="#begin">begin</a>()。
+
+<h3 class=fn><a name="~QPainter"></a>QPainter::~QPainter ()
+</h3>
+销毁绘制工具。
+
+<h3 class=fn>const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp; <a name="backgroundColor"></a>QPainter::backgroundColor () const
+</h3>
+<p> 返回当前背景色。
+<p> <p>请参考<a href="#setBackgroundColor">setBackgroundColor</a>()和<a href="qcolor.html">QColor</a>。
+
+<h3 class=fn><a href="qt.html#BGMode-enum">BGMode</a> <a name="backgroundMode"></a>QPainter::backgroundMode () const
+</h3>
+<p> 返回当前背景模式。
+<p> <p>请参考<a href="#setBackgroundMode">setBackgroundMode</a>()和<a href="qt.html#BGMode-enum">BGMode</a>。
+
+<h3 class=fn>bool <a name="begin"></a>QPainter::begin ( const&nbsp;<a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;pd, bool&nbsp;unclipped = FALSE )
+</h3>
+开始在绘制设备<em>pd</em>上绘制并且如果成功返回真，否则返回假。如果<em>unclipped</em>为真，绘制在绘制设备的边缘将不会被裁剪（尽管这不是在所有平台上被支持）。
+<p> 发生的错误是严重的问题，例如这些：
+<p> <pre>
+        p-&gt;begin( 0 ); // 不可能——绘制设备不能为0
+
+        <a href="qpixmap.html">QPixmap</a> pm( 0, 0 );
+        p-&gt;begin( pm ); // 不可能——pm.<a href="qpixmap.html#isNull">isNull</a>();
+
+        p-&gt;begin( myWidget );
+        p2-&gt;begin( myWidget ); // 不可能——在同一时间只能有一个绘制工具
+    </pre>
+ 
+<p> 注意绝大部分时间，你可以使用一个构造函数来代替<a href="#begin">begin</a>()，并且<a href="#end">end</a>()会在析构函数中被自动完成。
+<p> <b>警告：</b>在同一时间绘制设备上只能有一个绘制工具。
+<p> <p>请参考<a href="#end">end</a>()和<a href="#flush">flush</a>()。
+<p>实例：<a href="aclock-example.html#x1201">aclock/aclock.cpp</a>、<a href="simple-application-example.html#x1525">application/application.cpp</a>、<a href="desktop-example.html#x1771">desktop/desktop.cpp</a>、<a href="hello-example.html#x1599">hello/hello.cpp</a>、<a href="picture-example.html#x79">picture/picture.cpp</a>、<a href="tutorial1-10.html#x2335">t10/cannon.cpp</a>和<a href="xform-example.html#x1432">xform/xform.cpp</a>。
+
+<h3 class=fn>bool <a name="begin-2"></a>QPainter::begin ( const&nbsp;<a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;pd, const&nbsp;<a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;copyAttributes, bool&nbsp;unclipped = FALSE )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 这个版本在绘制设备<em>pd</em>上打开绘制工具并且从<em>copyAttributes</em>设置初始画笔、背景颜色和字体，当<em>unclipped</em>为真，在绘制设备的子对象上进行绘制。这等于：
+<p> <pre>
+        QPainter p;
+        p.<a href="#begin">begin</a>( pd );
+        p.<a href="#setPen">setPen</a>( copyAttributes-&gt;foregroundColor() );
+        p.<a href="#setBackgroundColor">setBackgroundColor</a>( copyAttributes-&gt;backgroundColor() );
+        p.<a href="#setFont">setFont</a>( copyAttributes-&gt;font() );
+    </pre>
+ 
+<p> 这个开始函数便于双重缓冲。当你在一个像素映射上绘制，而不是直接在窗口部件上绘制（稍后用bitBlt把这个像素映射放到窗口部件中），你将需要设置窗口部件的字体等等。这个函数正确地做到了这些。
+<p> 实例：
+<pre>
+        void MyWidget::paintEvent( <a href="qpaintevent.html">QPaintEvent</a> * )
+        {
+            <a href="qpixmap.html">QPixmap</a> pm(size());
+            QPainter p;
+            p.<a href="#begin">begin</a>(&amp;pm, this);
+            // ……绘制操作可能有闪烁……
+            p.<a href="#end">end</a>();
+            <a href="qpaintdevice.html#bitBlt-2">bitBlt</a>(this, 0, 0, &amp;pm);
+        }
+    </pre>
+ 
+<p> <p>请参考<a href="#end">end</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="boundingRect"></a>QPainter::boundingRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;flags, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;len = -1, QTextParag&nbsp;**&nbsp;intern = 0 )
+</h3>
+<p> 返回相对应的<a href="#drawText">drawText</a>()函数所要打印的对齐的文本的边界矩形，如果<em>len</em>>-1，使用字符串的<em>len</em>个字符，或者如果<em>len</em>为-1，使用整个字符串。绘制已经相应的边界矩形，由点<em>(x, y)</em>以及宽<em>w</em>和高<em>h</em>来约束。
+<p> <em>flags</em>参数是下列标记的位或运算结果：
+<center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top">标记 <th valign="top">意义
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignAuto</a> <td valign="top">根据语言对齐，通常是左。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignLeft</a> <td valign="top">左对齐。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignRight</a> <td valign="top">右对齐。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignHCenter</a> <td valign="top">水平中间对齐。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignTop</a> <td valign="top">上对齐。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignBottom</a> <td valign="top">下对齐。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignVCenter</a> <td valign="top">垂直中间对齐。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#AlignmentFlags-enum">AlignCenter</a> <td valign="top">（==<a href="qt.html#AlignmentFlags-enum">AlignHCenter</a> | <a href="qt.html#AlignmentFlags-enum">AlignVCenter</a>）。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#TextFlags-enum">SingleLine</a> <td valign="top">在文本中忽略换行符。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#TextFlags-enum">ExpandTabs</a> <td valign="top">扩展tab。
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qt.html#TextFlags-enum">ShowPrefix</a> <td valign="top">把“&x”解释为“<u>x</u>”。
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="qt.html#TextFlags-enum">WordBreak</a> <td valign="top">打断文本来适应矩形。
+</table></center>
+<p> 水平对齐默认为<a href="qt.html#AlignmentFlags-enum">AlignLeft</a>并且垂直对齐默认为<a href="qt.html#AlignmentFlags-enum">AlignTop</a>。
+<p> 如果几种同一方向上（水平或垂直）的对齐标记一起使用，对齐结果是不确定的。
+<p> <em>intern</em>参数不应该被使用。
+<p> <p>请参考<a href="qt.html#TextFlags-enum">Qt::TextFlags</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="boundingRect-2"></a>QPainter::boundingRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;flags, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str, int&nbsp;len = -1, QTextParag&nbsp;**&nbsp;internal = 0 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回相对应的<a href="#drawText">drawText</a>()函数所要打印的对齐的文本的边界矩形，如果<em>len</em>>-1，使用字符串的<em>len</em>个字符，或者如果<em>len</em>为-1，使用整个字符串。绘制已经相应的边界矩形，由矩形<em>r</em>来约束。
+<p> <em>intern</em>参数不应该被使用。
+<p> <p>请参考<a href="#drawText">drawText</a>()、<a href="#fontMetrics">fontMetrics</a>()、<a href="qfontmetrics.html#boundingRect">QFontMetrics::boundingRect</a>()和<a href="qt.html#TextFlags-enum">Qt::TextFlags</a>。
+
+<h3 class=fn>const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;&amp; <a name="brush"></a>QPainter::brush () const
+</h3>
+<p> 返回绘制工具的当前画刷。
+<p> <p>请参考<a href="#setBrush">QPainter::setBrush</a>()。
+<p>实例：<a href="themes-example.html#x243">themes/metal.cpp</a>和<a href="themes-example.html#x173">themes/wood.cpp</a>。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="brushOrigin"></a>QPainter::brushOrigin () const
+</h3>
+<p> 返回画刷原点的当前设置。
+<p> <p>请参考<a href="#setBrushOrigin">setBrushOrigin</a>()。
+
+<h3 class=fn><a href="qregion.html">QRegion</a> <a name="clipRegion"></a>QPainter::clipRegion ( <a href="qpainter.html#CoordinateMode-enum">CoordinateMode</a>&nbsp;m = CoordDevice ) const
+</h3>
+返回当前设置的裁剪区域。注意裁剪区域是在物理设备坐标内给定的并且如果<em>m</em>是<a href="#CoordinateMode-enum">CoordDevice</a><em>（默认），不</em>服从任何<a href="coordsys.html">坐标变换</a>。如果<em>m</em>是<a href="#CoordinateMode-enum">CoordPainter</a>，返回的区域是在模型坐标中。
+<p> <p>请参考<a href="#setClipRegion">setClipRegion</a>()、<a href="#setClipRect">setClipRect</a>()、<a href="#setClipping">setClipping</a>()和<a href="#CoordinateMode-enum">QPainter::CoordinateMode</a>。
+<p>实例： <a href="themes-example.html#x174">themes/wood.cpp</a>。
+
+<h3 class=fn><a href="qpaintdevice.html">QPaintDevice</a>&nbsp;* <a name="device"></a>QPainter::device () const
+</h3>
+<p> 返回绘制工具当前正在绘制的绘制设备，如果绘制工具没有激活，返回0。
+<p> <p>请参考<a href="qpaintdevice.html#paintingActive">QPaintDevice::paintingActive</a>()。
+<p>实例：<a href="helpviewer-example.html#x1001">helpviewer/helpwindow.cpp</a>和<a href="listboxcombo-example.html#x1140">listboxcombo/listboxcombo.cpp</a>。
+
+<h3 class=fn>void <a name="drawArc"></a>QPainter::drawArc ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )
+</h3>
+绘制由矩形<em>(x, y, w, h)</em>确定的弧，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+<p> 角度<em>a</em>和<em>alen</em>是1/16度，也就是说一个完整的圆等于5760（16*360）。正数的<em>a</em>和<em>alen</em>意味着逆时针方向并且负值意味着顺时针方向。0度在3点的时钟位置。
+<p> 实例：
+<pre>
+        QPainter p( myWidget );
+        p.<a href="#drawArc">drawArc</a>( 10,10, 70,100, 100*16, 160*16 ); // 绘制一个“(”这样的弧
+    </pre>
+ 
+<p> <p>请参考<a href="#drawPie">drawPie</a>()和<a href="#drawChord">drawChord</a>()。
+
+<h3 class=fn>void <a name="drawArc-2"></a>QPainter::drawArc ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制由矩形<em>r</em>确定的弧，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+
+<h3 class=fn>void <a name="drawChord"></a>QPainter::drawChord ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )
+</h3>
+绘制由矩形<em>(x, y, w, h)</em>确定的弦，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+<p> 这个弦由当前<a href="#brush">brush</a>()填充。
+<p> 角度<em>a</em>和<em>alen</em>是1/16度，也就是说一个完整的圆等于5760（16*360）。正数的<em>a</em>和<em>alen</em>意味着逆时针方向并且负值意味着顺时针方向。0度在3点的时钟位置。
+<p> <p>请参考<a href="#drawArc">drawArc</a>()和<a href="#drawPie">drawPie</a>()。
+
+<h3 class=fn>void <a name="drawChord-2"></a>QPainter::drawChord ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制由矩形<em>r</em>确定的弦，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+
+<h3 class=fn>void <a name="drawConvexPolygon"></a>QPainter::drawConvexPolygon ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;pa, int&nbsp;index = 0, int&nbsp;npoints = -1 )
+</h3>
+绘制<em>pa</em>中从<em>pa[index]</em>开始（<em>index</em>默认为0）的<em>npoints</em>个点确定的凸多边形。
+<p> 如果提供的多边形不是凸的，结果是不确定的。
+<p> 在一些平台上（例如X窗口），这个比<a href="#drawPolygon">drawPolygon</a>()更快。
+<p>实例： <a href="coordsys.html#x2430">aclock/aclock.cpp</a>。
+
+<h3 class=fn>void <a name="drawCubicBezier"></a>QPainter::drawCubicBezier ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;a, int&nbsp;index = 0 )
+</h3>
+绘制<em>a</em>中从<em>a[index]</em>开始（<em>index</em>默认为0）的控制点确定的三次贝塞尔曲线。
+<p> 在<em>a[index + 3]</em>之后的控制点被忽略。如果没有足够的控制点，就什么也不发生。
+
+<h3 class=fn>void <a name="drawEllipse"></a>QPainter::drawEllipse ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+绘制中心在<em>(x + w/2, y + h/2)</em>并且大小为<em>(w, h)</em>的椭圆。
+<p>实例：<a href="drawdemo-example.html#x1169">drawdemo/drawdemo.cpp</a>、<a href="picture-example.html#x80">picture/picture.cpp</a>和<a href="tictac-example.html#x124">tictac/tictac.cpp</a>。
+
+<h3 class=fn>void <a name="drawEllipse-2"></a>QPainter::drawEllipse ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制在<em>r</em>内适合的的椭圆。
+
+<h3 class=fn>void <a name="drawImage"></a>QPainter::drawImage ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qimage.html">QImage</a>&nbsp;&amp;&nbsp;image, int&nbsp;sx = 0, int&nbsp;sy = 0, int&nbsp;sw = -1, int&nbsp;sh = -1, int&nbsp;conversionFlags = 0 )
+</h3>
+在(<em>x</em>, <em>y</em>)点绘制从(<em>sx</em>, <em>sy</em>)开始，<em>sw</em>、<em>sh</em>分别为宽高的像素区域，如果图片需要被转换为像素映射，使用<em>conversionFlags</em>。<em>conversionFlags</em>的默认值为0，关于其它值有什么作用请参考convertFromImage()。
+<p> 如果<a href="#device">device</a>()是<a href="qpixmap.html">QPixmap</a>或<a href="qwidget.html">QWidget</a>，这个函数可以把<em>image</em>转换为像素映射然后再绘制它；如果device()是<a href="qprinter.html">QPrinter</a>或<a href="qpicture.html">QPicture</a>，它会直接绘制它。
+<p> 当在QPrinter上绘制时，图像中的alpha掩码将被忽略。
+<p> <p>请参考<a href="#drawPixmap">drawPixmap</a>()和<a href="qpixmap.html#convertFromImage">QPixmap::convertFromImage</a>()。
+<p>实例： <a href="canvas-example.html#x2717">canvas/canvas.cpp</a>。
+
+<h3 class=fn>void <a name="drawImage-2"></a>QPainter::drawImage ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;, const&nbsp;<a href="qimage.html">QImage</a>&nbsp;&amp;, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;sr, int&nbsp;conversionFlags = 0 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在给定的点绘制图像中的矩形<em>sr</em>。
+
+<h3 class=fn>void <a name="drawImage-3"></a>QPainter::drawImage ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, const&nbsp;<a href="qimage.html">QImage</a>&nbsp;&amp;&nbsp;i, int&nbsp;conversion_flags = 0 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在点<em>p</em>绘制图像<em>i</em>。
+<p> 如果图像需要被修改来适应低分辨率的结果（例如从32位转换为8位），使用<em>conversion_flags</em>来指定你希望发生什么。
+<p> <p>请参考<a href="qt.html#ImageConversionFlags-enum">Qt::ImageConversionFlags</a>。
+
+<h3 class=fn>void <a name="drawImage-4"></a>QPainter::drawImage ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qimage.html">QImage</a>&nbsp;&amp;&nbsp;i )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在矩形<em>r</em>中绘制图像<em>i</em>。如果图像和矩形的大小不同，图像将被伸缩来适应矩形。
+
+<h3 class=fn>void <a name="drawLine"></a>QPainter::drawLine ( int&nbsp;x1, int&nbsp;y1, int&nbsp;x2, int&nbsp;y2 )
+</h3>
+绘制从(<em>x1</em>, <em>y1</em>)到(<em>x2</em>, <em>y2</em>)的直线并且设置当前画笔位置为(<em>x2</em>, <em>y2</em>)。
+<p> <p>请参考<a href="#pen">pen</a>()。
+<p>实例：<a href="coordsys.html#x2431">aclock/aclock.cpp</a>、<a href="drawlines-example.html#x1697">drawlines/connect.cpp</a>、<a href="progress-example.html#x41">progress/progress.cpp</a>、<a href="splitter-example.html#x1235">splitter/splitter.cpp</a>、<a href="themes-example.html#x244">themes/metal.cpp</a>和<a href="themes-example.html#x175">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="drawLine-2"></a>QPainter::drawLine ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p1, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p2 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制从点<em>p1</em>到点<em>p2</em>的直线。
+
+<h3 class=fn>void <a name="drawLineSegments"></a>QPainter::drawLineSegments ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;nlines = -1 )
+</h3>
+绘制<em>a</em>中，从<em>a[index]</em>开始（<em>index</em>默认为0）的点确定的<em>nlines</em>条分隔的线。如果<em>nlines</em>为-1（默认），直到数组结束所有的点都被使用（也就是绘制(a.size()-index)/2个线）。
+<p> 绘制的第一条线是从<em>a[index]</em>到<em>a[index+1]</em>。绘制的第二条线是从<em>a[index+2]</em>到<em>a[index+3]</em>，等等。
+<p> <p>请参考<a href="#drawPolyline">drawPolyline</a>()、<a href="#drawPolygon">drawPolygon</a>()和<a href="qpen.html">QPen</a>。
+
+<h3 class=fn>void <a name="drawPicture"></a>QPainter::drawPicture ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qpicture.html">QPicture</a>&nbsp;&amp;&nbsp;pic )
+</h3>
+在(<em>x</em>, <em>y</em>)重放图片<em>pic</em>。
+<p> 当这个函数被调用时，如果(<em>x</em>, <em>y</em>) = (0, 0)，它就和<a href="qpicture.html#play">QPicture::play</a>()一样了。
+<p>实例：<a href="picture-example.html#x81">picture/picture.cpp</a>和<a href="xform-example.html#x1433">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="drawPicture-2"></a>QPainter::drawPicture ( const&nbsp;<a href="qpicture.html">QPicture</a>&nbsp;&amp;&nbsp;pic )
+</h3>
+<p> <b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 使用另外一个(0, 0)位移的<a href="#drawPicture">QPainter::drawPicture</a>()函数来替代它。
+
+<h3 class=fn>void <a name="drawPicture-3"></a>QPainter::drawPicture ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, const&nbsp;<a href="qpicture.html">QPicture</a>&nbsp;&amp;&nbsp;pic )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在点<em>p</em>绘制图片<em>pic</em>。
+
+<h3 class=fn>void <a name="drawPie"></a>QPainter::drawPie ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;a, int&nbsp;alen )
+</h3>
+绘制由矩形<em>(x, y, w, h)</em>确定的饼图，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+<p> 这个饼图由当前的<a href="#brush">brush</a>()填充。
+<p> 角度<em>a</em>和<em>alen</em>是1/16度，也就是说一个完整的圆等于5760（16*360）。正数的<em>a</em>和<em>alen</em>意味着逆时针方向并且负值意味着顺时针方向。0度在3点的时钟位置。
+<p> <p>请参考<a href="#drawArc">drawArc</a>()和<a href="#drawChord">drawChord</a>()。
+<p>实例：<a href="drawdemo-example.html#x1170">drawdemo/drawdemo.cpp</a>、<a href="grapher-nsplugin-example.html#x2765">grapher/grapher.cpp</a>、<a href="tutorial1-10.html#x2336">t10/cannon.cpp</a>和<a href="tutorial1-09.html#x2327">t9/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="drawPie-2"></a>QPainter::drawPie ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;a, int&nbsp;alen )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制由矩形<em>r</em>确定的饼图，开始角度为<em>a</em>，并且弧长为<em>alen</em>。
+
+<h3 class=fn>void <a name="drawPixmap"></a>QPainter::drawPixmap ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pixmap, int&nbsp;sx = 0, int&nbsp;sy = 0, int&nbsp;sw = -1, int&nbsp;sh = -1 )
+</h3>
+通过把<em>pixmap</em>的一部分复制到绘制设备中，在<em>(x, y)</em>绘制一个像素映射。
+<p> <em>(x, y)</em>指定了要被绘制的绘制设备的左上点。<em>(sx, sy)</em>指定了要被绘制的<em>pixmap</em>中的左上点。默认为(0, 0)。
+<p> <em>(sw, sh)</em>指定了要被绘制的<em>pixmap</em>的大小。默认(-1, -1)，意思是一直到像素映射的右下。
+<p> 当在<a href="qprinter.html">QPrinter</a>上绘制时，当前像素映射的遮蔽或者它的alpha通道被忽略。
+<p> <p>请参考<a href="qpaintdevice.html#bitBlt-2">bitBlt</a>()和<a href="qpixmap.html#setMask">QPixmap::setMask</a>()。
+<p>实例：<a href="grapher-nsplugin-example.html#x2766">grapher/grapher.cpp</a>、<a href="picture-example.html#x82">picture/picture.cpp</a>、<a href="qdir-example.html#x1825">qdir/qdir.cpp</a>、<a href="qtimage-nsplugin-example.html#x2577">qtimage/qtimage.cpp</a>、<a href="showimg-example.html#x1275">showimg/showimg.cpp</a>、<a href="tutorial1-10.html#x2337">t10/cannon.cpp</a>和<a href="xform-example.html#x1434">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="drawPixmap-2"></a>QPainter::drawPixmap ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;sr )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制像素映射<em>pm</em>中的矩形<em>sr</em>，原点就放在点<em>p</em>处。
+
+<h3 class=fn>void <a name="drawPixmap-3"></a>QPainter::drawPixmap ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制像素映射<em>pm</em>，原点就放在点<em>p</em>处。
+
+<h3 class=fn>void <a name="drawPixmap-4"></a>QPainter::drawPixmap ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在矩形<em>r</em>中绘制像素映射<em>pm</em>。如果像素映射和矩形大小不同，像素映射被拉伸来适合这个矩形。
+
+<h3 class=fn>void <a name="drawPoint"></a>QPainter::drawPoint ( int&nbsp;x, int&nbsp;y )
+</h3>
+使用当前画笔在<em>(x, y)</em>绘制一个单一点。
+<p> <p>请参考<a href="qpen.html">QPen</a>。
+<p>实例：<a href="desktop-example.html#x1772">desktop/desktop.cpp</a>和<a href="drawlines-example.html#x1698">drawlines/connect.cpp</a>。
+
+<h3 class=fn>void <a name="drawPoint-2"></a>QPainter::drawPoint ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制点<em>p</em>。
+
+<h3 class=fn>void <a name="drawPoints"></a>QPainter::drawPoints ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;npoints = -1 )
+</h3>
+使用当前画笔绘制一组点<em>a</em>。
+<p> 如果<em>index</em>为非零（默认为0），只有从<em>index</em>开始的点被绘制。如果<em>npoints</em>为负数（默认），从<em>index</em>开始剩余的所有点都被绘制。如果<em>index</em>为0或者正数，则<em>index</em>个点被绘制。
+
+<h3 class=fn>void <a name="drawPolygon"></a>QPainter::drawPolygon ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;a, bool&nbsp;winding = FALSE, int&nbsp;index = 0, int&nbsp;npoints = -1 )
+</h3>
+绘制<em>a</em>中，从<em>a[index]</em>开始（<em>index</em>默认为0）的<em>npoints</em>个点确定的多边形。
+<p> 如果<em>npoints</em>为－1（默认），直到数组的最后的所有点都被使用（也就是说a.size()-index条线确定的多边形）。
+<p> 第一个点总是被连接到最后一个点上。
+<p> 多边形被当前<a href="#brush">brush</a>()填充。如果<em>winding</em>为真，多边形会被使用缠绕填充算法（winding fill algorithm）填充。如果<em>winding</em>为假，多边形会被使用奇偶（交错）填充算法（even-odd (alternative) fill algorithm）填充。
+<p> <p>请参考<a href="#drawLineSegments">drawLineSegments</a>()、<a href="#drawPolyline">drawPolyline</a>()和<a href="qpen.html">QPen</a>。
+<p>实例：<a href="desktop-example.html#x1773">desktop/desktop.cpp</a>和<a href="picture-example.html#x83">picture/picture.cpp</a>。
+
+<h3 class=fn>void <a name="drawPolyline"></a>QPainter::drawPolyline ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;a, int&nbsp;index = 0, int&nbsp;npoints = -1 )
+</h3>
+绘制<em>a</em>中，从<em>a[index]</em>开始（<em>index</em>默认为0）的<em>npoints</em>个点确定的多边形。
+<p> 如果<em>npoints</em>为－1（默认），直到数组的最后的所有点都被使用（也就是说a.size()-index条线确定的多边形）。
+<p> <p>请参考<a href="#drawLineSegments">drawLineSegments</a>()、<a href="#drawPolygon">drawPolygon</a>()和<a href="qpen.html">QPen</a>。
+<p>实例：<a href="scribble-example.html#x938">scribble/scribble.cpp</a>和<a href="themes-example.html#x245">themes/metal.cpp</a>。
+
+<h3 class=fn>void <a name="drawRect"></a>QPainter::drawRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+绘制左上角在<em>(x, y)</em>并且宽为<em>w</em>、高为<em>h</em>的矩形。
+<p> <p>请参考<a href="qpen.html">QPen</a>和<a href="#drawRoundRect">drawRoundRect</a>()。
+<p>实例：<a href="drawdemo-example.html#x1171">drawdemo/drawdemo.cpp</a>、<a href="picture-example.html#x84">picture/picture.cpp</a>、<a href="tutorial1-10.html#x2338">t10/cannon.cpp</a>、<a href="tutorial1-11.html#x2353">t11/cannon.cpp</a>、<a href="tutorial1-09.html#x2328">t9/cannon.cpp</a>、<a href="tooltip-example.html#x563">tooltip/tooltip.cpp</a>和<a href="trivial-nsplugin-example.html#x2571">trivial/trivial.cpp</a>。
+
+<h3 class=fn>void <a name="drawRect-2"></a>QPainter::drawRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制矩形<em>r</em>。
+
+<h3 class=fn>void <a name="drawRoundRect"></a>QPainter::drawRoundRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;xRnd = 25, int&nbsp;yRnd = 25 )
+</h3>
+绘制左上角在<em>(x, y)</em>并且宽为<em>w</em>、高为<em>h</em>的圆角矩形。
+<p> <em>xRnd</em>和<em>yRnd</em>参数指定了角有多圆。0构成了直角，99是最圆。
+<p> 宽和高包括所有的绘制的线。
+<p> <p>请参考<a href="#drawRect">drawRect</a>()和<a href="qpen.html">QPen</a>。
+<p>实例：<a href="drawdemo-example.html#x1172">drawdemo/drawdemo.cpp</a>和<a href="themes-example.html#x176">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="drawRoundRect-2"></a>QPainter::drawRoundRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;xRnd = 25, int&nbsp;yRnd = 25 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制一个圆角矩形<em>r</em>，在每个角的x位置<em>xRnd</em>、y位置<em>yRnd</em>绘制圆角。
+
+<h3 class=fn>void <a name="drawText"></a>QPainter::drawText ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;pos, int&nbsp;len, <a href="qpainter.html#TextDirection-enum">TextDirection</a>&nbsp;dir = Auto )
+</h3>
+<p> 在点<em>p</em>从位置<em>pos</em>开始绘制文本那。如果<em>len</em>为-1，整个字符串被绘制。否则只是绘制开始的<em>len</em>个字符。文本的方向由<em>dir</em>确定。
+<p> <p>请参考<a href="#TextDirection-enum">QPainter::TextDirection</a>。
+<p>实例：<a href="desktop-example.html#x1774">desktop/desktop.cpp</a>、<a href="drawdemo-example.html#x1173">drawdemo/drawdemo.cpp</a>、<a href="grapher-nsplugin-example.html#x2768">grapher/grapher.cpp</a>、<a href="picture-example.html#x85">picture/picture.cpp</a>、<a href="progress-example.html#x42">progress/progress.cpp</a>、<a href="tutorial1-08.html#x2322">t8/cannon.cpp</a>和<a href="trivial-nsplugin-example.html#x2572">trivial/trivial.cpp</a>。
+
+<h3 class=fn>void <a name="drawText-2"></a>QPainter::drawText ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;len = -1, <a href="qpainter.html#TextDirection-enum">TextDirection</a>&nbsp;dir = Auto )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在位置(<em>x</em>, <em>y</em>)绘制给定文本。如果<em>len</em>为1，整个字符串被绘制。否则只是绘制开始的<em>len</em>个字符。文本的方向由<em>dir</em>确定。
+<p> <p>请参考<a href="#TextDirection-enum">QPainter::TextDirection</a>。
+
+<h3 class=fn>void <a name="drawText-3"></a>QPainter::drawText ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;len = -1, <a href="qpainter.html#TextDirection-enum">TextDirection</a>&nbsp;dir = Auto )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在给定的点绘制文本。
+<p> <p>请参考<a href="#TextDirection-enum">QPainter::TextDirection</a>。
+
+<h3 class=fn>void <a name="drawText-4"></a>QPainter::drawText ( int&nbsp;x, int&nbsp;y, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;pos, int&nbsp;len, <a href="qpainter.html#TextDirection-enum">TextDirection</a>&nbsp;dir = Auto )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在点<em>(x, y)</em>从位置<em>pos</em>开始绘制文本那。如果<em>len</em>为-1，整个字符串被绘制。否则只是绘制开始的<em>len</em>个字符。文本的方向由<em>dir</em>确定。
+
+
+<h3 class=fn>void <a name="drawText-5"></a>QPainter::drawText ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, int&nbsp;flags, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;, int&nbsp;len = -1, <a href="qrect.html">QRect</a>&nbsp;*&nbsp;br = 0, QTextParag&nbsp;**&nbsp;internal = 0 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在从(<em>x</em>, <em>y</em>)开始，宽为<em>w</em>，高为<em>h</em>的矩形中绘制给定文本。如果<em>len</em>为-1，整个字符串被绘制。否则只是绘制开始的<em>len</em>个字符。文本的标记由<em>flags</em>参数中的<a href="qt.html#AlignmentFlags-enum">Qt::AlignmentFlags</a>和<a href="qt.html#TextFlags-enum">Qt::TextFlags</a>或运算的结果给定。<em>br</em>（如果非零）参数只是在内部使用。
+
+<h3 class=fn>void <a name="drawText-6"></a>QPainter::drawText ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, int&nbsp;tf, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str, int&nbsp;len = -1, <a href="qrect.html">QRect</a>&nbsp;*&nbsp;brect = 0, QTextParag&nbsp;**&nbsp;internal = 0 )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在矩形<em>r</em>中从<em>str</em>中绘制最多<em>len</em>个字符。
+<p> 注意<em>r</em>.y()的意思和两个<a href="#drawText">drawText</a>()的变体不同。
+<p> 这个函数绘制格式化的文本。<em>tf</em>文本格式是<a href="qt.html#AlignmentFlags-enum">Qt::AlignmentFlags</a>和<a href="qt.html#TextFlags-enum">Qt::TextFlags</a>或运算的结果。
+<p> 水平对齐方式默认为AlignAuto并且垂直对齐方式默认为AlignTop。
+<p> <em>brect</em>（如果非零）被设置为输出的矩形的实际边界。<em>internal</em>还是用于内部。
+<p> <p>请参考<a href="#boundingRect">boundingRect</a>()。
+
+<h3 class=fn>void <a name="drawTiledPixmap"></a>QPainter::drawTiledPixmap ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pixmap, int&nbsp;sx = 0, int&nbsp;sy = 0 )
+</h3>
+在指定的矩形中绘制平铺的<em>pixmap</em>。
+<p> <em>(x, y)</em>指定了绘制设备的左上角，宽和高由<em>w</em>和<em>h</em>给定。<em>(sx, sy)</em>指定了所要绘制的<em>pixmap</em>的左上角。默认为(0, 0)。
+<p> 调用<a href="#drawTiledPixmap">drawTiledPixmap</a>()和在一个区域上使用一个像素映射多次调用<a href="#drawPixmap">drawPixmap</a>()相似，但是根据底下的窗口系统，这个有更多潜在的效率。
+<p> <p>请参考<a href="#drawPixmap">drawPixmap</a>()。
+
+<h3 class=fn>void <a name="drawTiledPixmap-2"></a>QPainter::drawTiledPixmap ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;sp )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在原点在<em>sp</em>的矩形<em>r</em>中绘制平铺的<em>pm</em>。
+
+<h3 class=fn>void <a name="drawTiledPixmap-3"></a>QPainter::drawTiledPixmap ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pm )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在矩形<em>r</em>中绘制平铺的<em>pm</em>。
+
+<h3 class=fn>void <a name="drawWinFocusRect"></a>QPainter::drawWinFocusRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;bgColor )
+</h3>
+绘制一个左上角在(<em>x</em>, <em>y</em>)并且宽为<em>w</em>、高为<em>h</em>的窗口焦点矩形，使用的画笔颜色和<em>bgColor</em>形成反差。
+<p> 这个函数绘制点画矩形（XOR不被使用）用来指出<a href="focus.html#keyboard-focus">键盘焦点</a>（当<a href="qapplication.html#style">QApplication::style</a>()是<tt>WindowStyle</tt>的时候）。
+<p> 用来绘制矩形的画笔颜色不是黑色就是白色，依赖于<em>bgColor</em>的颜色（请参考QColor::gray()）。
+<p> <b>警告：</b>如果坐标系统已经被<a href="#rotate">旋转</a>或者<a href="#shear">修剪</a>，这个函数什么也不绘制。
+<p> <p>请参考<a href="#drawRect">drawRect</a>()和<a href="qapplication.html#style">QApplication::style</a>()。
+
+<h3 class=fn>void <a name="drawWinFocusRect-2"></a>QPainter::drawWinFocusRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制一个左上角在(<em>x</em>, <em>y</em>)并且宽为<em>w</em>、高为<em>h</em>的窗口焦点矩形。
+<p> 这个函数绘制点画矩形（XOR不被使用）用来指出<a href="focus.html#keyboard-focus">键盘焦点</a>（当<a href="qapplication.html#style">QApplication::style</a>()是<tt>WindowStyle</tt>的时候）。
+<p> <b>警告：</b>如果坐标系统已经被<a href="#rotate">旋转</a>或者<a href="#shear">修剪</a>，这个函数什么也不绘制。
+<p> <p>请参考<a href="#drawRect">drawRect</a>()和<a href="qapplication.html#style">QApplication::style</a>()。
+
+<h3 class=fn>void <a name="drawWinFocusRect-3"></a>QPainter::drawWinFocusRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制矩形<em>r</em>作为窗口焦点矩形。
+
+<h3 class=fn>void <a name="drawWinFocusRect-4"></a>QPainter::drawWinFocusRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;bgColor )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 使用背景色<em>bgColor</em>绘制矩形<em>r</em>作为窗口焦点矩形。
+
+<h3 class=fn>bool <a name="end"></a>QPainter::end ()
+</h3>
+结束绘制。绘制时使用的任何资源都被释放。
+<p> 注意虽然你几乎不需要调用<a href="#end">end</a>()，析构函数将会执行它，但是至少还有一种情况需要它，就是双重缓冲。
+<p> <pre>
+        QPainter p( myPixmap, this )
+        // ...
+        p.<a href="#end">end</a>(); // 停止在myPixmap上的绘制
+        p.<a href="#begin">begin</a>( this );
+        p.<a href="#drawPixmap">drawPixmap</a>( myPixmap );
+    </pre>
+ 
+<p> 因为当它正在被绘制的时候，你不能绘制一个<a href="qpixmap.html">QPixmap</a>，它需要关闭激活的绘制工具。
+<p> <p>请参考<a href="#begin">begin</a>()和<a href="#isActive">isActive</a>()。
+<p>实例：<a href="aclock-example.html#x1204">aclock/aclock.cpp</a>、<a href="simple-application-example.html#x1527">application/application.cpp</a>、<a href="desktop-example.html#x1775">desktop/desktop.cpp</a>、<a href="hello-example.html#x1601">hello/hello.cpp</a>、<a href="picture-example.html#x86">picture/picture.cpp</a>、<a href="tutorial1-10.html#x2339">t10/cannon.cpp</a>和<a href="xform-example.html#x1437">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="eraseRect"></a>QPainter::eraseRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+<p> 擦除<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>中的区域。等价于<tt>fillRect( x, y, w, h, backgroundColor() )</tt>。
+<p>实例：<a href="listboxcombo-example.html#x1141">listboxcombo/listboxcombo.cpp</a>和<a href="showimg-example.html#x1276">showimg/showimg.cpp</a>。
+
+<h3 class=fn>void <a name="eraseRect-2"></a>QPainter::eraseRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 擦除矩形<em>r</em>中的区域。
+
+<h3 class=fn>void <a name="fillRect"></a>QPainter::fillRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;&amp;&nbsp;brush )
+</h3>
+在矩形<em>(x, y, w, h)</em>中使用<em>brush</em>填充。
+<p> 你可以指定<a href="qcolor.html">QColor</a>作为<em>brush</em>，因为<a href="qbrush.html">QBrush</a>的一个构造函数可以得到QColor参数并且创建一个实心模式的画刷。
+<p> <p>请参考<a href="#drawRect">drawRect</a>()。
+<p>实例：<a href="listboxcombo-example.html#x1142">listboxcombo/listboxcombo.cpp</a>、<a href="progress-example.html#x43">progress/progress.cpp</a>、<a href="qdir-example.html#x1826">qdir/qdir.cpp</a>、<a href="qfd-example.html#x1980">qfd/fontdisplayer.cpp</a>、<a href="themes-example.html#x246">themes/metal.cpp</a>和<a href="themes-example.html#x177">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="fillRect-2"></a>QPainter::fillRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;&amp;&nbsp;brush )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 在矩形<em>r</em>中使用<em>brush</em>填充。
+
+<h3 class=fn>void <a name="flush"></a>QPainter::flush ( const&nbsp;<a href="qregion.html">QRegion</a>&nbsp;&amp;&nbsp;region, <a href="qpainter.html#CoordinateMode-enum">CoordinateMode</a>&nbsp;cm = CoordDevice )
+</h3>
+使用裁剪模式<em>cm</em>刷新在区域<em>region</em>中的任何缓存的绘制操作。
+<p> 如果平台不支持刷新一个指定区域，这个刷新将更新整个设备。
+<p> <p>请参考<a href="#CoordinateMode-enum">CoordinateMode</a>。
+
+<h3 class=fn>void <a name="flush-2"></a>QPainter::flush ()
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 刷新任何缓存的绘制操作。
+
+<h3 class=fn>const&nbsp;<a href="qfont.html">QFont</a>&nbsp;&amp; <a name="font"></a>QPainter::font () const
+</h3>
+<p> 返回当前设置的绘图工具字体。
+<p> <p>请参考<a href="#setFont">setFont</a>()和<a href="qfont.html">QFont</a>。
+<p>实例： <a href="fileiconview-example.html#x857">fileiconview/qfileiconview.cpp</a>。
+
+<h3 class=fn><a href="qfontinfo.html">QFontInfo</a> <a name="fontInfo"></a>QPainter::fontInfo () const
+</h3>
+如果绘图工具是激活的，返回绘图工具的字体信息。它不能获得未激活的绘图工具的字体信息，所以如果绘图工具未激活，返回值是未定义的。
+<p> <p>请参考<a href="#fontMetrics">fontMetrics</a>()和<a href="#isActive">isActive</a>()。
+
+<h3 class=fn><a href="qfontmetrics.html">QFontMetrics</a> <a name="fontMetrics"></a>QPainter::fontMetrics () const
+</h3>
+如果绘图工具是激活的，返回绘图工具的字体规格。它不能获得未激活的绘图工具的字体规格，所以如果绘图工具未激活，返回值是未定义的。
+<p> <p>请参考<a href="#fontInfo">fontInfo</a>()和<a href="#isActive">isActive</a>()。
+<p>实例：<a href="qaction-application-example.html#x1083">action/application.cpp</a>、<a href="simple-application-example.html#x1528">application/application.cpp</a>、<a href="desktop-example.html#x1776">desktop/desktop.cpp</a>、<a href="drawdemo-example.html#x1174">drawdemo/drawdemo.cpp</a>、<a href="helpviewer-example.html#x1003">helpviewer/helpwindow.cpp</a>、<a href="mdi-example.html#x2029">mdi/application.cpp</a>和<a href="qwerty-example.html#x382">qwerty/qwerty.cpp</a>。
+
+<h3 class=fn>HDC <a name="handle"></a>QPainter::handle () const
+</h3>
+<p> 返回绘制中使用的由平台决定的句柄。使用这个函数是无法移植的。
+
+<h3 class=fn>bool <a name="hasClipping"></a>QPainter::hasClipping () const
+</h3>
+<p> 如果裁剪已经被设置，返回真，否则返回假。
+<p> <p>请参考<a href="#setClipping">setClipping</a>()。
+<p>实例： <a href="themes-example.html#x178">themes/wood.cpp</a>。
+
+<h3 class=fn>bool <a name="hasViewXForm"></a>QPainter::hasViewXForm () const
+</h3>
+<p> 如果视转换生效，返回真，否则返回假。
+<p> <p>请参考<a href="#setViewXForm">setViewXForm</a>()和<a href="#xForm">xForm</a>()。
+
+<h3 class=fn>bool <a name="hasWorldXForm"></a>QPainter::hasWorldXForm () const
+</h3>
+<p> 如果世界转换生效，返回真，否则返回假。
+<p> <p>请参考<a href="#setWorldXForm">setWorldXForm</a>()。
+
+<h3 class=fn>bool <a name="isActive"></a>QPainter::isActive () const
+</h3>
+<p> 如果绘图工具正在激活绘制，也就是说<a href="#begin">begin</a>()已经被调用并且<a href="#end">end</a>()还没有被调用，返回真，否则返回假。
+<p> <p>请参考<a href="qpaintdevice.html#paintingActive">QPaintDevice::paintingActive</a>()。
+<p>实例： <a href="desktop-example.html#x1777">desktop/desktop.cpp</a>。
+
+<h3 class=fn>void <a name="lineTo"></a>QPainter::lineTo ( int&nbsp;x, int&nbsp;y )
+</h3>
+绘制从当前画笔位置到<em>(x, y)</em>的线并且设置<em>(x, y)</em>为新的当前画笔位置。
+<p> <p>请参考<a href="qpen.html">QPen</a>、<a href="#moveTo">moveTo</a>()、<a href="#drawLine">drawLine</a>()和<a href="#pos">pos</a>()。
+
+<h3 class=fn>void <a name="lineTo-2"></a>QPainter::lineTo ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 绘制到典<em>p</em>的线。
+
+<h3 class=fn>void <a name="moveTo"></a>QPainter::moveTo ( int&nbsp;x, int&nbsp;y )
+</h3>
+设置当前画笔位置为<em>(x, y)</em>。
+<p> <p>请参考<a href="#lineTo">lineTo</a>()和<a href="#pos">pos</a>()。
+
+<h3 class=fn>void <a name="moveTo-2"></a>QPainter::moveTo ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置当前画笔位置为点<em>p</em>。
+
+<h3 class=fn>const&nbsp;<a href="qpen.html">QPen</a>&nbsp;&amp; <a name="pen"></a>QPainter::pen () const
+</h3>
+<p> 返回绘图工具的当前画笔。
+<p> <p>请参考<a href="#setPen">setPen</a>()。
+<p>实例：<a href="progress-example.html#x44">progress/progress.cpp</a>和<a href="themes-example.html#x179">themes/wood.cpp</a>。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="pos"></a>QPainter::pos () const
+</h3>
+返回画笔的当前位置。
+<p> <p>请参考<a href="#moveTo">moveTo</a>()。
+
+<h3 class=fn><a href="qt.html#RasterOp-enum">RasterOp</a> <a name="rasterOp"></a>QPainter::rasterOp () const
+</h3>
+<p> 返回当前的<a href="qt.html#RasterOp">光栅操作</a>。
+<p> <p>请参考<a href="#setRasterOp">setRasterOp</a>()和<a href="qt.html#RasterOp-enum">RasterOp</a>。
+
+<h3 class=fn>void <a name="redirect"></a>QPainter::redirect ( <a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;pdev, <a href="qpaintdevice.html">QPaintDevice</a>&nbsp;*&nbsp;replacement )<tt> [static]</tt>
+</h3>
+重定向绘制设备<em>pdev</em>的所有绘制指令到另一个绘制设备<em>replacement</em>，除非<em>replacement</em>为0。如果<em>replacement</em>为0，<em>pdev</em>的重定向被移除。
+<p> 通常情况下，你将可能发现调用<a href="qpixmap.html#grabWidget">QPixmap::grabWidget</a>()或者<a href="qpixmap.html#grabWindow">QPixmap::grabWindow</a>()是更容易的解决方法。
+
+<h3 class=fn>void <a name="resetXForm"></a>QPainter::resetXForm ()
+</h3>
+重置使用<a href="#translate">translate</a>()、<a href="#scale">scale</a>()、<a href="#shear">shear</a>()、<a href="#rotate">rotate</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()、<a href="#setViewport">setViewport</a>()和<a href="#setWindow">setWindow</a>()完成的任何转换。
+<p> <p>请参考<a href="#worldMatrix">worldMatrix</a>()、<a href="#viewport">viewport</a>()和<a href="#window">window</a>()。
+
+<h3 class=fn>void <a name="restore"></a>QPainter::restore ()
+</h3>
+恢复当前绘图工具状态（从栈中弹出一个保存的状态）。
+<p> <p>请参考<a href="#save">save</a>()。
+<p>实例： <a href="coordsys.html#x2432">aclock/aclock.cpp</a>。
+
+<h3 class=fn>void <a name="restoreWorldMatrix"></a>QPainter::restoreWorldMatrix ()
+</h3> 
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 我们建议使用<a href="#restore">restore</a>()来替代它。
+
+<h3 class=fn>void <a name="rotate"></a>QPainter::rotate ( double&nbsp;a )
+</h3>
+逆时针方向旋转坐标系统<em>a</em>度。
+<p> <p>请参考<a href="#translate">translate</a>()、<a href="#scale">scale</a>()、<a href="#shear">shear</a>()、<a href="#resetXForm">resetXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()和<a href="#xForm">xForm</a>()。
+<p>实例：<a href="coordsys.html#x2433">aclock/aclock.cpp</a>、<a href="tutorial1-10.html#x2340">t10/cannon.cpp</a>和<a href="tutorial1-09.html#x2329">t9/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="save"></a>QPainter::save ()
+</h3>
+保存当前绘图工具状态（把状态压到栈中）。<a href="#save">save</a>()必须被一个相对应的<a href="#restore">restore</a>()跟随。<a href="#end">end</a>()将释放栈。
+<p> <p>请参考<a href="#restore">restore</a>()。
+<p>实例： <a href="coordsys.html#x2434">aclock/aclock.cpp</a>。
+
+<h3 class=fn>void <a name="saveWorldMatrix"></a>QPainter::saveWorldMatrix ()
+</h3> 
+<b>这个函数是废弃的。</b>它的提供只是为了保证旧代码能够工作。我们强烈建议在新代码中不要使用它。
+<p> 我们建议使用<a href="#save">save</a>()来替代它。
+
+<h3 class=fn>void <a name="scale"></a>QPainter::scale ( double&nbsp;sx, double&nbsp;sy )
+</h3>
+通过<em>(sx, sy)</em>拉伸坐标系统。
+<p> <p>请参考<a href="#translate">translate</a>()、<a href="#shear">shear</a>()、<a href="#rotate">rotate</a>()、<a href="#resetXForm">resetXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()和<a href="#xForm">xForm</a>()。
+<p>实例： <a href="xform-example.html#x1438">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="setBackgroundColor"></a>QPainter::setBackgroundColor ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;c )
+</h3>
+设置绘图工具的背景色为<em>c</em>。
+<p> 背景色是当绘制不透明文本、点画线和位图时填充的颜色。背景色在透明背景模式（这是默认的）下无效。
+<p> <p>请参考<a href="#backgroundColor">backgroundColor</a>()、<a href="#setBackgroundMode">setBackgroundMode</a>()和<a href="qt.html#BackgroundMode-enum">BackgroundMode</a>。
+
+<h3 class=fn>void <a name="setBackgroundMode"></a>QPainter::setBackgroundMode ( <a href="qt.html#BGMode-enum">BGMode</a>&nbsp;m )
+</h3>
+设置绘图工具的背景模式为<em>m</em>，它必须是<a href="qt.html#BGMode-enum">TransparentMode</a>（默认）或者<a href="qt.html#BGMode-enum">OpaqueMode</a>。
+<p> 透明模式绘制不设置背景像素绘制点画线和文本。不透明模式使用当前背景颜色填充这些空间。
+<p> 注意为了绘制透明的位图和像素映射，你必须使用<a href="qpixmap.html#setMask">QPixmap::setMask</a>()。
+<p> <p>请参考<a href="#backgroundMode">backgroundMode</a>()和<a href="#setBackgroundColor">setBackgroundColor</a>()。
+<p>实例： <a href="picture-example.html#x87">picture/picture.cpp</a>。
+
+<h3 class=fn>void <a name="setBrush"></a>QPainter::setBrush ( <a href="qt.html#BrushStyle-enum">BrushStyle</a>&nbsp;style )
+</h3>
+设置绘图工具的画刷为黑色和特定的<em>style</em>。
+<p> <p>请参考<a href="#brush">brush</a>()和<a href="qbrush.html">QBrush</a>。
+<p>实例：<a href="aclock-example.html#x1208">aclock/aclock.cpp</a>、<a href="drawdemo-example.html#x1175">drawdemo/drawdemo.cpp</a>、<a href="picture-example.html#x88">picture/picture.cpp</a>、<a href="tutorial1-10.html#x2341">t10/cannon.cpp</a>、<a href="tutorial1-09.html#x2330">t9/cannon.cpp</a>、<a href="themes-example.html#x180">themes/wood.cpp</a>和<a href="tooltip-example.html#x564">tooltip/tooltip.cpp</a>。
+
+<h3 class=fn>void <a name="setBrush-2"></a>QPainter::setBrush ( const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;&amp;&nbsp;brush )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具的画刷为<em>brush</em>。
+<p> <em>brush</em>定义了外形如何被填充。
+<p> <p>请参考<a href="#brush">brush</a>()。
+
+<h3 class=fn>void <a name="setBrush-3"></a>QPainter::setBrush ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;color )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具的画刷具有风格<a href="qt.html#BrushStyle-enum">SolidPattern</a>和特定的<em>color</em>。
+<p> <p>请参考<a href="#brush">brush</a>()和<a href="qbrush.html">QBrush</a>。
+
+<h3 class=fn>void <a name="setBrushOrigin"></a>QPainter::setBrushOrigin ( int&nbsp;x, int&nbsp;y )
+</h3>
+设置画刷原点为<em>(x, y)</em>。
+<p> 画刷原点指定绘图工具的画刷的(0, 0)坐标。这个设置只适用于模式画刷和像素映射画刷。
+<p> <p>请参考<a href="#brushOrigin">brushOrigin</a>()。
+
+<h3 class=fn>void <a name="setBrushOrigin-2"></a>QPainter::setBrushOrigin ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置画刷原点为点<em>p</em>。
+
+<h3 class=fn>void <a name="setClipRect"></a>QPainter::setClipRect ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, <a href="qpainter.html#CoordinateMode-enum">CoordinateMode</a>&nbsp;m = CoordDevice )
+</h3>
+<p> 设置裁剪区域为矩形<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>并且使裁剪生效。裁剪模式被设置为<em>m</em>。
+<p> 注意裁剪区域是在物理设备坐标中给定的并且如果<em>m</em>等于<a href="#CoordinateMode-enum">CoordDevice</a>（默认），<em>不</em>服从任何<a href="coordsys.html">坐标转换</a>。如果<em>m</em>等于<a href="#CoordinateMode-enum">CoordPainter</a>，返回的区域在模型坐标中。
+<p> <p>请参考<a href="#setClipRegion">setClipRegion</a>()、<a href="#clipRegion">clipRegion</a>()、<a href="#setClipping">setClipping</a>()和<a href="#CoordinateMode-enum">QPainter::CoordinateMode</a>。
+<p>实例：<a href="grapher-nsplugin-example.html#x2770">grapher/grapher.cpp</a>、<a href="progress-example.html#x45">progress/progress.cpp</a>、<a href="qtimage-nsplugin-example.html#x2578">qtimage/qtimage.cpp</a>、<a href="showimg-example.html#x1277">showimg/showimg.cpp</a>、<a href="splitter-example.html#x1236">splitter/splitter.cpp</a>和<a href="trivial-nsplugin-example.html#x2573">trivial/trivial.cpp</a>。
+
+<h3 class=fn>void <a name="setClipRect-2"></a>QPainter::setClipRect ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r, <a href="qpainter.html#CoordinateMode-enum">CoordinateMode</a>&nbsp;m = CoordDevice )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置裁剪区域为矩形<em>r</em>并且使裁剪生效。裁剪模式被设置为<em>m</em>。
+<p> <p>请参考<a href="#CoordinateMode-enum">CoordinateMode</a>。
+
+<h3 class=fn>void <a name="setClipRegion"></a>QPainter::setClipRegion ( const&nbsp;<a href="qregion.html">QRegion</a>&nbsp;&amp;&nbsp;rgn, <a href="qpainter.html#CoordinateMode-enum">CoordinateMode</a>&nbsp;m = CoordDevice )
+</h3>
+设置裁剪区域为<em>rgn</em>并且使裁剪生效。裁剪模式被设置为<em>m</em>。
+<p> 注意裁剪区域是在物理设备坐标中给定的并且<em>不</em>服从任何<a href="coordsys.html">坐标转换</a>。
+<p> <p>请参考<a href="#setClipRect">setClipRect</a>()、<a href="#clipRegion">clipRegion</a>()、<a href="#setClipping">setClipping</a>()和<a href="#CoordinateMode-enum">CoordinateMode</a>。
+<p>实例：<a href="qfd-example.html#x1981">qfd/fontdisplayer.cpp</a>和<a href="themes-example.html#x181">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="setClipping"></a>QPainter::setClipping ( bool&nbsp;enable )
+</h3>
+如果<em>enable</em>为真，使裁剪生效，或者如果<em>enable</em>为假，使裁剪失效。
+<p> <p>请参考<a href="#hasClipping">hasClipping</a>()、<a href="#setClipRect">setClipRect</a>()和<a href="#setClipRegion">setClipRegion</a>()。
+<p>实例： <a href="themes-example.html#x182">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="setFont"></a>QPainter::setFont ( const&nbsp;<a href="qfont.html">QFont</a>&nbsp;&amp;&nbsp;font )
+</h3>
+设置绘图工具的字体为<em>font</em>。
+<p> 这个字体被后面的<a href="#drawText">drawText</a>()函数使用。文本颜色和画笔颜色相同。
+<p> <p>请参考<a href="#font">font</a>()和<a href="#drawText">drawText</a>()。
+<p>实例：<a href="simple-application-example.html#x1529">application/application.cpp</a>、<a href="drawdemo-example.html#x1176">drawdemo/drawdemo.cpp</a>、<a href="grapher-nsplugin-example.html#x2771">grapher/grapher.cpp</a>、<a href="hello-example.html#x1602">hello/hello.cpp</a>、<a href="picture-example.html#x89">picture/picture.cpp</a>、<a href="tutorial1-13.html#x2390">t13/cannon.cpp</a>和<a href="xform-example.html#x1439">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="setPen"></a>QPainter::setPen ( const&nbsp;<a href="qpen.html">QPen</a>&nbsp;&amp;&nbsp;pen )
+</h3>
+设置新的绘图工具画笔。
+<p> <em>pen</em>定义了如何绘制线和轮廓，并且它也定义了文本颜色。
+<p> <p>请参考<a href="#pen">pen</a>()。
+<p>实例：<a href="desktop-example.html#x1779">desktop/desktop.cpp</a>、<a href="drawdemo-example.html#x1177">drawdemo/drawdemo.cpp</a>、<a href="progress-example.html#x46">progress/progress.cpp</a>、<a href="tutorial1-10.html#x2342">t10/cannon.cpp</a>、<a href="tutorial1-09.html#x2331">t9/cannon.cpp</a>、<a href="themes-example.html#x248">themes/metal.cpp</a>和<a href="themes-example.html#x183">themes/wood.cpp</a>。
+
+<h3 class=fn>void <a name="setPen-2"></a>QPainter::setPen ( <a href="qt.html#PenStyle-enum">PenStyle</a>&nbsp;style )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具画笔有风格<em>style</em>、宽为0并且为黑色。
+<p> <p>请参考<a href="#pen">pen</a>()和<a href="qpen.html">QPen</a>。
+
+<h3 class=fn>void <a name="setPen-3"></a>QPainter::setPen ( const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;color )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具画笔有风格<a href="qt.html#PenStyle-enum">SolidLine</a>、宽为0并且为特定的<em>color</em>。
+<p> <p>请参考<a href="#pen">pen</a>()和<a href="qpen.html">QPen</a>。
+
+<h3 class=fn>void <a name="setRasterOp"></a>QPainter::setRasterOp ( <a href="qt.html#RasterOp-enum">RasterOp</a>&nbsp;r )
+</h3>
+设置<a href="qt.html#RasterOp">光栅操作</a>为<em>r</em>。默认为<a href="qt.html#RasterOp-enum">CopyROP</a>。
+<p> <p>请参考<a href="#rasterOp">rasterOp</a>()和<a href="qt.html#RasterOp-enum">Qt::RasterOp</a>。
+
+<h3 class=fn>void <a name="setTabArray"></a>QPainter::setTabArray ( int&nbsp;*&nbsp;ta )
+</h3>
+设置tab stop数组为<em>ta</em>。这将把tab stop放到<em>ta[0]</em>、<em>ta[1]</em>等等。这个数组是以零结束的。
+<p> 如果tab数组和tab stop大小被设置，tab数组先生效。
+<p> <p>请参考<a href="#tabArray">tabArray</a>()、<a href="#setTabStops">setTabStops</a>()、<a href="#drawText">drawText</a>()和<a href="#fontMetrics">fontMetrics</a>()。
+
+<h3 class=fn>void <a name="setTabStops"></a>QPainter::setTabStops ( int&nbsp;ts )
+</h3>
+设置tab stop宽度为<em>ts</em>，也就是说在<em>ts</em>、2*<em>ts</em>、3*<em>ts</em>等等定位tab stop。
+<p> 当绘制设置了<a href="qt.html#TextFlags-enum">ExpandTabs</a>的格式化文本时，tab stop被用到。只有在没有tab数组被设置（这是默认的情况）的情况下，这个确定的tab stop值被使用。
+<p> <p>请参考<a href="#tabStops">tabStops</a>()、<a href="#setTabArray">setTabArray</a>()、<a href="#drawText">drawText</a>()和<a href="#fontMetrics">fontMetrics</a>()。
+
+<h3 class=fn>void <a name="setViewXForm"></a>QPainter::setViewXForm ( bool&nbsp;enable )
+</h3>
+如果<em>enable</em>为真，使视转换生效，或者如果<em>enable</em>为假，使视转换失效。
+<p> <p>请参考<a href="#hasViewXForm">hasViewXForm</a>()、<a href="#setWindow">setWindow</a>()、<a href="#setViewport">setViewport</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()、<a href="#setWorldXForm">setWorldXForm</a>()和<a href="#xForm">xForm</a>()。
+
+<h3 class=fn>void <a name="setViewport"></a>QPainter::setViewport ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+设置绘图工具的视口矩形视转换并且使视转换生效。
+<p> 视口矩形是视转换的一部分。视口指定了设备坐标系统并且被<em>x</em>、<em>y</em>、<em>w</em>宽和<em>h</em>高参数指定。它的姐妹<a href="#window">window</a>()指定了逻辑坐标系统。
+<p> 默认视口矩形和设备矩形一样。关于坐标转换的概述请参考<a href="coordsys.html">坐标系统概述</a>。
+<p> <p>请参考<a href="#viewport">viewport</a>()、<a href="#setWindow">setWindow</a>()、<a href="#setViewXForm">setViewXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()、<a href="#setWorldXForm">setWorldXForm</a>()和<a href="#xForm">xForm</a>()。
+<p>实例： <a href="coordsys.html#x2435">aclock/aclock.cpp</a>。
+
+<h3 class=fn>void <a name="setViewport-2"></a>QPainter::setViewport ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具的视口为矩形<em>r</em>。
+
+<h3 class=fn>void <a name="setWindow"></a>QPainter::setWindow ( int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h )
+</h3>
+设置绘图工具的窗口矩形视转换并且使视转换生效。
+<p> 窗口矩形是视转换的一部分。窗口指定了逻辑坐标系统并且被<em>x</em>、<em>y</em>、<em>w</em>宽和<em>h</em>高参数指定。它的姐妹<a href="#viewport">viewport</a>()指定了设备坐标系统。
+<p> 默认窗口矩形和设备矩形一样。关于坐标转换的概述请参考<a href="coordsys.html">坐标系统概述</a>。
+<p> <p>请参考<a href="#window">window</a>()、<a href="#setViewport">setViewport</a>()、<a href="#setViewXForm">setViewXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()和<a href="#setWorldXForm">setWorldXForm</a>()。
+<p>实例：<a href="coordsys.html#x2436">aclock/aclock.cpp</a>和<a href="drawdemo-example.html#x1178">drawdemo/drawdemo.cpp</a>。
+
+<h3 class=fn>void <a name="setWindow-2"></a>QPainter::setWindow ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;r )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 设置绘图工具的窗口为矩形<em>r</em>。
+
+<h3 class=fn>void <a name="setWorldMatrix"></a>QPainter::setWorldMatrix ( const&nbsp;<a href="qwmatrix.html">QWMatrix</a>&nbsp;&amp;&nbsp;m, bool&nbsp;combine = FALSE )
+</h3>
+设置世界变换矩阵为<em>m</em>并且使世界变换生效。
+<p> 如果<em>combine</em>为真，那么<em>m</em>与当前变换矩阵组合，否则<em>m</em>替代当前变换矩阵。
+<p> 如果<em>m</em>是单位矩阵并且<em>combine</em>为假，这个函数调用<a href="#setWorldXForm">setWorldXForm</a>(FALSE)。（单位矩阵是<a href="qwmatrix.html#m11">QWMatrix::m11</a>()和<a href="qwmatrix.html#m22">QWMatrix::m22</a>()为1.0并且其它为0.0的矩阵。）
+<p> 在视变换（也就是<a href="#setWindow">window</a>和<a href="#setViewport">viewport</a>）之后世界变换被应用。
+<p> 下列的函数不使用QWMatrix就可以转换坐标系统：
+<ul>
+<li> <a href="#translate">translate</a>()
+<li> <a href="#scale">scale</a>()
+<li> <a href="#shear">shear</a>()
+<li> <a href="#rotate">rotate</a>()
+</ul>
+<p> 它们在绘制工具的<a href="#worldMatrix">worldMatrix</a>()上操作并且像这样重新实现：
+<p> <pre>
+        void QPainter::rotate( double a )
+        {
+            <a href="qwmatrix.html">QWMatrix</a> m;
+            m.<a href="qwmatrix.html#rotate">rotate</a>( a );
+            <a href="#setWorldMatrix">setWorldMatrix</a>( m, TRUE );
+        }
+    </pre>
+ 
+<p> 注意当你在<a href="qpicture.html">QPicture</a>中绘制时，你应该总是使用<em>combine</em>。否则它也许不可能会使用其它变换来重放图片。使用translate()、scale()等等是安全的。
+<p> 关于坐标系统的简要概述，请参考<a href="coordsys.html">坐标系统概述</a>。
+<p> <p>请参考<a href="#worldMatrix">worldMatrix</a>()、<a href="#setWorldXForm">setWorldXForm</a>()、<a href="#setWindow">setWindow</a>()、<a href="#setViewport">setViewport</a>()、<a href="#setViewXForm">setViewXForm</a>()、<a href="#xForm">xForm</a>()和<a href="qwmatrix.html">QWMatrix</a>。
+<p>实例：<a href="drawdemo-example.html#x1179">drawdemo/drawdemo.cpp</a>和<a href="xform-example.html#x1441">xform/xform.cpp</a>。
+
+<h3 class=fn>void <a name="setWorldXForm"></a>QPainter::setWorldXForm ( bool&nbsp;enable )
+</h3>
+如果<em>enable</em>为真，使世界变换生效，或者如果<em>enable</em>为假，使世界变换失效。世界变换矩阵不被改变。
+<p> <p>请参考<a href="#setWorldMatrix">setWorldMatrix</a>()、<a href="#setWindow">setWindow</a>()、<a href="#setViewport">setViewport</a>()、<a href="#setViewXForm">setViewXForm</a>()和<a href="#xForm">xForm</a>()。
+
+<h3 class=fn>void <a name="shear"></a>QPainter::shear ( double&nbsp;sh, double&nbsp;sv )
+</h3>
+使用<em>(sh, sv)</em>来裁剪坐标系统。
+<p> <p>请参考<a href="#translate">translate</a>()、<a href="#scale">scale</a>()、<a href="#rotate">rotate</a>()、<a href="#resetXForm">resetXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()和<a href="#xForm">xForm</a>()。
+
+<h3 class=fn>int * <a name="tabArray"></a>QPainter::tabArray () const
+</h3>
+<p> 返回当前设置的tab stop数组。
+<p> <p>请参考<a href="#setTabArray">setTabArray</a>()。
+
+<h3 class=fn>int <a name="tabStops"></a>QPainter::tabStops () const
+</h3>
+<p> 返回当前的tab stop设置。
+<p> <p>请参考<a href="#setTabStops">setTabStops</a>()。
+
+<h3 class=fn>void <a name="translate"></a>QPainter::translate ( double&nbsp;dx, double&nbsp;dy )
+</h3>
+使用<em>(dx, dy)</em>变换坐标系统。这次调用之后，<em>(dx, dy)</em>被添加到所有点上。
+<p> 例如，下面这个代码在同一个点上绘制两次：
+<pre>
+        void MyWidget::paintEvent()
+        {
+            QPainter paint( this );
+
+            paint.<a href="#drawPoint">drawPoint</a>( 0, 0 );
+
+            paint.<a href="#translate">translate</a>( 100.0, 40.0 );
+            paint.<a href="#drawPoint">drawPoint</a>( -100, -40 );
+        }
+    </pre>
+ 
+<p> <p>请参考<a href="#scale">scale</a>()、<a href="#shear">shear</a>()、<a href="#rotate">rotate</a>()、<a href="#resetXForm">resetXForm</a>()、<a href="#setWorldMatrix">setWorldMatrix</a>()和<a href="#xForm">xForm</a>()。
+<p>实例：<a href="helpviewer-example.html#x1005">helpviewer/helpwindow.cpp</a>、<a href="tutorial1-10.html#x2343">t10/cannon.cpp</a>、<a href="tutorial1-09.html#x2332">t9/cannon.cpp</a>、<a href="themes-example.html#x249">themes/metal.cpp</a>、<a href="themes-example.html#x184">themes/wood.cpp</a>和<a href="xform-example.html#x1442">xform/xform.cpp</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="viewport"></a>QPainter::viewport () const
+</h3>
+返回视口矩形。
+<p> <p>请参考<a href="#setViewport">setViewport</a>()和<a href="#setViewXForm">setViewXForm</a>()。
+
+<p>实例： <a href="coordsys.html#x2437">aclock/aclock.cpp</a>。
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="window"></a>QPainter::window () const
+</h3>
+返回窗口矩形。
+<p> <p>请参考<a href="#setWindow">setWindow</a>()和<a href="#setViewXForm">setViewXForm</a>()。
+
+<h3 class=fn>const&nbsp;<a href="qwmatrix.html">QWMatrix</a>&nbsp;&amp; <a name="worldMatrix"></a>QPainter::worldMatrix () const
+</h3>
+返回世界变换矩阵。
+<p> <p>请参考<a href="#setWorldMatrix">setWorldMatrix</a>()。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="xForm"></a>QPainter::xForm ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pv ) const
+</h3>
+返回从模式坐标中的点<em>pv</em>到系统坐标的变换。
+<p> <p>请参考<a href="#xFormDev">xFormDev</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="xForm-2"></a>QPainter::xForm ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;rv ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从模式坐标中的矩形<em>rv</em>到系统坐标的变换。
+<p> 如果世界变换生效并且已经指定旋转或者裁剪，那么边界矩形被返回。
+<p> <p>请参考<a href="#xFormDev">xFormDev</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qpointarray.html">QPointArray</a> <a name="xForm-3"></a>QPainter::xForm ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;av ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从模式坐标中的点的数组<em>av</em>到系统坐标的变换。
+<p> <p>请参考<a href="#xFormDev">xFormDev</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qpointarray.html">QPointArray</a> <a name="xForm-4"></a>QPainter::xForm ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;av, int&nbsp;index, int&nbsp;npoints ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从模式坐标中的点的数组<em>av</em>到系统坐标的变换。<em>index</em>是数组中的第一个点并且<em>npoints</em>表示被变换的点的个数。如果<em>npoints</em>为负数，数组中从<em>av[index]</em>开始的所有点都被变换。
+<p> 返回数组由所有变换后的点组成。
+<p> 实例：
+<pre>
+        <a href="qpointarray.html">QPointArray</a> a(10);
+        <a href="qpointarray.html">QPointArray</a> b;
+        b = painter.xForm(a, 2, 4);  // b.<a href="qmemarray.html#size">size</a>() == 4
+        b = painter.xForm(a, 2, -1); // b.<a href="qmemarray.html#size">size</a>() == 8
+    </pre>
+ 
+<p> <p>请参考<a href="#xFormDev">xFormDev</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="xFormDev"></a>QPainter::xFormDev ( const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;rd ) const
+</h3>
+<p> 返回从系统坐标中的矩形<em>rd</em>到模式坐标的变换。
+<p> 如果世界变换生效并且已经指定旋转或者裁剪，那么边界矩形被返回。
+<p> <p>请参考<a href="#xForm">xForm</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a> <a name="xFormDev-2"></a>QPainter::xFormDev ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pd ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从系统坐标中的点<em>pd</em>到模式坐标的变换。
+<p> <p>请参考<a href="#xForm">xForm</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qpointarray.html">QPointArray</a> <a name="xFormDev-3"></a>QPainter::xFormDev ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;ad ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从系统坐标中的点的数组<em>ad</em>到模式坐标的变换。
+<p> <p>请参考<a href="#xForm">xForm</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<h3 class=fn><a href="qpointarray.html">QPointArray</a> <a name="xFormDev-4"></a>QPainter::xFormDev ( const&nbsp;<a href="qpointarray.html">QPointArray</a>&nbsp;&amp;&nbsp;ad, int&nbsp;index, int&nbsp;npoints ) const
+</h3>
+这是一个重载成员函数，提供了方便。它的行为基本上和上面的函数相同。
+<p> 返回从系统坐标中的点的数组<em>ad</em>到模式坐标的变换。<em>index</em>是数组中的第一个点并且<em>npoints</em>表示被变换的点的个数。如果<em>npoints</em>为负数，数组中从<em>ad[index]</em>开始的所有点都被变换。
+<p> 返回数组由所有变换后的点组成。
+<p> 实例：
+<pre>
+        <a href="qpointarray.html">QPointArray</a> a(10);
+        <a href="qpointarray.html">QPointArray</a> b;
+        b = painter.xFormDev(a, 1, 3);  // b.<a href="qmemarray.html#size">size</a>() == 3
+        b = painter.xFormDev(a, 1, -1); // b.<a href="qmemarray.html#size">size</a>() == 9
+    </pre>
+ 
+<p> <p>请参考<a href="#xForm">xForm</a>()和<a href="qwmatrix.html#map">QWMatrix::map</a>()。
+
+<hr><h2>相关函数</h2>
+<h3 class=fn>void <a name="qDrawPlainRect"></a>qDrawPlainRect ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolor.html">QColor</a>&nbsp;&amp;&nbsp;c, int&nbsp;lineWidth, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;*&nbsp;fill )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制由（<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>）指定的简单矩形。
+<p> 颜色参数<em>c</em>指定了线的颜色。
+<p> <em>lineWidth</em>参数指定了线宽。
+<p> 只要<em>fill</em>不为0，矩形内部就被<em>*fill</em>画刷填充。
+<p> 如果你想使用一个<a href="qframe.html">QFrame</a>窗口部件替代，你可以把它显示为一个简单矩形，例如<tt>QFrame::setFrameStyle( QFrame::Box | QFrame::Plain )</tt>。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawShadeRect">qDrawShadeRect</a>()和<a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>()。
+
+<h3 class=fn>void <a name="qDrawShadeLine"></a>qDrawShadeLine ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x1, int&nbsp;y1, int&nbsp;x2, int&nbsp;y2, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, int&nbsp;midLineWidth )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制水平的（<em>y1</em> == <em>y2</em>）或者垂直的（<em>x1</em> == <em>x2</em>）阴影线。
+<p> 如果<em>y1</em> != <em>y2</em>并且<em>x1</em> != <em>x2</em>（也就是说这个线既不是水平的也不是垂直的），就什么也不绘制。
+<p> 颜色组参数<em>g</em>指定了阴影色（<a href="qcolorgroup.html#light">light</a>、<a href="qcolorgroup.html#dark">dark</a>和<a href="qcolorgroup.html#mid">middle</a>色）。
+<p> 如果<em>sunken</em>为真，线看起来下陷，或者如果<em>sunken</em>为假，线看起来上凸。
+<p> <em>lineWidth</em>参数指定了每条线的线宽。它不是总线宽。
+<p> <em>midLineWidth</em>参数指定了使用<a href="qcolorgroup.html#mid">QColorGroup::mid</a>()颜色绘制的中间线的宽度。
+<p> 如果你想使用一个<a href="qframe.html">QFrame</a>窗口部件替代，你可以把它显示为一个简单阴影线，例如<tt>QFrame::setFrameStyle( QFrame::HLine | QFrame::Sunken )</tt>。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawShadeRect">qDrawShadeRect</a>()、<a href="#qDrawShadePanel">qDrawShadePanel</a>()和<a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>()。
+
+<h3 class=fn>void <a name="qDrawShadePanel"></a>qDrawShadePanel ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;*&nbsp;fill )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制由（<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>）指定的阴影面板。
+<p> 颜色组参数<em>g</em>指定了阴影色（<a href="qcolorgroup.html#light">light</a>、<a href="qcolorgroup.html#dark">dark</a>和<a href="qcolorgroup.html#mid">middle</a>色）。
+<p> 如果<em>sunken</em>为真，面板看起来下陷，或者如果<em>sunken</em>为假，面板看起来上凸。
+<p> <em>lineWidth</em>参数指定了线宽。
+<p> 只要<em>fill</em>不为0，面板内部就被<em>*fill</em>画刷填充。
+<p> 如果你想使用一个<a href="qframe.html">QFrame</a>窗口部件替代，你可以把它显示为一个阴影面板，例如<tt>QFrame::setFrameStyle( QFrame::Panel | QFrame::Sunken )</tt>。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawWinPanel">qDrawWinPanel</a>()、<a href="#qDrawShadeLine">qDrawShadeLine</a>()、<a href="#qDrawShadeRect">qDrawShadeRect</a>()和<a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>()。
+
+<h3 class=fn>void <a name="qDrawShadeRect"></a>qDrawShadeRect ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, int&nbsp;lineWidth, int&nbsp;midLineWidth, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;*&nbsp;fill )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制由（<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>）指定的阴影矩形。
+<p> 颜色组参数<em>g</em>指定了阴影色（<a href="qcolorgroup.html#light">light</a>、<a href="qcolorgroup.html#dark">dark</a>和<a href="qcolorgroup.html#mid">middle</a>色）。
+<p> 如果<em>sunken</em>为真，矩形看起来下陷，或者如果<em>sunken</em>为假，矩形看起来上凸。
+<p> <em>lineWidth</em>参数指定了每条线的线宽。它不是总线宽。
+<p> <em>midLineWidth</em>参数指定了使用<a href="qcolorgroup.html#mid">QColorGroup::mid</a>()颜色绘制的中间线的宽度。
+<p> 只要<em>fill</em>不为0，矩形内部就被<em>*fill</em>画刷填充。
+<p> 如果你想使用一个<a href="qframe.html">QFrame</a>窗口部件替代，你可以把它显示为一个阴影矩形，例如<tt>QFrame::setFrameStyle( QFrame::Box | QFrame::Raised )</tt>。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawShadeLine">qDrawShadeLine</a>()、<a href="#qDrawShadePanel">qDrawShadePanel</a>()、<a href="#qDrawPlainRect">qDrawPlainRect</a>()、<a href="qstyle.html#drawItem">QStyle::drawItem</a>()、<a href="qstyle.html#drawControl">QStyle::drawControl</a>()和<a href="qstyle.html#drawComplexControl">QStyle::drawComplexControl</a>()。
+
+<h3 class=fn>void <a name="qDrawWinButton"></a>qDrawWinButton ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;*&nbsp;fill )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制由（<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>）指定的Windows风格的按钮。
+<p> 颜色组参数<em>g</em>指定了阴影色（<a href="qcolorgroup.html#light">light</a>、<a href="qcolorgroup.html#dark">dark</a>和<a href="qcolorgroup.html#mid">middle</a>色）。
+<p> 如果<em>sunken</em>为真，按钮看起来下陷，或者如果<em>sunken</em>为假，按钮看起来上凸。
+<p> 线宽为2像素。
+<p> 只要<em>fill</em>不为0，按钮内部就被<em>*fill</em>画刷填充。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawWinPanel">qDrawWinPanel</a>()和<a href="qstyle.html#drawControl">QStyle::drawControl</a>()。
+
+<h3 class=fn>void <a name="qDrawWinPanel"></a>qDrawWinPanel ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;x, int&nbsp;y, int&nbsp;w, int&nbsp;h, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;g, bool&nbsp;sunken, const&nbsp;<a href="qbrush.html">QBrush</a>&nbsp;*&nbsp;fill )
+</h3>
+<p> <tt>#include &lt;qdrawutil.h&gt;</tt>
+<p> 使用绘图工具<em>p</em>绘制由（<em>x</em>、<em>y</em>、<em>w</em>、<em>h</em>）指定的Windows风格的面板。
+<p> 颜色组参数<em>g</em>指定了阴影色（<a href="qcolorgroup.html#light">light</a>、<a href="qcolorgroup.html#dark">dark</a>和<a href="qcolorgroup.html#mid">middle</a>色）。
+<p> 如果<em>sunken</em>为真，面板看起来下陷，或者如果<em>sunken</em>为假，面板看起来上凸。
+<p> 线宽为2像素。
+<p> 只要<em>fill</em>不为0，面板内部就被<em>*fill</em>画刷填充。
+<p> 如果你想使用一个<a href="qframe.html">QFrame</a>窗口部件替代，你可以把它显示为一个Windows风格的面板，例如<tt>QFrame::setFrameStyle( QFrame::WinPanel | QFrame::Raised )</tt>。
+<p> <b>警告：</b>这个函数不会考虑<a href="qwidget.html#style">QWidget::style</a>()或者<a href="qapplication.html#style">QApplication::style</a>()。在<a href="qstyle.html">QStyle</a>中使用这个绘制函数可以使窗口部件遵循当前图形用户界面风格。
+<p> <p>请参考<a href="#qDrawShadePanel">qDrawShadePanel</a>()、<a href="#qDrawWinButton">qDrawWinButton</a>()和<a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>()。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

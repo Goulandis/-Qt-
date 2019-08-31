@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/widgets/qheader.cpp:137 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QHeader类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QHeader类参考</h1>
+
+<p>QHeader类为诸如表格和列表（listview）等提供标题行或者列。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qheader-h.html">qheader.h</a>&gt;</tt>
+<p>继承了<a href="qwidget.html">QWidget</a>。
+<p><a href="qheader-members.html">所有成员函数的列表。</a>
+<h2>公共成员</h2>
+<ul>
+<li><div class=fn><a href="#QHeader"><b>QHeader</b></a> ( QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</div></li>
+<li><div class=fn><a href="#QHeader-2"><b>QHeader</b></a> ( int&nbsp;n, QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</div></li>
+<li><div class=fn><a href="#~QHeader"><b>~QHeader</b></a> ()</div></li>
+<li><div class=fn>int <a href="#addLabel"><b>addLabel</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )</div></li>
+<li><div class=fn>int <a href="#addLabel-2"><b>addLabel</b></a> ( const&nbsp;QIconSet&nbsp;&amp;&nbsp;iconset, const&nbsp;QString&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )</div></li>
+<li><div class=fn>void <a href="#removeLabel"><b>removeLabel</b></a> ( int&nbsp;section )</div></li>
+<li><div class=fn>virtual void <a href="#setLabel"><b>setLabel</b></a> ( int&nbsp;section, const&nbsp;QString&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )</div></li>
+<li><div class=fn>virtual void <a href="#setLabel-2"><b>setLabel</b></a> ( int&nbsp;section, const&nbsp;QIconSet&nbsp;&amp;&nbsp;iconset, const&nbsp;QString&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )</div></li>
+<li><div class=fn>QString <a href="#label"><b>label</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>QIconSet * <a href="#iconSet"><b>iconSet</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>virtual void <a href="#setOrientation"><b>setOrientation</b></a> ( Orientation )</div></li>
+<li><div class=fn>Orientation <a href="#orientation"><b>orientation</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setTracking"><b>setTracking</b></a> ( bool&nbsp;enable )</div></li>
+<li><div class=fn>bool <a href="#tracking"><b>tracking</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setClickEnabled"><b>setClickEnabled</b></a> ( bool&nbsp;enable, int&nbsp;section = -1 )</div></li>
+<li><div class=fn>virtual void <a href="#setResizeEnabled"><b>setResizeEnabled</b></a> ( bool&nbsp;enable, int&nbsp;section = -1 )</div></li>
+<li><div class=fn>virtual void <a href="#setMovingEnabled"><b>setMovingEnabled</b></a> ( bool )</div></li>
+<li><div class=fn>virtual void <a href="#setStretchEnabled"><b>setStretchEnabled</b></a> ( bool&nbsp;b, int&nbsp;section )</div></li>
+<li><div class=fn>void <a href="#setStretchEnabled-2"><b>setStretchEnabled</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#isClickEnabled"><b>isClickEnabled</b></a> ( int&nbsp;section = -1 ) const</div></li>
+<li><div class=fn>bool <a href="#isResizeEnabled"><b>isResizeEnabled</b></a> ( int&nbsp;section = -1 ) const</div></li>
+<li><div class=fn>bool <a href="#isMovingEnabled"><b>isMovingEnabled</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isStretchEnabled"><b>isStretchEnabled</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isStretchEnabled-2"><b>isStretchEnabled</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>void <a href="#resizeSection"><b>resizeSection</b></a> ( int&nbsp;section, int&nbsp;s )</div></li>
+<li><div class=fn>int <a href="#sectionSize"><b>sectionSize</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>int <a href="#sectionPos"><b>sectionPos</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>int <a href="#sectionAt"><b>sectionAt</b></a> ( int&nbsp;pos ) const</div></li>
+<li><div class=fn>int <a href="#count"><b>count</b></a> () const</div></li>
+<li><div class=fn>int <a href="#headerWidth"><b>headerWidth</b></a> () const</div></li>
+<li><div class=fn>QRect <a href="#sectionRect"><b>sectionRect</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>virtual void setCellSize ( int&nbsp;section, int&nbsp;s ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>int cellSize ( int&nbsp;i ) const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>int cellPos ( int&nbsp;i ) const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>int cellAt ( int&nbsp;pos ) const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>int <a href="#offset"><b>offset</b></a> () const</div></li>
+<li><div class=fn>int <a href="#mapToSection"><b>mapToSection</b></a> ( int&nbsp;index ) const</div></li>
+<li><div class=fn>int <a href="#mapToIndex"><b>mapToIndex</b></a> ( int&nbsp;section ) const</div></li>
+<li><div class=fn>int mapToLogical ( int&nbsp;a ) const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>int mapToActual ( int&nbsp;l ) const &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void <a href="#moveSection"><b>moveSection</b></a> ( int&nbsp;section, int&nbsp;toIndex )</div></li>
+<li><div class=fn>virtual void moveCell ( int&nbsp;fromIdx, int&nbsp;toIdx ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void <a href="#setSortIndicator"><b>setSortIndicator</b></a> ( int&nbsp;section, bool&nbsp;increasing = TRUE )</div></li>
+<li><div class=fn>void <a href="#adjustHeaderSize"><b>adjustHeaderSize</b></a> ()</div></li>
+</ul>
+<h2>公共槽</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#setOffset"><b>setOffset</b></a> ( int&nbsp;pos )</div></li>
+</ul>
+<h2>信号</h2>
+<ul>
+<li><div class=fn>void <a href="#clicked"><b>clicked</b></a> ( int&nbsp;section )</div></li>
+<li><div class=fn>void <a href="#pressed"><b>pressed</b></a> ( int&nbsp;section )</div></li>
+<li><div class=fn>void <a href="#released"><b>released</b></a> ( int&nbsp;section )</div></li>
+<li><div class=fn>void <a href="#sizeChange"><b>sizeChange</b></a> ( int&nbsp;section, int&nbsp;oldSize, int&nbsp;newSize )</div></li>
+<li><div class=fn>void <a href="#indexChange"><b>indexChange</b></a> ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )</div></li>
+<li><div class=fn>void sectionClicked ( int&nbsp;index ) &nbsp;<em>(obsolete)</em></div></li>
+<li><div class=fn>void moved ( int&nbsp;fromIndex, int&nbsp;toIndex ) &nbsp;<em>(obsolete)</em></div></li>
+</ul>
+<h2>属性</h2>
+<ul>
+<li><div class=fn>int <a href="#count-prop"><b>count</b></a>&nbsp;- 标题中的节（section）数&nbsp;<em>(read only)</em></div></li>
+<li><div class=fn>bool <a href="#moving-prop"><b>moving</b></a>&nbsp;- 标题节是否可以被移动</div></li>
+<li><div class=fn>int <a href="#offset-prop"><b>offset</b></a>&nbsp;- 标题最左（或者最上）可见的象素</div></li>
+<li><div class=fn>Orientation <a href="#orientation-prop"><b>orientation</b></a>&nbsp;- 标题的物理朝向</div></li>
+<li><div class=fn>bool <a href="#stretching-prop"><b>stretching</b></a>&nbsp;- 标题的节是否总是占据标题的全部宽度（或者高度）</div></li>
+<li><div class=fn>bool <a href="#tracking-prop"><b>tracking</b></a>&nbsp;- 信号sizeChange()是否被连续发送</div></li>
+</ul>
+<h2>保护成员</h2>
+<ul>
+<li><div class=fn>QRect <a href="#sRect"><b>sRect</b></a> ( int&nbsp;index )</div></li>
+<li><div class=fn>virtual void <a href="#paintSection"><b>paintSection</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;index, const&nbsp;QRect&nbsp;&amp;&nbsp;fr )</div></li>
+<li><div class=fn>virtual void <a href="#paintSectionLabel"><b>paintSectionLabel</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;index, const&nbsp;QRect&nbsp;&amp;&nbsp;fr )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QHeader类为诸如表格和列表（listview）等提供标题行或者列。
+
+<p>本类提供一个标题，例如一个垂直标题显示行标签，或者一个水平标题显示列标签。它可以用于诸如<a href="qtable.html">QTable</a>和<a href="qlistview.html">QListView</a>中。
+<p>标题由一个或者很多节组成，每个节都可以显示一个文本标签和一个图标（iconset）。使用<a href="#setSortIndicator">setSortIndicator</a>()，还可以显示排序指示器（箭头）。
+<p>使用<a href="#addLabel">addLabel</a>()添加节，使用<a href="#removeLabel">removeLabel</a>()删去节。标签和图标在addLabel()中设置，以后可以用<a href="#setLabel">setLabel</a>()来修改。使用<a href="#count">count</a>()以得到标题中节的数目。
+<p>标题的朝向用<a href="#setOrientation">setOrientation</a>()来设置。如果<a href="#setStretchEnabled">setStretchEnabled</a>()为TRUE，节将会占据标题的全部宽度（对于垂直标题则是全部高度）。如果<a href="#setResizeEnabled">setResizeEnabled</a>()为TRUE，用户可以手动调整节的大小。调用<a href="#adjustHeaderSize">adjustHeaderSize</a>()，可以调整节的大小，占据全部宽度（或者高度）。
+<p>可以使用<a href="#moveSection">moveSection</a>()以移动节。如果<a href="#setMovingEnabled">setMovingEnabled</a>()为TRUE，用户可以把节拖来拖去。如果某个节被移动，节被添加（使用<a href="#addLabel">addLabel</a>()）时的索引位置就可能与移动之后不同了。实际上你不必担心这一点，因为QHeader的API是使用节的编号（section number）的术语来工作的，某特定的节被移到哪里并没有关系。
+<p>如果你想得到一个节的当前索引位置，可以以节编号为参数调用<a href="#mapToIndex">mapToIndex</a>()。（这个节编号是由生成该节的addLabel()调用所返回的数值。）如果你想得到一个具体索引位置的节的编号，可以以索引位置为参数调用<a href="#mapToSection">mapToSection</a>()。
+<p>下面是阐明mapToSection()和mapToIndex()的例子：
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top" colspan="4" rowspan="1">索引位置
+<tr bgcolor="#f0f0f0"> <td valign="top">0
+<td valign="top">1
+<td valign="top">2
+<td valign="top">3
+<tr bgcolor="#a2c511"> <th valign="top" colspan="4" rowspan="1">原来的节次序
+<tr bgcolor="#d0d0d0"> <td valign="top">Sect 0
+<td valign="top">Sect 1
+<td valign="top">Sect 2
+<td valign="top">Sect 3
+<tr bgcolor="#a2c511"> <th valign="top" colspan="4" rowspan="1">用户移动一个节之后的次序
+<tr bgcolor="#f0f0f0"> <td valign="top">Sect 0
+<td valign="top">Sect 2
+<td valign="top">Sect 3
+<td valign="top">Sect 1
+</table></center>
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top"><em>k</em>
+<th valign="top">mapToSection(<em>k</em>)
+<th valign="top">mapToIndex(<em>k</em>)
+<tr bgcolor="#d0d0d0"> <td valign="top">0 <td valign="top">0 <td valign="top">0
+<tr bgcolor="#f0f0f0"> <td valign="top">1 <td valign="top">2 <td valign="top">3
+<tr bgcolor="#d0d0d0"> <td valign="top">2 <td valign="top">3 <td valign="top">1
+<tr bgcolor="#f0f0f0"> <td valign="top">3 <td valign="top">1 <td valign="top">2
+</table></center>
+<p>在上面的例子中，如果我们要找出哪个节在索引位置3，可以调用<a href="#mapToSection">mapToSection</a>(3)，就会得到节编号为1，因为节1被移动到了那里。类似地，如果我们要知道节2占据了哪个索引位置，调用<a href="#mapToIndex">mapToIndex</a>(2)，就会得到索引为1。
+<p>QHeader提供了<a href="#clicked">clicked</a>()、<a href="#pressed">pressed</a>()和<a href="#released">released</a>()信号。如果用户改变了某个节的大小，<a href="#sizeChange">sizeChange</a>()信号被发送。如果你希望sizeChange()信号在用户调整大小时持续被发送（而不是只在调整后），使用<a href="#setTracking">setTracking</a>()。如果用户移动了节，<a href="#indexChange">indexChange</a>()信号被发送。
+<p> <img src=qheader-m.png> <img src=qheader-w.png>
+<p> <p>也参见<a href="qlistview.html">QListView</a>、<a href="qtable.html">QTable</a>和<a href="advanced.html">高级部件</a>。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QHeader"></a>QHeader::QHeader ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>构造一个水平标题，命名为<em>name</em>，父部件为<em>parent</em>。
+<p> 
+<h3 class=fn><a name="QHeader-2"></a>QHeader::QHeader ( int&nbsp;n, <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>构造一个水平标题，命名为<em>name</em>，由<em>n</em>节组成，父部件为<em>parent</em>。
+<p> 
+<h3 class=fn><a name="~QHeader"></a>QHeader::~QHeader ()
+</h3>销毁标题及其节。
+
+<h3 class=fn>int <a name="addLabel"></a>QHeader::addLabel ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )
+</h3>增加一个新节，标签文本为<em>s</em>。返回节所加在的索引位置（对于水平标题是在右边，对于垂直标题是在下边）。节的宽度设置为<em>size</em>。若<em>size</em> &lt; 0，则根据文本<em>s</em>来选择合适的大小。
+
+<h3 class=fn>int <a name="addLabel-2"></a>QHeader::addLabel ( const&nbsp;<a href="qiconset.html">QIconSet</a>&nbsp;&amp;&nbsp;iconset, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )
+</h3>这是重载的成员函数，为便利而提供。其行为本质上类似上一个函数。
+<p>增加一个带有图标<em>iconset</em>和标签文本<em>s</em>的新节。返回节所加在的索引位置（对于水平标题是在右边，对于垂直标题是在下边）。节的宽度设置为<em>size</em>。若<em>size</em> &lt; 0，则根据文本来选择合适的大小。
+<p>
+<h3 class=fn>void <a name="adjustHeaderSize"></a>QHeader::adjustHeaderSize ()
+</h3>
+
+<p>调整节的大小，以尽可能全部占据标题的大小。只有<a href="#isStretchEnabled">isStretchEnabled</a>()为TRUE的那些节会被调整大小。
+<p>
+<h3 class=fn>int <a name="cellAt"></a>QHeader::cellAt ( int&nbsp;pos ) const
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#sectionAt">sectionAt</a>()来代替本函数。
+<p> Returns the index at which the section is displayed, which contains
+<em>pos</em> in widget coordinates, or -1 if <em>pos</em> is outside the header
+sections.
+
+<h3 class=fn>int <a name="cellPos"></a>QHeader::cellPos ( int&nbsp;i ) const
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#sectionPos">sectionPos</a>()来代替本函数。
+<p> Returns the position in pixels of the section that is displayed at the
+index <em>i</em>。 The  position is measured from the start of the header.
+
+<h3 class=fn>int <a name="cellSize"></a>QHeader::cellSize ( int&nbsp;i ) const
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#sectionSize">sectionSize</a>()来代替本函数。
+<p> Returns the size in pixels of the section that is displayed at
+the index <em>i</em>。
+
+<h3 class=fn>void <a name="clicked"></a>QHeader::clicked ( int&nbsp;section )<tt> [信号]</tt>
+</h3>
+
+<p>如果<a href="#isClickEnabled">isClickEnabled</a>()为TRUE，当用户点击节<em>section</em>时，本信号被发送。
+<p> <p>也参见<a href="#pressed">pressed</a>()和<a href="#released">released</a>()。
+
+<h3 class=fn>int <a name="count"></a>QHeader::count () const
+</h3><p>返回标题中的节的数目。详见<a href="qheader.html#count-prop">"count"</a>属性。
+<h3 class=fn>int <a name="headerWidth"></a>QHeader::headerWidth () const
+</h3>
+返回所有标题列的总宽度。
+
+<h3 class=fn><a href="qiconset.html">QIconSet</a>&nbsp;* <a name="iconSet"></a>QHeader::iconSet ( int&nbsp;section ) const
+</h3>
+返回节<em>section</em>的图标。如果该节不存在，返回0。
+
+<h3 class=fn>void <a name="indexChange"></a>QHeader::indexChange ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )<tt> [信号]</tt>
+</h3>
+
+<p>当用户把节<em>section</em>从索引位置<em>fromIndex</em>移到索引位置<em>toIndex</em>时，本信号被发送。
+
+<h3 class=fn>bool <a name="isClickEnabled"></a>QHeader::isClickEnabled ( int&nbsp;section = -1 ) const
+</h3>
+如果节<em>section</em>为可点击，返回TRUE；否则返回FALSE。
+<p>在<em>section</em>超出范围时（为负或者大于<a href="#count">count</a>() - 1），如果所有节都是可点击，返回TRUE，否则返回FALSE。
+<p> <p>也参见<a href="#setClickEnabled">setClickEnabled</a>()。
+
+<h3 class=fn>bool <a name="isMovingEnabled"></a>QHeader::isMovingEnabled () const
+</h3><p>如果标题节可以被移动，返回TRUE；否则返回FALSE。详见<a href="qheader.html#moving-prop">"moving"</a>属性。
+<h3 class=fn>bool <a name="isResizeEnabled"></a>QHeader::isResizeEnabled ( int&nbsp;section = -1 ) const
+</h3>
+如果节<em>section</em>为可调整大小，返回TRUE；否则返回FALSE。
+<p>如果<em>section</em>为-1，本函数应用于所有节，也就是说，如果所有节都是可调整大小的，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setResizeEnabled">setResizeEnabled</a>()。
+
+<h3 class=fn>bool <a name="isStretchEnabled"></a>QHeader::isStretchEnabled () const
+</h3><p>如果标题节总是占据标题的全部宽度（或者高度），返回TRUE；否则返回FALSE。
+详见<a href="qheader.html#stretching-prop">"stretching"</a>属性。
+<h3 class=fn>bool <a name="isStretchEnabled-2"></a>QHeader::isStretchEnabled ( int&nbsp;section ) const
+</h3>如果节<em>section</em>可以调整大小以占据标题的全部宽度（或者高度），返回TRUE；否则返回FALSE。如果至少一个节是可伸缩的，节就总是占据标题的全部宽度。
+<p> <p>也参见<a href="#setStretchEnabled">setStretchEnabled</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="label"></a>QHeader::label ( int&nbsp;section ) const
+</h3>
+返回节<em>section</em>的文本。如果该节不存在，返回空字符串。
+
+<h3 class=fn>int <a name="mapToActual"></a>QHeader::mapToActual ( int&nbsp;l ) const
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#mapToIndex">mapToIndex</a>()来代替本函数。
+<p> Translates from logical index <em>l</em> to actual index (index at which the section <em>l</em> is displayed) .
+Returns -1 if <em>l</em> is outside the legal range.
+<p> <p>也参见<a href="#mapToLogical">mapToLogical</a>()。
+
+<h3 class=fn>int <a name="mapToIndex"></a>QHeader::mapToIndex ( int&nbsp;section ) const
+</h3>返回节<em>section</em>当前被显示的索引。
+<p>更多解释参见<a href="#mapexample">mapTo例子</a>。
+
+<h3 class=fn>int <a name="mapToLogical"></a>QHeader::mapToLogical ( int&nbsp;a ) const
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#mapToSection">mapToSection</a>()来代替本函数。
+<p> Translates from actual index <em>a</em> (index at which the section is displayed)  to
+logical index of the section.  Returns -1 if <em>a</em> is outside the legal range.
+<p> <p>也参见<a href="#mapToActual">mapToActual</a>()。
+
+<h3 class=fn>int <a name="mapToSection"></a>QHeader::mapToSection ( int&nbsp;index ) const
+</h3>返回显示于索引位置<em>index</em>的节。
+<p>更多解释参见<a href="#mapexample">mapTo例子</a>。
+
+<h3 class=fn>void <a name="moveCell"></a>QHeader::moveCell ( int&nbsp;fromIdx, int&nbsp;toIdx )<tt> [虚]</tt>
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#moveSection">moveSection</a>()来代替本函数。
+<p> Moves the section that is currently displayed at index <em>fromIdx</em>
+to index <em>toIdx</em>。
+
+<h3 class=fn>void <a name="moveSection"></a>QHeader::moveSection ( int&nbsp;section, int&nbsp;toIndex )
+</h3>把节<em>section</em>移到索引位置<em>toIndex</em>。
+
+<h3 class=fn>void <a name="moved"></a>QHeader::moved ( int&nbsp;fromIndex, int&nbsp;toIndex )<tt> [信号]</tt>
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#indexChange">indexChange</a>()来代替本函数。
+<p> This signal is emitted when the user has moved the section which
+is displayed at the index <em>fromIndex</em> to the index <em>toIndex</em>。
+
+<h3 class=fn>int <a name="offset"></a>QHeader::offset () const
+</h3><p>返回标题的最左（或者最上）的可见象素。
+详见<a href="qheader.html#offset-prop">"offset"</a>属性。
+<h3 class=fn><a href="qt.html#Orientation-enum">Orientation</a> <a name="orientation"></a>QHeader::orientation () const
+</h3><p>返回标题的物理朝向。
+详见<a href="qheader.html#orientation-prop">"orientation"</a>属性。
+<h3 class=fn>void <a name="paintSection"></a>QHeader::paintSection ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;index, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;fr )<tt> [虚 保护]</tt>
+</h3>在矩形<em>fr</em>内（使用部件坐标），使用画具<em>p</em>绘制在位置<em>index</em>的节。
+<p>调用了<a href="#paintSectionLabel">paintSectionLabel</a>()。
+
+<h3 class=fn>void <a name="paintSectionLabel"></a>QHeader::paintSectionLabel ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;index, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;fr )<tt> [虚 保护]</tt>
+</h3>在矩形<em>fr</em>内（使用部件坐标），使用画具<em>p</em>绘制在位置<em>index</em>的节的标签。
+<p>被<a href="#paintSection">paintSection</a>()所调用。
+
+<h3 class=fn>void <a name="pressed"></a>QHeader::pressed ( int&nbsp;section )<tt> [信号]</tt>
+</h3>
+
+<p>当用户按下节<em>section</em>时，本信号被发送。
+<p> <p>也参见<a href="#released">released</a>()。
+
+<h3 class=fn>void <a name="released"></a>QHeader::released ( int&nbsp;section )<tt> [信号]</tt>
+</h3>
+
+<p>当用户释放节<em>section</em>时，本信号被发送。
+<p> <p>也参见<a href="#pressed">pressed</a>()。
+
+<h3 class=fn>void <a name="removeLabel"></a>QHeader::removeLabel ( int&nbsp;section )
+</h3>删去节<em>section</em>。如果该节不存在，什么也不做。
+
+<h3 class=fn>void <a name="resizeSection"></a>QHeader::resizeSection ( int&nbsp;section, int&nbsp;s )
+</h3>调整节<em>section</em>的大小为<em>s</em>象素宽（或者高）。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="sRect"></a>QHeader::sRect ( int&nbsp;index )<tt> [protected]</tt>
+</h3>返回被索引为<em>index</em>的节所覆盖的矩形。
+
+<h3 class=fn>int <a name="sectionAt"></a>QHeader::sectionAt ( int&nbsp;pos ) const
+</h3>返回包括以象素给出的位置<em>pos</em>的节索引。
+<p> <p>也参见<a href="#offset-prop">offset</a>。
+
+<h3 class=fn>void <a name="sectionClicked"></a>QHeader::sectionClicked ( int&nbsp;index )<tt> [信号]</tt>
+</h3>
+
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#clicked">clicked</a>()来代替本函数。
+<p> This signal is emitted when a part of the header is clicked. <em>index</em> is the index at which the section is displayed.
+<p> In a list view this signal would typically be connected to a slot
+that sorts the specified column (or row)。
+
+<h3 class=fn>int <a name="sectionPos"></a>QHeader::sectionPos ( int&nbsp;section ) const
+</h3>
+返回节<em>section</em>开始的位置（以象素形式）。
+<p> <p>也参见<a href="#offset-prop">offset</a>。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="sectionRect"></a>QHeader::sectionRect ( int&nbsp;section ) const
+</h3>
+返回被节<em>section</em>所覆盖的矩形。
+
+<h3 class=fn>int <a name="sectionSize"></a>QHeader::sectionSize ( int&nbsp;section ) const
+</h3>
+以象素形式返回节<em>section</em>的宽度（或者高度）。
+
+<h3 class=fn>void <a name="setCellSize"></a>QHeader::setCellSize ( int&nbsp;section, int&nbsp;s )<tt> [虚]</tt>
+</h3>
+<b>本函数已经废弃。</b>为支持旧代码运行而提供，强烈建议新代码中不要使用。
+<p>使用<a href="#resizeSection">resizeSection</a>()来代替本函数。
+<p> Sets the size of the section <em>section</em> to <em>s</em> pixels.
+<p> <b>警告：</b> does not repaint or send out signals。
+
+<h3 class=fn>void <a name="setClickEnabled"></a>QHeader::setClickEnabled ( bool&nbsp;enable, int&nbsp;section = -1 )<tt> [虚]</tt>
+</h3>
+如果<em>enable</em>为TRUE，点击节<em>section</em>就会导致<a href="#clicked">clicked</a>()信号被发送；否则节将忽略点击。
+<p>如果<em>section</em>为-1（缺省），那么<em>enable</em>值对所有存在的节都设置，而且也应用到增加的新节上。
+<p> <p>也参见<a href="#moving-prop">moving</a>和<a href="#setResizeEnabled">setResizeEnabled</a>()。
+
+<h3 class=fn>void <a name="setLabel"></a>QHeader::setLabel ( int&nbsp;section, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )<tt> [虚]</tt>
+</h3>
+设置节<em>section</em>的文本为<em>s</em>。如果<em>size</em> &gt;= 0，节的宽度设置为<em>size</em>；否则不变。该节已经设置的图标保持不变。
+<p>如果该节不存在，什么也不做。
+
+<p>例子：<a href="tutorial2-08.html#x2510">chart/setdataform.cpp</a>和<a href="small-table-example-example.html#x2645">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="setLabel-2"></a>QHeader::setLabel ( int&nbsp;section, const&nbsp;<a href="qiconset.html">QIconSet</a>&nbsp;&amp;&nbsp;iconset, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;s, int&nbsp;size = -1 )<tt> [虚]</tt>
+</h3>这是重载的成员函数，为便利而提供。其行为本质上类似上一个函数。
+<p>把节<em>section</em>的图标设置为<em>iconset</em>，文本设置为<em>s</em>。如果<em>size</em> &gt;= 0，节的宽度设置为<em>size</em>；否则不变。
+<p>如果该节不存在，什么也不做。
+
+<h3 class=fn>void <a name="setMovingEnabled"></a>QHeader::setMovingEnabled ( bool )<tt> [虚]</tt>
+</h3><p>设置标题的节是否可以移动。详见<a href="qheader.html#moving-prop">"moving"</a>属性。
+<h3 class=fn>void <a name="setOffset"></a>QHeader::setOffset ( int&nbsp;pos )<tt> [虚 槽]</tt>
+</h3><p>设置标题的最左（或者最上）的可见象素为<em>pos</em>。详见<a href="qheader.html#offset-prop">"offset"</a>属性。
+<h3 class=fn>void <a name="setOrientation"></a>QHeader::setOrientation ( <a href="qt.html#Orientation-enum">Orientation</a> )<tt> [虚]</tt>
+</h3><p>设置标题的物理朝向。详见<a href="qheader.html#orientation-prop">"orientation"</a>属性。
+<h3 class=fn>void <a name="setResizeEnabled"></a>QHeader::setResizeEnabled ( bool&nbsp;enable, int&nbsp;section = -1 )<tt> [虚]</tt>
+</h3>如果<em>enable</em>为TRUE，用户可以调整节<em>section</em>的大小；否则该节不能被手动调整大小。
+<p>如果<em>section</em>为负（缺省），那么<em>enable</em>值对所有存在的节都设置，而且也应用到增加的新节上。
+例子：
+<pre>
+    // Allow resizing of all current and future sections
+    header-&gt;setResizeEnabled(TRUE);
+    // Disable resizing of section 3, (the fourth section added)
+    header-&gt;setResizeEnabled(FALSE, 3);
+    </pre>
+ 
+<p>如果用户调整了一个节的大小，<a href="#sizeChange">sizeChange</a>()信号被发送。
+<p> <p>也参见<a href="#moving-prop">moving</a>、<a href="#setClickEnabled">setClickEnabled</a>()和<a href="#tracking-prop">tracking</a>。
+
+<h3 class=fn>void <a name="setSortIndicator"></a>QHeader::setSortIndicator ( int&nbsp;section, bool&nbsp;increasing = TRUE )
+</h3>
+因为QHeader经常与表格或者列表部件一起使用，它可以显示排序的次序。这可以通过在节的右边显示一个箭头来实现。
+<p>如果<em>increasing</em>为TRUE（缺省），箭头指向下；否则向上。
+<p>同一时间只能有一个节显示排序指示。如果你不想让任何节显示排序指示器，传入参数<em>section</em>为-1。
+<p>
+<h3 class=fn>void <a name="setStretchEnabled"></a>QHeader::setStretchEnabled ( bool&nbsp;b, int&nbsp;section )<tt> [虚]</tt>
+</h3>
+如果<em>b</em>为TRUE，节<em>section</em>的大小将会随标题的大小调整而调整，以使节占据标题的全部宽度（对于垂直标题则是高度）；否则，节<em>section</em>被设置为不可伸缩，也不会随标题的调整大小而调整大小。
+<p>在<em>section</em>为-1时，如果<em>b</em>为TRUE，所有节的大小相等地随标题的大小调整而调整，以使节占据标题的全部宽度（对于垂直标题则是高度）；否则，所有节都被设置为不可伸缩，也不会随标题的调整大小而调整大小。
+<p> <p>也参见<a href="#adjustHeaderSize">adjustHeaderSize</a>()。
+
+<h3 class=fn>void <a name="setStretchEnabled-2"></a>QHeader::setStretchEnabled ( bool&nbsp;b )
+</h3><p>设置标题的节是否总是占据标题的全部宽度（或者高度）为<em>b</em>。
+详见<a href="qheader.html#stretching-prop">"stretching"</a>属性。
+<h3 class=fn>void <a name="setTracking"></a>QHeader::setTracking ( bool&nbsp;enable )<tt> [虚]</tt>
+</h3><p>设置<a href="#sizeChange">sizeChange</a>()信号是否持续被发送为<em>enable</em>。
+详见<a href="qheader.html#tracking-prop">"tracking"</a>属性。
+<h3 class=fn>void <a name="sizeChange"></a>QHeader::sizeChange ( int&nbsp;section, int&nbsp;oldSize, int&nbsp;newSize )<tt> [信号]</tt>
+</h3>
+
+<p>当用户把节<em>section</em>的大小从<em>oldSize</em>改为<em>newSize</em>时，本信号被发送。典型地，本信号连接到一个槽上，这个槽重绘包括该标题的表格或者列表。
+
+<h3 class=fn>bool <a name="tracking"></a>QHeader::tracking () const
+</h3><p>如果<a href="#sizeChange">sizeChange</a>()信号是持续被发送的，返回TRUE；否则返回FALSE。
+详见<a href="qheader.html#tracking-prop">"tracking"</a>属性。
+<hr><h2>属性文档</h2>
+<h3 class=fn>int <a name="count-prop"></a>count</h3> <p>本属性决定标题中的节的数目。
+<p>
+<p>用<a href="#count">count</a>()来得到本属性值。
+<h3 class=fn>bool <a name="moving-prop"></a>moving</h3> <p>得到本属性值标题的节是否可以被移动。
+<p>如果本属性为TRUE，用户可以移动节。如果用户移动某个节，<a href="#indexChange">indexChange</a>()信号被发送。
+<p> <p>也参见<a href="#setClickEnabled">setClickEnabled</a>()和<a href="#setResizeEnabled">setResizeEnabled</a>()。
+
+<p>用<a href="#setMovingEnabled">setMovingEnabled</a>()设置本属性值，用<a href="#isMovingEnabled">isMovingEnabled</a>()得到本属性值。
+<h3 class=fn>int <a name="offset-prop"></a>offset</h3> <p>本属性决定标题的最左（或者最上）的可见象素。
+<p>设置本属性将滚动标题以使得<em>offset</em>成为最左（或者最上，对于垂直标题）的可见象素。
+
+<p>用<a href="#setOffset">setOffset</a>()设置本属性值，用<a href="#offset">offset</a>()得到本属性值。
+<h3 class=fn><a href="qt.html#Orientation-enum">Orientation</a> <a name="orientation-prop"></a>orientation</h3> <p>本属性决定标题的物理朝向。
+<p>朝向要么是QHeader::Vertical，要么就是QHeader::Horizontal（缺省）。
+<p>如果你没有提供大小参数，就要在添加标签之前调用<a href="#setOrientation">setOrientation</a>()，否则大小会不正确。
+
+<p>用<a href="#setOrientation">setOrientation</a>()设置本属性值，用<a href="#orientation">orientation</a>()得到本属性值。
+<h3 class=fn>bool <a name="stretching-prop"></a>stretching</h3> <p>本属性决定标题的节是否总是占据标题的全部宽度（或者高度）。
+<p>
+<p>用<a href="#setStretchEnabled">setStretchEnabled</a>()设置本属性值，用<a href="#isStretchEnabled">isStretchEnabled</a>()得到本属性值。
+<h3 class=fn>bool <a name="tracking-prop"></a>tracking</h3> <p>本属性决定<a href="#sizeChange">sizeChange</a>()信号是否持续地被发送。
+<p>如果tracking为打开，当鼠标移动（也就是标题被调整大小）时，sizeChange()信号持续地被发送；否则，只有在大小调整结束鼠标按键释放时，才发送信号。
+<p>Tracking缺省为FALSE。
+
+<p>用<a href="#setTracking">setTracking</a>()设置本属性值，用<a href="#tracking">tracking</a>()得到本属性值。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

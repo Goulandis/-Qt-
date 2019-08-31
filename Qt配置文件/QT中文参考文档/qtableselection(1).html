@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/table/qtable.cpp:169 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QTableSelection类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QTableSelection类参考<br><small>[<a href="table.html">表格模块</a>]</small></h1>
+
+<p>QTableSelection类提供对QTable中的选中区域的处理。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;</tt>
+<p><a href="qtableselection-members.html">所有成员函数的列表。</a>
+<h2>公共成员</h2>
+<ul>
+<li><div class=fn><a href="#QTableSelection"><b>QTableSelection</b></a> ()</div></li>
+<li><div class=fn>void <a href="#init"><b>init</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>void <a href="#expandTo"><b>expandTo</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;QTableSelection&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;QTableSelection&nbsp;&amp;&nbsp;s ) const</div></li>
+<li><div class=fn>int <a href="#topRow"><b>topRow</b></a> () const</div></li>
+<li><div class=fn>int <a href="#bottomRow"><b>bottomRow</b></a> () const</div></li>
+<li><div class=fn>int <a href="#leftCol"><b>leftCol</b></a> () const</div></li>
+<li><div class=fn>int <a href="#rightCol"><b>rightCol</b></a> () const</div></li>
+<li><div class=fn>int <a href="#anchorRow"><b>anchorRow</b></a> () const</div></li>
+<li><div class=fn>int <a href="#anchorCol"><b>anchorCol</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isActive"><b>isActive</b></a> () const</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+ 
+
+QTableSelection类提供对<a href="qtable.html">QTable</a>中的选中区域的处理。
+<p> 
+<p>选中区域（selection）是QTable中一个单元格的矩形集合。这个矩形集合中的一个叫做锚单元格（anchor cell），它是第一个被选中的单元格。<a href="#init">init</a>()函数设置锚单元格和只包括这个单元格的选中矩形。；<a href="#expandTo">expandTo</a>()函数则把选中矩形扩展为包括其他单元格。
+<p>有几个查询区域范围的处理函数：<a href="#anchorRow">anchorRow</a>()和<a href="#anchorCol">anchorCol</a>()返回锚的位置；<a href="#leftCol">leftCol</a>()、<a href="#rightCol">rightCol</a>()、<a href="#topRow">topRow</a>()和<a href="#bottomRow">bottomRow</a>()返回矩形的四边。这四个都是选中区域的一部分。
+<p>一个新生成的QTableSelection是非活动的——<a href="#isActive">isActive</a>()返回FALSE。你必须使用init()和expandTo()以激活它。
+<p> <p>也参见<a href="qtable.html">QTable</a>、<a href="qtable.html#addSelection">QTable::addSelection</a>()、<a href="qtable.html#selection">QTable::selection</a>()和<a href="advanced.html">高级部件</a>。
+
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QTableSelection"></a>QTableSelection::QTableSelection ()
+</h3>生成一个非活动的选中区域。使用<a href="#init">init</a>()和<a href="#expandTo">expandTo</a>()来激活它。
+
+<h3 class=fn>int <a name="anchorCol"></a>QTableSelection::anchorCol () const
+</h3> 
+<p>返回选中区域的锚的列。
+<p> <p>也参见<a href="#anchorRow">anchorRow</a>()和<a href="#expandTo">expandTo</a>()。
+
+<h3 class=fn>int <a name="anchorRow"></a>QTableSelection::anchorRow () const
+</h3> 
+<p>返回选中区域的锚的行。
+<p> <p>也参见<a href="#anchorCol">anchorCol</a>()和<a href="#expandTo">expandTo</a>()。
+
+<h3 class=fn>int <a name="bottomRow"></a>QTableSelection::bottomRow () const
+</h3> 
+<p>返回选中区域的底行。
+<p> <p>也参见<a href="#topRow">topRow</a>()、<a href="#leftCol">leftCol</a>()和<a href="#rightCol">rightCol</a>()。
+
+<h3 class=fn>void <a name="expandTo"></a>QTableSelection::expandTo ( int&nbsp;row, int&nbsp;col )
+</h3>把选中区域扩展到包括单元格<em>row</em>、<em>col</em>。新的选中区域矩形是<em>row</em>、<em>col</em>和之前的选中区域矩形的边界范围矩形（bounding rectangle）。调用本函数后，选中区域被激活。
+<p>如果未调用<a href="#init">init</a>()，本函数什么也不做。
+<p> <p>也参见<a href="#init">init</a>()和<a href="#isActive">isActive</a>()。
+
+<h3 class=fn>void <a name="init"></a>QTableSelection::init ( int&nbsp;row, int&nbsp;col )
+</h3>把选中区域的锚设置为单元格<em>row</em>、<em>col</em>，并且该选中区域只包含这个单元格。
+<p>要扩展选中区域以包括其他单元格，调用<a href="#expandTo">expandTo</a>()。
+<p> <p>也参见<a href="#isActive">isActive</a>()。
+
+<h3 class=fn>bool <a name="isActive"></a>QTableSelection::isActive () const
+</h3> 
+<p>返回选中区域是否激活。选中区域在<a href="#init">init</a>()和<a href="#expandTo">expandTo</a>()被调用之后被激活。
+
+<h3 class=fn>int <a name="leftCol"></a>QTableSelection::leftCol () const
+</h3> 
+<p>返回选中区域的左边列。
+<p> <p>也参见<a href="#topRow">topRow</a>()、<a href="#bottomRow">bottomRow</a>()和<a href="#rightCol">rightCol</a>()。
+
+<h3 class=fn>bool <a name="operator!-eq"></a>QTableSelection::operator!= ( const&nbsp;<a href="qtableselection.html">QTableSelection</a>&nbsp;&amp;&nbsp;s ) const
+</h3>如果<em>s</em>与选中区域不包含同样的单元格，返回TRUE；否则返回FALSE。
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>QTableSelection::operator== ( const&nbsp;<a href="qtableselection.html">QTableSelection</a>&nbsp;&amp;&nbsp;s ) const
+</h3>如果<em>s</em>与选中区域包含同样的单元格，返回TRUE；否则返回FALSE。
+
+<h3 class=fn>int <a name="rightCol"></a>QTableSelection::rightCol () const
+</h3> 
+<p>返回选中区域的右边列。
+<p> <p>也参见<a href="#topRow">topRow</a>()、<a href="#bottomRow">bottomRow</a>()和<a href="#leftCol">leftCol</a>()。
+
+<h3 class=fn>int <a name="topRow"></a>QTableSelection::topRow () const
+</h3> 
+<p>返回选中区域的顶行。
+<p> <p>也参见<a href="#bottomRow">bottomRow</a>()、<a href="#leftCol">leftCol</a>()和<a href="#rightCol">rightCol</a>()。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>
+

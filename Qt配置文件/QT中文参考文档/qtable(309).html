@@ -1,0 +1,915 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/table/qtable.cpp:1379 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QTable类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QTable类参考<br><small>[<a href="table.html">表格模块</a>]</small></h1>
+
+<p>QTable类提供了一个灵活的和可编辑的表格部件。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;</tt>
+<p>继承了<a href="qscrollview.html">QScrollView</a>。
+<p>被<a href="qdatatable.html">QDataTable</a>所继承。
+<p><a href="qtable-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QTable"><b>QTable</b></a> ( QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</div></li>
+<li><div class=fn><a href="#QTable-2"><b>QTable</b></a> ( int&nbsp;numRows, int&nbsp;numCols, QWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</div></li>
+<li><div class=fn><a href="#~QTable"><b>~QTable</b></a> ()</div></li>
+<li><div class=fn>QHeader * <a href="#horizontalHeader"><b>horizontalHeader</b></a> () const</div></li>
+<li><div class=fn>QHeader * <a href="#verticalHeader"><b>verticalHeader</b></a> () const</div></li>
+<li><div class=fn>enum <a href="#SelectionMode-enum"><b>SelectionMode</b></a> { Single, Multi, SingleRow, MultiRow, NoSelection }</div></li>
+<li><div class=fn>virtual void <a href="#setSelectionMode"><b>setSelectionMode</b></a> ( SelectionMode&nbsp;mode )</div></li>
+<li><div class=fn>SelectionMode <a href="#selectionMode"><b>selectionMode</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setItem"><b>setItem</b></a> ( int&nbsp;row, int&nbsp;col, QTableItem&nbsp;*&nbsp;item )</div></li>
+<li><div class=fn>virtual void <a href="#setText"><b>setText</b></a> ( int&nbsp;row, int&nbsp;col, const&nbsp;QString&nbsp;&amp;&nbsp;text )</div></li>
+<li><div class=fn>virtual void <a href="#setPixmap"><b>setPixmap</b></a> ( int&nbsp;row, int&nbsp;col, const&nbsp;QPixmap&nbsp;&amp;&nbsp;pix )</div></li>
+<li><div class=fn>virtual QTableItem * <a href="#item"><b>item</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual QString <a href="#text"><b>text</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual QPixmap <a href="#pixmap"><b>pixmap</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual void <a href="#clearCell"><b>clearCell</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>virtual QRect <a href="#cellGeometry"><b>cellGeometry</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual int <a href="#columnWidth"><b>columnWidth</b></a> ( int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual int <a href="#rowHeight"><b>rowHeight</b></a> ( int&nbsp;row ) const</div></li>
+<li><div class=fn>virtual int <a href="#columnPos"><b>columnPos</b></a> ( int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual int <a href="#rowPos"><b>rowPos</b></a> ( int&nbsp;row ) const</div></li>
+<li><div class=fn>virtual int <a href="#columnAt"><b>columnAt</b></a> ( int&nbsp;x ) const</div></li>
+<li><div class=fn>virtual int <a href="#rowAt"><b>rowAt</b></a> ( int&nbsp;y ) const</div></li>
+<li><div class=fn>virtual int <a href="#numRows"><b>numRows</b></a> () const</div></li>
+<li><div class=fn>virtual int <a href="#numCols"><b>numCols</b></a> () const</div></li>
+<li><div class=fn>void <a href="#updateCell"><b>updateCell</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>int <a href="#currentRow"><b>currentRow</b></a> () const</div></li>
+<li><div class=fn>int <a href="#currentColumn"><b>currentColumn</b></a> () const</div></li>
+<li><div class=fn>void <a href="#ensureCellVisible"><b>ensureCellVisible</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>bool <a href="#isSelected"><b>isSelected</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>bool <a href="#isRowSelected"><b>isRowSelected</b></a> ( int&nbsp;row, bool&nbsp;full = FALSE ) const</div></li>
+<li><div class=fn>bool <a href="#isColumnSelected"><b>isColumnSelected</b></a> ( int&nbsp;col, bool&nbsp;full = FALSE ) const</div></li>
+<li><div class=fn>int <a href="#numSelections"><b>numSelections</b></a> () const</div></li>
+<li><div class=fn>QTableSelection <a href="#selection"><b>selection</b></a> ( int&nbsp;num ) const</div></li>
+<li><div class=fn>virtual int <a href="#addSelection"><b>addSelection</b></a> ( const&nbsp;QTableSelection&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>virtual void <a href="#removeSelection"><b>removeSelection</b></a> ( const&nbsp;QTableSelection&nbsp;&amp;&nbsp;s )</div></li>
+<li><div class=fn>virtual void <a href="#removeSelection-2"><b>removeSelection</b></a> ( int&nbsp;num )</div></li>
+<li><div class=fn>virtual int <a href="#currentSelection"><b>currentSelection</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#showGrid"><b>showGrid</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#columnMovingEnabled"><b>columnMovingEnabled</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#rowMovingEnabled"><b>rowMovingEnabled</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#sortColumn"><b>sortColumn</b></a> ( int&nbsp;col, bool&nbsp;ascending = TRUE, bool&nbsp;wholeRows = FALSE )</div></li>
+<li><div class=fn>bool <a href="#sorting"><b>sorting</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#takeItem"><b>takeItem</b></a> ( QTableItem&nbsp;*&nbsp;i )</div></li>
+<li><div class=fn>virtual void <a href="#setCellWidget"><b>setCellWidget</b></a> ( int&nbsp;row, int&nbsp;col, QWidget&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual QWidget * <a href="#cellWidget"><b>cellWidget</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual void <a href="#clearCellWidget"><b>clearCellWidget</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>virtual QRect <a href="#cellRect"><b>cellRect</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>virtual void <a href="#paintCell-2"><b>paintCell</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;row, int&nbsp;col, const&nbsp;QRect&nbsp;&amp;&nbsp;cr, bool&nbsp;selected )</div></li>
+<li><div class=fn>virtual void <a href="#paintCell"><b>paintCell</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;row, int&nbsp;col, const&nbsp;QRect&nbsp;&amp;&nbsp;cr, bool&nbsp;selected, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;cg )</div></li>
+<li><div class=fn>virtual void <a href="#paintFocus"><b>paintFocus</b></a> ( QPainter&nbsp;*&nbsp;p, const&nbsp;QRect&nbsp;&amp;&nbsp;cr )</div></li>
+<li><div class=fn>bool <a href="#isReadOnly"><b>isReadOnly</b></a> () const</div></li>
+<li><div class=fn>bool <a href="#isRowReadOnly"><b>isRowReadOnly</b></a> ( int&nbsp;row ) const</div></li>
+<li><div class=fn>bool <a href="#isColumnReadOnly"><b>isColumnReadOnly</b></a> ( int&nbsp;col ) const</div></li>
+<li><div class=fn>void <a href="#repaintSelections"><b>repaintSelections</b></a> ()</div></li>
+<li><div class=fn>enum <a href="#FocusStyle-enum"><b>FocusStyle</b></a> { FollowStyle, SpreadSheet }</div></li>
+<li><div class=fn>virtual void <a href="#setFocusStyle"><b>setFocusStyle</b></a> ( FocusStyle&nbsp;fs )</div></li>
+<li><div class=fn>FocusStyle <a href="#focusStyle"><b>focusStyle</b></a> () const</div></li>
+</ul>
+<h2>公有槽</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#setNumRows"><b>setNumRows</b></a> ( int&nbsp;r )</div></li>
+<li><div class=fn>virtual void <a href="#setNumCols"><b>setNumCols</b></a> ( int&nbsp;r )</div></li>
+<li><div class=fn>virtual void <a href="#setShowGrid"><b>setShowGrid</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>virtual void <a href="#hideRow"><b>hideRow</b></a> ( int&nbsp;row )</div></li>
+<li><div class=fn>virtual void <a href="#hideColumn"><b>hideColumn</b></a> ( int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#showRow"><b>showRow</b></a> ( int&nbsp;row )</div></li>
+<li><div class=fn>virtual void <a href="#showColumn"><b>showColumn</b></a> ( int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#setColumnWidth"><b>setColumnWidth</b></a> ( int&nbsp;col, int&nbsp;w )</div></li>
+<li><div class=fn>virtual void <a href="#setRowHeight"><b>setRowHeight</b></a> ( int&nbsp;row, int&nbsp;h )</div></li>
+<li><div class=fn>virtual void <a href="#adjustColumn"><b>adjustColumn</b></a> ( int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#adjustRow"><b>adjustRow</b></a> ( int&nbsp;row )</div></li>
+<li><div class=fn>virtual void <a href="#setColumnStretchable"><b>setColumnStretchable</b></a> ( int&nbsp;col, bool&nbsp;stretch )</div></li>
+<li><div class=fn>virtual void <a href="#setRowStretchable"><b>setRowStretchable</b></a> ( int&nbsp;row, bool&nbsp;stretch )</div></li>
+<li><div class=fn>bool <a href="#isColumnStretchable"><b>isColumnStretchable</b></a> ( int&nbsp;col ) const</div></li>
+<li><div class=fn>bool <a href="#isRowStretchable"><b>isRowStretchable</b></a> ( int&nbsp;row ) const</div></li>
+<li><div class=fn>virtual void <a href="#setSorting"><b>setSorting</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>virtual void <a href="#swapRows"><b>swapRows</b></a> ( int&nbsp;row1, int&nbsp;row2, bool&nbsp;swapHeader = FALSE )</div></li>
+<li><div class=fn>virtual void <a href="#swapColumns"><b>swapColumns</b></a> ( int&nbsp;col1, int&nbsp;col2, bool&nbsp;swapHeader = FALSE )</div></li>
+<li><div class=fn>virtual void <a href="#swapCells"><b>swapCells</b></a> ( int&nbsp;row1, int&nbsp;col1, int&nbsp;row2, int&nbsp;col2 )</div></li>
+<li><div class=fn>virtual void <a href="#setLeftMargin"><b>setLeftMargin</b></a> ( int&nbsp;m )</div></li>
+<li><div class=fn>virtual void <a href="#setTopMargin"><b>setTopMargin</b></a> ( int&nbsp;m )</div></li>
+<li><div class=fn>virtual void <a href="#setCurrentCell"><b>setCurrentCell</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>void <a href="#clearSelection"><b>clearSelection</b></a> ( bool&nbsp;repaint = TRUE )</div></li>
+<li><div class=fn>virtual void <a href="#setColumnMovingEnabled"><b>setColumnMovingEnabled</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>virtual void <a href="#setRowMovingEnabled"><b>setRowMovingEnabled</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>virtual void <a href="#setReadOnly"><b>setReadOnly</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>virtual void <a href="#setRowReadOnly"><b>setRowReadOnly</b></a> ( int&nbsp;row, bool&nbsp;ro )</div></li>
+<li><div class=fn>virtual void <a href="#setColumnReadOnly"><b>setColumnReadOnly</b></a> ( int&nbsp;col, bool&nbsp;ro )</div></li>
+<li><div class=fn>virtual void <a href="#setDragEnabled"><b>setDragEnabled</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#dragEnabled"><b>dragEnabled</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#insertRows"><b>insertRows</b></a> ( int&nbsp;row, int&nbsp;count = 1 )</div></li>
+<li><div class=fn>virtual void <a href="#insertColumns"><b>insertColumns</b></a> ( int&nbsp;col, int&nbsp;count = 1 )</div></li>
+<li><div class=fn>virtual void <a href="#removeRow"><b>removeRow</b></a> ( int&nbsp;row )</div></li>
+<li><div class=fn>virtual void <a href="#removeRows"><b>removeRows</b></a> ( const&nbsp;QMemArray&lt;int&gt;&nbsp;&amp;&nbsp;rows )</div></li>
+<li><div class=fn>virtual void <a href="#removeColumn"><b>removeColumn</b></a> ( int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#removeColumns"><b>removeColumns</b></a> ( const&nbsp;QMemArray&lt;int&gt;&nbsp;&amp;&nbsp;cols )</div></li>
+<li><div class=fn>virtual void <a href="#editCell"><b>editCell</b></a> ( int&nbsp;row, int&nbsp;col, bool&nbsp;replace = FALSE )</div></li>
+</ul>
+<h2>信号</h2>
+<ul>
+<li><div class=fn>void <a href="#currentChanged"><b>currentChanged</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>void <a href="#clicked"><b>clicked</b></a> ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;QPoint&nbsp;&amp;&nbsp;mousePos )</div></li>
+<li><div class=fn>void <a href="#doubleClicked"><b>doubleClicked</b></a> ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;QPoint&nbsp;&amp;&nbsp;mousePos )</div></li>
+<li><div class=fn>void <a href="#pressed"><b>pressed</b></a> ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;QPoint&nbsp;&amp;&nbsp;mousePos )</div></li>
+<li><div class=fn>void <a href="#selectionChanged"><b>selectionChanged</b></a> ()</div></li>
+<li><div class=fn>void <a href="#valueChanged"><b>valueChanged</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>void <a href="#contextMenuRequested"><b>contextMenuRequested</b></a> ( int&nbsp;row, int&nbsp;col, const&nbsp;QPoint&nbsp;&amp;&nbsp;pos )</div></li>
+<li><div class=fn>void <a href="#dropped"><b>dropped</b></a> ( QDropEvent&nbsp;*&nbsp;e )</div></li>
+</ul>
+<h2>属性</h2>
+<ul>
+<li><div class=fn>bool <a href="#columnMovingEnabled-prop"><b>columnMovingEnabled</b></a>&nbsp;- 用户是否可以移动列</div></li>
+<li><div class=fn>FocusStyle <a href="#focusStyle-prop"><b>focusStyle</b></a>&nbsp;- 当前的（焦点所在的）单元格如何绘制</div></li>
+<li><div class=fn>int <a href="#numCols-prop"><b>numCols</b></a>&nbsp;- 表格中的列数</div></li>
+<li><div class=fn>int <a href="#numRows-prop"><b>numRows</b></a>&nbsp;- 表格中的行数</div></li>
+<li><div class=fn>bool <a href="#readOnly-prop"><b>readOnly</b></a>&nbsp;- 表格是否是只读的</div></li>
+<li><div class=fn>bool <a href="#rowMovingEnabled-prop"><b>rowMovingEnabled</b></a>&nbsp;- 用户是否可以移动行</div></li>
+<li><div class=fn>SelectionMode <a href="#selectionMode-prop"><b>selectionMode</b></a>&nbsp;- 当前的选中模式</div></li>
+<li><div class=fn>bool <a href="#showGrid-prop"><b>showGrid</b></a>&nbsp;- 是否显示表格的栅格</div></li>
+<li><div class=fn>bool <a href="#sorting-prop"><b>sorting</b></a>&nbsp;- 点击列标题是否对该列排序</div></li>
+</ul>
+<h2>保护成员</h2>
+<ul>
+<li><div class=fn>enum <a href="#EditMode-enum"><b>EditMode</b></a> { NotEditing, Editing, Replacing }</div></li>
+<li><div class=fn>virtual void <a href="#drawContents"><b>drawContents</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;cx, int&nbsp;cy, int&nbsp;cw, int&nbsp;ch )</div></li>
+<li><div class=fn>void <a href="#setEditMode"><b>setEditMode</b></a> ( EditMode&nbsp;mode, int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragEnterEvent"><b>contentsDragEnterEvent</b></a> ( QDragEnterEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragMoveEvent"><b>contentsDragMoveEvent</b></a> ( QDragMoveEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDragLeaveEvent"><b>contentsDragLeaveEvent</b></a> ( QDragLeaveEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual void <a href="#contentsDropEvent"><b>contentsDropEvent</b></a> ( QDropEvent&nbsp;*&nbsp;e )</div></li>
+<li><div class=fn>virtual QDragObject * <a href="#dragObject"><b>dragObject</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#startDrag"><b>startDrag</b></a> ()</div></li>
+<li><div class=fn>virtual void <a href="#paintEmptyArea"><b>paintEmptyArea</b></a> ( QPainter&nbsp;*&nbsp;p, int&nbsp;cx, int&nbsp;cy, int&nbsp;cw, int&nbsp;ch )</div></li>
+<li><div class=fn>virtual void <a href="#activateNextCell"><b>activateNextCell</b></a> ()</div></li>
+<li><div class=fn>virtual QWidget * <a href="#createEditor"><b>createEditor</b></a> ( int&nbsp;row, int&nbsp;col, bool&nbsp;initFromCell ) const</div></li>
+<li><div class=fn>virtual void <a href="#setCellContentFromEditor"><b>setCellContentFromEditor</b></a> ( int&nbsp;row, int&nbsp;col )</div></li>
+<li><div class=fn>virtual QWidget * <a href="#beginEdit"><b>beginEdit</b></a> ( int&nbsp;row, int&nbsp;col, bool&nbsp;replace )</div></li>
+<li><div class=fn>virtual void <a href="#endEdit"><b>endEdit</b></a> ( int&nbsp;row, int&nbsp;col, bool&nbsp;accept, bool&nbsp;replace )</div></li>
+<li><div class=fn>virtual void <a href="#resizeData"><b>resizeData</b></a> ( int&nbsp;len )</div></li>
+<li><div class=fn>virtual void <a href="#insertWidget"><b>insertWidget</b></a> ( int&nbsp;row, int&nbsp;col, QWidget&nbsp;*&nbsp;w )</div></li>
+<li><div class=fn>int <a href="#indexOf"><b>indexOf</b></a> ( int&nbsp;row, int&nbsp;col ) const</div></li>
+<li><div class=fn>bool <a href="#isEditing"><b>isEditing</b></a> () const</div></li>
+<li><div class=fn>EditMode <a href="#editMode"><b>editMode</b></a> () const</div></li>
+<li><div class=fn>int <a href="#currEditRow"><b>currEditRow</b></a> () const</div></li>
+<li><div class=fn>int <a href="#currEditCol"><b>currEditCol</b></a> () const</div></li>
+</ul>
+<h2>保护槽</h2>
+<ul>
+<li><div class=fn>virtual void <a href="#columnWidthChanged"><b>columnWidthChanged</b></a> ( int&nbsp;col )</div></li>
+<li><div class=fn>virtual void <a href="#rowHeightChanged"><b>rowHeightChanged</b></a> ( int&nbsp;row )</div></li>
+<li><div class=fn>virtual void <a href="#columnIndexChanged"><b>columnIndexChanged</b></a> ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )</div></li>
+<li><div class=fn>virtual void <a href="#rowIndexChanged"><b>rowIndexChanged</b></a> ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )</div></li>
+<li><div class=fn>virtual void <a href="#columnClicked"><b>columnClicked</b></a> ( int&nbsp;col )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+ 
+
+
+
+<p>QTable类提供了一个灵活的和可编辑的表格部件。
+<p>鉴于所提供功能的复杂性，QTable确实包含了许多API，尽管如此，它还是易于使用的。QTable提供的功能可以处理<a href="#headers">标题（headers）</a>、<a href="#columnsrows">行列（rows和columns）</a>、<a href="#cells">单元格（cells）</a>和<a href="#selections">选中区域（selections）</a>。QTable还含有内嵌编辑（in-place editing）和<a href="dnd.html">拖放（drag和drop）</a>，以及一批有用的<a href="#signals">信号</a>。QTable有效率地支持很大的表格，例如有百万行乘百万列单元格的表格也毫无问题。QTable内存使用节约，未用的单元格没有内存开销。
+<p> <pre>
+    QTable *table = new QTable( 100, 250, this );
+    table-&gt;<a href="#setPixmap">setPixmap</a>( 3, 2, pix );
+    table-&gt;<a href="#setText">setText</a>( 3, 2, "A pixmap" );
+    </pre>
+ 
+<p>第一行代码构造了一个指定行列数目的表格。然后我们在<em>同一个</em><a href="#cells">单元格</a>插入一个象素映射（pixmap）和一些文本，象素映射在文本的左边。QTable的单元格可以使用<a href="qtableitem.html">QTableItem</a>、<a href="qcombotableitem.html">QComboTableItem</a>或者<a href="qchecktableitem.html">QCheckTableItem</a>来填充。缺省情况下显示行号的垂直标题在表格的左部，而显示列标的水平标题在上部。（显示的数字从1开始，尽管在QTable内部行列都是由零开始计数。）
+<p>如果你想使用鼠标跟踪（mouse tracking），对<em>视口（viewport）</em>调用<a href="qwidget.html#setMouseTracking">setMouseTracking</a>(TRUE) （参见<a href="qscrollview.html#allviews">QScrollView</a>）。
+<p> <center><img src="qtableitems.png" alt="Table Items"></center> 
+<p> <a name="headers"></a>
+<h3>标题
+</h3>
+<a name="1"></a><p>QTable支持一个标题列，用来显示行号；以及一个标题行，用来显示列标。要设置行列标签（label），需要对由<a href="#verticalHeader">verticalHeader</a>()和<a href="#horizontalHeader">horizontalHeader</a>()分别返回的指针使用<a href="qheader.html#setLabel">QHeader::setLabel</a>()。垂直标题显示在表格的左边内，宽度由<a href="#setLeftMargin">setLeftMargin</a>()设置。水平标题显示在表格的上边内，高度由<a href="#setTopMargin">setTopMargin</a>()设置。表格的栅格可以通过<a href="#setShowGrid">setShowGrid</a>()来开关。如果要隐藏水平标题，调用<a href="qwidget.html#hide">hide</a>()，以及setTopMargin( 0 )，以使得标题所在的区域减为零尺寸。
+<p>标题标签是通过他们的区域编号（section number）来生成索引的。注意，<a href="qheader.html">QHeader</a>关于区域编号的缺省行为为QTable而覆盖（overrided）了。参见下面在“行列”一节讨论行列移动时的相关解释。
+<p> <a name="columnsrows"></a>
+<h3>行列
+</h3>
+<a name="1-1"></a><p>行列的尺寸由<a href="#setRowHeight">setRowHeight</a>()和<a href="#setColumnWidth">setColumnWidth</a>()设置。如果要使得某行高到足以全部显示最高的表项（item），可以使用<a href="#adjustRow">adjustRow</a>()。类似地，<a href="#adjustColumn">adjustColumn</a>()使某列宽至全部显示最宽的表项。使用<a href="#setRowStretchable">setRowStretchable</a>()和<a href="#setColumnStretchable">setColumnStretchable</a>()，可以让行高、列宽在表格的高宽变化时自动调整。
+<p>行列的隐藏显示可以使用<a href="#hideRow">hideRow</a>()、<a href="#hideColumn">hideColumn</a>()、<a href="#showRow">showRow</a>()和<a href="#showColumn">showColumn</a>()。插入新的行列使用<a href="#insertRows">insertRows</a>()和<a href="#insertColumns">insertColumns</a>()。如果你设置<a href="#setNumRows">setNumRows</a>()或者<a href="#setNumCols">setNumCols</a>()为比<a href="#numRows">numRows</a>()或者<a href="#numCols">numCols</a>()还要大，额外的行列会添加在下面（行）或者右边（列）。已有的行列可以使用<a href="#removeRow">removeRow</a>()和<a href="#removeColumn">removeColumn</a>()来删除，多个行列则是<a href="#removeRows">removeRows</a>()和<a href="#removeColumns">removeColumns</a>()。
+<p>使用<a href="#rowMovingEnabled">rowMovingEnabled</a>()和<a href="#columnMovingEnabled">columnMovingEnabled</a>()，行列可以设置为可移动的，也就是说，用户能够拖动放置他们。基于性能原因，<a href="qheader.html">QHeader</a>区域编号的缺省行为被QTable重写。现在在QTable中，当一行或者一列被拖放，其区域编号也变为新的位置。这样，QHeader的区域（section）和索引就没有不同了。QTable中的QHeader类没有提供独立于用户界面次序的索引机制。
+<p>表格可以使用<a href="#sortColumn">sortColumn</a>()来排序。如果<a href="#setSorting">setSorting</a>()设置为TRUE，用户可以点击列标题以对该列排序。行之间可以用<a href="#swapRows">swapRows</a>()来交换；列则是<a href="#swapColumns">swapColumns</a>()；而单元格则是<a href="#swapCells">swapCells</a>()。
+<p>对于可编辑的表格（参见<a href="#setReadOnly">setReadOnly</a>()），可以使用<a href="#setRowReadOnly">setRowReadOnly</a>()和<a href="#setColumnReadOnly">setColumnReadOnly</a>()来设置个别行列的只读属性。（单元格是可编辑还是只读取决于其设置和该单元格的<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。）
+<p>焦点所在的行和列分别由<a href="#currentRow">currentRow</a>()和<a href="#currentColumn">currentColumn</a>()返回。
+<p>尽管许多QTable函数以行列进行操作，<a href="#indexOf">indexOf</a>()函数可以返回一个识别特定单元格的整数。
+<p> <a name="cells"></a>
+<h3>单元格
+</h3>
+<a name="1-2"></a><p>表格构造初始，QTable所有的单元格都是空的。
+<p>有两种方法来填充表格的单元格。首先也是最简单的方法是使用<a href="qtableitem.html">QTableItem</a>或者QTableItem的子类。第二种方法对很大的稀疏表格有用，它不使用QTableItem，而是自己重新实现一些函数。我们下面按顺序看看这两种方法。
+<p>在单元格内放置一个字符串，使用<a href="#setText">setText</a>()。这个函数将为还不存在的单元格生成一个新的QTableItem，然后显示里面的文本。缺省情况下表项的部件是<a href="qlineedit.html">QLineEdit</a>。使用<a href="#setPixmap">setPixmap</a>()，单元格也可以放置一个象素映射，而且也在必要时生成表项。单元格可以<em>同时</em>包括象素映射和文本，象素映射显示在文本的左边。另一种方法是构造一个QTableItem或者QTableItem的子类，设置其属性，然后使用<a href="#setItem">setItem</a>()以插入到单元格中。
+<p>如果需要含有组合框的单元格，使用<a href="qcombotableitem.html">QComboTableItem</a>类；类似地，含有多选框的单元格要用<a href="qchecktableitem.html">QCheckTableItem</a>类。这些表项的样子和行为都类似组合框或者多选框，然而极少耗费内存。
+<p> <pre>        for ( int j = 0; j &lt; numRows; ++j )
+    <a name="x2449"></a>        table.<a href="#setItem">setItem</a>( j, 1, new <a href="qchecktableitem.html">QCheckTableItem</a>( &amp;table, "Check me" ) );
+</pre>上面的例子中，我们生成了一列QCheckTableItem，用setItem()插入到表格中。
+<p>QTable拥有其QTableItem的所有权，在自己被销毁时也会删除他们。你可以使用<a href="#takeItem">takeItem</a>()来获得一个表项的所有权，用它来在单元格之间移动单元格的内容，不论是不是属于同一个表格。（也参见<a href="#swapCells">swapCells</a>()）。
+<p>QTableItem中的文本，与QComboTableItem和QCheckTableItem中的值一样，其内嵌编辑都是自动进行的。单元格可以是可编辑或者只读的，参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。如果要精细地控制编辑，参见<a href="#beginEdit">beginEdit</a>()和<a href="#endEdit">endEdit</a>()。
+<p>使用<a href="#item">item</a>()，可以把单元格的内容作为一个<a href="qtableitem.html">QTableItem</a>取得；类似地，使用<a href="#text">text</a>()作为字符串取得，使用<a href="#pixmap">pixmap</a>()作为象素映射取得（如果有的话）。单元格的范围矩形由<a href="#cellGeometry">cellGeometry</a>()来给定。使用<a href="#updateCell">updateCell</a>()来重绘单元格，例如在使用<a href="#clearCell">clearCell</a>()删除单元格之后，清除其显示。可以使用<a href="#ensureCellVisible">ensureCellVisible</a>()来迫使表格滚动至显示某个特定单元格的位置。<a href="#isSelected">isSelected</a>()函数表明一个单元格是否被选中。
+<p>可以使用<a href="#setCellWidget">setCellWidget</a>()来使你自己的部件代替单元格的部件，但是写QTableItem的子类可能更为简便。单元格的部件（如果有的话）可以使用<a href="#clearCellWidget">clearCellWidget</a>()来删去。
+<p> <!-- index notes on large tables --><a name="notes-on-large-tables"></a><a name="bigtables"></a>
+<h4>大表格
+</h4>
+<a name="1-2-1"></a><p>对于大稀疏表格，使用QTableItem或者其他部件的效率不高。解决的办法是：如应该表现的那样<em>绘制</em>单元格，在需求时生成和销毁单元格编辑器。
+<p>这种方法需要你重新实现几个函数。重写<a href="#paintCell">paintCell</a>()以显示你的数据，<a href="#createEditor">createEditor</a>()和<a href="#setCellContentFromEditor">setCellContentFromEditor</a>()以方便内嵌编辑。重要的是，重写<a href="#resizeData">resizeData</a>()为空，以防止QTable试图生成一个大数组。还需要重写<a href="#item">item</a>()、<a href="#setItem">setItem</a>()、<a href="#clearCell">clearCell</a>()，和<a href="#insertWidget">insertWidget</a>()、<a href="#cellWidget">cellWidget</a>()和<a href="#clearCellWidget">clearCellWidget</a>()。几乎所有情况下（像排序、删除和插入行列等）你必须重写<a href="#swapRows">swapRows</a>()、<a href="#swapCells">swapCells</a>()和<a href="#swapColumns">swapColumns</a>()，包括标题操作。
+<p>如果你用一个QTableItem和QWidget的字典来表述活动的单元格，也就是说，只保存了对实际使用的单元格的引用，大部分函数可以用一行代码来实现。（参见<a href="table-bigtable-main-cpp.html">table/bigtable/main.cpp</a>的例子。）
+<p>更多单元格的信息参见<a href="qtableitem.html">QTableItem</a>文档。
+<p> <a name="selections"></a>
+<h3>选中区域
+</h3>
+<a name="1-3"></a><p>QTable支持单一选中区域、多重选中区域（多个单元格）和无选中区域。选中模式由<a href="#setSelectionMode">setSelectionMode</a>()设置。使用<a href="#isSelected">isSelected</a>()来判断一个特定的单元格是否被选中，而<a href="#isRowSelected">isRowSelected</a>()和<a href="#isColumnSelected">isColumnSelected</a>()则是判断行、列。
+<p>QTable支持多重选中区域。你可以使用<a href="#addSelection">addSelection</a>()来在编程中选择单元格。选中区域的个数由<a href="#numSelections">numSelections</a>()给出。当前选中区域由<a href="#currentSelection">currentSelection</a>()返回。可以使用<a href="#removeSelection">removeSelection</a>()来删去一个选中区域，和<a href="#clearSelection">clearSelection</a>()来删去所有的选中区域。选中区域是<a href="qtableselection.html">QTableSelection</a>对象。
+<p> <a name="signals"></a>
+<h3>信号
+</h3>
+<a name="1-4"></a><p>当用户点击一个单元格时，信号<a href="#currentChanged">currentChanged</a>()被发送。你也可以连接到低层次的信号<a href="#clicked">clicked</a>()、<a href="#doubleClicked">doubleClicked</a>()和<a href="#pressed">pressed</a>()上。如果用户改变了选中区域，信号<a href="#selectionChanged">selectionChanged</a>()被发送；类似地，单元格值改变将发送<a href="#valueChanged">valueChanged</a>()信号。如果右键单击（或者按下平台特定的键序列），信号<a href="#contextMenuRequested">contextMenuRequested</a>()被发送。如果用户放置了一个拖动或者一个对象，信号<a href="#dropped">dropped</a>()与放置事件（drop event）一起被发送。
+<p>也参见<a href="advanced.html">高级部件</a>。
+
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="EditMode-enum"></a>QTable::EditMode</h3> 
+<ul>
+<li><tt>QTable::NotEditing</tt> - 当前没有被编辑的单元格。
+<li><tt>QTable::Editing</tt> - 当前有一个单元格被编辑。编辑器使用单元格的原内容为初始值。
+<li><tt>QTable::Replacing</tt> - 当前有一个单元格被编辑。编辑器没有使用单元格的原内容为初始值。
+</ul>
+<h3 class=fn><a name="FocusStyle-enum"></a>QTable::FocusStyle</h3> 
+<p>指明当前单元格（焦点所在）如何被绘制。
+<ul>
+<li><tt>QTable::FollowStyle</tt> - 当前单元格按照当前的风格（style）被绘制，而且如果当前单元格在选中区域内，其背景也绘制为选中。
+<li><tt>QTable::SpreadSheet</tt> - 当前单元格按照在电子表格里被绘制。这意味着，单元格由包围它的一个黑色矩形所指示出来，而且其背景也总是使用部件的底色——即使被选中。
+</ul><p> 
+<h3 class=fn><a name="SelectionMode-enum"></a>QTable::SelectionMode</h3> 
+<ul>
+<li><tt>QTable::NoSelection</tt> - 用户不能选中单元格。
+<li><tt>QTable::Single</tt> - 用户只能选中一个单一区域的单元格。
+<li><tt>QTable::Multi</tt> - 用户可以选中多重区域的单元格。
+<li><tt>QTable::SingleRow</tt> - 用户一次选中一行（总是当前表项所在的那一行）。
+<li><tt>QTable::MultiRow</tt> - 用户可以选中多行。
+</ul>
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QTable"></a>QTable::QTable ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>生成一个空表格对象，命名为<em>name</em>，作为<em>parent</em>的子部件。
+<p>如果使用QTableItem，在填充表格前要调用<a href="#setNumRows">setNumRows</a>()和<a href="#setNumCols">setNumCols</a>()以设置表格尺寸。
+<p> <p>也参见<a href="qwidget.html#clearWFlags">QWidget::clearWFlags</a>()和<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>。
+
+<h3 class=fn><a name="QTable-2"></a>QTable::QTable ( int&nbsp;numRows, int&nbsp;numCols, <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>构造空表格，命名为<em>name</em>，行数为<em>numRows</em>，列数为<em>numCols</em>，是<em>parent</em>的子部件。
+<p>如果使用<a href="qtableitem.html">QTableItem</a>填充表格，可以生成<a href="qtableitem.html">QTableItem</a>、<a href="qcombotableitem.html">QComboTableItem</a>和<a href="qchecktableitem.html">QCheckTableItem</a>表项并且使用<a href="#setItem">setItem</a>()插入到表格中。（使用QTableItem的另外一种方法可参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p> <p>也参见<a href="qwidget.html#clearWFlags">QWidget::clearWFlags</a>()和<a href="qt.html#WidgetFlags-enum">Qt::WidgetFlags</a>。
+
+<h3 class=fn><a name="~QTable"></a>QTable::~QTable ()
+</h3>解构器（Destructor）。删除QTable对象使用的所有资源，包括所有的QTableItem及其部件。
+
+<h3 class=fn>void <a name="activateNextCell"></a>QTable::activateNextCell ()<tt> [virtual protected]</tt>
+</h3>用来在内嵌编辑使用回车键完成后，激活下一个单元格。
+<p>缺省行为是由上到下，也就是说，移到当前编辑单元格的下方的单元格。如果需要不同的响应行为，例如由左至右，需要重写这个函数。
+
+<h3 class=fn>int <a name="addSelection"></a>QTable::addSelection ( const&nbsp;<a href="qtableselection.html">QTableSelection</a>&nbsp;&amp;&nbsp;s )<tt> [virtual]</tt>
+</h3>给表格增加一个由<em>s</em>所描述的选中区域，返回其个数，在选中区域非法时返回-1。
+<p>切记调用<a href="qtableselection.html#init">QTableSelection::init</a>()和<a href="qtableselection.html#expandTo">QTableSelection::expandTo</a>()以使得选中区域合法（也参见<a href="qtableselection.html#isActive">QTableSelection::isActive</a>()）。
+<p> <p>也参见<a href="#numSelections">numSelections</a>()、<a href="#removeSelection">removeSelection</a>()和<a href="#clearSelection">clearSelection</a>()。
+
+<h3 class=fn>void <a name="adjustColumn"></a>QTable::adjustColumn ( int&nbsp;col )<tt> [virtual slot]</tt>
+</h3>调整<em>col</em>列的大小，以使得列宽足以显示该列最宽的表项。
+<p> <p>也参见<a href="#adjustRow">adjustRow</a>()。
+
+<p>已在<a href="qdatatable.html#adjustColumn">QDataTable</a>中重新实现。
+<h3 class=fn>void <a name="adjustRow"></a>QTable::adjustRow ( int&nbsp;row )<tt> [virtual slot]</tt>
+</h3>调整<em>row</em>行的大小，以使得行高足以显示该行最高的表项。
+<p> <p>也参见<a href="#adjustColumn">adjustColumn</a>()。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="beginEdit"></a>QTable::beginEdit ( int&nbsp;row, int&nbsp;col, bool&nbsp;replace )<tt> [virtual protected]</tt>
+</h3>用来启动在<em>row</em>、<em>col</em>的单元格的编辑器。通过生成一个编辑器（调用<a href="#createEditor">createEditor</a>()）和使用<a href="#setCellWidget">setCellWidget</a>()把单元格的编辑器设置为新生成的编辑器，实现编辑过程。（编辑完成后，调用<a href="#endEdit">endEdit</a>()以把单元格内容替换为编辑器的结果。）如果<em>replace</em>为TRUE，编辑器会以单元格内容（如果有的话）为初始值，也就是说，用户来修改原来单元格的内容；否则，用户将输入新的数据。
+<p> <p>也参见<a href="#endEdit">endEdit</a>()。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="cellGeometry"></a>QTable::cellGeometry ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>以内容坐标（content coordinates）返回在<em>row</em>、<em>col</em>的单元格的范围矩形（bounding rectangle）。
+
+<h3 class=fn><a href="qrect.html">QRect</a> <a name="cellRect"></a>QTable::cellRect ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回在单元格坐标系统中<em>row</em>、<em>col</em>单元格的几何结构（geometry）。在<a href="#paintCell">paintCell</a>()时使用方便。等价于<a href="qrect.html">QRect</a>( <a href="qpoint.html">QPoint</a>(0,0)、<a href="#cellGeometry">cellGeometry</a>( row, col)。<a href="qwidget.html#size">size</a>() );
+<p> <p>也参见<a href="#cellGeometry">cellGeometry</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2515">chart/setdataform.cpp</a>。
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="cellWidget"></a>QTable::cellWidget ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回在<em>row</em>、<em>col</em>的单元格中所设置的部件，如果未设置则返回0。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p> <p>也参见<a href="#clearCellWidget">clearCellWidget</a>()和<a href="#setCellWidget">setCellWidget</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2516">chart/setdataform.cpp</a>。
+<h3 class=fn>void <a name="clearCell"></a>QTable::clearCell ( int&nbsp;row, int&nbsp;col )<tt> [virtual]</tt>
+</h3>删去在<em>row</em>、<em>col</em>的<a href="qtableitem.html">QTableItem</a>。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+
+<h3 class=fn>void <a name="clearCellWidget"></a>QTable::clearCellWidget ( int&nbsp;row, int&nbsp;col )<tt> [virtual]</tt>
+</h3>删去在<em>row</em>、<em>col</em>的单元格中所设置的部件（如果有的话）。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p>本函数删去在<em>row</em>、<em>col</em>坐标的部件。注意：部件不是立即被删去，而是对部件调用<a href="qobject.html#deleteLater">QObject::deleteLater</a>()以避免时序问题。
+<p> <p>也参见<a href="#cellWidget">cellWidget</a>()和<a href="#setCellWidget">setCellWidget</a>()。
+
+<h3 class=fn>void <a name="clearSelection"></a>QTable::clearSelection ( bool&nbsp;repaint = TRUE )<tt> [slot]</tt>
+</h3>清除所有选中区域，如果<em>repaint</em>为TRUE则重绘适当的区域。
+<p> <p>也参见<a href="#removeSelection">removeSelection</a>()。
+
+<h3 class=fn>void <a name="clicked"></a>QTable::clicked ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;mousePos )<tt> [signal]</tt>
+</h3> 
+<p>当鼠标按键<em>button</em>被点击时，本信号被发送。事件发生所在的单元格在<em>row</em>、<em>col</em>，鼠标位置在<em>mousePos</em>结构里。
+
+<p>例子：<a href="tutorial2-08.html#x2517">chart/setdataform.cpp</a>。
+<h3 class=fn>int <a name="columnAt"></a>QTable::columnAt ( int&nbsp;x ) const<tt> [virtual]</tt>
+</h3>返回在位置<em>x</em>的列的序数。<em>x</em>必须以内容坐标的形式给出。
+<p> <p>也参见<a href="#columnPos">columnPos</a>()和<a href="#rowAt">rowAt</a>()。
+
+<h3 class=fn>void <a name="columnClicked"></a>QTable::columnClicked ( int&nbsp;col )<tt> [virtual protected slot]</tt>
+</h3>当列<em>col</em>被点击时调用。缺省的实现是如果<a href="#sorting">sorting</a>()为TRUE则对该列排序。
+
+<h3 class=fn>void <a name="columnIndexChanged"></a>QTable::columnIndexChanged ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )<tt> [virtual protected slot]</tt>
+</h3>当列的顺序将被改变时调用，也就是说，当用户从<em>fromIndex</em>到<em>toIndex</em>移动列标题<em>section</em>的时候。
+<p>如果要编程上改变列的顺序，可以调用<a href="#swapRows">swapRows</a>()或者<a href="#swapColumns">swapColumns</a>()。
+<p> <p>也参见<a href="qheader.html#indexChange">QHeader::indexChange</a>()和<a href="#rowIndexChanged">rowIndexChanged</a>()。
+
+<h3 class=fn>bool <a name="columnMovingEnabled"></a>QTable::columnMovingEnabled () const
+</h3><p>如果用户可以移动列，返回TRUE；否则返回FALSE。详情参见<a href="qtable.html#columnMovingEnabled-prop">"columnMovingEnabled"</a>属性。
+<h3 class=fn>int <a name="columnPos"></a>QTable::columnPos ( int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>以内容坐标的形式返回列<em>col</em>的x坐标。
+<p> <p>也参见<a href="#columnAt">columnAt</a>()和<a href="#rowPos">rowPos</a>()。
+
+<h3 class=fn>int <a name="columnWidth"></a>QTable::columnWidth ( int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回列<em>col</em>的宽度。
+<p> <p>也参见<a href="#setColumnWidth">setColumnWidth</a>()和<a href="#rowHeight">rowHeight</a>()。
+
+<h3 class=fn>void <a name="columnWidthChanged"></a>QTable::columnWidthChanged ( int&nbsp;col )<tt> [virtual protected slot]</tt>
+</h3>无论何时列<em>col</em>的宽度改变，都应该调用本函数。它更新受影响的各个列的几何特性，重绘表格以反映所做的改变。
+
+<h3 class=fn>void <a name="contentsDragEnterEvent"></a>QTable::contentsDragEnterEvent ( <a href="qdragenterevent.html">QDragEnterEvent</a>&nbsp;*&nbsp;e )<tt> [virtual protected]</tt>
+</h3>本事件处理者（event handler）当QTable对象接收到一个<a href="qdragenterevent.html">QDragEnterEvent</a> <em>e</em>时调用，也就是说，当用户按下鼠标按键以拖拉什么东西的时候。
+<p>焦点移到<a href="qdragenterevent.html">QDragEnterEvent</a>所发生的单元格处。
+
+<p>由<a href="qscrollview.html#contentsDragEnterEvent">QScrollView</a>处重新实现。
+<h3 class=fn>void <a name="contentsDragLeaveEvent"></a>QTable::contentsDragLeaveEvent ( <a href="qdragleaveevent.html">QDragLeaveEvent</a>&nbsp;*&nbsp;e )<tt> [virtual protected]</tt>
+</h3>本事件处理者当一个拖拉动作伴随事件<em>e</em>离开<em>这个</em>QTable对象时调用。
+
+<p>由<a href="qscrollview.html#contentsDragLeaveEvent">QScrollView</a>处重新实现。
+<h3 class=fn>void <a name="contentsDragMoveEvent"></a>QTable::contentsDragMoveEvent ( <a href="qdragmoveevent.html">QDragMoveEvent</a>&nbsp;*&nbsp;e )<tt> [virtual protected]</tt>
+</h3>本事件处理者当QTable对象接收到一个<a href="qdragmoveevent.html">QDragMoveEvent</a> <em>e</em>时调用，也就是说，当用户确实拖拽了鼠标的时候。
+<p>焦点移到<a href="qdragmoveevent.html">QDragMoveEvent</a>所发生的单元格处。
+
+<p>由<a href="qscrollview.html#contentsDragMoveEvent">QScrollView</a>处重新实现。
+<h3 class=fn>void <a name="contentsDropEvent"></a>QTable::contentsDropEvent ( <a href="qdropevent.html">QDropEvent</a>&nbsp;*&nbsp;e )<tt> [virtual protected]</tt>
+</h3>本事件处理者当用户以在<em>这个</em>QTable上放置什么东西来结束一次拖放，并从而触发了这个放置事件<em>e</em>的时候调用。
+
+<p>由<a href="qscrollview.html#contentsDropEvent">QScrollView</a>处重新实现。
+<h3 class=fn>void <a name="contextMenuRequested"></a>QTable::contextMenuRequested ( int&nbsp;row, int&nbsp;col, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;pos )<tt> [signal]</tt>
+</h3>
+
+<p>当用户用鼠标右键（或者一个系统特定键盘键）调用上下文菜单（context menu）时，本信号被发送。事件发生的单元格在<em>row</em>、<em>col</em>处。<em>pos</em>是上下文菜单在全局坐标系统中的出现位置。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="createEditor"></a>QTable::createEditor ( int&nbsp;row, int&nbsp;col, bool&nbsp;initFromCell ) const<tt> [virtual protected]</tt>
+</h3>返回一个部件，可以用作在<em>row</em>、<em>col</em>处的单元格的内容编辑器。
+<p>若<em>initFromCell</em>为TRUE，该编辑器用于编辑此单元格的当前内容（这样编辑器部件就应该使用该内容作为初始值）。若<em>initFromCell</em>为FALSE，单元格的内容被用户在本函数生成的部件中新输入的内容所替代。
+<p>缺省的功能描述如下：如果<em>initFromCell</em>为TRUE，或者单元格包含一个<a href="qtableitem.html">QTableItem</a>并且该表项的<a href="qtableitem.html#isReplaceable">QTableItem::isReplaceable</a>()为FALSE，那么该单元格被要求生成一个适当的编辑器（使用<a href="qtableitem.html#createEditor">QTableItem::createEditor</a>()）。否则<a href="qlineedit.html">QLineEdit</a>被用作编辑器。
+<p>如果要为单元格创建你自己的编辑器，需要实现定制的QTableItem子类和重写QTableItem::createEditor()。
+<p>如果不使用QTableItem，而且不想使用QLineEdit作为缺省的编辑器，需要写QTable的子类和用类似下面的代码重写本函数：
+<pre>
+    <a href="qtableitem.html">QTableItem</a> *i = <a href="#item">item</a>( row, col );
+    if ( initFromCell || ( i &amp;&amp; !i-&gt;<a href="qtableitem.html#isReplaceable">isReplaceable</a>() ) )
+        // If we had a QTableItem ask the base class to create the editor
+        return QTable::createEditor( row, col, initFromCell );
+    else
+        return ...(create your editor)
+  </pre>
+ 
+编辑器部件的所有权被传递给调用者。
+<p>如果重写了本函数，对于只读的单元格要返回0。你将需要重写<a href="#setCellContentFromEditor">setCellContentFromEditor</a>()以得到用户的输入数据。
+<p> <p>也参见<a href="qtableitem.html#createEditor">QTableItem::createEditor</a>()。
+
+<h3 class=fn>int <a name="currEditCol"></a>QTable::currEditCol () const<tt> [protected]</tt>
+</h3>返回当前被编辑的列。
+<h3 class=fn>int <a name="currEditRow"></a>QTable::currEditRow () const<tt> [protected]</tt>
+</h3>返回当前被编辑的行。
+<h3 class=fn>void <a name="currentChanged"></a>QTable::currentChanged ( int&nbsp;row, int&nbsp;col )<tt> [signal]</tt>
+</h3> 
+<p>当当前单元格已变为<em>row</em>、<em>col</em>时，本信号被发送。
+
+<p>例子：<a href="tutorial2-08.html#x2518">chart/setdataform.cpp</a>。
+<h3 class=fn>int <a name="currentColumn"></a>QTable::currentColumn () const
+</h3> 
+<p>返回当前列。
+<p> <p>也参见<a href="#currentRow">currentRow</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2519">chart/setdataform.cpp</a>。
+<h3 class=fn>int <a name="currentRow"></a>QTable::currentRow () const
+</h3> 
+<p>返回当前行。
+<p> <p>也参见<a href="#currentColumn">currentColumn</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2520">chart/setdataform.cpp</a>。
+<h3 class=fn>int <a name="currentSelection"></a>QTable::currentSelection () const<tt> [virtual]</tt>
+</h3>返回当前选中区域的个数，如果没有则返回-1。
+<p> <p>也参见<a href="#numSelections">numSelections</a>()。
+
+<h3 class=fn>void <a name="doubleClicked"></a>QTable::doubleClicked ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;mousePos )<tt> [signal]</tt>
+</h3> 
+<p>当鼠标按键<em>button</em>被双击时，本信号被发送。事件发生所在的单元格在<em>row</em>、<em>col</em>，鼠标位置在<em>mousePos</em>结构里。
+
+<h3 class=fn>bool <a name="dragEnabled"></a>QTable::dragEnabled () const<tt> [slot]</tt>
+</h3>如果本函数返回TRUE，则表格支持拖拽。
+<p> <p>也参见<a href="#setDragEnabled">setDragEnabled</a>()。
+
+<h3 class=fn><a href="qdragobject.html">QDragObject</a>&nbsp;* <a name="dragObject"></a>QTable::dragObject ()<tt> [virtual protected]</tt>
+</h3>如果用户对一个选中的单元格按下鼠标键，开始移动（也就是拖拽），并且<a href="#dragEnabled">dragEnabled</a>()为TRUE，本函数被调用，以得到一个拖拽对象。一次使用该对象的拖拽立即开始，除非<a href="#dragObject">dragObject</a>()返回0。
+<p>缺省情况下本函数返回0。你可以重新实现它，依所选表项来生成一个<a href="qdragobject.html">QDragObject</a>。
+<p> <p>也参见<a href="#dropped">dropped</a>()。
+
+<h3 class=fn>void <a name="drawContents"></a>QTable::drawContents ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;cx, int&nbsp;cy, int&nbsp;cw, int&nbsp;ch )<tt> [virtual protected]</tt>
+</h3>在画具（painter）<em>p</em>上绘制表格内容。本函数已优化，从而只绘制在位置<em>cx</em>、<em>cy</em>的，宽<em>cw</em>象素，高<em>ch</em>象素的裁减矩形内的单元格。
+<p>另外，<a href="#drawContents">drawContents</a>()高亮显示当前单元格。
+
+<p>由<a href="qscrollview.html#drawContents">QScrollView</a>处重新实现。
+<h3 class=fn>void <a name="dropped"></a>QTable::dropped ( <a href="qdropevent.html">QDropEvent</a>&nbsp;*&nbsp;e )<tt> [signal]</tt>
+</h3> 
+<p>当表格上发生一次放置事件时，本信号被发送。
+<p><em>e</em>包含了放置事件的信息。
+
+<h3 class=fn>void <a name="editCell"></a>QTable::editCell ( int&nbsp;row, int&nbsp;col, bool&nbsp;replace = FALSE )<tt> [virtual slot]</tt>
+</h3>开始编辑在<em>row</em>、<em>col</em>处的单元格。
+<p>如果<em>replace</em>为TRUE，编辑结束时单元格的内容将被编辑器的内容替代，也就是说，用户将输入新的数据；否则，单元格的当前内容（如果有的话）将在编辑器里被修改。
+<p> <p>也参见<a href="#beginEdit">beginEdit</a>()。
+
+<h3 class=fn><a href="qtable.html#EditMode-enum">EditMode</a> <a name="editMode"></a>QTable::editMode () const<tt> [protected]</tt>
+</h3>返回当前编辑模式。
+<h3 class=fn>void <a name="endEdit"></a>QTable::endEdit ( int&nbsp;row, int&nbsp;col, bool&nbsp;accept, bool&nbsp;replace )<tt> [virtual protected]</tt>
+</h3>当在<em>row</em>、<em>col</em>处的单元格的内嵌编辑被要求停止时，本函数被调用。
+<p>如果该单元格未被编辑，或者<em>accept</em>为FALSE，函数返回，单元格的内容保持不变。
+<p>如果<em>accept</em>为TRUE，编辑器的内容一定要传递给响应的单元格。如果<em>replace</em>为TRUE，该单元格的内容应该被编辑器的内容替代（这意味着删去该单元格的<a href="qtableitem.html">QTableItem</a>而新建一个）；否则（如果可能的话），
+编辑器的内容应该只放到该单元格已经存在的QTableItem中。
+<p>如果该单元格的内容应该被替换，或者没有QTableItem，那么<a href="#setCellContentFromEditor">setCellContentFromEditor</a>()被调用。否则，对于该单元格的QTableItem，<a href="qtableitem.html#setContentFromEditor">QTableItem::setContentFromEditor</a>()被调用。
+<p>最后，<a href="#clearCellWidget">clearCellWidget</a>()被调用，以删去编辑器部件。
+<p> <p>也参见<a href="#setCellContentFromEditor">setCellContentFromEditor</a>()和<a href="#beginEdit">beginEdit</a>()。
+
+<h3 class=fn>void <a name="ensureCellVisible"></a>QTable::ensureCellVisible ( int&nbsp;row, int&nbsp;col )
+</h3>滚动表格，使得在<em>row</em>、<em>col</em>处的单元格可见。
+
+<h3 class=fn><a href="qtable.html#FocusStyle-enum">FocusStyle</a> <a name="focusStyle"></a>QTable::focusStyle () const
+</h3><p>返回当前（焦点）单元格如何被绘制。详情参见<a href="qtable.html#focusStyle-prop">"focusStyle"</a>属性。
+<h3 class=fn>void <a name="hideColumn"></a>QTable::hideColumn ( int&nbsp;col )<tt> [virtual slot]</tt>
+</h3>隐藏列<em>col</em>。
+<p> <p>也参见<a href="#showColumn">showColumn</a>()和<a href="#hideRow">hideRow</a>()。
+
+<h3 class=fn>void <a name="hideRow"></a>QTable::hideRow ( int&nbsp;row )<tt> [virtual slot]</tt>
+</h3>隐藏行<em>row</em>。
+<p> <p>也参见<a href="#showRow">showRow</a>()和<a href="#hideColumn">hideColumn</a>()。
+
+<h3 class=fn><a href="qheader.html">QHeader</a>&nbsp;* <a name="horizontalHeader"></a>QTable::horizontalHeader () const
+</h3>返回表格的顶部<a href="qheader.html">QHeader</a>。
+<p>该标题包含列标。
+<p>要修改列标，使用<a href="qheader.html#setLabel">QHeader::setLabel</a>()，例如，
+
+<pre>        <a href="#horizontalHeader">horizontalHeader</a>()-&gt;setLabel( 0, tr( "File" ) );
+</pre>
+<p> <p>也参见<a href="#verticalHeader">verticalHeader</a>()、<a href="#setTopMargin">setTopMargin</a>()和<a href="qheader.html">QHeader</a>。
+
+<p>例子：<a href="tutorial2-08.html#x2521">chart/setdataform.cpp</a>和<a href="small-table-example-example.html#x2648">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>int <a name="indexOf"></a>QTable::indexOf ( int&nbsp;row, int&nbsp;col ) const<tt> [protected]</tt>
+</h3>
+返回单一整数，它通过把二维的表格映射为一维数组来标识详细的<em>row</em>和<em>col</em>。
+<p>这很有用，例如如果你要使用<a href="qintdict.html">QIntDict</a>，以把整数映射到稀疏表格中的使用的单元格上。
+
+<h3 class=fn>void <a name="insertColumns"></a>QTable::insertColumns ( int&nbsp;col, int&nbsp;count = 1 )<tt> [virtual slot]</tt>
+</h3>在列<em>col</em>处插入<em>count</em>个空列。
+<p> <p>也参见<a href="#insertRows">insertRows</a>()和<a href="#removeColumn">removeColumn</a>()。
+
+<h3 class=fn>void <a name="insertRows"></a>QTable::insertRows ( int&nbsp;row, int&nbsp;count = 1 )<tt> [virtual slot]</tt>
+</h3>在行<em>row</em>处插入<em>count</em>个空行。
+<p> <p>也参见<a href="#insertColumns">insertColumns</a>()和<a href="#removeRow">removeRow</a>()。
+
+<h3 class=fn>void <a name="insertWidget"></a>QTable::insertWidget ( int&nbsp;row, int&nbsp;col, <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;w )<tt> [virtual protected]</tt>
+</h3>在内部数据结构里，在<em>row</em>、<em>col</em>处插入部件<em>w</em>。详情参见<a href="#setCellWidget">setCellWidget</a>()的文档。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+
+<h3 class=fn>bool <a name="isColumnReadOnly"></a>QTable::isColumnReadOnly ( int&nbsp;col ) const
+</h3>返回列<em>col</em>是否只读。
+<p>该列的某个单元格是可编辑还是只读，取决于该单元格的EditType和这个设置：参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。
+<p> <p>也参见<a href="#setColumnReadOnly">setColumnReadOnly</a>()和<a href="#isRowReadOnly">isRowReadOnly</a>()。
+
+<h3 class=fn>bool <a name="isColumnSelected"></a>QTable::isColumnSelected ( int&nbsp;col, bool&nbsp;full = FALSE ) const
+</h3>
+<p>如果列<em>col</em>被选中，返回TRUE；否则返回FALSE。
+<p>如果<em>full</em>为FALSE（缺省的情况），“列被选中”意味着该列的至少一个单元格被选中；如果<em>full</em>为TRUE，“列被选中”则意味着该列所有的单元格都被选中。
+<p> <p>也参见<a href="#isRowSelected">isRowSelected</a>()和<a href="#isSelected">isSelected</a>()。
+
+<h3 class=fn>bool <a name="isColumnStretchable"></a>QTable::isColumnStretchable ( int&nbsp;col ) const<tt> [slot]</tt>
+</h3>如果列<em>col</em>可伸缩，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setColumnStretchable">setColumnStretchable</a>()和<a href="#isRowStretchable">isRowStretchable</a>()。
+
+<h3 class=fn>bool <a name="isEditing"></a>QTable::isEditing () const<tt> [protected]</tt>
+</h3>
+如果EditMode为<a href="#EditMode-enum">Editing</a>或者<a href="#EditMode-enum">Replacing</a>，返回TRUE。如果EditMode为<a href="#EditMode-enum">NotEditing</a>返回FALSE。
+<p> <p>也参见<a href="#EditMode-enum">QTable::EditMode</a>。
+
+<h3 class=fn>bool <a name="isReadOnly"></a>QTable::isReadOnly () const
+</h3><p>如果表格只读，返回TRUE；否则返回FALSE。详情参见<a href="qtable.html#readOnly-prop">"readOnly"</a>属性。
+<h3 class=fn>bool <a name="isRowReadOnly"></a>QTable::isRowReadOnly ( int&nbsp;row ) const
+</h3>返回行<em>row</em>是否只读。
+<p>该行的某个单元格是可编辑还是只读，取决于该单元格的EditType和这个设置：参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。
+<p> <p>也参见<a href="#setRowReadOnly">setRowReadOnly</a>()和<a href="#isColumnReadOnly">isColumnReadOnly</a>()。
+
+<h3 class=fn>bool <a name="isRowSelected"></a>QTable::isRowSelected ( int&nbsp;row, bool&nbsp;full = FALSE ) const
+</h3>
+<p>如果行<em>row</em>被选中，返回TRUE；否则返回FALSE。
+<p>如果<em>full</em>为FALSE（缺省的情况），“行被选中”意味着该行的至少一个单元格被选中；如果<em>full</em>为TRUE，“行被选中”则意味着该行所有的单元格都被选中。
+<p> <p>也参见<a href="#isColumnSelected">isColumnSelected</a>()和<a href="#isSelected">isSelected</a>()。
+
+<h3 class=fn>bool <a name="isRowStretchable"></a>QTable::isRowStretchable ( int&nbsp;row ) const<tt> [slot]</tt>
+</h3>如果行<em>row</em>可伸缩，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setRowStretchable">setRowStretchable</a>()和<a href="#isColumnStretchable">isColumnStretchable</a>()。
+
+<h3 class=fn>bool <a name="isSelected"></a>QTable::isSelected ( int&nbsp;row, int&nbsp;col ) const
+</h3>
+如果<em>row</em>、<em>col</em>处的单元格被选中，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#isRowSelected">isRowSelected</a>()和<a href="#isColumnSelected">isColumnSelected</a>()。
+
+<h3 class=fn><a href="qtableitem.html">QTableItem</a>&nbsp;* <a name="item"></a>QTable::item ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回<a href="qtableitem.html">QTableItem</a>，它代表着在<em>row</em>、<em>col</em>处的单元格的内容。
+<p>如果<em>row</em>或者<em>col</em>超出范围，或者该单元格没有设置内容，<a href="#item">item</a>()返回0。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p> <p>也参见<a href="#setItem">setItem</a>()。
+
+<h3 class=fn>int <a name="numCols"></a>QTable::numCols () const<tt> [virtual]</tt>
+</h3><p>返回表格中的列数。详情参见<a href="qtable.html#numCols-prop">"numCols"</a>属性。
+<p>在<a href="qdatatable.html#numCols">QDataTable</a>处被重新实现。
+<h3 class=fn>int <a name="numRows"></a>QTable::numRows () const<tt> [virtual]</tt>
+</h3><p>返回表格中的行数。详情参见<a href="qtable.html#numRows-prop">"numRows"</a>属性。
+<p>在<a href="qdatatable.html#numRows">QDataTable</a>处被重新实现。
+<h3 class=fn>int <a name="numSelections"></a>QTable::numSelections () const
+</h3>返回当前选中区域的数目。
+<p> <p>也参见<a href="#currentSelection">currentSelection</a>()。
+
+<h3 class=fn>void <a name="paintCell"></a>QTable::paintCell ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;row, int&nbsp;col, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;cr, bool&nbsp;selected, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;cg )<tt> [virtual]</tt>
+</h3>在画具<em>p</em>上绘制在<em>row</em>、<em>col</em>处的单元格。该画具已经被转变为单元格原有的。<em>cr</em>描述了在内容坐标系统中单元格的坐标。
+<p>如果<em>selected</em>为TRUE，单元格将高亮显示。
+<p><em>cg</em>是应用来绘制该单元格内容的颜色组。
+<p>如果你想绘制定制的单元格内容，例如右对齐的文本，你必须要么重写<a href="#paintCell">paintCell</a>()，要么写<a href="qtableitem.html">QTableItem</a>的子类并且重写<a href="qtableitem.html#paint">QTableItem::paint</a>()以完成定制绘制。
+<p>如果你想使用QTableItem的子类，例如用来保存数据结构，那么重写QTableItem::paint()也许最合适。对于你要立即绘制的数据，例如从数据库中得到的数据，则可能最好是重写paintCell()。注意，如果你重写paintCell()，也就是说不使用QTableItems，你就必须重写其他一些函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p>注意，缺省情况下为提高效率，画具并没有裁剪。如果你需要裁剪，使用如下代码：
+<p> <pre>
+    p-&gt;setClipRect( <a href="#cellRect">cellRect</a>(row, col), QPainter::CoordPainter );
+    //... your drawing code
+    p-&gt;setClipping( FALSE );
+    </pre>
+
+<h3 class=fn>void <a name="paintCell-2"></a>QTable::paintCell ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;row, int&nbsp;col, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;cr, bool&nbsp;selected )<tt> [virtual]</tt>
+</h3>这是一个重载的成员函数，为便利而提供。其行为本质上类似上一个函数。
+<p>使用另外的那个<a href="#paintCell">paintCell</a>()函数。本函数只是为了反向兼容性。
+
+<h3 class=fn>void <a name="paintEmptyArea"></a>QTable::paintEmptyArea ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, int&nbsp;cx, int&nbsp;cy, int&nbsp;cw, int&nbsp;ch )<tt> [virtual protected]</tt>
+</h3>本函数以画具<em>p</em>的背景色，填充从<em>cx</em>、<em>cy</em>位置开始的，宽<em>cw</em>象素，高<em>ch</em>象素的矩形。
+<p> <a href="#paintEmptyArea">paintEmptyArea</a>()被<a href="#drawContents">drawContents</a>()调用，以擦除或者填充未用区域。
+<h3 class=fn>void <a name="paintFocus"></a>QTable::paintFocus ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;cr )<tt> [virtual]</tt>
+</h3>绘制当前单元格的焦点矩形（参见<a href="#currentRow">currentRow</a>()、<a href="#currentColumn">currentColumn</a>()）。
+<p>画具<em>p</em>已经被转变为单元格原有的，<em>cr</em>则指定了以内容坐标形式的单元格几何特性。
+
+<h3 class=fn><a href="qpixmap.html">QPixmap</a> <a name="pixmap"></a>QTable::pixmap ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回为在<em>row</em>、<em>col</em>处的单元格设置的象素映射，如果该单元格不含象素映射，返回无效象素映射（null-pixmap）。
+<p> <p>也参见<a href="#setPixmap">setPixmap</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2522">chart/setdataform.cpp</a>。
+<h3 class=fn>void <a name="pressed"></a>QTable::pressed ( int&nbsp;row, int&nbsp;col, int&nbsp;button, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;mousePos )<tt> [signal]</tt>
+</h3> 
+<p>当鼠标按键<em>button</em>被按下时，本信号被发送。事件发生所在的单元格在<em>row</em>、<em>col</em>，鼠标位置在<em>mousePos</em>结构里。
+
+<h3 class=fn>void <a name="removeColumn"></a>QTable::removeColumn ( int&nbsp;col )<tt> [virtual slot]</tt>
+</h3>
+删去列<em>col</em>，并且删除其所有单元格，包括单元格中可能有的任何表项和部件。
+<p> <p>也参见<a href="#removeColumns">removeColumns</a>()、<a href="#hideColumn">hideColumn</a>()、<a href="#insertColumns">insertColumns</a>()和<a href="#removeRow">removeRow</a>()。
+
+<h3 class=fn>void <a name="removeColumns"></a>QTable::removeColumns ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;int&gt;&nbsp;&amp;&nbsp;cols )<tt> [virtual slot]</tt>
+</h3>
+删去数组<em>cols</em>中的列，并且删除其所有单元格，包括单元格中可能有的任何表项和部件。
+<p>传入的数组必须只包含合法的列（在0到<a href="#numCols">numCols</a>() - 1的范围内），没有重复，按升序排列。
+<p> <p>也参见<a href="#removeColumn">removeColumn</a>()、<a href="#insertColumns">insertColumns</a>()和<a href="#removeRows">removeRows</a>()。
+
+<h3 class=fn>void <a name="removeRow"></a>QTable::removeRow ( int&nbsp;row )<tt> [virtual slot]</tt>
+</h3>
+删去行<em>row</em>，并且删除其所有单元格，包括单元格中可能有的任何表项和部件。
+<p> <p>也参见<a href="#hideRow">hideRow</a>()、<a href="#insertRows">insertRows</a>()、<a href="#removeColumn">removeColumn</a>()和<a href="#removeRows">removeRows</a>()。
+
+<h3 class=fn>void <a name="removeRows"></a>QTable::removeRows ( const&nbsp;<a href="qmemarray.html">QMemArray</a>&lt;int&gt;&nbsp;&amp;&nbsp;rows )<tt> [virtual slot]</tt>
+</h3>
+删去数组<em>rows</em>中的行，并且删除其所有单元格，包括单元格中可能有的任何表项和部件。
+<p>传入的数组必须只包含合法的行（在0到<a href="#numRows">numRows</a>() - 1的范围内），没有重复，按升序排列。
+<p> <p>也参见<a href="#removeRow">removeRow</a>()、<a href="#insertRows">insertRows</a>()和<a href="#removeColumns">removeColumns</a>()。
+
+<h3 class=fn>void <a name="removeSelection"></a>QTable::removeSelection ( const&nbsp;<a href="qtableselection.html">QTableSelection</a>&nbsp;&amp;&nbsp;s )<tt> [virtual]</tt>
+</h3>
+如果表格中有选中区域<em>s</em>，该选中区域从表格中被删去。
+<p> <p>也参见<a href="#addSelection">addSelection</a>()和<a href="#numSelections">numSelections</a>()。
+
+<h3 class=fn>void <a name="removeSelection-2"></a>QTable::removeSelection ( int&nbsp;num )<tt> [virtual]</tt>
+</h3>这是一个重载的成员函数，为便利而提供。其行为本质上类似上一个函数。
+<p>从表格中删去编号为<em>num</em>的选中区域。
+<p> <p>也参见<a href="#numSelections">numSelections</a>()、<a href="#addSelection">addSelection</a>()和<a href="#clearSelection">clearSelection</a>()。
+
+<h3 class=fn>void <a name="repaintSelections"></a>QTable::repaintSelections ()
+</h3>重绘所有的选中区域。
+<h3 class=fn>void <a name="resizeData"></a>QTable::resizeData ( int&nbsp;len )<tt> [virtual protected]</tt>
+</h3>当QTable的内部数组需要调整大小至<em>len</em>个元素时被调用。
+
+<p>如果不使用QTableItem，需要重写本函数为空方法以免浪费内存。更多详情参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+
+<h3 class=fn>int <a name="rowAt"></a>QTable::rowAt ( int&nbsp;y ) const<tt> [virtual]</tt>
+</h3>返回在位置<em>y</em>的行的序数。<em>y</em>必须以内容坐标的形式给出。
+<p> <p>也参见<a href="#rowPos">rowPos</a>()和<a href="#columnAt">columnAt</a>()。
+
+<h3 class=fn>int <a name="rowHeight"></a>QTable::rowHeight ( int&nbsp;row ) const<tt> [virtual]</tt>
+</h3>返回行<em>row</em>的高度。
+<p> <p>也参见<a href="#setRowHeight">setRowHeight</a>()和<a href="#columnWidth">columnWidth</a>()。
+
+<p>例子：<a href="small-table-example-example.html#x2649">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="rowHeightChanged"></a>QTable::rowHeightChanged ( int&nbsp;row )<tt> [virtual protected slot]</tt>
+</h3>无论何时行<em>row</em>的宽度改变，都应该调用本函数。它更新受影响的各个行的几何特性，重绘表格以反映所做的改变。
+
+<h3 class=fn>void <a name="rowIndexChanged"></a>QTable::rowIndexChanged ( int&nbsp;section, int&nbsp;fromIndex, int&nbsp;toIndex )<tt> [virtual protected slot]</tt>
+</h3>当行的顺序将被改变时调用，也就是说，当用户从<em>fromIndex</em>到<em>toIndex</em>移动行标题<em>section</em>的时候。
+<p>如果要编程上改变行的顺序，可以调用<a href="#swapRows">swapRows</a>()或者<a href="#swapColumns">swapColumns</a>()。
+<p> <p>也参见<a href="qheader.html#indexChange">QHeader::indexChange</a>()和<a href="#columnIndexChanged">columnIndexChanged</a>()。
+
+<h3 class=fn>bool <a name="rowMovingEnabled"></a>QTable::rowMovingEnabled () const
+</h3><p>如果用户可以移动行，返回TRUE；否则返回FALSE。详情参见<a href="qtable.html#rowMovingEnabled-prop">"rowMovingEnabled"</a>属性。
+<h3 class=fn>int <a name="rowPos"></a>QTable::rowPos ( int&nbsp;row ) const<tt> [virtual]</tt>
+</h3>以内容坐标的形式返回行<em>row</em>的y坐标。
+<p> <p>也参见<a href="#rowAt">rowAt</a>()和<a href="#columnPos">columnPos</a>()。
+
+<h3 class=fn><a href="qtableselection.html">QTableSelection</a> <a name="selection"></a>QTable::selection ( int&nbsp;num ) const
+</h3>返回编号为<em>num</em>的选中区域，或者一个空<a href="qtableselection.html">QTableSelection</a>，如果<em>num</em>超出范围的话（参见QTableSelection::isNull()）。
+
+<h3 class=fn>void <a name="selectionChanged"></a>QTable::selectionChanged ()<tt> [signal]</tt>
+</h3> 
+<p>无论何时选中区域改变，本信号被发送。
+<p> <p>也参见<a href="qtableselection.html">QTableSelection</a>。
+
+<h3 class=fn><a href="qtable.html#SelectionMode-enum">SelectionMode</a> <a name="selectionMode"></a>QTable::selectionMode () const
+</h3><p>返回当前选中模式。详情参见<a href="qtable.html#selectionMode-prop">"selectionMode"</a>属性。
+<h3 class=fn>void <a name="setCellContentFromEditor"></a>QTable::setCellContentFromEditor ( int&nbsp;row, int&nbsp;col )<tt> [virtual protected]</tt>
+</h3>用来以在<em>row</em>、<em>col</em>处的单元格的编辑器的内容，替换该单元格内容。如果该单元格已经有一个<a href="qtableitem.html">QTableItem</a>，则先被删去（参见<a href="#clearCell">clearCell</a>()）。
+<p>例如如果你想依编辑器的内容来生成不同的QTableItem，就需要重写本函数。
+<p>如果不需要QTableItem，你就需要重写本函数，以把用户输入数据保存到你的数据结构中。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p> <p>也参见<a href="qtableitem.html#setContentFromEditor">QTableItem::setContentFromEditor</a>()和<a href="#createEditor">createEditor</a>()。
+
+<h3 class=fn>void <a name="setCellWidget"></a>QTable::setCellWidget ( int&nbsp;row, int&nbsp;col, <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;e )<tt> [virtual]</tt>
+</h3>
+把部件<em>e</em>放置到在<em>row</em>、<em>col</em>处的单元格中，并且在单元格几何特性改变时负责定位和调整大小。
+<p>缺省情况下，部件被插入到<a href="#numRows">numRows</a>()×<a href="#numCols">numCols</a>()个元素的向量中。对于很大的表格，你很可能会要把部件存储到消耗更少内存的数据结构中。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>）。为了支持使用你自己的数据结构，本函数调用<a href="#insertWidget">insertWidget</a>()以增加部件到内部数据结构。要使用你自己的数据结构，需要重写insertWidget()、<a href="#cellWidget">cellWidget</a>()和<a href="#clearCellWidget">clearCellWidget</a>()。
+<p>单元格的部件是使用“new”操作符动态生成的，一旦表格被销毁，也自动被销毁。当使用setCellWidget()时，表格拥有部件的所有权。
+<p> 
+<p>例子：<a href="tutorial2-08.html#x2523">chart/setdataform.cpp</a>。
+<h3 class=fn>void <a name="setColumnMovingEnabled"></a>QTable::setColumnMovingEnabled ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3><p>设置用户是否可以移动列为<em>b</em>。详情参见<a href="qtable.html#columnMovingEnabled-prop">"columnMovingEnabled"</a>属性。
+<h3 class=fn>void <a name="setColumnReadOnly"></a>QTable::setColumnReadOnly ( int&nbsp;col, bool&nbsp;ro )<tt> [virtual slot]</tt>
+</h3>
+如果<em>ro</em>为TRUE，列<em>col</em>被设置为只读；否则被设置为可编辑。
+<p><p>该列的某个单元格是可编辑还是只读，取决于该单元格的EditType和这个设置：参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。
+<p> <p>也参见<a href="#isColumnReadOnly">isColumnReadOnly</a>()、<a href="#setRowReadOnly">setRowReadOnly</a>()和<a href="#readOnly-prop">readOnly</a>。
+
+<p> 
+<p>例子：<a href="tutorial2-08.html#x2524">chart/setdataform.cpp</a>。
+<h3 class=fn>void <a name="setColumnStretchable"></a>QTable::setColumnStretchable ( int&nbsp;col, bool&nbsp;stretch )<tt> [virtual slot]</tt>
+</h3>
+如果<em>stretch</em>为TRUE，列<em>col</em>被设置为可伸缩；否则被设置为不可伸缩。
+<p>如果表格部件的宽度减少或者增加，可伸缩的列将尽可能适合空间地变窄或者变宽。用户不能手动调整可伸缩的列的大小。
+<p> <p>也参见<a href="#isColumnStretchable">isColumnStretchable</a>()、<a href="#setRowStretchable">setRowStretchable</a>()和<a href="#adjustColumn">adjustColumn</a>()。
+
+<h3 class=fn>void <a name="setColumnWidth"></a>QTable::setColumnWidth ( int&nbsp;col, int&nbsp;w )<tt> [virtual slot]</tt>
+</h3>调整列<em>col</em>为<em>w</em>象素宽。
+<p> <p>也参见<a href="#columnWidth">columnWidth</a>()和<a href="#setRowHeight">setRowHeight</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2525">chart/setdataform.cpp</a>。
+<p>Reimplemented in <a href="qdatatable.html#setColumnWidth">QDataTable</a>。
+<h3 class=fn>void <a name="setCurrentCell"></a>QTable::setCurrentCell ( int&nbsp;row, int&nbsp;col )<tt> [virtual slot]</tt>
+</h3>把焦点移到在<em>row</em>、<em>col</em>的单元格上。
+<p> <p>也参见<a href="#currentRow">currentRow</a>()和<a href="#currentColumn">currentColumn</a>()。
+
+<h3 class=fn>void <a name="setDragEnabled"></a>QTable::setDragEnabled ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3>如果<em>b</em>为TRUE，当用户对选中的单元格按下且移动鼠标时，表格开始一个拖拽事件（参见<a href="#dragObject">dragObject</a>()）。
+
+<h3 class=fn>void <a name="setEditMode"></a>QTable::setEditMode ( <a href="qtable.html#EditMode-enum">EditMode</a>&nbsp;mode, int&nbsp;row, int&nbsp;col )<tt> [protected]</tt>
+</h3>设置当前的编辑模式为<em>mode</em>，当前编辑行为<em>row</em>，当前编辑列为<em>col</em>。
+<p> <p>也参见<a href="#EditMode-enum">EditMode</a>。
+
+<h3 class=fn>void <a name="setFocusStyle"></a>QTable::setFocusStyle ( <a href="qtable.html#FocusStyle-enum">FocusStyle</a>&nbsp;fs )<tt> [virtual]</tt>
+</h3><p>设置当前（焦点）单元格如何绘制为<em>fs</em>。详情参见<a href="qtable.html#focusStyle-prop">"focusStyle"</a>属性。
+<h3 class=fn>void <a name="setItem"></a>QTable::setItem ( int&nbsp;row, int&nbsp;col, <a href="qtableitem.html">QTableItem</a>&nbsp;*&nbsp;item )<tt> [virtual]</tt>
+</h3>
+把表项<em>item</em>插入到表格的行<em>row</em>、列column <em>col</em>，且重绘该单元格。如果该单元格已存在一个表项，删除且用<em>item</em>替换之。表格拥有表项的所有权。
+<p>如果不使用QTableItem，需要重写本函数：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p> <p>也参见<a href="#item">item</a>()和<a href="#takeItem">takeItem</a>()。
+
+<p>例子：<a href="small-table-example-example.html#x2650">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="setLeftMargin"></a>QTable::setLeftMargin ( int&nbsp;m )<tt> [virtual slot]</tt>
+</h3>设置左边界为<em>m</em>象素宽。
+<p>显示行号的<a href="#verticalHeader">verticalHeader</a>()占据这个边界位置。
+<p>在阿拉伯（arabic）或者希伯莱（hebrew）<a href="i18n.html#localization">localization</a>中，verticalHeader()出现在表格的右边，本函数将设置右边界。
+<p> <p>也参见<a href="qscrollview.html#leftMargin">leftMargin</a>()、<a href="#setTopMargin">setTopMargin</a>()和<a href="#verticalHeader">verticalHeader</a>()。
+
+<h3 class=fn>void <a name="setNumCols"></a>QTable::setNumCols ( int&nbsp;r )<tt> [virtual slot]</tt>
+</h3><p>设置表格中列数为<em>r</em>。详情参见<a href="qtable.html#numCols-prop">"numCols"</a>属性。
+<h3 class=fn>void <a name="setNumRows"></a>QTable::setNumRows ( int&nbsp;r )<tt> [virtual slot]</tt>
+</h3><p>设置表格中行数为<em>r</em>。详情参见<a href="qtable.html#numRows-prop">"numRows"</a>属性。
+<h3 class=fn>void <a name="setPixmap"></a>QTable::setPixmap ( int&nbsp;row, int&nbsp;col, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;pix )<tt> [virtual]</tt>
+</h3>设置在<em>row</em>、<em>col</em>处的单元格中的象素映射为<em>pix</em>。
+<p>如果单元格中没有表项，则生成一个EditType为<tt>OnTyping</tt>的<a href="qtableitem.html">QTableItem</a>；否则，已存在的表项的象素映射（如果有的话）被<em>pix</em>所替代。
+<p>注意：QComboTableItem和QCheckTableItem不显示象素映射。
+<p> <p>也参见<a href="#pixmap">pixmap</a>()、<a href="#setText">setText</a>()、<a href="#setItem">setItem</a>()和<a href="qtableitem.html#setPixmap">QTableItem::setPixmap</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2528">chart/setdataform.cpp</a>和<a href="small-table-example-example.html#x2651">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="setReadOnly"></a>QTable::setReadOnly ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3><p>设置表格是否只读为<em>b</em>。详情参见<a href="qtable.html#readOnly-prop">"readOnly"</a>属性。
+<h3 class=fn>void <a name="setRowHeight"></a>QTable::setRowHeight ( int&nbsp;row, int&nbsp;h )<tt> [virtual slot]</tt>
+</h3>调整行<em>row</em>为<em>h</em>象素高。
+<p> <p>也参见<a href="#rowHeight">rowHeight</a>()和<a href="#setColumnWidth">setColumnWidth</a>()。
+
+<h3 class=fn>void <a name="setRowMovingEnabled"></a>QTable::setRowMovingEnabled ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3><p>设置用户是否可以移动行为<em>b</em>。详情参见<a href="qtable.html#rowMovingEnabled-prop">"rowMovingEnabled"</a>属性。
+<h3 class=fn>void <a name="setRowReadOnly"></a>QTable::setRowReadOnly ( int&nbsp;row, bool&nbsp;ro )<tt> [virtual slot]</tt>
+</h3>
+如果<em>ro</em>为TRUE，行<em>row</em>被设置为只读；否则被设置为可编辑。
+<p>该行的某个单元格是可编辑还是只读，取决于该单元格的EditType和这个设置：参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。
+<p> <p>也参见<a href="#isRowReadOnly">isRowReadOnly</a>()、<a href="#setColumnReadOnly">setColumnReadOnly</a>()和<a href="#readOnly-prop">readOnly</a>。
+
+<h3 class=fn>void <a name="setRowStretchable"></a>QTable::setRowStretchable ( int&nbsp;row, bool&nbsp;stretch )<tt> [virtual slot]</tt>
+</h3>如果<em>stretch</em>为TRUE，行<em>row</em>被设置为可伸缩；否则被设置为不可伸缩。
+<p>如果表格部件的高度减少或者增加，可伸缩的行将尽可能适合空间地变矮或者变高。用户不能手动调整可伸缩的行的大小。
+<p> <p>也参见<a href="#isRowStretchable">isRowStretchable</a>()和<a href="#setColumnStretchable">setColumnStretchable</a>()。
+
+<h3 class=fn>void <a name="setSelectionMode"></a>QTable::setSelectionMode ( <a href="qtable.html#SelectionMode-enum">SelectionMode</a>&nbsp;mode )<tt> [virtual]</tt>
+</h3><p>设置当前选中模式为<em>mode</em>。详情参见<a href="qtable.html#selectionMode-prop">"selectionMode"</a>属性。
+<h3 class=fn>void <a name="setShowGrid"></a>QTable::setShowGrid ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3><p>设置表格的栅格是否显示为<em>b</em>。详情参见<a href="qtable.html#showGrid-prop">"showGrid"</a>属性。
+<h3 class=fn>void <a name="setSorting"></a>QTable::setSorting ( bool&nbsp;b )<tt> [virtual slot]</tt>
+</h3><p>设置点击列标题是否对该列排序为<em>b</em>。详情参见<a href="qtable.html#sorting-prop">"sorting"</a>属性。
+<h3 class=fn>void <a name="setText"></a>QTable::setText ( int&nbsp;row, int&nbsp;col, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;text )<tt> [virtual]</tt>
+</h3>设置在<em>row</em>、<em>col</em>处的单元格的文本为<em>text</em>。
+<p>如果单元格中没有表项，则生成一个EditType为<tt>OnTyping</tt>的<a href="qtableitem.html">QTableItem</a>；否则，已存在的表项的文本（如果有的话）被<em>text</em>所替代。
+<p> <p>也参见<a href="#text">text</a>()、<a href="#setPixmap">setPixmap</a>()、<a href="#setItem">setItem</a>()和<a href="qtableitem.html#setText">QTableItem::setText</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2529">chart/setdataform.cpp</a>和<a href="small-table-example-example.html#x2652">table/small-table-demo/main.cpp</a>。
+<h3 class=fn>void <a name="setTopMargin"></a>QTable::setTopMargin ( int&nbsp;m )<tt> [virtual slot]</tt>
+</h3>设置顶部边界为<em>m</em>象素高。
+<p>显示列标的<a href="#horizontalHeader">horizontalHeader</a>()占据这个边界位置。
+<p> <p>也参见<a href="qscrollview.html#topMargin">topMargin</a>()和<a href="#setLeftMargin">setLeftMargin</a>()。
+
+<h3 class=fn>void <a name="showColumn"></a>QTable::showColumn ( int&nbsp;col )<tt> [virtual slot]</tt>
+</h3>显示列<em>col</em>。
+<p> <p>也参见<a href="#hideColumn">hideColumn</a>()和<a href="#showRow">showRow</a>()。
+
+<h3 class=fn>bool <a name="showGrid"></a>QTable::showGrid () const
+</h3><p>如果表格的栅格可见，返回TRUE；否则返回FALSE。详情参见<a href="qtable.html#showGrid-prop">"showGrid"</a>属性。
+<h3 class=fn>void <a name="showRow"></a>QTable::showRow ( int&nbsp;row )<tt> [virtual slot]</tt>
+</h3>显示行<em>row</em>。
+<p> <p>也参见<a href="#hideRow">hideRow</a>()和<a href="#showColumn">showColumn</a>()。
+
+<h3 class=fn>void <a name="sortColumn"></a>QTable::sortColumn ( int&nbsp;col, bool&nbsp;ascending = TRUE, bool&nbsp;wholeRows = FALSE )<tt> [virtual]</tt>
+</h3>对列<em>col</em>排序。如果<em>ascending</em>为TRUE，按升序；否则按降序。
+<p>如果<em>wholeRows</em>为TRUE，用<a href="#swapRows">swapRows</a>()对全部行排序；否则，只用<a href="#swapCells">swapCells</a>()对该列的单元格排序。
+<p>注意：如果不使用QTableItem，需要重写swapRows()和swapCells()。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p> <p>也参见<a href="#swapRows">swapRows</a>()。
+
+<p>例子：<a href="statistics-example.html#x2631">table/statistics/statistics.cpp</a>。
+<p>在<a href="qdatatable.html#sortColumn">QDataTable</a>处被重新实现。
+<h3 class=fn>bool <a name="sorting"></a>QTable::sorting () const
+</h3><p>如果点击列标题则对该列排序，返回TRUE；否则返回FALSE。详情参见<a href="qtable.html#sorting-prop">"sorting"</a>属性。
+<h3 class=fn>void <a name="startDrag"></a>QTable::startDrag ()<tt> [virtual protected]</tt>
+</h3>开始一次拖拽。
+<p>通常你不必调用或者重新本函数。
+<p> <p>也参见<a href="#dragObject">dragObject</a>()。
+
+<h3 class=fn>void <a name="swapCells"></a>QTable::swapCells ( int&nbsp;row1, int&nbsp;col1, int&nbsp;row2, int&nbsp;col2 )<tt> [virtual slot]</tt>
+</h3>交换在<em>row1</em>、<em>col1</em>处的单元格和在<em>row2</em>、<em>col2</em>处的单元格的内容。
+<p>当对表格排序时，本函数也被调用。
+<p>如果不使用QTableItem，同时也想使用户可以交换单元格，那么你需要重写本函数。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p> <p>也参见<a href="#swapColumns">swapColumns</a>()和<a href="#swapRows">swapRows</a>()。
+
+<h3 class=fn>void <a name="swapColumns"></a>QTable::swapColumns ( int&nbsp;col1, int&nbsp;col2, bool&nbsp;swapHeader = FALSE )<tt> [virtual slot]</tt>
+</h3>交换列<em>col1</em>与列<em>col2</em>。
+<p>本函数用于交换两列的位置。当用户改变列顺序（参见<a href="#setColumnMovingEnabled">setColumnMovingEnabled</a>()）和对列排序的时候被调用。
+<p>如果不使用QTableItem，同时也想使用户可以交换列，那么你需要重写本函数。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p>如果<em>swapHeader</em>为TRUE，列标题的内容也要交换。
+<p> <p>也参见<a href="#swapCells">swapCells</a>()。
+
+<h3 class=fn>void <a name="swapRows"></a>QTable::swapRows ( int&nbsp;row1, int&nbsp;row2, bool&nbsp;swapHeader = FALSE )<tt> [virtual slot]</tt>
+</h3>交换行<em>row1</em>与行<em>row2</em>的数据。
+<p>本函数用于交换两行的位置。当用户改变行顺序（参见<a href="#setRowMovingEnabled">setRowMovingEnabled</a>()）和对行排序的时候被调用。
+<p>如果不使用QTableItem，同时也想使用户可以交换行，那么你需要重写本函数。（参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。）
+<p>如果<em>swapHeader</em>为TRUE，行标题的内容也要交换。
+<p> <p>也参见<a href="#swapColumns">swapColumns</a>()和<a href="#swapCells">swapCells</a>()。
+
+<h3 class=fn>void <a name="takeItem"></a>QTable::takeItem ( <a href="qtableitem.html">QTableItem</a>&nbsp;*&nbsp;i )<tt> [virtual]</tt>
+</h3>
+把表项<em>i</em>拿出表格。本函数<em>并不</em>删除该表项。你必须要么自己删除该表项，要么把它插入一个表格里（使用<a href="#setItem">setItem</a>()），让这个表格拥有它的所有权。
+<p>使用本函数，你可以在一个表格内把表项从一个单元格移到另一个，或者在表格之间移动表项。用setItem()再插入该表项。
+<p>如果要交换两个单元格，使用<a href="#swapCells">swapCells</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="text"></a>QTable::text ( int&nbsp;row, int&nbsp;col ) const<tt> [virtual]</tt>
+</h3>返回在<em>row</em>、<em>col</em>处的单元格中的文本，或者空字符串，如果相应的表项不存在或者没有文本。
+<p> <p>也参见<a href="#setText">setText</a>()和<a href="#setPixmap">setPixmap</a>()。
+
+<p>例子：<a href="tutorial2-08.html#x2530">chart/setdataform.cpp</a>。
+<p>在<a href="qdatatable.html#text">QDataTable</a>处被重新实现。
+<h3 class=fn>void <a name="updateCell"></a>QTable::updateCell ( int&nbsp;row, int&nbsp;col )
+</h3>重绘在<em>row</em>、<em>col</em>处的单元格。
+<p> 
+<h3 class=fn>void <a name="valueChanged"></a>QTable::valueChanged ( int&nbsp;row, int&nbsp;col )<tt> [signal]</tt>
+</h3> 
+<p>当用户改变在<em>row</em>、<em>col</em>处的单元格的值时，本信号被发送。
+
+<p>例子：<a href="tutorial2-08.html#x2531">chart/setdataform.cpp</a>。
+<h3 class=fn><a href="qheader.html">QHeader</a>&nbsp;* <a name="verticalHeader"></a>QTable::verticalHeader () const
+</h3>返回表格的左<a href="qheader.html">QHeader</a>。
+<p>该标题含有行号。
+<p> <p>也参见<a href="#horizontalHeader">horizontalHeader</a>()、<a href="#setLeftMargin">setLeftMargin</a>()和<a href="qheader.html">QHeader</a>。
+
+<hr><h2>属性文档</h2>
+<h3 class=fn>bool <a name="columnMovingEnabled-prop"></a>columnMovingEnabled</h3> <p>本属性决定用户是否可以移动列。
+<p>缺省为FALSE。
+<p> <p>也参见<a href="#rowMovingEnabled-prop">rowMovingEnabled</a>。
+
+<p>用<a href="#setColumnMovingEnabled">setColumnMovingEnabled</a>()设置本属性值，用<a href="#columnMovingEnabled">columnMovingEnabled</a>()得到本属性值。
+<h3 class=fn><a href="qtable.html#FocusStyle-enum">FocusStyle</a> <a name="focusStyle-prop"></a>focusStyle</h3> <p>本属性决定当前（焦点）单元格如何绘制。
+<p>缺省风格为<a href="#FocusStyle-enum">SpreadSheet</a>。
+<p> <p>也参见<a href="#FocusStyle-enum">QTable::FocusStyle</a>。
+
+<p>用<a href="#setFocusStyle">setFocusStyle</a>()设置本属性值，用<a href="#focusStyle">focusStyle</a>()得到本属性值。
+<h3 class=fn>int <a name="numCols-prop"></a>numCols</h3> <p>本属性决定表格中列的数目。
+<p>用<a href="#setNumCols">setNumCols</a>()设置本属性值，用<a href="#numCols">numCols</a>()得到本属性值。
+<p><p>也参见<a href="#numRows-prop">numRows</a>。
+
+<h3 class=fn>int <a name="numRows-prop"></a>numRows</h3> <p>本属性决定表格中行的数目。
+<p>用<a href="#setNumRows">setNumRows</a>()设置本属性值，用<a href="#numRows">numRows</a>()得到本属性值。
+<p><p>也参见<a href="#numCols-prop">numCols</a>。
+
+<h3 class=fn>bool <a name="readOnly-prop"></a>readOnly</h3> <p>本属性决定表格是否是只读的。
+<p>表格的某个单元格是可编辑还是只读，取决于该单元格的EditType和这个设置：参见<a href="qtableitem.html#wheneditable">QTableItem::EditType</a>。
+<p> <p>也参见<a href="qwidget.html#enabled-prop">QWidget::enabled</a>、<a href="#setColumnReadOnly">setColumnReadOnly</a>()和<a href="#setRowReadOnly">setRowReadOnly</a>()。
+
+<p>用<a href="#setReadOnly">setReadOnly</a>()设置本属性值，用<a href="#isReadOnly">isReadOnly</a>()得到本属性值。
+<h3 class=fn>bool <a name="rowMovingEnabled-prop"></a>rowMovingEnabled</h3> <p>本属性决定用户是否可以移动行。
+<p>缺省为FALSE。
+<p> <p>也参见<a href="#columnMovingEnabled-prop">columnMovingEnabled</a>。
+
+<p>用<a href="#setRowMovingEnabled">setRowMovingEnabled</a>()设置本属性值，用<a href="#rowMovingEnabled">rowMovingEnabled</a>()得到本属性值。
+<h3 class=fn><a href="qtable.html#SelectionMode-enum">SelectionMode</a> <a name="selectionMode-prop"></a>selectionMode</h3> <p>本属性决定当前选中模式。
+<p>缺省模式为<a href="#SelectionMode-enum">Multi</a>，即允许用户选中多重区域的单元格。
+<p> <p>也参见<a href="#SelectionMode-enum">SelectionMode</a>和<a href="#selectionMode-prop">selectionMode</a>。
+
+<p>用<a href="#setSelectionMode">setSelectionMode</a>()设置本属性值，用<a href="#selectionMode">selectionMode</a>()得到本属性值。
+<h3 class=fn>bool <a name="showGrid-prop"></a>showGrid</h3> <p>本属性决定表格栅格是否显示。
+<p>缺省为显示栅格。
+
+<p>用<a href="#setShowGrid">setShowGrid</a>()设置本属性值，用<a href="#showGrid">showGrid</a>()得到本属性值。
+<h3 class=fn>bool <a name="sorting-prop"></a>sorting</h3> <p>本属性决定点击列标题是否对该列排序。
+<p>用<a href="#setSorting">setSorting</a>()设置本属性值，用<a href="#sorting">sorting</a>()得到本属性值。
+<p><p>也参见<a href="#sortColumn">sortColumn</a>()。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

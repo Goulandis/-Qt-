@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/table/qtable.cpp:320 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="farfareast">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QTableItem类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QTableItem类参考<br><small>[<a href="table.html">表格模块</a>]</small></h1>
+
+<p>QTableItem类为QTable单元格提供内容。
+<a href="#details">详见……</a>
+<p><tt>#include &lt;<a href="qtable-h.html">qtable.h</a>&gt;</tt>
+<p>继承了<a href="qt.html">Qt</a>。
+<p>被<a href="qcombotableitem.html">QComboTableItem</a>和<a href="qchecktableitem.html">QCheckTableItem</a>所继承。
+<p><a href="qtableitem-members.html">所有成员函数的列表。</a>
+<h2>公共成员</h2>
+<ul>
+<li><div class=fn>enum <a href="#EditType-enum"><b>EditType</b></a> { Never, OnTyping, WhenCurrent, Always }</div></li>
+<li><div class=fn><a href="#QTableItem"><b>QTableItem</b></a> ( QTable&nbsp;*&nbsp;table, EditType&nbsp;et, const&nbsp;QString&nbsp;&amp;&nbsp;text )</div></li>
+<li><div class=fn><a href="#QTableItem-2"><b>QTableItem</b></a> ( QTable&nbsp;*&nbsp;table, EditType&nbsp;et, const&nbsp;QString&nbsp;&amp;&nbsp;text, const&nbsp;QPixmap&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>virtual <a href="#~QTableItem"><b>~QTableItem</b></a> ()</div></li>
+<li><div class=fn>virtual QPixmap <a href="#pixmap"><b>pixmap</b></a> () const</div></li>
+<li><div class=fn>virtual QString <a href="#text"><b>text</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setPixmap"><b>setPixmap</b></a> ( const&nbsp;QPixmap&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>virtual void <a href="#setText"><b>setText</b></a> ( const&nbsp;QString&nbsp;&amp;&nbsp;str )</div></li>
+<li><div class=fn>QTable * <a href="#table"><b>table</b></a> () const</div></li>
+<li><div class=fn>virtual int <a href="#alignment"><b>alignment</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setWordWrap"><b>setWordWrap</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#wordWrap"><b>wordWrap</b></a> () const</div></li>
+<li><div class=fn>EditType <a href="#editType"><b>editType</b></a> () const</div></li>
+<li><div class=fn>virtual QWidget * <a href="#createEditor"><b>createEditor</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setContentFromEditor"><b>setContentFromEditor</b></a> ( QWidget&nbsp;*&nbsp;w )</div></li>
+<li><div class=fn>virtual void <a href="#setReplaceable"><b>setReplaceable</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#isReplaceable"><b>isReplaceable</b></a> () const</div></li>
+<li><div class=fn>virtual QString <a href="#key"><b>key</b></a> () const</div></li>
+<li><div class=fn>virtual QSize <a href="#sizeHint"><b>sizeHint</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setSpan"><b>setSpan</b></a> ( int&nbsp;rs, int&nbsp;cs )</div></li>
+<li><div class=fn>int <a href="#rowSpan"><b>rowSpan</b></a> () const</div></li>
+<li><div class=fn>int <a href="#colSpan"><b>colSpan</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#setRow"><b>setRow</b></a> ( int&nbsp;r )</div></li>
+<li><div class=fn>virtual void <a href="#setCol"><b>setCol</b></a> ( int&nbsp;c )</div></li>
+<li><div class=fn>int <a href="#row"><b>row</b></a> () const</div></li>
+<li><div class=fn>int <a href="#col"><b>col</b></a> () const</div></li>
+<li><div class=fn>virtual void <a href="#paint"><b>paint</b></a> ( QPainter&nbsp;*&nbsp;p, const&nbsp;QColorGroup&nbsp;&amp;&nbsp;cg, const&nbsp;QRect&nbsp;&amp;&nbsp;cr, bool&nbsp;selected )</div></li>
+<li><div class=fn>virtual void <a href="#setEnabled"><b>setEnabled</b></a> ( bool&nbsp;b )</div></li>
+<li><div class=fn>bool <a href="#isEnabled"><b>isEnabled</b></a> () const</div></li>
+<li><div class=fn>virtual int <a href="#rtti"><b>rtti</b></a> () const</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+<p>QTableItem类为<a href="qtable.html">QTable</a>单元格提供内容。
+<p> 
+<p>在很多应用中，QTableItem都适合于显示和编辑QTable单元格。而在需要生成很大的表格的情况下，你可能更喜欢另一种方法，而不是使用QTableItem：参见<a href="qtable.html#notes-on-large-tables">关于大表格的注意事项</a>。
+<p>QTableItem包含着一个单元格的数据，缺省情况下是一个字符串和一个象素映射。表项还包括单元格的显示大小和数据对齐方式，同时指定了单元格的EditType和用于内嵌编辑的编辑器（缺省为<a href="qlineedit.html">QLineEdit</a>）。如果你需要多选框，使用<a href="qchecktableitem.html">QCheckTableItem</a>；需要组合框则使用<a href="qcombotableitem.html">QComboTableItem</a>。<a href="#EditType-enum">EditType</a>（在构造器中设置的）决定单元格的内容是否可以被编辑；<a href="#setReplaceable">setReplaceable</a>()设置了单元格是否可以被另外一个单元格的内容所替换。
+<p>如果指定了象素映射，总是显示在文本在左边。可以分别用<a href="#setText">setText</a>()和<a href="#setPixmap">setPixmap</a>()来改变文本或者象素映射。对于文本可以使用<a href="#setWordWrap">setWordWrap</a>()。表项的对齐方式在构造器中设置。
+<p>如果你想用自己的部件而不是QLineEdit来编辑单元格内容，那就重新实现<a href="#createEditor">createEditor</a>()和<a href="#setContentFromEditor">setContentFromEditor</a>()。如果要显示定制的内容，就重写<a href="#paint">paint</a>()。
+<p>对表项排序使用了<a href="#key">key</a>()函数；缺省情况下返回表项的<a href="#text">文本</a>()。重写key()以定制你的表项排序方式。
+<p>使用<a href="qtable.html#setItem">QTable::setItem</a>()把表项插入到表格中。如果你把表项插入到一个已经有表项的单元格中，原有的表项被删去。
+<p>例子：
+<pre>
+    for ( int row = 0; row &lt; table-&gt;numRows(); row++ ) {
+        for ( int col = 0; col &lt; table-&gt;numCols(); col++ ) {
+            table-&gt;setItem( row, col,
+                new QTableItem( table, WhenCurrent, QString::number( row * col ) ) );
+        }
+    }
+    </pre>
+ 
+<p>如果要在相同或者不同的表格中把表项从一个单元格移到另一个，可以使用<a href="qtable.html#takeItem">QTable::takeItem</a>()和QTable::setItem()，但是也可以参见<a href="qtable.html#swapCells">QTable::swapCells</a>()。
+<p>表项可以以标准删除的方式来删去；表格和单元格将会相应地更新。
+<p> <center><img src="qtableitems.png" alt="Table Items"></center> 
+<p> <p>也参见<a href="qchecktableitem.html">QCheckTableItem</a>、<a href="qcombotableitem.html">QComboTableItem</a>和<a href="advanced.html">高级部件</a>。
+
+<p> 
+<hr><h2>成员类型文档</h2>
+<h3 class=fn><a name="EditType-enum"></a>QTableItem::EditType</h3> 
+<p> <a name="wheneditable"></a>
+本枚举用于定义单元格是可编辑还是只读（与其他设置共同作用），和单元格应如何被显示。
+<ul>
+<li><tt>QTableItem::Always</tt> - 单元格总是<em>看起来</em>可编辑。
+</ul><p>使用这个EditType确保了用<a href="#createEditor">createEditor</a>()生成的编辑器（缺省为<a href="qlineedit.html">QLineEdit</a>）总是可见。这暗示了内容的对齐方式：缺省编辑器的所有东西（即使数字）都是左对齐，而单元格的数字值缺省为右对齐。
+<p>如果编辑类型为<a href="#EditType-enum">Always</a>的单元格对齐不正确，你可以为这些表项重写createEditor()。
+<ul>
+<li><tt>QTableItem::WhenCurrent</tt> - 只有当单元格有<a href="focus.html#keyboard-focus">键盘焦点</a>（参见<a href="qtable.html#setCurrentCell">QTable::setCurrentCell</a>()）时，该单元格是<em>看起来</em>可编辑的。
+<li><tt>QTableItem::OnTyping</tt> - 只有当用户在单元格中打字或者对单元格双击时，该单元格是<em>看起来</em>可编辑的。这类似于<a href="#EditType-enum">WhenCurrent</a>的作用，但是也许更好一点。
+</ul><p>当QTableItem对象在使用方便的函数如<a href="qtable.html#setText">QTable::setText</a>()和<a href="qtable.html#setPixmap">QTable::setPixmap</a>()时生成的时候，其编辑类型缺省为<a href="#EditType-enum">OnTyping</a>。
+<ul>
+<li><tt>QTableItem::Never</tt> - 单元格不可编辑。
+</ul><p>只有当对于该单元格所在的行<a href="qtable.html#isRowReadOnly">QTable::isRowReadOnly</a>()为FALSE，对于该单元格所在的行<a href="qtable.html#isColumnReadOnly">QTable::isColumnReadOnly</a>()为FALSE，而且<a href="qtable.html#isReadOnly">QTable::isReadOnly</a>()为FALSE时，单元格才是实际可编辑的。
+<p>QComboTableItem有一个isEditable()属性，用于指示用户是可以输入自己的文本还是限制于从已有列表中选择。只有当QComboTableItem依照以上描述的EditType一样是可编辑的时，它才可以交互。
+<p> 
+<hr><h2>成员函数文档</h2>
+<h3 class=fn><a name="QTableItem"></a>QTableItem::QTableItem ( <a href="qtable.html">QTable</a>&nbsp;*&nbsp;table, <a href="qtableitem.html#EditType-enum">EditType</a>&nbsp;et, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;text )
+</h3>使用文本<em>text</em>来生成表格<em>table</em>的一个子项。该表项的<a href="#EditType-enum">EditType</a>为<em>et</em>。
+<p>该表项使用<a href="qlineedit.html">QLineEdit</a>作为编辑器，文字不自动回行，占据一个单元格。可使用<a href="qtable.html#setItem">QTable::setItem</a>()以把该表项插入到表格中。
+<p>表格拥有表项的所有权，所以一个表项不应该同时被插入多个表格中。
+
+<h3 class=fn><a name="QTableItem-2"></a>QTableItem::QTableItem ( <a href="qtable.html">QTable</a>&nbsp;*&nbsp;table, <a href="qtableitem.html#EditType-enum">EditType</a>&nbsp;et, const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;text, const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;p )
+</h3>使用文本<em>text</em>和象素映射<em>p</em>来生成表格<em>table</em>的一个子项。该表项的<a href="#EditType-enum">EditType</a>为<em>et</em>。
+<p>表项把象素映射显示在文本的左边。表项使用<a href="qlineedit.html">QLineEdit</a>用于文本编辑，文字不自动回行，占据一个单元格。可使用<a href="qtable.html#setItem">QTable::setItem</a>()以把该表项插入到表格中。
+<p>表格拥有表项的所有权，所以一个表项不应该同时被插入多个表格中。
+
+<h3 class=fn><a name="~QTableItem"></a>QTableItem::~QTableItem ()<tt> [virtual]</tt>
+</h3>该解构器删去这个表项，并且释放所有分配的资源。
+<p>如果该表项在某个表格中（也就是说，被使用setItem()插入到表格中），将被从表格和它所占据的单元格中删去。
+
+<h3 class=fn>int <a name="alignment"></a>QTableItem::alignment () const<tt> [virtual]</tt>
+</h3>本对齐函数返回单元格的文本内容在绘制时如何对齐。缺省的实现是：数字右对齐，其他文本左对齐。
+<p> <p>也参见<a href="qt.html#AlignmentFlags-enum">Qt::AlignmentFlags</a>。
+
+<h3 class=fn>int <a name="col"></a>QTableItem::col () const
+</h3>返回表项所在列。如果单元格跨越多列，本函数返回最左一列。
+<p> <p>也参见<a href="#row">row</a>()和<a href="#setCol">setCol</a>()。
+
+<h3 class=fn>int <a name="colSpan"></a>QTableItem::colSpan () const
+</h3>返回表项跨越的列数，通常是1。
+<p> <p>也参见<a href="#setSpan">setSpan</a>()和<a href="#rowSpan">rowSpan</a>()。
+
+<h3 class=fn><a href="qwidget.html">QWidget</a>&nbsp;* <a name="createEditor"></a>QTableItem::createEditor () const<tt> [virtual]</tt>
+</h3>本虚拟函数生成一个编辑器，用户用它来编辑单元格的内容。缺省的实现是生成一个<a href="qlineedit.html">QLineEdit</a>。
+<p>如果本函数返回0，则单元格为只读。
+<p>返回的部件最好是可见的，理想状态下以<a href="qscrollview.html#viewport">QTable::viewport</a>()为父部件。
+<p>如果重写本函数，你几乎肯定需要重写<a href="#setContentFromEditor">setContentFromEditor</a>()，可能需要重写<a href="#sizeHint">sizeHint</a>()。
+<p> 
+
+<pre>    <a name="x2448"></a>QWidget *ComboItem::<a href="#createEditor">createEditor</a>() const
+    {
+        // create an editor - a combobox in our case
+        ( (ComboItem*)this )-&gt;cb = new <a href="qcombobox.html">QComboBox</a>( <a href="#table">table</a>()-&gt;viewport() );
+        QObject::<a href="qobject.html#connect">connect</a>( cb, SIGNAL( activated( int ) ), table(), SLOT( doValueChanged() ) );
+        cb-&gt;insertItem( "Yes" );
+        cb-&gt;insertItem( "No" );
+        // and initialize it
+        cb-&gt;setCurrentItem( <a href="#text">text</a>() == "No" ? 1 : 0 );
+        return cb;
+</pre>
+<p> <p>也参见<a href="qtable.html#createEditor">QTable::createEditor</a>()、<a href="#setContentFromEditor">setContentFromEditor</a>()和<a href="qscrollview.html#viewport">QTable::viewport</a>()。
+
+<p>例子：<a href="qtableitem.html#x2448">table/statistics/statistics.cpp</a>。
+<h3 class=fn><a href="qtableitem.html#EditType-enum">EditType</a> <a name="editType"></a>QTableItem::editType () const
+</h3>返回表项的编辑类型。
+<p>这是在表项构造时设置的。
+<p> <p>也参见<a href="#EditType-enum">EditType</a>和<a href="#QTableItem">QTableItem</a>()。
+
+<h3 class=fn>bool <a name="isEnabled"></a>QTableItem::isEnabled () const
+</h3>如果表项为激活，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setEnabled">setEnabled</a>()。
+
+<h3 class=fn>bool <a name="isReplaceable"></a>QTableItem::isReplaceable () const
+</h3>本函数返回的是，单元格的内容是否能被另一个表项的内容替换。跨越多个单元格的表项不管这个设置，其内容不能被另一个表项替换。
+<p>（这不同于<a href="#EditType-enum">EditType</a>，因为EditType是关于<em>用户</em>是否能改变单元格的内容。）
+<p> <p>也参见<a href="#setReplaceable">setReplaceable</a>()和<a href="#EditType-enum">EditType</a>。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="key"></a>QTableItem::key () const<tt> [virtual]</tt>
+</h3>本虚拟函数返回用于排序的关键字。缺省的实现是返回相关表项的<a href="#text">text</a>()。
+<p> <p>也参见<a href="qtable.html#sorting-prop">QTable::sorting</a>。
+
+<h3 class=fn>void <a name="paint"></a>QTableItem::paint ( <a href="qpainter.html">QPainter</a>&nbsp;*&nbsp;p, const&nbsp;<a href="qcolorgroup.html">QColorGroup</a>&nbsp;&amp;&nbsp;cg, const&nbsp;<a href="qrect.html">QRect</a>&nbsp;&amp;&nbsp;cr, bool&nbsp;selected )<tt> [virtual]</tt>
+</h3>本虚拟函数用于在矩形区域<em>cr</em>内绘制一个表项的内容，使用的画具为<em>p</em>，颜色组为<em>cg</em>。
+<p>若<em>selected</em>为TRUE，单元格高亮显示。
+<p>通常不必使用本函数，但如果要绘制单元格的定制内容，你就需要重写。
+<p>注意：为提高效率，该画具缺省并未剪裁。如果需要剪裁，使用
+<p> <pre>
+    p-&gt;setClipRect( <a href="#table">table</a>()-&gt;cellRect(row, col), QPainter::ClipPainter );
+    //... your drawing code
+    p-&gt;setClipping( FALSE );
+    </pre>
+ 
+<p> 
+<p>例子：<a href="statistics-example.html#x2633">table/statistics/statistics.cpp</a>。
+<h3 class=fn><a href="qpixmap.html">QPixmap</a> <a name="pixmap"></a>QTableItem::pixmap () const<tt> [virtual]</tt>
+</h3>返回表项的象素映射，如果没有则是一个空象素映射。
+<p> <p>也参见<a href="#setPixmap">setPixmap</a>()和<a href="#text">text</a>()。
+
+<h3 class=fn>int <a name="row"></a>QTableItem::row () const
+</h3>返回表项所在行。如果单元格跨越多行，本函数返回最上一行。
+<p> <p>也参见<a href="#col">col</a>()和<a href="#setRow">setRow</a>()。
+
+<h3 class=fn>int <a name="rowSpan"></a>QTableItem::rowSpan () const
+</h3>返回表项跨越的行数，通常是1。
+<p> <p>也参见<a href="#setSpan">setSpan</a>()和<a href="#colSpan">colSpan</a>()。
+
+<h3 class=fn>int <a name="rtti"></a>QTableItem::rtti () const<tt> [virtual]</tt>
+</h3>
+返回这个表项的运行时类型判别（Returns the Run Time Type Identification）值，对于QTableItem为0。
+<p>尽管经常被主张正统的人（purist）所不取，对于QTable来说，运行时类型判别还是很有用的，原因是它考虑了有效的索引存储机制。
+<p>当你基于QTableItem生成子类时，确保每一个子类返回一个唯一的<a href="#rtti">运行时类型判别rtti</a>()值。建议使用大于1000的值，最好是大的随机数，以允许对该类的扩展。
+<p> <p>也参见<a href="qchecktableitem.html#rtti">QCheckTableItem::rtti</a>()和<a href="qcombotableitem.html#rtti">QComboTableItem::rtti</a>()。
+
+<p>在<a href="qcombotableitem.html#rtti">QComboTableItem</a>和<a href="qchecktableitem.html#rtti">QCheckTableItem</a>中被重写。
+<h3 class=fn>void <a name="setCol"></a>QTableItem::setCol ( int&nbsp;c )<tt> [virtual]</tt>
+</h3>设置列<em>c</em>为表项的列。通常不必调用本函数。
+<p>如果单元格跨越多列，本函数设置最左一列，并保持该多单元格表项的宽度。
+<p> <p>也参见<a href="#col">col</a>()、<a href="#setRow">setRow</a>()和<a href="#colSpan">colSpan</a>()。
+
+<h3 class=fn>void <a name="setContentFromEditor"></a>QTableItem::setContentFromEditor ( <a href="qwidget.html">QWidget</a>&nbsp;*&nbsp;w )<tt> [virtual]</tt>
+</h3>只要单元格的内容被编辑器<em>w</em>编辑过，<a href="qtable.html">QTable</a>调用本虚拟函数，把新值拷贝到QTableItem中。
+<p>如果你重写了<a href="#createEditor">createEditor</a>()，而且返回的不是<a href="qlineedit.html">QLineEdit</a>，你几乎肯定要重写本函数。
+<p> 
+
+<pre>    void ComboItem::<a href="#setContentFromEditor">setContentFromEditor</a>( <a href="qwidget.html">QWidget</a> *w )
+    {
+        // the user changed the value of the combobox, so synchronize the
+        // value of the item (its text), with the value of the combobox
+        if ( w-&gt;<a href="qobject.html#inherits">inherits</a>( "QComboBox" ) )
+            <a href="#setText">setText</a>( ( (QComboBox*)w )-&gt;currentText() );
+        else
+            QTableItem::<a href="#setContentFromEditor">setContentFromEditor</a>( w );
+</pre>
+<p> <p>也参见<a href="qtable.html#setCellContentFromEditor">QTable::setCellContentFromEditor</a>()。
+
+<p>例子：<a href="statistics-example.html#x2634">table/statistics/statistics.cpp</a>。
+<h3 class=fn>void <a name="setEnabled"></a>QTableItem::setEnabled ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>如果<em>b</em>为TRUE，该表项被激活；如果<em>b</em>为FALSE，该表项被设为失效。
+<p>失效的表项不响应用户交互。
+<p> <p>也参见<a href="#isEnabled">isEnabled</a>()。
+
+<h3 class=fn>void <a name="setPixmap"></a>QTableItem::setPixmap ( const&nbsp;<a href="qpixmap.html">QPixmap</a>&nbsp;&amp;&nbsp;p )<tt> [virtual]</tt>
+</h3>设置象素映射<em>p</em>为本表项的象素映射。
+<p>注意：<a href="#setPixmap">setPixmap</a>()并没有更新表项所属的单元格。使用<a href="qtable.html#updateCell">QTable::updateCell</a>()来重绘单元格内容。
+<p>对于<a href="qcombotableitem.html">QComboTableItem</a>和<a href="qchecktableitem.html">QCheckTableItem</a>，本函数没有可见的影响。
+<p> <p>也参见<a href="qtable.html#setPixmap">QTable::setPixmap</a>()、<a href="#pixmap">pixmap</a>()和<a href="#setText">setText</a>()。
+
+<h3 class=fn>void <a name="setReplaceable"></a>QTableItem::setReplaceable ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>
+如果<em>b</em>为TRUE，可以用一个QTableItem的内容来替换另一个单元格的内容。如果<em>b</em>为FALSE，则不可以。跨越多个单元格的表项，其内容不能被其他表项替换。
+<p>（这不同于<a href="#EditType-enum">EditType</a>，因为EditType是关于<em>用户</em>是否能改变单元格的内容。）
+<p> <p>也参见<a href="#isReplaceable">isReplaceable</a>()。
+
+<h3 class=fn>void <a name="setRow"></a>QTableItem::setRow ( int&nbsp;r )<tt> [virtual]</tt>
+</h3>设置行<em>r</em>为表项的行。通常不必调用本函数。
+<p>如果单元格跨越多行，本函数设置最上一行，并保持该多单元格表项的高度。
+<p> <p>也参见<a href="#row">row</a>()、<a href="#setCol">setCol</a>()和<a href="#rowSpan">rowSpan</a>()。
+
+<h3 class=fn>void <a name="setSpan"></a>QTableItem::setSpan ( int&nbsp;rs, int&nbsp;cs )<tt> [virtual]</tt>
+</h3>改变该QTableItem的范围，使其跨越多个单元格，覆盖<em>rs</em>个行和<em>cs</em>个列。左上的单元格为原始单元格。
+<p> <b>警告：</b>只有当表项已经使用例如<a href="qtable.html#setItem">QTable::setItem</a>()等方法插入到表格中时，本函数才起作用。本函数也核对以确保<em>rs</em>行和<em>cs</em>列在表格范围内，如果不是则不改变跨越而直接返回。
+<p> <p>也参见<a href="#rowSpan">rowSpan</a>()和<a href="#colSpan">colSpan</a>()。
+
+<h3 class=fn>void <a name="setText"></a>QTableItem::setText ( const&nbsp;<a href="qstring.html">QString</a>&nbsp;&amp;&nbsp;str )<tt> [virtual]</tt>
+</h3>把表项的文本改变为<em>str</em>。
+<p>注意在；<a href="#setText">setText</a>()并没有更新表项所属的单元格。使用<a href="qtable.html#updateCell">QTable::updateCell</a>()来重绘单元格内容。
+<p> <p>也参见<a href="qtable.html#setText">QTable::setText</a>()、<a href="#text">text</a>()、<a href="#setPixmap">setPixmap</a>()和<a href="qtable.html#updateCell">QTable::updateCell</a>()。
+
+<p>例子：<a href="statistics-example.html#x2635">table/statistics/statistics.cpp</a>。
+<h3 class=fn>void <a name="setWordWrap"></a>QTableItem::setWordWrap ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>如果<em>b</em>为TRUE，单元格的文本将在必要时多行自动回行，以适应单元格的宽度；否则文本将只在一行内显示。
+<p> <p>也参见<a href="#wordWrap">wordWrap</a>()、<a href="qtable.html#adjustColumn">QTable::adjustColumn</a>()和<a href="qtable.html#setColumnStretchable">QTable::setColumnStretchable</a>()。
+
+<h3 class=fn><a href="qsize.html">QSize</a> <a name="sizeHint"></a>QTableItem::sizeHint () const<tt> [virtual]</tt>
+</h3>本虚拟函数单元格要显示全部内容所需要的大小。
+<p>如果写QTableItem的子类，一般要重写本函数。
+
+<h3 class=fn><a href="qtable.html">QTable</a>&nbsp;* <a name="table"></a>QTableItem::table () const
+</h3> 
+<p>返回该表项所属的<a href="qtable.html">QTable</a>。
+<p> <p>也参见<a href="qtable.html#setItem">QTable::setItem</a>()和<a href="#QTableItem">QTableItem</a>()。
+
+<h3 class=fn><a href="qstring.html">QString</a> <a name="text"></a>QTableItem::text () const<tt> [virtual]</tt>
+</h3>提供该表项的文本，如果没有文本则是一个空字符串。
+<p>如果editMode()为<a href="#EditType-enum">Always</a>，之前<a href="#setContentFromEditor">setContentFromEditor</a>()被调用，以使编辑器的当前值被返回。
+<p>如果editMode()是别的，而且单元格的编辑器激活，那么如果编辑器不是<a href="qlineedit.html">QLineEdit</a>，setContentFromEditor()就被调用。这意味着，在这种情况下，如果用户输入文本，那么直到用户认可新数据（比如说按下回车或者Tab键），<a href="#text">text</a>()返回的都是表项的原始值。对于其他的编辑器（例如组合框），setContentFromEditor()总是被调用，所以也总是返回编辑器当前显示的值。
+<p> <p>也参见<a href="#setText">setText</a>()和<a href="#pixmap">pixmap</a>()。
+
+<h3 class=fn>bool <a name="wordWrap"></a>QTableItem::wordWrap () const
+</h3>如果单元格能自动回行，返回TRUE；否则返回FALSE。
+<p> <p>也参见<a href="#setWordWrap">setWordWrap</a>()。
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:farfareast</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

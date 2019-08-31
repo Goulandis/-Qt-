@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-win-commercial-3.0.5/doc/tutorial2.doc:1017 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>获得数据</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>获得数据</h1>
+
+
+<p> 
+<p> <center><img src="chart-setdata.png" alt="The set data dialog"></center> 
+<p> 设置数据对话框允许用户添加和编辑值，并且可以选择用来显示值的颜色和样式。用户可以可以输入标签文本并为每一个标签选择一个标签颜色。
+<p> （由<tt>setdataform.h</tt>展开。）
+<p> 
+
+<pre>    class SetDataForm: public <a href="qdialog.html">QDialog</a>
+    {
+        <a href="metaobjects.html#Q_OBJECT">Q_OBJECT</a>
+    public:
+        SetDataForm( ElementVector *elements, int decimalPlaces,
+                     <a href="qwidget.html">QWidget</a> *parent = 0, const char *name = "set data form",
+                     bool modal = TRUE, WFlags f = 0 );
+        ~SetDataForm() {}
+
+    public slots:
+        void setColor();
+        void setColor( int row, int col );
+        void currentChanged( int row, int col );
+        void valueChanged( int row, int col );
+
+    protected slots:
+        void accept();
+
+    private:
+        <a href="qtable.html">QTable</a> *table;
+        <a href="qpushbutton.html">QPushButton</a> *colorPushButton;
+        <a href="qpushbutton.html">QPushButton</a> *okPushButton;
+        <a href="qpushbutton.html">QPushButton</a> *cancelPushButton;
+
+    protected:
+        <a href="qvboxlayout.html">QVBoxLayout</a> *tableButtonBox;
+        <a href="qhboxlayout.html">QHBoxLayout</a> *buttonBox;
+
+    private:
+        ElementVector *m_elements;
+        int m_decimalPlaces;
+    };
+</pre>
+<p> 头文件很简单。构造函数中用一个指针指向元素矢量，这样这个“聪明的”对话框就可以直接显示并且编辑数据。我们将会解释我们在实现中所看到的槽的。
+<p> （由<tt>setdataform.cpp</tt>展开。）
+<p> 
+
+<pre>    #include "images/pattern01.xpm"
+    #include "images/pattern02.xpm"
+</pre>
+<p> 我们创建了一个小的<tt>.XPM</tt>图片用来显示Qt支持的每一种画刷样式。我们将会在样式组合框中使用这些的。
+<p> <h2> 构造函数
+</h2>
+<a name="1"></a><p> <pre>    SetDataForm::SetDataForm( ElementVector *elements, int decimalPlaces,
+                              <a href="qwidget.html">QWidget</a>* parent,  const char* name,
+                              bool modal, WFlags f )
+        : <a href="qdialog.html">QDialog</a>( parent, name, modal, f )
+
+    {
+        m_elements = elements;
+        m_decimalPlaces = decimalPlaces;
+</pre>
+<p> 我们传递了绝大部分参数到<a href="qdialog.html">QDialog</a>超类中。我们把元素矢量指针和所要显示的小数点位数赋给成员变量，这样它们就可以被所有的SetDataForm的成员函数访问了。
+<p> <pre>        <a href="qwidget.html#setCaption">setCaption</a>( "Chart -- Set Data" );
+        <a href="qwidget.html#resize">resize</a>( 540, 440 );
+</pre>
+<p> 我们为对话框设置一个标题并且重定义它的大小。
+<p> <pre>        tableButtonBox = new <a href="qvboxlayout.html">QVBoxLayout</a>( this, 11, 6, "table button box layout" );
+</pre>
+<p> 这个视窗的布局相当简单。按钮被组织在一个水平的布局中并且表和这个按钮布局通过使用tableButtonBox布局被竖直地组织在一起。
+<p> <pre>        table = new <a href="qtable.html">QTable</a>( this, "data table" );
+    <a name="x2471"></a>    table-&gt;<a href="qtable.html#setNumCols">setNumCols</a>( 5 );
+    <a name="x2472"></a>    table-&gt;<a href="qtable.html#setNumRows">setNumRows</a>( ChartForm::MAX_ELEMENTS );
+    <a name="x2469"></a>    table-&gt;<a href="qtable.html#setColumnReadOnly">setColumnReadOnly</a>( 1, true );
+        table-&gt;<a href="qtable.html#setColumnReadOnly">setColumnReadOnly</a>( 2, true );
+        table-&gt;<a href="qtable.html#setColumnReadOnly">setColumnReadOnly</a>( 4, true );
+    <a name="x2470"></a>    table-&gt;<a href="qtable.html#setColumnWidth">setColumnWidth</a>( 0, 80 );
+        table-&gt;<a href="qtable.html#setColumnWidth">setColumnWidth</a>( 1, 60 ); // Columns 1 and 4 must be equal
+        table-&gt;<a href="qtable.html#setColumnWidth">setColumnWidth</a>( 2, 60 );
+        table-&gt;<a href="qtable.html#setColumnWidth">setColumnWidth</a>( 3, 200 );
+        table-&gt;<a href="qtable.html#setColumnWidth">setColumnWidth</a>( 4, 60 );
+    <a name="x2466"></a>    <a href="qheader.html">QHeader</a> *th = table-&gt;<a href="qtable.html#horizontalHeader">horizontalHeader</a>();
+    <a name="x2455"></a>    th-&gt;<a href="qheader.html#setLabel">setLabel</a>( 0, "Value" );
+        th-&gt;<a href="qheader.html#setLabel">setLabel</a>( 1, "Color" );
+        th-&gt;<a href="qheader.html#setLabel">setLabel</a>( 2, "Pattern" );
+        th-&gt;<a href="qheader.html#setLabel">setLabel</a>( 3, "Label" );
+        th-&gt;<a href="qheader.html#setLabel">setLabel</a>( 4, "Color" );
+        tableButtonBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( table );
+</pre>
+<p> 我们创建一个有五列的新的<a href="qtable.html">QTable</a>，并且它的行数和元素矢量中的元素个数相同。我们让颜色和样式列只读：这是为了防止用户在这些地方输入。我们将通过让用户在颜色上点击或者定位到颜色上并且点击Color按钮时可以修改颜色。样式被放在一个组合框中，很简单地通过用户选择一个不同地样式就可以改变它。接下来我们设置合适地初始宽度，为每一列插入标签并且最后把这个表添加到tableButtonBox布局中。
+<p> <pre>        buttonBox = new <a href="qhboxlayout.html">QHBoxLayout</a>( 0, 0, 6, "button box layout" );
+</pre>
+<p> 我们创建一个水平盒子布局用来保存按钮。
+<p> <pre>        colorPushButton = new <a href="qpushbutton.html">QPushButton</a>( this, "color button" );
+    <a name="x2448"></a>    colorPushButton-&gt;<a href="qbutton.html#setText">setText</a>( "&amp;Color..." );
+        colorPushButton-&gt;<a href="qwidget.html#setEnabled">setEnabled</a>( false );
+        buttonBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( colorPushButton );
+</pre>
+<p> 我们创建一个color按钮并把它添加到buttonBox布局中。我们让这个按钮失效，只有当焦点在一个颜色单元格时，我们才会让它有效。
+<p> <pre>        <a href="qspaceritem.html">QSpacerItem</a> *spacer = new <a href="qspaceritem.html">QSpacerItem</a>( 0, 0, QSizePolicy::Expanding,
+                                                     QSizePolicy::Minimum );
+    <a name="x2443"></a>    buttonBox-&gt;<a href="qboxlayout.html#addItem">addItem</a>( spacer );
+</pre>
+<p> 因为我们想把color按钮和OK以及Cancel按钮分开，接下来我们创建一个间隔并把它添加到buttonBox布局中。
+<p> <pre>        okPushButton = new <a href="qpushbutton.html">QPushButton</a>( this, "ok button" );
+        okPushButton-&gt;<a href="qbutton.html#setText">setText</a>( "OK" );
+    <a name="x2457"></a>    okPushButton-&gt;<a href="qpushbutton.html#setDefault">setDefault</a>( TRUE );
+        buttonBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( okPushButton );
+
+        cancelPushButton = new <a href="qpushbutton.html">QPushButton</a>( this, "cancel button" );
+        cancelPushButton-&gt;<a href="qbutton.html#setText">setText</a>( "Cancel" );
+    <a name="x2447"></a>    cancelPushButton-&gt;<a href="qbutton.html#setAccel">setAccel</a>( Key_Escape );
+        buttonBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( cancelPushButton );
+</pre>
+<p> OK和Cancel按钮被创建了并被添加到buttonBox。我们让OK按钮为这个对话框的默认按钮，并且我们为Cancel按钮提供了一个<tt>Esc</tt>加速键。
+<p> <pre>    <a name="x2444"></a>    tableButtonBox-&gt;<a href="qboxlayout.html#addLayout">addLayout</a>( buttonBox );
+</pre>
+<p> 我们把buttonBox布局添加到tableButtonBox中，并且这个布局也是完整的。
+<p> <pre>    <a name="x2462"></a>    <a href="qobject.html#connect">connect</a>( table, SIGNAL( <a href="qtable.html#clicked">clicked</a>(int,int,int,const <a href="qpoint.html">QPoint</a>&amp;) ),
+                 this, SLOT( setColor(int,int) ) );
+    <a name="x2463"></a>    <a href="qobject.html#connect">connect</a>( table, SIGNAL( <a href="qtable.html#currentChanged">currentChanged</a>(int,int) ),
+                 this, SLOT( currentChanged(int,int) ) );
+    <a name="x2476"></a>    <a href="qobject.html#connect">connect</a>( table, SIGNAL( <a href="qtable.html#valueChanged">valueChanged</a>(int,int) ),
+                 this, SLOT( valueChanged(int,int) ) );
+        <a href="qobject.html#connect">connect</a>( colorPushButton, SIGNAL( <a href="qbutton.html#clicked">clicked</a>() ), this, SLOT( setColor() ) );
+        <a href="qobject.html#connect">connect</a>( okPushButton, SIGNAL( <a href="qbutton.html#clicked">clicked</a>() ), this, SLOT( <a href="qdialog.html#accept">accept</a>() ) );
+        <a href="qobject.html#connect">connect</a>( cancelPushButton, SIGNAL( <a href="qbutton.html#clicked">clicked</a>() ), this, SLOT( <a href="qdialog.html#reject">reject</a>() ) );
+</pre>
+<p> 现在我们来演习一下这个视窗。
+<ul>
+<li> 如果用户点击了一个单元格，我们调用setColor()槽，它会检查这个单元格是否保存一个颜色，如果是的，将会调用颜色对话框。
+<li> 我们把<a href="qtable.html">QTable</a>的currentChanged()信号和我们的currentChanged()槽连接起来了，举例来说，这将被用在根据用户现在所在的列来决定使color按钮有效/失效。
+<li> 我们把表格的valueChanged()和我们的valueChanged()槽连接起来了，我们将会用这个来显示带有正确的小数位数的值。
+<li> 如果用户点击Color按钮，我们就调用setColor()槽。
+<li> OK按钮被连接到accept()槽，我们将会在这个槽里面更新元素矢量。
+<li> Cancel按钮被连接到<a href="qdialog.html">QDialog</a>的reject()槽，并且这部分中不再需要更多的代码和动作。
+</ul>
+<p> <pre>        QPixmap patterns[MAX_PATTERNS];
+        patterns[0]  = QPixmap( pattern01 );
+        patterns[1]  = QPixmap( pattern02 );
+</pre>
+<p> 我们为每一个画刷样式创建了一个图片并且把它们存储在<tt>patterns</tt>数组中。
+<p> <pre>    <a name="x2460"></a>    <a href="qrect.html">QRect</a> rect = table-&gt;<a href="qtable.html#cellRect">cellRect</a>( 0, 1 );
+        <a href="qpixmap.html">QPixmap</a> pix( rect.<a href="qrect.html#width">width</a>(), rect.<a href="qrect.html#height">height</a>() );
+</pre>
+<p> 我们每一个颜色单元格所占用的矩形并创建一个这样大小的空白图片。
+<p> <pre>        for ( int i = 0; i &lt; ChartForm::MAX_ELEMENTS; ++i ) {
+            Element element = (*m_elements)[i];
+
+            if ( element.isValid() )
+                table-&gt;<a href="qtable.html#setText">setText</a>(
+                    i, 0,
+                    QString( "%1" ).arg( element.value(), 0, 'f',
+                                         m_decimalPlaces ) );
+
+            <a href="qcolor.html">QColor</a> color = element.valueColor();
+            pix.<a href="qpixmap.html#fill">fill</a>( color );
+            table-&gt;<a href="qtable.html#setPixmap">setPixmap</a>( i, 1, pix );
+            table-&gt;<a href="qtable.html#setText">setText</a>( i, 1, color.<a href="qcolor.html#name">name</a>() );
+
+            <a href="qcombobox.html">QComboBox</a> *combobox = new <a href="qcombobox.html">QComboBox</a>;
+            for ( int j = 0; j &lt; MAX_PATTERNS; ++j )
+                combobox-&gt;<a href="qcombobox.html#insertItem">insertItem</a>( patterns[j] );
+    <a name="x2453"></a>        combobox-&gt;<a href="qcombobox.html#setCurrentItem">setCurrentItem</a>( element.valuePattern() - 1 );
+    <a name="x2468"></a>        table-&gt;<a href="qtable.html#setCellWidget">setCellWidget</a>( i, 2, combobox );
+
+            table-&gt;<a href="qtable.html#setText">setText</a>( i, 3, element.label() );
+
+            color = element.labelColor();
+    <a name="x2456"></a>        pix.<a href="qpixmap.html#fill">fill</a>( color );
+    <a name="x2473"></a>        table-&gt;<a href="qtable.html#setPixmap">setPixmap</a>( i, 4, pix );
+    <a name="x2474"></a><a name="x2450"></a>        table-&gt;<a href="qtable.html#setText">setText</a>( i, 4, color.<a href="qcolor.html#name">name</a>() );
+</pre>
+<p> 对于元素矢量中的每一个元素，我们必须填充表格。
+<p> 如果元素是有效的，我们把它的值写在第一列（0列，Value），根据指定的小数点位数进行格式化。
+<p> 我们读元素的值颜色并用这种颜色填充空白图片，然后我们让颜色单元格显示这个图片。我们需要能够在以后读到这个颜色（比如用户改变了颜色）。一个方法就是测试图片中的一个像素，另一个就是继承<a href="qtableitem.html">QTableItem</a>（和我们继承CanvasText类似）并且在里面存储这个颜色。但是我们用了一个简单的方法：我们设置这个单元格的文本为这个颜色的名字。
+<p> 接下来我们用样式来填充样式组合框。我们将通过使用被选择的样式在组合框中的位置来决定用户选择了哪一个样式。<a href="qtable.html">QTable</a>可以利用<a href="qcombotableitem.html">QComboTableItem</a>条目，但是只支持文本，所以我们使用setCellWidget()来代替把<a href="qcombobox.html">QComboBox</a>的插入到表中。
+<p> 接下来我们插入元素的标签。最后我们用我们设置值颜色的方法来设置标签颜色。
+<p> <h2> 槽
+</h2>
+<a name="2"></a><p> <pre>    void SetDataForm::currentChanged( int row, int col )
+    {
+        colorPushButton-&gt;<a href="qwidget.html#setEnabled">setEnabled</a>( col == 1 || col == 4 );
+        if ( col == 2 )
+    <a name="x2461"></a>        ((QComboBox*)table-&gt;<a href="qtable.html#cellWidget">cellWidget</a>( row, col ))-&gt;popup();
+    }
+</pre>
+<p> 当用户进行定位时，表的currentChanged()信号被发射。如果用户进入1或4列时（值颜色或标签颜色），我们让colorPushButton生效，否则让它失效。
+<p> 为了给键盘用户提供方便，如果用户定位到样式组合框中时，我们弹出它。
+<p> <pre>    void SetDataForm::valueChanged( int row, int col )
+    {
+        if ( col == 0 ) {
+            bool ok;
+    <a name="x2475"></a>        double d = table-&gt;<a href="qtable.html#text">text</a>( row, col ).toDouble( &amp;ok );
+            if ( ok &amp;&amp; d &gt; EPSILON )
+                table-&gt;<a href="qtable.html#setText">setText</a>(
+                    row, col, QString( "%1" ).arg(
+                                d, 0, 'f', m_decimalPlaces ) );
+            else
+                table-&gt;<a href="qtable.html#setText">setText</a>( row, col, table-&gt;<a href="qtable.html#text">text</a>( row, col ) + "?" );
+        }
+    }
+</pre>
+<p> 如果用户改变值，我们必须使用正确的小数位数对它进行格式化，或者指出它是无效的。
+<p> <pre>    void SetDataForm::setColor()
+    {
+    <a name="x2465"></a><a name="x2464"></a>    setColor( table-&gt;<a href="qtable.html#currentRow">currentRow</a>(), table-&gt;<a href="qtable.html#currentColumn">currentColumn</a>() );
+        table-&gt;<a href="qwidget.html#setFocus">setFocus</a>();
+    }
+</pre>
+<p> 如果用户按下Color按钮，我们调用另一个setColor()函数并把焦点返回到表中。
+<p> <pre>    void SetDataForm::setColor( int row, int col )
+    {
+        if ( !( col == 1 || col == 4 ) )
+            return;
+
+    <a name="x2451"></a>    <a href="qcolor.html">QColor</a> color = QColorDialog::<a href="qcolordialog.html#getColor">getColor</a>(
+                            QColor( table-&gt;<a href="qtable.html#text">text</a>( row, col ) ),
+                            this, "color dialog" );
+    <a name="x2449"></a>    if ( color.<a href="qcolor.html#isValid">isValid</a>() ) {
+    <a name="x2467"></a>        <a href="qpixmap.html">QPixmap</a> pix = table-&gt;<a href="qtable.html#pixmap">pixmap</a>( row, col );
+            pix.<a href="qpixmap.html#fill">fill</a>( color );
+            table-&gt;<a href="qtable.html#setPixmap">setPixmap</a>( row, col, pix );
+            table-&gt;<a href="qtable.html#setText">setText</a>( row, col, color.<a href="qcolor.html#name">name</a>() );
+        }
+    }
+</pre>
+<p> 如果当焦点在一个颜色单元格中时这个函数被调用，我们调用静态的<a href="qcolordialog.html#getColor">QColorDialog::getColor</a>()对话框来获得用户所选择的颜色。如果他们选择了一个颜色，我们就用这种颜色来填充颜色单元格的图片，并且设置单元格的文本为新的颜色的名称。
+<p> <pre>    <a name="x2454"></a>void SetDataForm::<a href="qdialog.html#accept">accept</a>()
+    {
+        bool ok;
+        for ( int i = 0; i &lt; ChartForm::MAX_ELEMENTS; ++i ) {
+            Element &amp;element = (*m_elements)[i];
+            double d = table-&gt;<a href="qtable.html#text">text</a>( i, 0 ).toDouble( &amp;ok );
+            if ( ok )
+                element.setValue( d );
+            else
+                element.setValue( Element::INVALID );
+            element.setValueColor( QColor( table-&gt;<a href="qtable.html#text">text</a>( i, 1 ) ) );
+            element.setValuePattern(
+                    ((QComboBox*)table-&gt;<a href="qtable.html#cellWidget">cellWidget</a>( i, 2 ))-&gt;currentItem() + 1 );
+            element.setLabel( table-&gt;<a href="qtable.html#text">text</a>( i, 3 ) );
+            element.setLabelColor( QColor( table-&gt;<a href="qtable.html#text">text</a>( i, 4 ) ) );
+        }
+
+        QDialog::<a href="qdialog.html#accept">accept</a>();
+    }
+</pre>
+<p> 如果用户点击OK，我们必须更新元素矢量。我们对矢量进行迭代并把每一个元素的值设置为用户输入的值，否则如果值是无效的就设置为<tt>INVALID</tt>。我们通过颜色的名称作为参数临时构造一个<a href="qcolor.html">QColor</a>来设置值颜色和标签颜色。样式被设置为样式组合框的当前条目与1的偏移量（因为我们的样式数字是从1开始的，但是组合框的条目是从0开始索引的）。
+<p> 最后我们调用<a href="qdialog.html#accept">QDialog::accept</a>()。
+<p> <p align=right>
+<a href="tutorial2-07.html">&laquo; 文件处理</a> |
+<a href="tutorial2.html">目录</a> |
+<a href="tutorial2-09.html">设置选项 &raquo;</a>
+</p>
+<p> 
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>

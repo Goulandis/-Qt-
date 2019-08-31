@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/reggie/tmp/qt-3.0-reggie-5401/qt-x11-commercial-3.0.5/src/kernel/qpoint.cpp:42 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Translator" content="Cavendish">
+<meta name="Qt zh_CN Documents Website" content="http://www.qiliang.net/qt">
+<title>QPoint类</title>
+<style type="text/css"><!--
+h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; font-family: "Times New Roman" }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">主页</font></a>
+ | <a href="classes.html">
+<font color="#004faf">所有的类</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">主要的类</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">注释的类</font></a>
+ | <a href="groups.html">
+<font color="#004faf">分组的类</font></a>
+ | <a href="functions.html">
+<font color="#004faf">函数</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table>
+<h1 align=center>QPoint类参考</h1>
+
+<p>QPoint类定义了平面上的一个点。
+<a href="#details">详情请见……</a>
+<p><tt>#include &lt;<a href="qpoint-h.html">qpoint.h</a>&gt;</tt>
+<p><a href="qpoint-members.html">所有成员函数的列表。</a>
+<h2>公有成员</h2>
+<ul>
+<li><div class=fn><a href="#QPoint"><b>QPoint</b></a> ()</div></li>
+<li><div class=fn><a href="#QPoint-2"><b>QPoint</b></a> ( int&nbsp;xpos, int&nbsp;ypos )</div></li>
+<li><div class=fn>bool <a href="#isNull"><b>isNull</b></a> () const</div></li>
+<li><div class=fn>int <a href="#x"><b>x</b></a> () const</div></li>
+<li><div class=fn>int <a href="#y"><b>y</b></a> () const</div></li>
+<li><div class=fn>void <a href="#setX"><b>setX</b></a> ( int&nbsp;x )</div></li>
+<li><div class=fn>void <a href="#setY"><b>setY</b></a> ( int&nbsp;y )</div></li>
+<li><div class=fn>int <a href="#manhattanLength"><b>manhattanLength</b></a> () const</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#rx"><b>rx</b></a> ()</div></li>
+<li><div class=fn>QCOORD &amp; <a href="#ry"><b>ry</b></a> ()</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator+-eq"><b>operator+=</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator--eq"><b>operator-=</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator*-eq"><b>operator*=</b></a> ( int&nbsp;c )</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator*-eq-2"><b>operator*=</b></a> ( double&nbsp;c )</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator/-eq"><b>operator/=</b></a> ( int&nbsp;c )</div></li>
+<li><div class=fn>QPoint &amp; <a href="#operator/-eq-2"><b>operator/=</b></a> ( double&nbsp;c )</div></li>
+</ul>
+<h2>相关函数</h2>
+<ul>
+<li><div class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p1, const&nbsp;QPoint&nbsp;&amp;&nbsp;p2 )</div></li>
+<li><div class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p1, const&nbsp;QPoint&nbsp;&amp;&nbsp;p2 )</div></li>
+<li><div class=fn>const QPoint <a href="#operator+"><b>operator+</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p1, const&nbsp;QPoint&nbsp;&amp;&nbsp;p2 )</div></li>
+<li><div class=fn>const QPoint <a href="#operator-"><b>operator-</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p1, const&nbsp;QPoint&nbsp;&amp;&nbsp;p2 )</div></li>
+<li><div class=fn>const QPoint <a href="#operator*"><b>operator*</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, int&nbsp;c )</div></li>
+<li><div class=fn>const QPoint <a href="#operator*-2"><b>operator*</b></a> ( int&nbsp;c, const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>const QPoint <a href="#operator*-3"><b>operator*</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, double&nbsp;c )</div></li>
+<li><div class=fn>const QPoint <a href="#operator*-4"><b>operator*</b></a> ( double&nbsp;c, const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>const QPoint <a href="#operator--2"><b>operator-</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>const QPoint <a href="#operator/"><b>operator/</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, int&nbsp;c )</div></li>
+<li><div class=fn>const QPoint <a href="#operator/-2"><b>operator/</b></a> ( const&nbsp;QPoint&nbsp;&amp;&nbsp;p, double&nbsp;c )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-lt-lt"><b>operator&lt;&lt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, const&nbsp;QPoint&nbsp;&amp;&nbsp;p )</div></li>
+<li><div class=fn>QDataStream &amp; <a href="#operator-gt-gt"><b>operator&gt;&gt;</b></a> ( QDataStream&nbsp;&amp;&nbsp;s, QPoint&nbsp;&amp;&nbsp;p )</div></li>
+</ul>
+<hr><a name="details"></a><h2>详细描述</h2>
+
+
+QPoint类定义了平面上的一个点。
+<p> 
+
+
+<p> 一个点由一个x坐标和一个y坐标确定。
+<p> 坐标类型是<tt>QCOORD</tt>（一个32位整数）。<tt>QCOORD</tt>的最小值是<tt>QCOORD_MIN</tt>（-2147483648），最大值是<tt>QCOORD_MAX</tt>（2147483647）。
+<p> 坐标可以通过函数<a href="#x">x</a>()和<a href="#y">y</a>()来访问，它们可以由<a href="#setX">setX</a>()和<a href="#setY">setY</a>()来设置并且由<a href="#rx">rx</a>()由<a href="#ry">ry</a>()来参考。
+<p> 假设一个点<em>p</em>，下面的语句都是等价的：
+<pre>
+        p.setX( p.x() + 1 );
+        p += <a href="#QPoint">QPoint</a>( 1, 0 );
+        p.rx()++;
+    </pre>
+ 
+<p> 一个QPoint也可以用作是一个矢量。QPoint的加法和减法也像矢量一样定义了（每个分量分别的被相加或者相减）。你可以把一个QPoint与一个<tt>int</tt>或者一个<tt>double</tt>做乘法或者除法。函数<a href="#manhattanLength">manhattanLength</a>()像对矢量那样给出了QPoint一个比较廉价的长度接近值的说明。
+<p> Example:
+<pre>
+        //QPoint oldPos在其它什么地方定义过了
+        MyWidget::mouseMoveEvent( <a href="qmouseevent.html">QMouseEvent</a> *e )
+        {
+            QPoint vector = e-&gt;<a href="qmouseevent.html#pos">pos</a>() - oldPos;
+            if ( vector.<a href="#manhattanLength">manhattanLength</a>() &gt; 3 )
+            ... //鼠标从oldPos移动超过3个象素
+        }
+    </pre>
+ 
+<p> QPoint可以进行比较得出相等或者不等，并且它们可以写到QStream或者从QStream中读出。
+<p> <p>也可以参考<a href="qpointarray.html">QPointArray</a>、<a href="qsize.html">QSize</a>、<a href="qrect.html">QRect</a>、<a href="graphics.html">图形类</a>和<a href="images.html">图像处理类</a>。
+
+<hr><h2>成员函数文档</h2>
+
+<h3 class=fn><a name="QPoint"></a>QPoint::QPoint ()
+</h3>
+<p> 构造一个坐标为(0,0)的点（<a href="#isNull">isNull</a>()返回真）。
+
+<h3 class=fn><a name="QPoint-2"></a>QPoint::QPoint ( int&nbsp;xpos, int&nbsp;ypos )
+</h3>
+<p> 构造一个x值为<em>xpos</em>，y值为<em>ypos</em>的点。
+
+<h3 class=fn>bool <a name="isNull"></a>QPoint::isNull () const
+</h3>
+<p> 如果x值和y值都是0的话，返回真，否则返回假。
+
+<h3 class=fn>int <a name="manhattanLength"></a>QPoint::manhattanLength () const
+</h3>
+返回<a href="#x">x</a>()和<a href="#y">y</a>()的绝对值得和，就是传统上的从原点开始的矢量的“曼哈顿长度”。这个传统的出现是因为这样的距离适用于在矩形方格上旅行的履行者们，就像曼哈顿的街道一样。
+<p> 这个很有用的，并且运算很快，和真实长度sqrt(pow(x(),2)+pow(y(),2))很接近。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator*-eq"></a>QPoint::operator*= ( int&nbsp;c )
+</h3>
+<p> 用<em>c</em>与这个点的x和y做乘法，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p( -1, 4 );
+        p *= 2;            // p变成了(-2,8)
+    </pre>
+ 
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator*-eq-2"></a>QPoint::operator*= ( double&nbsp;c )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 用<em>c</em>与这个点的x和y做乘法，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p( -1, 4 );
+        p *= 2.5;          // p变成了(-3,10)
+    </pre>
+ 
+<p> 注意这个结果被取整了，因为点是用整数保存的。
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator+-eq"></a>QPoint::operator+= ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+<p> 把点<em>p</em>加到这个点上，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p(  3, 7 );
+        QPoint q( -1, 4 );
+        p += q;            // p变成了(2,11)
+    </pre>
+ 
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator--eq"></a>QPoint::operator-= ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+<p> 从这个点上减去点<em>p</em>，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p(  3, 7 );
+        QPoint q( -1, 4 );
+        p -= q;            // p变成了(4,3)
+    </pre>
+ 
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator/-eq"></a>QPoint::operator/= ( int&nbsp;c )
+</h3>
+<p> x和y都除以<em>c</em>，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p( -2, 8 );
+        p /= 2;            // p变成了(-1,4)
+    </pre>
+ 
+
+<h3 class=fn><a href="qpoint.html">QPoint</a>&nbsp;&amp; <a name="operator/-eq-2"></a>QPoint::operator/= ( double&nbsp;c )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> x和y都除以<em>c</em>，并且返回这个点的引用。
+<p> 实例：
+<pre>
+        QPoint p( -3, 10 );
+        p /= 2.5;           // p变成了(-1,4)
+    </pre>
+ 
+<p> 注意这个结果被取整了，因为点是用整数保存的。
+
+<h3 class=fn>QCOORD &amp; <a name="rx"></a>QPoint::rx ()
+</h3>
+<p> 返回这个点的x坐标的引用。
+<p> 使用这个引用可以直接操作x。
+<p> 实例：
+<pre>
+        QPoint p( 1, 2 );
+        p.<a href="#rx">rx</a>()--;         // p变成了(0, 2)
+    </pre>
+ 
+<p> <p>也可以参考<a href="#ry">ry</a>()。
+
+<h3 class=fn>QCOORD &amp; <a name="ry"></a>QPoint::ry ()
+</h3>
+<p> 返回这个点的y坐标的引用。
+<p> 使用这个引用可以直接操作y。
+<p> 实例：
+<pre>
+        QPoint p( 1, 2 );
+        p.<a href="#ry">ry</a>()++;         // p变成了(1, 3)
+    </pre>
+ 
+<p> <p>也可以参考<a href="#rx">rx</a>()。
+
+<h3 class=fn>void <a name="setX"></a>QPoint::setX ( int&nbsp;x )
+</h3>
+<p> 设置这个点的x坐标为<em>x</em>。
+<p> <p>也可以参考<a href="#x">x</a>()和<a href="#setY">setY</a>()。
+<p>实例：<a href="tutorial1-14.html#x2409">t14/cannon.cpp</a>。
+
+<h3 class=fn>void <a name="setY"></a>QPoint::setY ( int&nbsp;y )
+</h3>
+<p> 设置这个点的y坐标为<em>y</em>。
+<p> <p>也可以参考<a href="#y">y</a>()和<a href="#setX">setX</a>()。
+<p>实例：<a href="tutorial1-14.html#x2410">t14/cannon.cpp</a>。
+
+<h3 class=fn>int <a name="x"></a>QPoint::x () const
+</h3>
+<p> 返回这个点的x坐标。
+<p> <p>也可以参考<a href="#setX">setX</a>()和<a href="#y">y</a>()。
+<p>实例：<a href="canvas-example.html#x2720">canvas/canvas.cpp</a>、<a href="tutorial2-06.html#x2486">chart/canvasview.cpp</a>、<a href="dirview-example.html#x1736">dirview/dirview.cpp</a>、<a href="fileiconview-example.html#x860">fileiconview/qfileiconview.cpp</a>、<a href="life-example.html#x1882">life/life.cpp</a>、<a href="tutorial1-14.html#x2411">t14/cannon.cpp</a>和<a href="themes-example.html#x190">themes/wood.cpp</a>。
+
+<h3 class=fn>int <a name="y"></a>QPoint::y () const
+</h3>
+<p> 返回这个点的y坐标。
+<p> <p>也可以参考<a href="#setY">setY</a>()和<a href="#x">x</a>()。
+<p>实例：<a href="canvas-example.html#x2721">canvas/canvas.cpp</a>、<a href="tutorial2-06.html#x2487">chart/canvasview.cpp</a>、<a href="fileiconview-example.html#x861">fileiconview/qfileiconview.cpp</a>、<a href="life-example.html#x1883">life/life.cpp</a>、<a href="tutorial1-14.html#x2412">t14/cannon.cpp</a>和<a href="themes-example.html#x191">themes/wood.cpp</a>。
+
+<hr><h2>相关函数</h2>
+
+<h3 class=fn>bool <a name="operator!-eq"></a>operator!= ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p1, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p2 )
+</h3>
+<p> 
+<p> 如果<em>p1</em>和<em>p2</em>相等，返回真，否则返回假。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator*"></a>operator* ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, int&nbsp;c )
+</h3>
+<p> 
+<p> 返回由<em>p</em>的分量和<em>c</em>相乘构成的QPoint。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator*-2"></a>operator* ( int&nbsp;c, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 
+<p> 返回由<em>p</em>的分量和<em>c</em>相乘构成的QPoint。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator*-3"></a>operator* ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, double&nbsp;c )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 
+<p> 返回由<em>p</em>的分量和<em>c</em>相乘构成的QPoint。
+<p> 注意这个结果被取整了，因为点是用整数保存的。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator*-4"></a>operator* ( double&nbsp;c, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 
+<p> 返回由<em>p</em>的分量和<em>c</em>相乘构成的QPoint。
+<p> 注意这个结果被取整了，因为点是用整数保存的。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator+"></a>operator+ ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p1, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p2 )
+</h3>
+<p> 
+<p> 返回<em>p1</em>和<em>p2</em>的和，每个分量都分别相加。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator-"></a>operator- ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p1, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p2 )
+</h3>
+<p> 
+<p> 返回<em>p1</em>减去<em>p2</em>得到的结果，每个分量都分别相减。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator--2"></a>operator- ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 
+<p> 返回<em>p</em>每个分量都变号后构成的QPoint，和<tt>QPoint(0,0) - p</tt>是一样的。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator/"></a>operator/ ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, int&nbsp;c )
+</h3>
+<p> 
+<p> 返回<em>p</em>每个分量除以<em>c</em>后构成的QPoint。
+
+<h3 class=fn>const&nbsp;<a href="qpoint.html">QPoint</a> <a name="operator/-2"></a>operator/ ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p, double&nbsp;c )
+</h3>
+这是一个重载成员函数，提供了方便。它的行为和上面的函数基本一致。
+<p> 
+<p> 返回<em>p</em>每个分量除以<em>c</em>后构成的QPoint。
+<p> 注意这个结果被取整了，因为点是用整数保存的。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-lt-lt"></a>operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+<p> 把点<em>p</em>写到流<em>s</em>中并且返回流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>operator== ( const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p1, const&nbsp;<a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p2 )
+</h3>
+<p> 
+<p> 如果<em>p1</em>和<em>p2</em>相等，返回真，否则返回假。
+
+<h3 class=fn><a href="qdatastream.html">QDataStream</a>&nbsp;&amp; <a name="operator-gt-gt"></a>operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a>&nbsp;&amp;&nbsp;s, <a href="qpoint.html">QPoint</a>&nbsp;&amp;&nbsp;p )
+</h3>
+<p> 从流<em>s</em>中读取一个QPoint到点<em>p</em>并且返回这个流的引用。
+<p> <p>也可以参考<a href="datastreamformat.html">QDataStream操作符的格式</a>。
+
+<!-- eof -->
+<hr><p>
+这个文件是<a href="index.html">Qt工具包</a>一部分。
+版权所有 &copy; 1995-2002
+<a href="http://www.trolltech.com/">Trolltech</a>。保留所有权利。
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2002 
+<a href="http://www.trolltech.com">Trolltech</a>
+<td><a href="http://www.trolltech.com/trademarks.html">Trademarks</a>
+<td><a href="zh_CN.html">译者:Cavendish</a>
+<td align=right><div align=right>Qt 3.0.5版</div>
+</table></div></address></body>
+</html>
